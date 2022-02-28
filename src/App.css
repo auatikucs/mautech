@@ -2,11 +2,22 @@
   --x:0;
   --y:0;
 }
+@keyframes glow{
+  0%{
+    background-color: rgba( 64, 0, 0, 0.4 );
+  }
+  50%{
+    background-color: rgba( 64, 0, 0, 1 );
+  }
+  100%{
+    background-color: rgba( 64, 0, 0, 0.4 );
+  }
+}
 body{
   font-family: 'Ubuntu Mono', monospace;
   margin: 0px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .mynav.show{
 transform: translateY(0px);
@@ -16,4 +27,13 @@ opacity: 1;
 .mynav.hide{
   transform: translateY(-200px);
   opacity: 0;
+}
+.tour{
+  animation: glow 1.5s   infinite reverse;
+}
+.the-vc{
+  background-image: url('../public/mau.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  
 }

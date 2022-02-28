@@ -12,9 +12,15 @@ min-height:130px;
 max-height:130px;
 min-width: 100vw;
 position: fixed;
-top: 0;
+top:0;
 transition: all 0.3s;
-background:'#ffffff';
+background:  rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+z-index: 200;
 opacity: 1;
 box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 display: flex;
@@ -55,7 +61,7 @@ flex-direction: row;
 
 .links{
     width: 70%;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     .main-links{
@@ -173,30 +179,30 @@ export default function Nav() {
     const navRef=useRef()
     const [show, setShow] = useState('show')
     const [isDrawerOpen,setIsDrawerOpen]=useState(false)
-    let lastScroll=window.scrollY
-    const controlNavbar = () => {
-        if (window.scrollY >lastScroll ) {
-            lastScroll = window.scrollY
-            setShow('hide')
-        }
-        if(window.scrollY<lastScroll){
-          setShow('show')
-          lastScroll = window.scrollY
-        }
+    // let lastScroll=window.scrollY
+    // const controlNavbar = () => {
+    //     if (window.scrollY >lastScroll ) {
+    //         lastScroll = window.scrollY
+    //         setShow('hide')
+    //     }
+    //     if(window.scrollY<lastScroll){
+    //       setShow('show')
+    //       lastScroll = window.scrollY
+    //     }
         
-    }
+    // }
   
-    useEffect(() => {
-        window.addEventListener('scroll', controlNavbar)
-        return () => {
-            window.removeEventListener('scroll', controlNavbar)
-        }
-    }, [])
+    // useEffect(() => {
+    //     window.addEventListener('scroll', controlNavbar)
+    //     return () => {
+    //         window.removeEventListener('scroll', controlNavbar)
+    //     }
+    // }, [])
 
 
 
     return (
-        <MyNav ref={navRef} className={`mynav ${show}`}>
+        <MyNav>
          <div className='logo'>
           <img src={require('../assets/mau.png')} alt='logo'/>
           <div className='logo-head'>
