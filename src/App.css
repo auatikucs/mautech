@@ -6,6 +6,7 @@ body{
   font-family: 'Ubuntu Mono', monospace;
   margin: 0px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .mynav.show{
 transform: translateY(0px);
