@@ -13,6 +13,21 @@
     background-color: rgba( 64, 0, 0, 0.4 );
   }
 }
+@keyframes move{
+  0%{
+    transform: translateX(0px);
+  }
+  20%{
+    transform: translateX(-100px);
+  }
+
+  60%{
+    transform: translateX(-400px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
 body{
   font-family: 'Ubuntu Mono', monospace;
   margin: 0px;
@@ -35,5 +50,9 @@ opacity: 1;
   background-image: url('../public/mau.png');
   background-repeat: no-repeat;
   background-size: contain;
+  
+}
+.indi-news{
+  animation: move 8s 2s infinite reverse;
   
 }
