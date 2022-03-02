@@ -15,9 +15,10 @@ import Modal from '@mui/material/Modal';
 import { useState } from 'react';
 const MyContainer = styled.div`
 min-height: 150vh;
-min-width: 100vw;
+min-width: 100%;
 background-color:white;
 margin-top: 130px;
+overflow-x: hidden;
 
 .vc-message{
     display: grid;
@@ -291,7 +292,7 @@ list of Nigerian universities offering medicine`}
               marginRight:'auto',
               marginTop:10
           }} controls>
-         <source src={require('../assets/mau-vid.mp4')} type="video/mp4"/>
+         <source src='https://res.cloudinary.com/nutscoders/video/upload/v1646231311/mau-vid_gmyivp.mp4' type="video/mp4"/>
          </video>
      </div>
       </Modal>

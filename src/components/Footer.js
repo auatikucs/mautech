@@ -7,6 +7,7 @@ import MyLinks from './MyLinks';
 const StyledFooter=styled.div`
 min-height: 70vh;
 width: 100%;
+overflow-x: hidden;
 background-color: white;
 margin-bottom: 50px;
 .footer-cont{
