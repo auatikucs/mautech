@@ -1,6 +1,8 @@
 import { Button, Typography } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from "react-router-dom";
+
 
 const StyledCont=styled.div`
 width: 80%;
@@ -43,7 +45,8 @@ and (max-device-width : 480px) {
     
 }
 `;
-export default function MyCard({header='',content='',image}) {
+export default function MyCard({header='',content='',image,link}) {
+    let navigate = useNavigate();
     return (
         <StyledCont>
           <img src={image}/>
@@ -51,7 +54,9 @@ export default function MyCard({header='',content='',image}) {
           <p>
           {content}
           </p>
-          <Button style={{
+          <Button onClick={()=>{
+             navigate(`program/${link}`)
+          }} style={{
               width:'80%',
               marginLeft:20,
               borderRadius:50,

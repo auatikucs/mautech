@@ -221,19 +221,20 @@ export default function Nav() {
          <div className='links'>
           <div className='main-links'>
             <ul>
-                <li><a href='#'>Home</a></li>
+                <li><a href='#'>Careers</a></li>
                 <li><a href='#'>Resources</a></li>
-                <li><a href='#'>Id</a></li>
-                <li><a href='#'>About</a></li>
+                <li><a href='#'>Alumni</a></li>
+                <li><a href='#'>About Us</a></li>
             </ul>
           </div>
 
           <div className='sub-links'>
           <ul>
-                <li><a href='#'>Academics</a></li>
-                <li><a href='#'>Apply & Afford</a></li>
-                <li><a href='#'>Campus</a></li>
-                <li><a href='#'>Students</a></li>
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>Admissions</a></li>
+                <li><a href='#'>Academic</a></li>
+                <li><a href='#'>Portals</a></li>
+                <li><a href='#'>Campus Life</a></li>
             </ul>
             <Button style={{
                 marginLeft:'auto',

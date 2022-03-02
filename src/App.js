@@ -4,6 +4,7 @@ import HomeScreen from './screens/HomeScreen';
 import { BrowserRouter, Route,Routes} from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import ProgramDetailScreen from './screens/ProgramDetailScreen';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Nav/>
     <Routes>
     <Route exact path='/' element={<HomeScreen/>}/>
+    <Route exact path='/program/:type' element={<ProgramDetailScreen/>}/>
     </Routes>
     <Footer/>
    

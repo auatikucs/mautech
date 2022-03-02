@@ -38,6 +38,7 @@ export default function Explore() {
 MAJORS & PROGRAMS</h1>
 <div className='mainHolder'>
 <MyCard 
+link='undergraduate'
 image={require('../assets/und.jpg')}
 content='Explore a range of majors and minors with nearly 
 limitless opportunities to launch your career.'
