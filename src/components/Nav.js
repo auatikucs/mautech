@@ -43,16 +43,22 @@ flex-direction: row;
         align-items: center;
         flex-direction: column;
         position: relative;
+        padding: 10px;
         h4{
          text-align: center;
-         font-size: 30px;
-         font-weight: 400; 
+         font-size: 20px;
+         font-weight: bold; 
          color:#D07348;
+         text-transform: uppercase;
         }
         p{
             position: absolute;
-            bottom: 0px;
+            bottom: 0;
+            left: 0;
             color: #D07348;
+            font-size: 18px;
+            width: 100%;
+            
             
         }
     }
@@ -79,7 +85,7 @@ flex-direction: row;
         a{
             text-decoration: none;
             color: white;
-            font-size: 20px;
+            font-size: 16px;
             transition: all 0.3s;
             font-weight: lighter;
         }
@@ -107,7 +113,7 @@ flex-direction: row;
         a{
             text-decoration: none;
             color:#D07348 ;
-            font-size: 25px;
+            font-size: 18px;
             font-weight: bold;
             transition: all 0.3s;
             border-right: 1px solid lightgray;
@@ -131,13 +137,13 @@ max-height:100px;
 .logo{
     .logo-head{
         h4{
-            font-size: 15px;
+            font-size: 14px;
             text-align: center;
             text-transform: uppercase;
         }
         p{
-        margin-top: 60px;
         font-size: 9px;
+        margin-left: 20px;
        
         }
     }
@@ -207,7 +213,7 @@ export default function Nav() {
           <img src={require('../assets/mau.png')} alt='logo'/>
           <div className='logo-head'>
           <h4>Modibbo Adama <br/> University</h4>
-          <p>Established in 1981</p>
+          <i><p>Established in 1981</p></i>
           </div>
            
          </div>
@@ -243,8 +249,8 @@ export default function Nav() {
          <DrawerIcon onClick={()=>{
              setIsDrawerOpen(true)
          }} color='black' style={{
-             height:50,
-             width:50,
+             height:40,
+             width:40,
              position:'absolute',
              right:0,
              marginRight:40

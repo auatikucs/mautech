@@ -29,10 +29,11 @@
   }
 }
 body{
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Poppins', sans-serif;
   margin: 0px;
   box-sizing: border-box;
   overflow-x: hidden;
+  
 }
 .mynav.show{
 transform: translateY(0px);

@@ -4,13 +4,13 @@ import styled from 'styled-components'
 
 const StyledCont=styled.div`
 width: 80%;
-height: 350px;
+min-height: 350px;
 background-color:#f9f9f9;
 border-radius: 10px;
 box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 position: relative;
 img{
-    height: 60%;
+    height: 50%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -23,7 +23,7 @@ top:0;
 margin-top:30%;
 margin-left: 20px;
 font-weight: bolder;
-font-size: 40px;
+font-size: 30px;
 text-align: justify;
 margin-right: 20px;
 
