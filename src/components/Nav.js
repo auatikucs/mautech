@@ -10,7 +10,7 @@ import  CancelOutlined from '@mui/icons-material/CancelOutlined';
 const MyNav=styled.nav`
 min-height:130px;
 max-height:130px;
-min-width: 100vw;
+min-width: 100%;
 position: fixed;
 top:0;
 transition: all 0.3s;
@@ -18,7 +18,6 @@ background:  rgba( 255, 255, 255, 0.25 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 4px );
 -webkit-backdrop-filter: blur( 4px );
-border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 z-index: 200;
 opacity: 1;
@@ -48,12 +47,12 @@ flex-direction: row;
          text-align: center;
          font-size: 30px;
          font-weight: 400; 
-         color: #400000;
+         color:#D07348;
         }
         p{
             position: absolute;
             bottom: 0px;
-            color: #400000;
+            color: #D07348;
             
         }
     }
@@ -68,7 +67,7 @@ flex-direction: row;
         height: 50px;
         width: 100%;
         border-bottom-left-radius: 20px;
-        background-color: #400000;
+        background-color: #D07348;
         li{
           text-decoration: none;
           color: white;
@@ -98,7 +97,7 @@ flex-direction: row;
         align-items:center;
         li{
           text-decoration: none;
-          color: #400000;
+          color: #D07348;
           display: inline;
           margin: 5px;
           text-transform: uppercase;
@@ -107,7 +106,7 @@ flex-direction: row;
         }
         a{
             text-decoration: none;
-            color:#400000 ;
+            color:#D07348 ;
             font-size: 25px;
             font-weight: bold;
             transition: all 0.3s;
@@ -132,23 +131,24 @@ max-height:100px;
 .logo{
     .logo-head{
         h4{
-            font-size: 20px;
+            font-size: 15px;
             text-align: center;
             text-transform: uppercase;
         }
         p{
-        margin-top: 40px;
-        font-size: 11px;
+        margin-top: 60px;
+        font-size: 9px;
        
         }
     }
-}
-img{
+    img{
     width: 80px;
     height: 80px;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
+}
+
 .links{
     display: none;
 }
@@ -162,7 +162,7 @@ img{
 `;
 
 const MobileLinks=styled.div`
-min-height: 100%;
+min-height: 100vh;
 min-width: 250px;
 background-color:#400000;
 h4{
@@ -232,7 +232,7 @@ export default function Nav() {
             <Button style={{
                 marginLeft:'auto',
                 marginRight:20,
-                backgroundColor:'#400000',
+                backgroundColor:'#D07348',
                 borderRadius:50
             }} variant='contained' endIcon={<ForwardIcon/>}>Apply Now</Button>
           </div>
@@ -245,7 +245,9 @@ export default function Nav() {
          }} color='black' style={{
              height:50,
              width:50,
-             marginLeft:50
+             position:'absolute',
+             right:0,
+             marginRight:40
          }}/>
          </div>
 

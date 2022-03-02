@@ -56,3 +56,25 @@ opacity: 1;
   animation: move 8s 2s infinite reverse;
   
 }
+
+.mapouter{
+  position:relative;
+  text-align:right;
+  height:339px;
+  width:414px;
+}
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:339px;width:414px;
+}
+body::-webkit-scrollbar{
+  background-color:#D07348;
+  box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+body::-webkit-scrollbar-thumb{
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.5);
+}

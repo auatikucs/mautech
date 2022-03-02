@@ -8,6 +8,11 @@ import UniNews from '../sub-components/UniNews';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import OnlineLinks from '../components/OnlineLinks';
 import MyCount from '../components/MyCount';
+import MyDivider from '../sub-components/MyDivider';
+import  CancelOutlined from '@mui/icons-material/CancelOutlined';
+import Explore from '../components/Explore';
+import Modal from '@mui/material/Modal';
+import { useState } from 'react';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100vw;
@@ -117,6 +122,7 @@ and (max-device-width : 480px) {
 `;
 
 export default function HomeScreen() {
+    const [openModel,setModal]=useState(false)
 
     return (
         <MyContainer>
@@ -142,7 +148,9 @@ export default function HomeScreen() {
             </Carousel>
 
 
-            <Button className='tour' style={{
+            <Button onClick={()=>{
+                setModal(true)
+            }} className='tour' style={{
                 marginLeft: 'auto',
                 marginRight: 20,
                 background: 'rgba( 64, 0, 0, 0.4 )',
@@ -245,6 +253,48 @@ list of Nigerian universities offering medicine`}
             <Divider style={{ backgroundColor: '#D07348',marginBottom:20 }} />
             <OnlineLinks/>
             <MyCount/>
+            <MyDivider/>
+            <Explore/>
+        <Modal
+        open={openModel}
+        onClose={()=>{
+            setModal(false)
+        }}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+     <div style={
+         {
+             width:'100%',
+             height:'100%',
+             backgroundColor:'rgba(0,0,0,0.5)',
+             display:'flex',
+             flexDirection:'column'
+         }
+     }>
+         <CancelOutlined onClick={()=>{
+              setModal(false)
+          }} style={{
+             height:30,
+             width:30,
+             marginLeft:'auto',
+             marginTop:20,
+             color:'white',
+             marginRight:30,
+             cursor:'pointer'
+             
+         }}/>
+          <video style={{
+              width:'80%',
+              height:'60vh',
+              marginLeft:'auto',
+              marginRight:'auto',
+              marginTop:10
+          }} controls>
+         <source src={require('../assets/mau-vid.mp4')} type="video/mp4"/>
+         </video>
+     </div>
+      </Modal>
         </MyContainer>
     )
 }
