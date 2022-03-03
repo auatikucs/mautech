@@ -110,7 +110,7 @@ export default function ProgramDetailScreen() {
 
             <div className='sch-list'>
               <MyCard
-              link='/department'
+              link='/department/001'
               header='College of Medical Science'
               content={`Change lives with a honorary degree from one of MAU's top Medical  school courses.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646291142/med2_baw25e.jpg'
@@ -139,6 +139,7 @@ export default function ProgramDetailScreen() {
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646294226/eng_itlord.jpg'
               />
          <MyCard
+              link='/department/002'
               header='Faculty Of Agriculture'
               content={`If you want to study Agriculture, you will deal with agricultural processes and their conditions. This includes the cultivation of renewable raw materials and the production of food for humans and animals.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646295371/farm_nmxw3l.jpg'
