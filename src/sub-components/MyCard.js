@@ -11,12 +11,13 @@ background-color:#f9f9f9;
 border-radius: 10px;
 box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 position: relative;
+margin-bottom: 20px;
 img{
     height: 50%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    filter: sepia(0.6);
+    filter: sepia(0.4);
 }
 h3{
 position: absolute;
@@ -28,6 +29,7 @@ font-weight: bolder;
 font-size: 30px;
 text-align: justify;
 margin-right: 20px;
+background-color: rgba(0,0,0,0.5);
 
 }
 p{
@@ -38,10 +40,15 @@ p{
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
+
     width: 95%;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 400px;
+    img{
+        height: 40%;
+    }
     
 }
 `;
@@ -55,7 +62,7 @@ export default function MyCard({header='',content='',image,link}) {
           {content}
           </p>
           <Button onClick={()=>{
-             navigate(`program/${link}`)
+             navigate(`${link}`)
           }} style={{
               width:'80%',
               marginLeft:20,

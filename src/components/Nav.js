@@ -5,6 +5,7 @@ import DrawerIcon from '@mui/icons-material/MenuOutlined'
 import styled from 'styled-components'
 import MyList from '../sub-components/MyList';
 import  CancelOutlined from '@mui/icons-material/CancelOutlined';
+import {Link} from 'react-router-dom'
 
 
 const MyNav=styled.nav`
@@ -101,6 +102,7 @@ flex-direction: row;
         background-color: white;
         justify-content:flex-start;
         align-items:center;
+        transition: all 0.4s;
         li{
           text-decoration: none;
           color: #D07348;
@@ -118,8 +120,19 @@ flex-direction: row;
             transition: all 0.3s;
             border-right: 1px solid lightgray;
             padding-right: 10px;
+            
 
         }
+        a:hover{
+            border-bottom:5px solid #D07348;
+        }
+        a:active{
+            border-bottom:5px solid #D07348;
+        }
+        a:visited{
+            border-bottom:5px solid #D07348;
+        }
+        
     }
 }
 .phone-links{
@@ -171,6 +184,9 @@ const MobileLinks=styled.div`
 min-height: 100vh;
 min-width: 250px;
 background-color:#400000;
+a{
+text-decoration: none;
+}
 h4{
     color: white;
     font-weight: bolder;
@@ -184,27 +200,8 @@ h4{
 export default function Nav() {
     const navRef=useRef()
     const [show, setShow] = useState('show')
+    const [index,setIndex]=useState(1)
     const [isDrawerOpen,setIsDrawerOpen]=useState(false)
-    // let lastScroll=window.scrollY
-    // const controlNavbar = () => {
-    //     if (window.scrollY >lastScroll ) {
-    //         lastScroll = window.scrollY
-    //         setShow('hide')
-    //     }
-    //     if(window.scrollY<lastScroll){
-    //       setShow('show')
-    //       lastScroll = window.scrollY
-    //     }
-        
-    // }
-  
-    // useEffect(() => {
-    //     window.addEventListener('scroll', controlNavbar)
-    //     return () => {
-    //         window.removeEventListener('scroll', controlNavbar)
-    //     }
-    // }, [])
-
 
 
     return (
@@ -230,9 +227,17 @@ export default function Nav() {
 
           <div className='sub-links'>
           <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>Admissions</a></li>
-                <li><a href='#'>Academic</a></li>
+                <li><Link onClick={()=>{
+                    setIndex(1)
+                }} style={{
+                    borderBottom:index==1?'5px solid #D07348':null
+                }} to='/'>Home</Link></li>
+                <li><Link to='/program'>Admissions</Link></li>
+                <li><Link  onClick={()=>{
+                    setIndex(3)
+                }} style={{
+                    borderBottom:index==3?'5px solid #D07348':null
+                }} to='/program'>Academics</Link></li>
                 <li><a href='#'>Portals</a></li>
                 <li><a href='#'>Campus Life</a></li>
             </ul>
@@ -276,21 +281,24 @@ export default function Nav() {
              color:'white'
              
          }}/>
-          <h4>Academics</h4>
+          <h4>LINKS</h4>
           <List>
-              <MyList title='Undergraduate'/>
-              <MyList title='Graduate Programs'/>
-              <MyList title='Consultancy Unit'/>
-              <MyList title='Distance Learning'/>
-              <MyList title='IJMB Unit'/>
-          </List>
-          <h4>Campus</h4>
-          <List>
+              <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/'><MyList title='Home'/></Link>
+               <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/program'><MyList title='Academics'/></Link>
+              <MyList title='Admissions'/>
+              <MyList title='Portals'/>
               <MyList title='Campus Life'/>
-              <MyList title='Visit Us'/>
+          </List>
+          <h4>Units</h4>
+          <List>
+              <MyList title='Careers'/>
+              <MyList title='Resources'/>
+              <MyList title='Alumni'/>
               <MyList title='About Us'/>
-              <MyList title='Distance Learning'/>
-              <MyList title='IJMB Unit'/>
           </List>
       </MobileLinks>
     </Drawer>

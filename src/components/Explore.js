@@ -38,18 +38,20 @@ export default function Explore() {
 MAJORS & PROGRAMS</h1>
 <div className='mainHolder'>
 <MyCard 
-link='undergraduate'
+link='program'
 image={require('../assets/und.jpg')}
 content='Explore a range of majors and minors with nearly 
 limitless opportunities to launch your career.'
 header='Undergradute Programs'/>
 
 <MyCard 
+link='program'
 image={require('../assets/post.jpg')}
 content='Grow as a leader and advance in your profession with one of our graduate programs for women and men.'
 header='PostGraduate Programs'/>
 
 <MyCard 
+link='program'
 image={require('../assets/car2.jpg')}
 content='Elevate your career with adult degree-completion programs and licensure/certificate programs.'
 header='Consultancy Unit'/>
