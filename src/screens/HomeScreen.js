@@ -125,6 +125,7 @@ and (max-device-width : 480px) {
 export default function HomeScreen() {
     const [openModel,setModal]=useState(false)
 
+
     return (
         <MyContainer>
             <Carousel autoPlay stopAutoPlayOnHover>

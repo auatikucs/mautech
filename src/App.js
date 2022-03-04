@@ -18,7 +18,7 @@ function App() {
     <Route exact path='/program' element={<ProgramDetailScreen/>}/>
     <Route exact path='/department/:id' element={<DetailScreen/>}/>
     <Route exact path='/course/:name' element={<DepartmentScreen/>}/>
-    <Route exact path='/coursefinder' element={<CourseFinderScreen/>}/>
+    <Route exact path='/admissions' element={<CourseFinderScreen/>}/>
 
     </Routes>
     <Footer/>

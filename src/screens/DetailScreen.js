@@ -199,7 +199,7 @@ const myData=[
         'Department  of Food Science and Technology',
         'Department  of Agricultural Economics and Extension',
         'Department  of Crop Production and Horticulture',
-        'Department  of Social Science '
+        'Department  of Soil Science '
                      ]
     },
 

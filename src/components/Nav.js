@@ -222,13 +222,6 @@ export default function Nav() {
                 <li><a href='#'>Resources</a></li>
                 <li><a href='#'>Alumni</a></li>
                 <li><a href='#'>About Us</a></li>
-                <li>
-                <Link onClick={()=>{
-                    setIndex(1)
-                }} style={{
-                    borderBottom:index==1?'5px solid #D07348':null
-                }} to='/coursefinder'>Course Finder</Link>
-                </li>
             </ul>
           </div>
 
@@ -239,7 +232,7 @@ export default function Nav() {
                 }} style={{
                     borderBottom:index==1?'5px solid #D07348':null
                 }} to='/'>Home</Link></li>
-                <li><Link to='/program'>Admissions</Link></li>
+                <li><Link to='/admissions'>Admissions</Link></li>
                 <li><Link  onClick={()=>{
                     setIndex(3)
                 }} style={{
@@ -298,8 +291,7 @@ export default function Nav() {
               }} to='/program'><MyList title='Academics'/></Link>
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
-              }} to='/coursefinder'><MyList title='Course Finder'/></Link>
-              <MyList title='Admissions'/>
+              }} to='/admissions'><MyList title='Admissions'/></Link>
               <MyList title='Portals'/>
               <MyList title='Campus Life'/>
           </List>
