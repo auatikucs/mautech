@@ -6,6 +6,8 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import ProgramDetailScreen from './screens/ProgramDetailScreen';
 import DetailScreen from './screens/DetailScreen';
+import DepartmentScreen from './screens/DepartmentScreen';
+import CourseFinderScreen from './screens/CourseFinderScreen';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
     <Route exact path='/' element={<HomeScreen/>}/>
     <Route exact path='/program' element={<ProgramDetailScreen/>}/>
     <Route exact path='/department/:id' element={<DetailScreen/>}/>
+    <Route exact path='/course/:name' element={<DepartmentScreen/>}/>
+    <Route exact path='/coursefinder' element={<CourseFinderScreen/>}/>
 
     </Routes>
     <Footer/>

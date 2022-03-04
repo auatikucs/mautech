@@ -110,18 +110,20 @@ export default function ProgramDetailScreen() {
 
             <div className='sch-list'>
               <MyCard
-              link='/department/001'
-              header='College of Medical Science'
+              link='/department/008'
+              header='Medical Sciences'
               content={`Change lives with a honorary degree from one of MAU's top Medical  school courses.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646291142/med2_baw25e.jpg'
               />
 
            <MyCard
+               link='/department/004'
               header='Faculty Of Life Sciences'
               content={`There are obvious practical reasons that the life sciences are valuable. The study of the life sciences lends important insights into disease processes`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646293244/lifes_xkclfa.jpg'
               />
               <MyCard
+               link='/department/005'
               header='Faculty Of Physical Sciences'
               content={`
               The intellect can be developed through studying science. Apart from the development of the intellect.`}
@@ -129,11 +131,13 @@ export default function ProgramDetailScreen() {
               />
 
        <MyCard
+               link='/department/006'
               header='Faculty Of Enviromental Sciences'
               content={`Environmental science enlightens us on how to conserve our environment in the face of increasing human population growth and anthropogenic activities that degrade natural resources and ecosystems.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646293738/env_ur7y2b.jpg'
               />
         <MyCard
+              link='/department/003'
               header='Faculty Of Engineering'
               content={`Engineers secure the faith of growing economy. Engineering plays such an important role because it is the way that we humans are able to use the rules of the world to achieve things.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646294226/eng_itlord.jpg'
@@ -145,12 +149,14 @@ export default function ProgramDetailScreen() {
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646295371/farm_nmxw3l.jpg'
               />
            <MyCard
+               link='/department/001'
               header='Faculty Of Social Sciences'
               content={`Social science is able to provide insight into how science and innovation work – in effect it is the science of science.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646295632/soci_ewy2ia.jpg'
               />
 
          <MyCard
+               link='/department/007'
               header='Faculty Of Education'
               content={`The Faculty prepares professional teachers/leaders in teacher education and researchers.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646295893/eduu_p2m3j7.jpg'
