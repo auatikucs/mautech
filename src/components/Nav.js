@@ -5,7 +5,7 @@ import DrawerIcon from '@mui/icons-material/MenuOutlined'
 import styled from 'styled-components'
 import MyList from '../sub-components/MyList';
 import  CancelOutlined from '@mui/icons-material/CancelOutlined';
-import {Link} from 'react-router-dom'
+import {Link, useLocation, useParams} from 'react-router-dom'
 
 
 const MyNav=styled.nav`
@@ -90,6 +90,9 @@ flex-direction: row;
             transition: all 0.3s;
             font-weight: lighter;
         }
+        li:hover{
+            color:yellowgreen;
+         }
         a:hover{
             color:yellowgreen;
         }
@@ -123,6 +126,7 @@ flex-direction: row;
             
 
         }
+      
         a:hover{
             border-bottom:5px solid #D07348;
         }
@@ -198,11 +202,14 @@ h4{
 
 `;
 export default function Nav() {
+    const myParams=useLocation()
     const navRef=useRef()
     const [show, setShow] = useState('show')
     const [index,setIndex]=useState(1)
     const [isDrawerOpen,setIsDrawerOpen]=useState(false)
-
+    useEffect(()=>{
+        console.log("++++++",myParams.pathname)
+    },[])
 
     return (
         <MyNav>
@@ -221,23 +228,28 @@ export default function Nav() {
                 <li><a href='#'>Careers</a></li>
                 <li><a href='#'>Resources</a></li>
                 <li><a href='#'>Alumni</a></li>
-                <li><a href='#'>About Us</a></li>
+                <li>
+                <Link className='miniLink' style={{
+                    color:myParams.pathname=='/about'?'yellowgreen':'white',
+                }} to='/about'>About Us</Link>
+                </li>
             </ul>
           </div>
 
           <div className='sub-links'>
           <ul>
-                <li><Link onClick={()=>{
-                    setIndex(1)
-                }} style={{
-                    borderBottom:index==1?'5px solid #D07348':null
+                <li><Link style={{
+                    borderBottom:myParams.pathname=='/'?'5px solid #D07348':null
                 }} to='/'>Home</Link></li>
-                <li><Link to='/admissions'>Admissions</Link></li>
-                <li><Link  onClick={()=>{
-                    setIndex(3)
-                }} style={{
-                    borderBottom:index==3?'5px solid #D07348':null
+
+                <li><Link style={{
+                    borderBottom:myParams.pathname=='/admissions'?'5px solid #D07348':null
+                }} to='/admissions'>Admissions</Link></li>
+
+                <li><Link style={{
+                    borderBottom:myParams.pathname=='/program'?'5px solid #D07348':null
                 }} to='/program'>Academics</Link></li>
+
                 <li><a href='#'>Portals</a></li>
                 <li><a href='#'>Campus Life</a></li>
             </ul>
@@ -300,7 +312,9 @@ export default function Nav() {
               <MyList title='Careers'/>
               <MyList title='Resources'/>
               <MyList title='Alumni'/>
-              <MyList title='About Us'/>
+              <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/about'><MyList title='About Us'/></Link>
           </List>
       </MobileLinks>
     </Drawer>

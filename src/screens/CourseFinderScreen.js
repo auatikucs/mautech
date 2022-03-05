@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -57,6 +57,12 @@ and (max-device-width : 480px) {
 }
 `;
 export default function CourseFinderScreen() {
+    useEffect(()=>{
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+          })
+    },[])
     const theme = createTheme({
         palette: {
           primary: {

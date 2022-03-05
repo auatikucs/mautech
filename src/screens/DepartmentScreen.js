@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router';
 import styled from 'styled-components'
 import EmptyIcon from '@mui/icons-material/HourglassEmpty'
@@ -221,6 +221,12 @@ const CoursesList=[
     }
 ]
 export default function DepartmentScreen() {
+    useEffect(()=>{
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+          })
+    },[])
     const {name}=useParams()
     const filteredList=CoursesList.filter(crs=>name.toLocaleLowerCase().includes(crs.name.toLocaleLowerCase()))
     return (
