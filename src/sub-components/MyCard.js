@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const StyledCont=styled.div`
 width: 80%;
-min-height: 350px;
+min-height: 450px;
 background-color:#f9f9f9;
 border-radius: 10px;
 box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
@@ -23,7 +23,7 @@ h3{
 position: absolute;
 color:white;
 top:0;
-margin-top:30%;
+margin-top:20%;
 margin-left: 20px;
 font-weight: bolder;
 font-size: 30px;
@@ -34,8 +34,8 @@ background-color: rgba(0,0,0,0.5);
 }
 p{
     text-align: justify;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 @media only screen 
 and (min-device-width : 320px) 
@@ -77,7 +77,8 @@ export default function MyCard({header='',content='',image,link}) {
               width:'80%',
               marginLeft:20,
               borderRadius:50,
-              backgroundColor:'#D07348'
+              backgroundColor:'#D07348',
+              marginBottom:10
           }} variant='contained'>Click To Explore</Button>
         </StyledCont>
     )

@@ -3,6 +3,8 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router';
 import styled from 'styled-components'
 import EmptyIcon from '@mui/icons-material/HourglassEmpty'
+import MyDepList from '../components/MyDepList';
+import MyAccordion from '../components/MyAccordion';
 
 const StyledContainer=styled.div`
 margin-top: 130px;
@@ -63,7 +65,7 @@ h5{
     margin-top: 20px;
     .hodImage{
         min-height: 400px;
-        width: 30%;
+        width: 40%;
         background-color:white;
         display: flex;
         flex-direction: column;
@@ -184,13 +186,15 @@ const CoursesList=[
         with substantial body of theoretical, practical and entrepreneurial principles and practices 
         that underpin an understanding of computational thinking and problem solving based on techniques 
         for analysing, designing, simulating and modelling computational solutions to problems.`,
-        requirement:` In addition to the requirements for admission into degree programmes at the Modibbo Adama University, Yola, candidates for admission into B.Sc. Computer Science degree programme must also fulfil one of the following:
-        a)	Pass at credit level in at least five O-level subjects that must include English Language, Mathematics, Physics and any two of Further Mathematics, Biology, Chemistry, Information and Communication Technology, Geography or Economics.
-        b)	Candidates for direct entry into 200 level must in addition to satisfying condition (a) above, also obtain at least:
-            (i) Two A-level passes or equivalent, one of which must be Mathematics.
-            (ii) A Diploma in Computer Science at credit level from a recognized institution.`,
+        requirement:` In addition to the requirements for admission into degree programmes 
+        at the Modibbo Adama University, Yola, candidates for admission into B.Sc. Computer 
+        Science degree programme must also fulfil one of the following:
+        `,
         postGraduate:'',
-        resorce:'https://res.cloudinary.com/nutscoders/raw/upload/v1646423784/Department_of_Computer_Science_Curriculum_2018_BMAS_DRAFT_27_July_Update_1_ljmzsx.docx'
+        resorce:'https://res.cloudinary.com/nutscoders/raw/upload/v1646423784/Department_of_Computer_Science_Curriculum_2018_BMAS_DRAFT_27_July_Update_1_ljmzsx.docx',
+        requirementList:['Pass at credit level in at least five O-level subjects that must include English Language, Mathematics, Physics and any two of Further Mathematics, Biology, Chemistry, Information and Communication Technology, Geography or Economics.',
+        'Two A-level passes or equivalent, one of which must be Mathematics.(For D.E)',
+        ' A Diploma in Computer Science at credit level from a recognized institution. (For D.E)']
     },
     {
         name:'Mathematics',
@@ -213,11 +217,9 @@ const CoursesList=[
         requirement:`Candidate must obtain five O’ Level 
         (WASC/GCE/SSCE/NECO or equivalent) credit passes in English Language, Mathematics, 
         Physics and any two of Chemistry, Biology/Agricultural Science, Geography or Economics, obtained in not more than 2 sittings. U.M.E Subjects include English Language, 
-        Mathematics and any two of the listed subjects. Candidates for direct entry into 200 level must in addition to satisfying condition (a)    	above, must also obtain at least:
-        • Two A-level passes or equivalent one of which must include Mathematics and Physics/Economics.
-        • A Diploma in Mathematics or Statistics at credit level from a recognized institution.
-        
-        `
+        Mathematics and any two of the listed subjects. Candidates for direct entry into 200 level must in addition to satisfying condition (a)    	above, must also obtain at least:    
+        `,
+        requirementList:['Two A-level passes or equivalent one of which must include Mathematics and Physics/Economics.','A Diploma in Mathematics or Statistics at credit level from a recognized institution.']
     }
 ]
 export default function DepartmentScreen() {
@@ -241,10 +243,15 @@ export default function DepartmentScreen() {
              <div className='hodImage'>
                  <img src={filteredList[0].hodImage}/>
                  <h3>{filteredList[0].hodName}</h3>
+                 <h4>Bsc.Computer Sci., Msc. AI, PHD</h4>
                  <p>(Head Of Department)</p>
+                 <h4>STAFF LIST</h4>
+                 <MyAccordion title='Prof. G. Wajiga' qualification='BSc, MSc, PhD' topic='Soft Computing'/>
+                 <MyAccordion title='Dr A. S. Ahmadu' qualification='BTech, MSc, PhD' topic='Data Mining'/>
+                 <MyAccordion title='Dr Y. M. Malgwi' qualification='BSc, MSc, PhD' topic='Machine Learning/Medical Informatics'/>
              </div>
              <div className='depMission'>
-                <div className='myBtn'>
+                {/* <div className='myBtn'>
                      <Button style={{
                          backgroundColor:'rgba(208, 115, 72,1)',
                          width:'40%',
@@ -255,30 +262,24 @@ export default function DepartmentScreen() {
                          width:'40%',
                          borderRadius:50
                          }}  variant='contained'>Download Brochure</Button>
-                 </div>
-                 <h4>Department Mission</h4>
+                 </div> */}
+                 {/* <h4>Department Mission</h4>
                  <p>
                    {filteredList[0].mission}
                  </p>
-                 <h4>Department Vission</h4>
+                 <h4>Department Vission</h4> */}
                  <p>{filteredList[0].vission}</p>
 
-                 <h4>Department Aim</h4>
-                 <p>{filteredList[0].aim}</p>
+                <MyDepList list={filteredList[0].requirementList} title='BSC (Undergradutate)' content={filteredList[0].mission} requirements={filteredList[0].requirement}/>
+                <MyDepList list={filteredList[0].requirementList} title='MSC (Postgradutate)' content={filteredList[0].mission} requirements={filteredList[0].requirement}/>
+                <MyDepList list={filteredList[0].requirementList} title='Phd (Postgradutate)' content={filteredList[0].mission} requirements={filteredList[0].requirement}/>
+                 {/* <p>{filteredList[0].aim}</p> */}
                
              </div>
             </div>
 
-            <div className='depTerms'>
-            <img src={require('../assets/terms.png')}/>
-            <div className='mainReq'>
-            <h4>Admission Requirements</h4>
-            <p>
-           {filteredList[0].requirement}
-            </p>
-            </div>
-            </div>
-    <h5>You Can Downlod The Brochure Above For More Details, THank you.</h5>
+        
+
                     </>
                 )
             }

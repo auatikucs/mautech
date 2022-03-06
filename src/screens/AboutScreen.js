@@ -164,6 +164,46 @@ and (max-device-width : 480px) {
      }
     }
 }
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .principals{
+
+    .prinDetails{
+       
+        .princImage{
+             margin-left: 10px;
+             
+            
+          
+         
+        }
+        .princProfile{
+            margin-right: 20px;
+            
+            p{
+            
+        }
+        }
+
+
+    }
+}
+
+
+
+    .mainAbout{
+   
+     .aboutWriteUp{
+       
+     }
+    }
+
+
+  }
 `;
 export default function AboutScreen() {
 
@@ -276,7 +316,7 @@ export default function AboutScreen() {
             {myData[currentIndex].history}
              </p>
              <Button style={{
-                 marginLeft:10,
+                 marginLeft:'20%',
                  marginBottom:20
              }} variant='contained'>Download CV</Button>
            </div>

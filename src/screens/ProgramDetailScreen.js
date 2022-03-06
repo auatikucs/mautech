@@ -51,9 +51,11 @@ background-size: cover;
 .sch-list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 30px;
-    padding: 20px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen 
@@ -90,7 +92,7 @@ export default function ProgramDetailScreen() {
 
     return (
         <StyledContainer>
-            <div style={{
+            {/* <div style={{
                 backgroundImage:`url(${require('../assets/und.jpg')})`
             }} className='pr-detail'>
             <div className='first-wave'>
@@ -106,12 +108,12 @@ export default function ProgramDetailScreen() {
                     </p>
                 </div>
             </div>
-            </div>
+            </div> */}
 
             <div className='sch-list'>
               <MyCard
               link='/department/008'
-              header='Medical Sciences'
+              header='Faculty Of Medical Sciences'
               content={`Change lives with a honorary degree from one of MAU's top Medical  school courses.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646291142/med2_baw25e.jpg'
               />
@@ -133,7 +135,7 @@ export default function ProgramDetailScreen() {
        <MyCard
                link='/department/006'
               header='Faculty Of Enviromental Sciences'
-              content={`Environmental science enlightens us on how to conserve our environment in the face of increasing human population growth and anthropogenic activities that degrade natural resources and ecosystems.`}
+              content={`Environmental science enlightens us on how to conserve our environment in the face of increasing human population growth and other activities.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646293738/env_ur7y2b.jpg'
               />
         <MyCard
@@ -145,7 +147,7 @@ export default function ProgramDetailScreen() {
          <MyCard
               link='/department/002'
               header='Faculty Of Agriculture'
-              content={`If you want to study Agriculture, you will deal with agricultural processes and their conditions. This includes the cultivation of renewable raw materials and the production of food for humans and animals.`}
+              content={`If you want to study Agriculture, you will deal with agricultural processes and their conditions.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646295371/farm_nmxw3l.jpg'
               />
            <MyCard
