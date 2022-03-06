@@ -112,13 +112,13 @@ flex-direction: row;
           display: inline;
           margin: 5px;
           text-transform: uppercase;
-          margin-left: 20px;
+          margin-left: 15px;
 
         }
         a{
             text-decoration: none;
             color:#D07348 ;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
             transition: all 0.3s;
             border-right: 1px solid lightgray;
@@ -182,6 +182,41 @@ max-height:100px;
 }
 
 
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  
+    .logo{
+    .logo-head{
+        h4{
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        p{
+        font-size: 9px;
+        margin-left: 20px;
+       
+        }
+    }
+    img{
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+}
+
+.links{
+    display: none;
+}
+.phone-links{
+    display: flex;
+    align-items: center;
+}
+
+}
 `;
 
 const MobileLinks=styled.div`
@@ -228,11 +263,7 @@ export default function Nav() {
                 <li><a href='#'>Careers</a></li>
                 <li><a href='#'>Resources</a></li>
                 <li><a href='#'>Alumni</a></li>
-                <li>
-                <Link className='miniLink' style={{
-                    color:myParams.pathname=='/about'?'yellowgreen':'white',
-                }} to='/about'>About Us</Link>
-                </li>
+                <li><a href='#'>Services</a></li>
             </ul>
           </div>
 
@@ -241,7 +272,11 @@ export default function Nav() {
                 <li><Link style={{
                     borderBottom:myParams.pathname=='/'?'5px solid #D07348':null
                 }} to='/'>Home</Link></li>
-
+                <li>
+                <Link className='miniLink' style={{
+                     borderBottom:myParams.pathname=='/about'?'5px solid #D07348':null
+                }} to='/about'>About Us</Link>
+                </li>
                 <li><Link style={{
                     borderBottom:myParams.pathname=='/admissions'?'5px solid #D07348':null
                 }} to='/admissions'>Admissions</Link></li>
@@ -314,15 +349,17 @@ export default function Nav() {
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/campus'> <MyList title='Campus Life'/></Link>
+               <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/about'><MyList title='About Us'/></Link>
           </List>
           <h4>Units</h4>
           <List>
               <MyList title='Careers'/>
               <MyList title='Resources'/>
               <MyList title='Alumni'/>
-              <Link onClick={()=>{
-                  setIsDrawerOpen(false)
-              }} to='/about'><MyList title='About Us'/></Link>
+              <MyList title='Services'/>
+             
           </List>
       </MobileLinks>
     </Drawer>

@@ -120,6 +120,42 @@ and (max-device-width : 480px) {
         }
     }
 }
+
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .vc-message{
+        grid-template-columns: 1fr;
+        min-height: 80vh;
+
+        .message{
+            flex-direction:row;
+            .the-vc{
+                width: 40%;
+                img{
+                height: 100%;
+                width: 100%;
+                }
+            }
+            .the-msg{
+            width: 60%;
+            
+            h3{
+                margin-top: 50px;
+            }
+            p{
+                text-align: justify;
+                font-size: 25px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        }
+    }
+
+  }
 `;
 
 export default function HomeScreen() {

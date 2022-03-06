@@ -51,6 +51,16 @@ and (max-device-width : 480px) {
     }
     
 }
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+   min-height: 500px;
+   h3{
+       margin-left: 0px;
+   }
+  }
 `;
 export default function MyCard({header='',content='',image,link}) {
     let navigate = useNavigate();

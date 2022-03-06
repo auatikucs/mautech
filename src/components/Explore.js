@@ -30,6 +30,7 @@ and (max-device-width : 480px) {
   padding: 0px;
   }
 }
+
 `;
 export default function Explore() {
     return (

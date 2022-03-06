@@ -31,7 +31,7 @@ min-height: 100vh;
             background-color: rgba(0,0,0,0.5);
             margin-right: 30px;
             border-radius: 20px;
-            margin-top:50%;
+            
         }
         p{
             text-align: justify;
@@ -65,6 +65,7 @@ and (max-device-width : 480px) {
         .welcomeDean{
             margin-right: auto;
             width: 90%;
+            margin-top:50%;
             p{
             text-align: justify;
             margin-left: auto;
