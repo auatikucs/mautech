@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 const StyledContainer=styled.div`
@@ -90,6 +90,12 @@ and (max-device-width : 480px) {
 }
 `;
 export default function CampusScreen() {
+    useEffect(()=>{
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+          })
+    },[])
     return (
         <StyledContainer>
         <div className='campusImage'>
