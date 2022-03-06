@@ -251,7 +251,13 @@ export default function Nav() {
                 }} to='/program'>Academics</Link></li>
 
                 <li><a href='#'>Portals</a></li>
-                <li><a href='#'>Campus Life</a></li>
+
+                <li>
+                <Link to='/campus' style={{
+                    borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
+                }}  >Campus Life</Link>
+                </li>
+              
             </ul>
             <Button style={{
                 marginLeft:'auto',
@@ -305,7 +311,9 @@ export default function Nav() {
                   setIsDrawerOpen(false)
               }} to='/admissions'><MyList title='Admissions'/></Link>
               <MyList title='Portals'/>
-              <MyList title='Campus Life'/>
+              <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/campus'> <MyList title='Campus Life'/></Link>
           </List>
           <h4>Units</h4>
           <List>

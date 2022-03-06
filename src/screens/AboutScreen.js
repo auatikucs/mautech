@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import { createTheme,ThemeProvider } from '@mui/material/styles';
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 import styled from 'styled-components'
 const imageUrl=require('../assets/mau.png')
 
@@ -165,6 +166,13 @@ and (max-device-width : 480px) {
 }
 `;
 export default function AboutScreen() {
+
+    useEffect(()=>{
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+          })
+    },[])
   const [currentIndex,setCurrent]=useState(0)
   const myData=[
       {
@@ -220,12 +228,7 @@ export default function AboutScreen() {
         Adamawa State, Nigeria.  He holds a Bachelor of Sciences (Botany) Degree from
          University of Maiduguri and M.Sc and Ph.D from Ahmadu Bello University, Zaria.
         He has served in various Committees both in MAU Yola and A.B.U. Zaria.  Professor
-         Malgwi has served as Dean School of Pure and Applied Sciences twice.  He was at various
-          time Chairman or member of various Committees in the University.
-        Until his election, he was the Dean School of Post Graduate Studies. Professor M. M. 
-        Malgwi is a member of six Professional bodies and Academic associations here in Nigerian 
-        and abroad.  The seventh Deputy Vice Chancellor Academic is happily married to Professor
-         (Mrs.) Anna M. Malgwi and blessed with three children.`,
+         Malgwi has served as Dean School of Pure and Applied Sciences twice.`,
         resource:``
     }
   ]

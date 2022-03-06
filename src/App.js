@@ -9,6 +9,7 @@ import DetailScreen from './screens/DetailScreen';
 import DepartmentScreen from './screens/DepartmentScreen';
 import CourseFinderScreen from './screens/CourseFinderScreen';
 import AboutScreen from './screens/AboutScreen';
+import CampusScreen from './screens/CampusScreen';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
     <Route exact path='/course/:name' element={<DepartmentScreen/>}/>
     <Route exact path='/admissions' element={<CourseFinderScreen/>}/>
     <Route exact path='/about' element={<AboutScreen/>}/>
+    <Route exact path='/campus' element={<CampusScreen/>}/>
 
     </Routes>
     <Footer/>
