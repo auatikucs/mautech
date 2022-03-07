@@ -285,7 +285,10 @@ export default function Nav() {
                     borderBottom:myParams.pathname=='/program'?'5px solid #D07348':null
                 }} to='/program'>Academics</Link></li>
 
-                <li><a href='#'>Portals</a></li>
+                <li>
+                <Link style={{
+                    borderBottom:myParams.pathname=='/portal'?'5px solid #D07348':null
+                }} to='/portal'>Portals</Link></li>
 
                 <li>
                 <Link to='/campus' style={{
@@ -345,7 +348,9 @@ export default function Nav() {
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/admissions'><MyList title='Admissions'/></Link>
-              <MyList title='Portals'/>
+              <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/portal'><MyList title='Portals'/></Link>
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/campus'> <MyList title='Campus Life'/></Link>

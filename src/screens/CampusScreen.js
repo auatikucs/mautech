@@ -51,6 +51,31 @@ min-height: 100vh;
         }
     }
 }
+.campusDetails{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    h1{
+        text-align: center;
+        color: rgba(208,115,72,1);
+    }
+    p{
+        width: 90%;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .moreCampusDetails{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            h3{
+                text-align: center;
+            }
+        }
+}
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
@@ -82,12 +107,26 @@ and (max-device-width : 480px) {
             font-size: 18px;
             text-transform: uppercase;
         }
-        
         }
         
     }
 }
 
+}
+
+.campusDetails{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+   
+    .moreCampusDetails{
+            /* width: 100%;
+            display: grid; */
+            grid-template-columns: 1fr;
+            h3{
+                text-align: center;
+            }
+        }
 }
 `;
 export default function CampusScreen() {
@@ -117,7 +156,62 @@ concerned only with what is written out in the curricula end up as defective pro
           
          </div>
         </div>
-           
+          <div className='campusDetails'>
+              <h1>THERE’S MORE TO LIFE THAN CLASS.</h1>
+              <p>You’re not just choosing a school — you’re choosing a home. 
+                  On MAU's beautiful campus you’ll find a diverse, welcoming community 
+                  of students and faculty, plus opportunities to learn, 
+                  lead, explore and give back, not to mention have fun.</p>
+            <div className='moreCampusDetails'>
+              <div>
+                  <h3>Hostel Accomodation</h3>
+                  <p>
+                  One of the most important services delivered by the Student Affairs 
+                  Department is arranging and providing not only acceptable but affordable 
+                  accommodation. This is a duty of an outstanding importance especially to the 
+                  first students who, in most cases, are complete ‘strangers’ in the environment.
+                  </p>
+              </div>
+
+
+              <div>
+                  <h3>Students’ Associations</h3>
+                  <p>
+                  One of the ways of helping students to appreciate the advantages of living and 
+                  working together in society is to encourage them to associate with themselves and thus 
+                  form associations. These associations are of many varieties and background. Some are based 
+                  on communities, local governments or on states of origin. Others are of cultural, 
+                  religious and social origins, going beyond consanguine and ancestral boundaries.
+                  </p>
+              </div>
+
+              <div>
+                  <h3>Medical Center</h3>
+                  <p>
+                  The Medical Centre was established to take care of the health needs of 
+                  the staff, students and the close relatives of the staff. It is also one of the
+                   avenues through which the University carries out a much needed 
+                  community service to the rural population around the University.
+                  </p>
+              </div>
+
+
+              <div>
+                  <h3>The Student Union Government (SUG)</h3>
+                  <p>
+                  There is no doubt, whatsoever, that student unionism is desirable in the University. 
+                  What the authorities expect, however, is mature and responsible leadership from members
+                   of the student union executive, as they are a critical link between the students and the 
+                   authorities. Towards this end, and in order to have responsible and visionary student 
+                   leadership, the authorities have put in place a number of quality control measures for 
+                   those who are aspiring to be student leaders. One of these measures is that such students 
+                   must have made a minimum cumulative grade point average (CGPA) of 3.5. The authorities have 
+                   always consciously 
+                  encouraged students to join the body, and have always insisted on good quality leadership.
+                  </p>
+              </div>
+            </div>
+          </div>
         </StyledContainer>
     )
 }
