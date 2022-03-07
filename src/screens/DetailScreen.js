@@ -587,7 +587,7 @@ export default function DetailScreen() {
                      </div>
                  </div>
              </div>
-             <h3 style={{
+             {/* <h3 style={{
                  textAlign:'center',
                  color:'#D07348'
              }}>Faculty Staff</h3>
@@ -601,7 +601,7 @@ export default function DetailScreen() {
                       </div>
                   ))
               }
-             </div>
+             </div> */}
              <h3 style={{
                  textAlign:'center',
                  color:'#D07348'

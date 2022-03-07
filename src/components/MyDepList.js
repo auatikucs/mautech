@@ -20,6 +20,9 @@ border-radius: 10px;
     margin-bottom: 10px;
     margin-top: 20px;
 }
+h4{
+  text-align: left;
+}
 
 `;
 export default function MyDepList({title,content,requirements,list=[]}) {

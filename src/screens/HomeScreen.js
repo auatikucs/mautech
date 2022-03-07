@@ -36,8 +36,9 @@ overflow-x: hidden;
             width: 40%;
             height: 100%;
             img{
-                width: 100%;
-                height: 85%;
+                width:90%;
+                height:80%;
+                border-radius: 50%;
             }
             h4{
                 margin: 0px;
@@ -99,9 +100,18 @@ and (max-device-width : 480px) {
             flex-direction:column;
             .the-vc{
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 img{
-                height: 100%;
-                width: 100%;
+                height: 80%;
+                width: 90%;
+
+              
+                }
+                h4{
+                    margin-top: 20px;
                 }
             }
             .the-msg{
@@ -208,7 +218,7 @@ export default function HomeScreen() {
             <div className='vc-message'>
                 <div className='message'>
                     <div className='the-vc'>
-                        <img src={require('../assets/liman.png')} />
+                        <img src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' />
                         <h4>
                             Prof. Abdullahi Liman Tukur,
                             Vice Chancellor. MAU-Yola.
