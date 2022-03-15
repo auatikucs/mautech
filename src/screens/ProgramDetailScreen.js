@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import styled from 'styled-components'
 import { useNavigate,useParams } from "react-router-dom";
 import MyCard from '../sub-components/MyCard'
+import MyLinks from '../components/MyLinks';
 const StyledContainer=styled.div`
 width: 100%;
-min-height: 100vh;
+min-height: 60vh;
 margin-top: 130px;
 .pr-detail{
 min-height: 80vh;
@@ -110,8 +111,8 @@ export default function ProgramDetailScreen() {
             </div>
             </div> */}
 
-            <div className='sch-list'>
-              <MyCard
+            {/* <div className='sch-list'> */}
+              {/* <MyCard
               link='/department/008'
               header='Faculty Of Medical Sciences'
               content={`Change lives with a honorary degree from one of MAU's top Medical  school courses.`}
@@ -162,9 +163,19 @@ export default function ProgramDetailScreen() {
               header='Faculty Of Education'
               content={`The Faculty prepares professional teachers/leaders in teacher education and researchers.`}
               image='https://res.cloudinary.com/nutscoders/image/upload/v1646295893/eduu_p2m3j7.jpg'
-              />
+              /> */}
         
-            </div>
+            {/* </div> */}
+
+
+            <MyLinks route={`/department/008`} link='School of Medical Sciences'/>
+            <MyLinks route={`/department/004`} link='Faculty of Life Sciences'/>
+            <MyLinks route={`/department/005`} link='Faculty of Physical Sciences'/>
+            <MyLinks route={`/department/006`} link='Faculty of Enviromental Sciences'/>
+            <MyLinks route={`/department/003`} link='Faculty of Engineering'/>
+            <MyLinks route={`/department/002`} link='Faculty of Agriculture'/>
+            <MyLinks route={`/department/001`} link='Faculty of Social Sciences'/>
+            <MyLinks route={`/department/007`} link='Faculty of Education'/>
         </StyledContainer>
     )
 }

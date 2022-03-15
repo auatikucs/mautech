@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import MyList from '../sub-components/MyList';
 import  CancelOutlined from '@mui/icons-material/CancelOutlined';
 import {Link, useLocation, useParams} from 'react-router-dom'
+import DropList from '../sub-components/DropList';
+import DropPortal from '../sub-components/DropPortal';
 
 
 const MyNav=styled.nav`
@@ -242,9 +244,7 @@ export default function Nav() {
     const [show, setShow] = useState('show')
     const [index,setIndex]=useState(1)
     const [isDrawerOpen,setIsDrawerOpen]=useState(false)
-    useEffect(()=>{
-        console.log("++++++",myParams.pathname)
-    },[])
+    
 
     return (
         <MyNav>
@@ -281,14 +281,18 @@ export default function Nav() {
                     borderBottom:myParams.pathname=='/admissions'?'5px solid #D07348':null
                 }} to='/admissions'>Admissions</Link></li>
 
-                <li><Link style={{
+                {/* <li><Link style={{
                     borderBottom:myParams.pathname=='/program'?'5px solid #D07348':null
-                }} to='/program'>Academics</Link></li>
+                }} to='/program'>Academics</Link></li> */}
 
-                <li>
+                <DropList/>
+
+                <DropPortal/>
+
+                {/* <li>
                 <Link style={{
                     borderBottom:myParams.pathname=='/portal'?'5px solid #D07348':null
-                }} to='/portal'>Portals</Link></li>
+                }} to='/portal'>Portals</Link></li> */}
 
                 <li>
                 <Link to='/campus' style={{
