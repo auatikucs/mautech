@@ -84,7 +84,7 @@ export default function MyCarouselContent({image,heading='',subheading='',body='
     return (
         <CarouselContainer>
         <div className='color-code'></div>
-        <img  src={image}/>
+        {image?  <img  src={image}/>:null}
        <div className='car-write'>
        <Slide cascade={true} triggerOnce={true} delay={500}>
        <h4><span>{subheading}</span><br/>{heading}</h4>

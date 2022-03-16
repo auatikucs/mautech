@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Carousel from 'react-material-ui-carousel'
 import MyCarouselContent from '../components/MyCarouselContent';
-import { Button, Divider, List } from '@mui/material';
+import { Button, Divider, List, Skeleton } from '@mui/material';
 import VideoIcon from '@mui/icons-material/VideoCallOutlined'
 import MyNews from '../sub-components/MyNews';
 import UniNews from '../sub-components/UniNews';
@@ -9,10 +9,10 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import OnlineLinks from '../components/OnlineLinks';
 import MyCount from '../components/MyCount';
 import MyDivider from '../sub-components/MyDivider';
-import  CancelOutlined from '@mui/icons-material/CancelOutlined';
+import CancelOutlined from '@mui/icons-material/CancelOutlined';
 import Explore from '../components/Explore';
 import Modal from '@mui/material/Modal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
@@ -169,34 +169,55 @@ and (max-device-width : 480px) {
 `;
 
 export default function HomeScreen() {
-    const [openModel,setModal]=useState(false)
+    const [openModel, setModal] = useState(false)
+    const [isLoading, setLoading] = useState(true)
+    const [homeData, setHomeData] = useState([])
+    useEffect(() => {
+        fetch('https://modibbo-adama.herokuapp.com/admin/get-home-event')
+            .then(res => {
+                res.json()
+                    .then(data => {
+                        setLoading(false)
+                        if (data.success) {
+                            setHomeData(data.message)
 
+                        }
+
+                    })
+            })
+    }, [])
 
     return (
         <MyContainer>
-            <Carousel autoPlay stopAutoPlayOnHover>
-                <MyCarouselContent
-                    subheading='Welcome To'
-                    body='Committed to producing world-class graduate for the pursuit of
-       all round excellence through quality research, teaching and community service.'
-                    heading='Modibbo Adama University, Yola'
-
-                    image={require('../assets/car2.jpg')} />
-                <MyCarouselContent
-                    subheading='Registration'
-                    heading='New Session Registrationg On-going'
-                    body='Registration for 2022/2023 will commence on Monday 23rd March 2022'
-                    image={require('../assets/car3.jpg')} />
-                <MyCarouselContent
-                    subheading='Result Approval!!!'
-                    heading='Senate To Approve 2021/2022 Results'
-                    body='Senate Final Meeting On Results Approval Will commence first week of 
-      April 2023'
-                    image={require('../assets/car4.jpg')} />
+            {
+                console.log(homeData,"+++++")
+            }
+             {
+                    isLoading && (
+                        <Skeleton animation="wave" style={{
+                            width: '100%',
+                            height: '70vh'
+                        }} variant="rectangular" />
+                    )
+                }
+            <Carousel  autoPlay stopAutoPlayOnHover>
+                {
+                    !isLoading && (
+                        homeData.length > 0 &&
+                        homeData[0].mainEvents.map((dat, ind)=>(
+                            <MyCarouselContent key={ind}
+                                subheading={dat.subHeader}
+                                heading={dat.header}
+                                body={dat.description}
+                                image={dat.image}
+                             />
+                        ))
+                    )
+                }
             </Carousel>
 
 
-            <Button onClick={()=>{
+            <Button onClick={() => {
                 setModal(true)
             }} className='tour' style={{
                 marginLeft: 'auto',
@@ -298,51 +319,74 @@ list of Nigerian universities offering medicine`}
                 />
 
             </div>
-            <Divider style={{ backgroundColor: '#D07348',marginBottom:20 }} />
-            <OnlineLinks/>
-            <MyCount/>
-            <MyDivider/>
-            <Explore/>
-        <Modal
-        open={openModel}
-        onClose={()=>{
-            setModal(false)
-        }}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-     <div style={
-         {
-             width:'100%',
-             height:'100%',
-             backgroundColor:'rgba(0,0,0,0.5)',
-             display:'flex',
-             flexDirection:'column'
-         }
-     }>
-         <CancelOutlined onClick={()=>{
-              setModal(false)
-          }} style={{
-             height:30,
-             width:30,
-             marginLeft:'auto',
-             marginTop:20,
-             color:'white',
-             marginRight:30,
-             cursor:'pointer'
-             
-         }}/>
-          <video style={{
-              width:'80%',
-              height:'60vh',
-              marginLeft:'auto',
-              marginRight:'auto',
-              marginTop:10
-          }} controls>
-         <source src='https://res.cloudinary.com/nutscoders/video/upload/v1646231311/mau-vid_gmyivp.mp4' type="video/mp4"/>
-         </video>
-     </div>
-      </Modal>
+            <Divider style={{ backgroundColor: '#D07348', marginBottom: 20 }} />
+            <OnlineLinks />
+            <MyCount />
+            <MyDivider />
+            <Explore />
+            <Modal
+                open={openModel}
+                onClose={() => {
+                    setModal(false)
+                }}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <div style={
+                    {
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0,0,0,0.5)',
+                        display: 'flex',
+                        flexDirection: 'column'
+                    }
+                }>
+                    <CancelOutlined onClick={() => {
+                        setModal(false)
+                    }} style={{
+                        height: 30,
+                        width: 30,
+                        marginLeft: 'auto',
+                        marginTop: 20,
+                        color: 'white',
+                        marginRight: 30,
+                        cursor: 'pointer'
+
+                    }} />
+                    <video style={{
+                        width: '80%',
+                        height: '60vh',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        marginTop: 10
+                    }} controls>
+                        <source src='https://res.cloudinary.com/nutscoders/video/upload/v1646231311/mau-vid_gmyivp.mp4' type="video/mp4" />
+                    </video>
+                </div>
+            </Modal>
         </MyContainer>
     )
 }
+
+
+
+
+
+// <MyCarouselContent
+// subheading='Welcome To'
+// body='Committed to producing world-class graduate for the pursuit of
+// all round excellence through quality research, teaching and community service.'
+// heading='Modibbo Adama University, Yola'
+
+// image={require('../assets/car2.jpg')} />
+// <MyCarouselContent
+// subheading='Registration'
+// heading='New Session Registrationg On-going'
+// body='Registration for 2022/2023 will commence on Monday 23rd March 2022'
+// image={require('../assets/car3.jpg')} />
+// <MyCarouselContent
+// subheading='Result Approval!!!'
+// heading='Senate To Approve 2021/2022 Results'
+// body='Senate Final Meeting On Results Approval Will commence first week of 
+// April 2023'
+// image={require('../assets/car4.jpg')} /> 
