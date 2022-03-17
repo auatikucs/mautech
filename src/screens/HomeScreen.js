@@ -173,7 +173,7 @@ export default function HomeScreen() {
     const [isLoading, setLoading] = useState(true)
     const [homeData, setHomeData] = useState([])
     useEffect(() => {
-        fetch('https://modibbo-adama.herokuapp.com/admin/get-home-event')
+        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-home-event')
             .then(res => {
                 res.json()
                     .then(data => {
