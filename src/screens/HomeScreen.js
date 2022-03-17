@@ -239,22 +239,29 @@ export default function HomeScreen() {
             <div className='vc-message'>
                 <div className='message'>
                     <div className='the-vc'>
-                        <img src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' />
+                        {
+                            !isLoading&&
+                            homeData.length > 0&&(
+                                <>
+                        <img src={homeData[0].vc.image} />
                         <h4>
-                            Prof. Abdullahi Liman Tukur,
-                            Vice Chancellor. MAU-Yola.
-       </h4>
+                           {homeData[0].vc.header}, Vice Chancellor. MAU-Yola.
+                       </h4>
+                                </>
+                            )
+
+                        }
+                        
                     </div>
 
                     <div className='the-msg'>
                         <h3>Vc's Message</h3>
                         <p>
-                            I welcome you to the Modibbo Adama University of Technology, Yola
-                            (MAUTECH) formerly known as Federal University of Technology, Yola.
-                            I congratulate you for selecting MAUTECH. In doing so, you have become part
-                            of a tradition of excellence that is placing MAUTECH in the sport light locally,
-                            regionally, nationally, and internationally. In fact, since its establishment in 1981....
-       </p>
+                          {
+                              !isLoading&&
+                              homeData.length > 0?homeData[0].vc.description:''
+                          }  
+                        </p>
 
                         <Button style={{
                             marginLeft: '25%',
@@ -390,3 +397,11 @@ list of Nigerian universities offering medicine`}
 // body='Senate Final Meeting On Results Approval Will commence first week of 
 // April 2023'
 // image={require('../assets/car4.jpg')} /> 
+
+
+
+// I welcome you to the Modibbo Adama University of Technology, Yola
+//                             (MAUTECH) formerly known as Federal University of Technology, Yola.
+//                             I congratulate you for selecting MAUTECH. In doing so, you have become part
+//                             of a tradition of excellence that is placing MAUTECH in the sport light locally,
+//                             regionally, nationally, and internationally. In fact, since its establishment in 1981....
