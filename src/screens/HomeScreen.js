@@ -245,7 +245,7 @@ export default function HomeScreen() {
                                 <>
                         <img src={homeData[0].vc.image} />
                         <h4>
-                           {homeData[0].vc.header}, Vice Chancellor. MAU-Yola.
+                           {homeData[0].vc.name}, Vice Chancellor. MAU-Yola.
                        </h4>
                                 </>
                             )
