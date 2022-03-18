@@ -36,7 +36,7 @@ export default function UniNews({image,heading='',body=''}) {
       <CardMedia
         height='150'
         component="img"
-        image={image}
+        image={image?image:'https://res.cloudinary.com/nutscoders/image/upload/v1647580347/newss_yni3zt.jpg'}
         alt="News"
       />
       <CardContent>

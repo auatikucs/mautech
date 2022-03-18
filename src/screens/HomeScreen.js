@@ -276,16 +276,17 @@ export default function HomeScreen() {
                 <div className='news'>
                     <h3>Upcoming/Ongoing School Events</h3>
                     <List>
-                        <MyNews
-                            news='Senate Final Meeting On Results Approval Will commence first week of 
-          April 2023'/>
-
-                        <MyNews
-                            news='Senate Final Meeting On Results Approval Will commence first week of 
-          April 2023'/>
-
-
-                        <MyNews news='Registration for 2022/2023 will commence on Monday 23rd March 2022' />
+                        {
+                            !isLoading&&
+                            homeData.length > 0&&(
+                                homeData[0].programs.map((prg,ind)=>(
+                                    <MyNews
+                                    key={ind}
+                                    news={prg.description}/>
+                                ))
+                            )
+                        }
+                    
                     </List>
                 </div>
             </div>
@@ -296,34 +297,21 @@ export default function HomeScreen() {
                 textAlign: 'center'
             }}>News and Events</h4>
             <div className='uni-news'>
-                <UniNews
-                    image={require('../assets/news2.jpg')}
-                    heading='ICT Training'
-                    body='Our training program is aimed at developing a 
-community of certified professionals, and providing 
-organizations with the opportunity to ensure their staff'
-                />
+                {
+                    !isLoading&&
+                    homeData.length > 0&&(
+                        homeData[0].newsEvents.map((nws,ind)=>(
+                            <UniNews
+                            key={ind}
+                            image={nws.image}
+                            heading={nws.header}
+                            body={nws.description}
+                        />
+                        ))
+                    )
+                }
+                
 
-                <UniNews
-                    image={require('../assets/news4.jpg')}
-                    heading={`VC's Cup`}
-                    body={`The Vice-Chancellor's Cup is our inter-departmental tournament for all staff, regardless 
-of ability. A variety of sports and activities take place each `}
-                />
-
-                <UniNews
-                    image={require('../assets/news3.png')}
-                    heading='Medicine Approved'
-                    body={` Moddibbo Adama University of Technology (MAUTECH), Yola has joined the 
-list of Nigerian universities offering medicine`}
-                />
-
-
-                <UniNews
-                    image={require('../assets/news1.jpg')}
-                    heading='Admission'
-                    body='2020 Undergraduate Admission on Progress '
-                />
 
             </div>
             <Divider style={{ backgroundColor: '#D07348', marginBottom: 20 }} />
@@ -405,3 +393,26 @@ list of Nigerian universities offering medicine`}
 //                             I congratulate you for selecting MAUTECH. In doing so, you have become part
 //                             of a tradition of excellence that is placing MAUTECH in the sport light locally,
 //                             regionally, nationally, and internationally. In fact, since its establishment in 1981....
+
+
+
+// <UniNews
+// image={require('../assets/news4.jpg')}
+// heading={`VC's Cup`}
+// body={`The Vice-Chancellor's Cup is our inter-departmental tournament for all staff, regardless 
+// of ability. A variety of sports and activities take place each `}
+// />
+
+// <UniNews
+// image={require('../assets/news3.png')}
+// heading='Medicine Approved'
+// body={` Moddibbo Adama University of Technology (MAUTECH), Yola has joined the 
+// list of Nigerian universities offering medicine`}
+// />
+
+
+// <UniNews
+// image={require('../assets/news1.jpg')}
+// heading='Admission'
+// body='2020 Undergraduate Admission on Progress '
+// />
