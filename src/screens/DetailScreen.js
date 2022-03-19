@@ -222,11 +222,11 @@ export default function DetailScreen() {
                               )
                           }
                           {
-                             !myAppParam.triger[0].dean==null&&(
+                             myAppParam.triger[0].dean!==null&&(
                            <>
                             <img src={myAppParam.triger[0].dean.image}/>
                             <h4>{myAppParam.triger[0].dean.name}</h4>
-                            <p>Dean Faculty Of {myAppParam.triger[0].facultyName}</p>
+                            <p>Dean {myAppParam.triger[0].facultyName}</p>
                             </>
                             ) 
                           }

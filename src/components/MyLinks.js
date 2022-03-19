@@ -1,11 +1,14 @@
 import { Divider, ListItemButton, ListItemText } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
-export default function MyLinks({link='',route}) {
+import AppContext from '../Context/app/appContext'
+export default function MyLinks({link='',route,id}) {
+    const myAppParam=useContext(AppContext)
     const navigate=useNavigate()
     return (
-        <div>
+     <div>
 <ListItemButton onClick={()=>{
+myAppParam.loadData(id)
 navigate(route)
 }}  style={{
     color:'#D07348'
