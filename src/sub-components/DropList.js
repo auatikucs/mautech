@@ -1,8 +1,9 @@
 import {Link, useLocation, useParams,useNavigate} from 'react-router-dom'
 import {Divider, List, ListItemButton, ListItemText } from '@mui/material'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MyList from './MyList';
+import AppContext from '../Context/app/appContext';
 
 const StyledLi=styled.li`
 position: relative;
@@ -27,6 +28,27 @@ position: relative;
 }
 `;
 export default function DropList({link='',route=''}) {
+    const [facList,setList]=useState([])
+    const myAppParam=useContext(AppContext)
+    const [loading,setLoading]=useState(false)
+    useEffect(()=>{
+        loadData()
+    },[])
+
+    const loadData=()=>{
+        setLoading(true)
+        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-faculties')
+        .then(res => {
+            res.json()
+                .then(data => {
+                    setLoading(false)
+                    setList(data.message)
+                })
+        }).catch(err=>{
+            setLoading(false)
+        })
+    }
+
     const myParams=useLocation()
     const navigate=useNavigate()
     return (
@@ -36,88 +58,33 @@ export default function DropList({link='',route=''}) {
                 }}>{link}Academics</a>
                 <div className='content'>
                <List>
-               <ListItemButton onClick={()=>{
-                  navigate('/department/008')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Medical Sciences' />
-             </ListItemButton>
+                   {
+                       loading&&(
+                           <h4>loading.......</h4>
+                       )
+                   }
+                   {
+                       !loading&&
+                       facList.length>0&&(
+                       facList.map((fac,ind)=>(
+                        <ListItemButton key={ind} onClick={()=>{
+                            myAppParam.loadData(fac.facultyId)
+                            navigate(`/department/${fac.facultyId}`)
+
+                         }} style={{
+                     color:'white',
+                     textTransform:'capitalize',
+                     fontWeight:'bold'
+                 }} component="span" className='content-lists'>
+                  <ListItemText  primary={fac.facultyName} />
+                       </ListItemButton>
+                       ))
+                       )
+                   }
+              
 
 
-             <ListItemButton onClick={()=>{
-                  navigate('/department/004')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Life Sciences' />
-             </ListItemButton>
-
-
-             <ListItemButton onClick={()=>{
-                  navigate('/department/005')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Physical Science' />
-             </ListItemButton>
-
-             <ListItemButton onClick={()=>{
-                  navigate('/department/006')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Enviromental Sciences' />
-             </ListItemButton>
-
-             <ListItemButton onClick={()=>{
-                  navigate('/department/003')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Engineering' />
-             </ListItemButton>
-
-             <ListItemButton onClick={()=>{
-                  navigate('/department/002')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Agricultural' />
-             </ListItemButton>
-
-             <ListItemButton onClick={()=>{
-                  navigate('/department/001')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Social Sciences' />
-             </ListItemButton>
-
-
-             <ListItemButton onClick={()=>{
-                  navigate('/department/007')
-               }} style={{
-           color:'white',
-           textTransform:'capitalize',
-           fontWeight:'bold'
-       }} component="span" className='content-lists'>
-        <ListItemText  primary='Faculty of Education'/>
-             </ListItemButton>
+            
                </List>
                 </div>
                 
@@ -125,3 +92,4 @@ export default function DropList({link='',route=''}) {
  
     )
 }
+

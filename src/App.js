@@ -11,9 +11,11 @@ import CourseFinderScreen from './screens/CourseFinderScreen';
 import AboutScreen from './screens/AboutScreen';
 import CampusScreen from './screens/CampusScreen';
 import PortalsScreen from './screens/PortalsScreen';
+import AppState from './Context/app/appState';
 
 function App() {
   return (
+    <AppState>
     <BrowserRouter>
     <Nav/>
     <Routes>
@@ -31,6 +33,7 @@ function App() {
    
  
    </BrowserRouter>
+   </AppState>
   
   );
 }

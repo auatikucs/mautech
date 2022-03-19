@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react';
 import styled from 'styled-components'
 import { useNavigate,useParams } from "react-router-dom";
@@ -83,12 +83,30 @@ clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
 }
 `;
 export default function ProgramDetailScreen() {
+    const [facList,setList]=useState([])
+    const [loading,setLoading]=useState(false)
+
+    const loadData=()=>{
+        setLoading(true)
+        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-faculties')
+        .then(res => {
+            res.json()
+                .then(data => {
+                    setLoading(false)
+                    setList(data.message)
+                })
+        }).catch(err=>{
+            setLoading(false)
+        })
+    }
+
     const params=useParams()
     useEffect(()=>{
         window.scrollTo({
             top:0,
             behavior: 'smooth',
           })
+        loadData()
     },[])
 
     return (
@@ -167,15 +185,15 @@ export default function ProgramDetailScreen() {
         
             {/* </div> */}
 
-
-            <MyLinks route={`/department/008`} link='School of Medical Sciences'/>
-            <MyLinks route={`/department/004`} link='Faculty of Life Sciences'/>
-            <MyLinks route={`/department/005`} link='Faculty of Physical Sciences'/>
-            <MyLinks route={`/department/006`} link='Faculty of Enviromental Sciences'/>
-            <MyLinks route={`/department/003`} link='Faculty of Engineering'/>
-            <MyLinks route={`/department/002`} link='Faculty of Agriculture'/>
-            <MyLinks route={`/department/001`} link='Faculty of Social Sciences'/>
-            <MyLinks route={`/department/007`} link='Faculty of Education'/>
+            {   
+                !loading&&
+                facList.length>0&&(
+                    facList.map((fac,ind)=>(
+                        <MyLinks key={ind} route={`/department/${fac.facultyId}`} link={fac.facultyName}/>
+                    ))
+                )
+            }
+            
         </StyledContainer>
     )
 }
