@@ -163,21 +163,6 @@ export default function DetailScreen() {
     const [loading,setLoading]=useState(false)
     const myAppParam=useContext(AppContext)
 
-    const loadData=()=>{
-        setLoading(true)
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-faculty?facultyId=${id}`)
-        .then(res => {
-            res.json()
-                .then(data => {
-                    setLoading(false)
-                  
-                   
-                })
-        }).catch(err=>{
-            setLoading(false)
-        })
-    }
-
     useState(()=>{
         window.scrollTo({
             top:0,
@@ -185,12 +170,12 @@ export default function DetailScreen() {
           })
         //   loadData()
         
-         
+         console.log(myAppParam)
     },[])
     return (
         <StyledContainer>
            {
-               loading&&(
+               myAppParam.loading&&(
                    <>
                 <Skeleton style={{
                 marginLeft:'auto',
@@ -206,7 +191,7 @@ export default function DetailScreen() {
            }
 
            {
-               !loading&&
+               !myAppParam.loading&&
                myAppParam.triger.length>0&&(
                 <div className='faculty-cont'>
                 <div className='mainDean'>
@@ -226,6 +211,7 @@ export default function DetailScreen() {
                            <>
                             <img src={myAppParam.triger[0].dean.image}/>
                             <h4>{myAppParam.triger[0].dean.name}</h4>
+                            <p>{myAppParam.triger[0].dean.qualification.map(ql=>ql+', ')}</p>
                             <p>Dean {myAppParam.triger[0].facultyName}</p>
                             </>
                             ) 

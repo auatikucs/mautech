@@ -2,29 +2,32 @@ import React,{Children, useReducer,useEffect} from 'react'
 import AppContext from './appContext'
 import appReducer from './appReducer'
 import {
-LOAD_DATA,
+LOAD_DATA, SET_LOADING,
 } from '../types'
 
 
 export default function AppState(props){
     const initState={
-        triger:[]
+        triger:[],
+        loading:false
     }
 const [state,dispatch]=useReducer(appReducer,initState)
 
 const loadData=(id)=>{
+    setIsLoading()
     fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-faculty?facultyId=${id}`)
     .then(res => {
         res.json()
             .then(data => {
                 setLoading([data.message])
+                setIsLoading()
                
             })
     }).catch(err=>{
         
     })
 }
-
+const setIsLoading=()=>dispatch({type:SET_LOADING})
 const setLoading=(triger)=>dispatch({type:LOAD_DATA,payload:triger})
 // const setIslogged=()=>dispatch({type:SET_ISLOGED})
 // const setStaff=(staff)=>dispatch({type:SET_STAFF,payload:staff})
@@ -36,7 +39,8 @@ const setLoading=(triger)=>dispatch({type:LOAD_DATA,payload:triger})
 return <AppContext.Provider
 value={{
     triger:state.triger,
-    loadData
+    loadData,
+    loading:state.loading
 }}
 >
 

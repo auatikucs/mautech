@@ -38,7 +38,7 @@ overflow-x: hidden;
             img{
                 width:90%;
                 height:80%;
-                border-radius: 50%;
+                
             }
             h4{
                 margin: 0px;
@@ -189,9 +189,6 @@ export default function HomeScreen() {
 
     return (
         <MyContainer>
-            {
-                console.log(homeData,"+++++")
-            }
              {
                     isLoading && (
                         <Skeleton animation="wave" style={{
@@ -367,52 +364,3 @@ export default function HomeScreen() {
 
 
 
-// <MyCarouselContent
-// subheading='Welcome To'
-// body='Committed to producing world-class graduate for the pursuit of
-// all round excellence through quality research, teaching and community service.'
-// heading='Modibbo Adama University, Yola'
-
-// image={require('../assets/car2.jpg')} />
-// <MyCarouselContent
-// subheading='Registration'
-// heading='New Session Registrationg On-going'
-// body='Registration for 2022/2023 will commence on Monday 23rd March 2022'
-// image={require('../assets/car3.jpg')} />
-// <MyCarouselContent
-// subheading='Result Approval!!!'
-// heading='Senate To Approve 2021/2022 Results'
-// body='Senate Final Meeting On Results Approval Will commence first week of 
-// April 2023'
-// image={require('../assets/car4.jpg')} /> 
-
-
-
-// I welcome you to the Modibbo Adama University of Technology, Yola
-//                             (MAUTECH) formerly known as Federal University of Technology, Yola.
-//                             I congratulate you for selecting MAUTECH. In doing so, you have become part
-//                             of a tradition of excellence that is placing MAUTECH in the sport light locally,
-//                             regionally, nationally, and internationally. In fact, since its establishment in 1981....
-
-
-
-// <UniNews
-// image={require('../assets/news4.jpg')}
-// heading={`VC's Cup`}
-// body={`The Vice-Chancellor's Cup is our inter-departmental tournament for all staff, regardless 
-// of ability. A variety of sports and activities take place each `}
-// />
-
-// <UniNews
-// image={require('../assets/news3.png')}
-// heading='Medicine Approved'
-// body={` Moddibbo Adama University of Technology (MAUTECH), Yola has joined the 
-// list of Nigerian universities offering medicine`}
-// />
-
-
-// <UniNews
-// image={require('../assets/news1.jpg')}
-// heading='Admission'
-// body='2020 Undergraduate Admission on Progress '
-// />

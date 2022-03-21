@@ -1,5 +1,5 @@
 import {
-  LOAD_DATA
+  LOAD_DATA, SET_LOADING
    
 }from '../types'
 
@@ -11,6 +11,12 @@ const AppReducer= (state,action)=>{
                         return {
                             ...state,
                             triger:action.payload
+                        }
+            case SET_LOADING:
+                   const prev=state.loading
+                        return {
+                            ...state,
+                            loading:!prev
                         }
 
             
