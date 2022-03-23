@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom'
 import MyLinks from '../components/MyLinks';
 import { Skeleton } from '@mui/material';
 import AppContext from '../Context/app/appContext';
+import DepLink from '../components/DepLink';
 const StyledContainer=styled.div`
 margin-top: 130px;
 padding: 20px;
@@ -232,7 +233,7 @@ export default function DetailScreen() {
                 <div className='departmentList'>
                 {
                     myAppParam.triger[0].departmentList.map(dep=>(
-                        <MyLinks route={`/course/${dep.departmentId}`} key={dep.departmentId} link={dep.departmentName}/>
+                        <DepLink route={`/course/${dep.departmentId}`} key={dep.departmentId} link={dep.departmentName} id={dep.departmentId}/>
                     ))
                 }
                 </div>

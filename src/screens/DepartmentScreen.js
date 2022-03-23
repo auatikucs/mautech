@@ -1,10 +1,11 @@
 import { Button } from '@mui/material';
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router';
 import styled from 'styled-components'
 import EmptyIcon from '@mui/icons-material/HourglassEmpty'
 import MyDepList from '../components/MyDepList';
 import MyAccordion from '../components/MyAccordion';
+import AppContext from '../Context/app/appContext';
 
 const StyledContainer=styled.div`
 margin-top: 130px;
@@ -170,130 +171,82 @@ h5{
 }
 `;
 
-const CoursesList=[
-    {
-        name:'Computer Science',
-        hodName:'Prof. E.J Garba',
-        hodImage:'https://res.cloudinary.com/nutscoders/image/upload/v1646423255/HOD_Computer_Science_apzr1l.jpg',
-        vission:`The vision of the department is to produce world class computer scientists 
-        that are in tune with the latest technologies and that can 
-        use their skills in finding solutions to real world problems for the benefit of mankind.`,
-        mission:`The mission of the B.Sc. Computer Science at Modibbo Adama University Yola 
-        is to equip students and practitioners with the necessary skillsets that will allow 
-        them to solve problems in Computing and beyond with 
-        the overall goal of producing highly-skilled manpower for national development.`,
-        aim:`This curriculum is intended to provide Computer Science undergraduate students 
-        with substantial body of theoretical, practical and entrepreneurial principles and practices 
-        that underpin an understanding of computational thinking and problem solving based on techniques 
-        for analysing, designing, simulating and modelling computational solutions to problems.`,
-        requirement:` In addition to the requirements for admission into degree programmes 
-        at the Modibbo Adama University, Yola, candidates for admission into B.Sc. Computer 
-        Science degree programme must also fulfil one of the following:
-        `,
-        postGraduate:'',
-        resorce:'https://res.cloudinary.com/nutscoders/raw/upload/v1646423784/Department_of_Computer_Science_Curriculum_2018_BMAS_DRAFT_27_July_Update_1_ljmzsx.docx',
-        requirementList:['Pass at credit level in at least five O-level subjects that must include English Language, Mathematics, Physics and any two of Further Mathematics, Biology, Chemistry, Information and Communication Technology, Geography or Economics.',
-        'Two A-level passes or equivalent, one of which must be Mathematics.(For D.E)',
-        ' A Diploma in Computer Science at credit level from a recognized institution. (For D.E)']
-    },
-    {
-        name:'Mathematics',
-        hodName:'Dr. Adamu Alkali',
-        hodImage:'https://res.cloudinary.com/nutscoders/image/upload/v1646431189/Coordinator_Alumni_mk7c0r.jpg',
-        vission:`The B.Sc degree programme is designed to provide the 
-        students with a sound, broad and balanced foundation in mathematical
-         knowledge and skills with courses 
-        which are oriented towards practical development of the nation.`,
-        mission:`To provide excellent training opportunities for 
-        students and practitioners in Mathematics and its industrial
-         applications with the overall goal of 
-        producing highly-skilled manpower for national development.`,
-        aim:`The aim of the B. Tech. degree programmes in the department is 
-        to provide high quality training in Industrial Mathematics/Mathematics 
-        with Economics and its application to the industrial sector for enhanced 
-        scientific and technological development of the nation.`,
-        postGraduate:'',
-        resorce:'https://res.cloudinary.com/nutscoders/raw/upload/v1646431801/HandBook_Maths_2016_ke6iww.doc',
-        requirement:`Candidate must obtain five O’ Level 
-        (WASC/GCE/SSCE/NECO or equivalent) credit passes in English Language, Mathematics, 
-        Physics and any two of Chemistry, Biology/Agricultural Science, Geography or Economics, obtained in not more than 2 sittings. U.M.E Subjects include English Language, 
-        Mathematics and any two of the listed subjects. Candidates for direct entry into 200 level must in addition to satisfying condition (a)    	above, must also obtain at least:    
-        `,
-        requirementList:['Two A-level passes or equivalent one of which must include Mathematics and Physics/Economics.','A Diploma in Mathematics or Statistics at credit level from a recognized institution.']
-    }
-]
 export default function DepartmentScreen() {
+    const myAppParam=useContext(AppContext)
     useEffect(()=>{
         window.scrollTo({
             top:0,
             behavior: 'smooth',
           })
     },[])
-    const {name}=useParams()
-    const filteredList=CoursesList.filter(crs=>name.toLocaleLowerCase().includes(crs.name.toLocaleLowerCase()))
     return (
         <StyledContainer>
+           {
+    myAppParam.department.length>0&&(
+        <>
+        <div className='depHead'>
+ <h2>{myAppParam.department[0].departmentName} Department</h2>
+</div>
+<div className='hodDetails'>
+    {
+        myAppParam.department[0].hod!=null&&(
+        <div className='hodImage'>
+            <img src={myAppParam.department[0].hod.image}/>
+            <h3>{myAppParam.department[0].hod.name}</h3>
+            <h4>{myAppParam.department[0].hod.qualification.map(ql=>ql+', ')}</h4>
+            <p>(Head Of Department)</p>
+            <h4>STAFF LIST</h4>
             {
-                filteredList.length>0&&(
-                    <>
-                    <div className='depHead'>
-             <h2>Department Of {filteredList[0].name}</h2>
-            </div>
-            <div className='hodDetails'>
-             <div className='hodImage'>
-                 <img src={filteredList[0].hodImage}/>
-                 <h3>{filteredList[0].hodName}</h3>
-                 <h4>Bsc.Computer Sci., Msc. AI, PHD</h4>
-                 <p>(Head Of Department)</p>
-                 <h4>STAFF LIST</h4>
-                 <MyAccordion title='Prof. G. Wajiga' qualification='BSc, MSc, PhD' topic='Soft Computing'/>
-                 <MyAccordion title='Dr A. S. Ahmadu' qualification='BTech, MSc, PhD' topic='Data Mining'/>
-                 <MyAccordion title='Dr Y. M. Malgwi' qualification='BSc, MSc, PhD' topic='Machine Learning/Medical Informatics'/>
-             </div>
-             <div className='depMission'>
-                {/* <div className='myBtn'>
-                     <Button style={{
-                         backgroundColor:'rgba(208, 115, 72,1)',
-                         width:'40%',
-                         borderRadius:50
-                         }} variant='contained'>Apply Now!</Button>
-                     <Button download={filteredList[0].name} href={filteredList[0].resorce} style={{
-                         backgroundColor:'rgba(208, 115, 72,1)',
-                         width:'40%',
-                         borderRadius:50
-                         }}  variant='contained'>Download Brochure</Button>
-                 </div> */}
-                 {/* <h4>Department Mission</h4>
-                 <p>
-                   {filteredList[0].mission}
-                 </p>
-                 <h4>Department Vission</h4> */}
-                 <p>{filteredList[0].vission}</p>
-
-                <MyDepList list={filteredList[0].requirementList} title='BSC (Undergradutate)' content={filteredList[0].mission} requirements={filteredList[0].requirement}/>
-                <MyDepList list={filteredList[0].requirementList} title='MSC (Postgradutate)' content={filteredList[0].mission} requirements={filteredList[0].requirement}/>
-                <MyDepList list={filteredList[0].requirementList} title='Phd (Postgradutate)' content={filteredList[0].mission} requirements={filteredList[0].requirement}/>
-                 {/* <p>{filteredList[0].aim}</p> */}
-               
-             </div>
-            </div>
-
-        
-
-                    </>
+                myAppParam.department[0].staffList.length>0&&(
+                    myAppParam.department[0].staffList.map(stf=>(
+                        <MyAccordion key={stf.name} title={stf.name} qualification={stf.qualification.map(ql=>ql+', ')} topic={stf.major}/>
+                    ))
                 )
             }
-            {
-                filteredList.length==0&&(
-                    <div className='emptyList'>
-                        <EmptyIcon style={{
-                    width: 50,
-                    height:50
-                }}/>
-                <h4>Department Data Not Added Yet!!!</h4>
-                    </div>
-                )
-            }
+            
+           
+        </div>
+        )
+    }
+ 
+ <div className='depMission'>
+   
+     <p>{myAppParam.department[0].vission}</p>
+     {
+         myAppParam.department[0].programs.length>0&&(
+            myAppParam.department[0].programs.map(prg=>(
+                <MyDepList key={prg.name} list={prg.admissionRequirement} title={prg.name} content={prg.mission} requirements=''/>
+            ))
+         )
+     }
+
+    
+   
+ </div>
+</div>
+
+
+
+        </>
+    )
+}
+{
+    myAppParam.department.length==0&&(
+        <div className='emptyList'>
+            <EmptyIcon style={{
+        width: 50,
+        height:50
+    }}/>
+    <h4>Department Data Not Added Yet!!!</h4>
+        </div>
+    )
+}
+
+
+
+
         </StyledContainer>
     )
 }
+
+

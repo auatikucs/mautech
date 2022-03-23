@@ -7,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import EmptyIcon from '@mui/icons-material/HourglassEmpty'
 import MyLinks from '../components/MyLinks';
 import { createTheme,ThemeProvider } from '@mui/material/styles';
+import DepLink from '../components/DepLink';
 
 const StyledContainer=styled.div`
 margin-top: 130px;
@@ -81,50 +82,23 @@ export default function CourseFinderScreen() {
       });
 
     const [mySearch,setSearch]=useState('')
-    const [coursesList,setCoourses]=useState([
-        'Fisheries',
-        'Animal Science and Range Management',
-        'Crop Production',
-        'Food Science and Technology',
-        'Agricultural Economics and Extension',
-        'Crop Production and Horticulture',
-        'Soil Science',
-        'Agricultural & Env. Engineering',
-        'Chemical Engineering',
-        'Civil Engineering',
-        'Electrical Electronic',
-        'Mechanical Engineering',
-        'Biochemistry',
-        'Biotechnology',
-        'Biological Science',
-        'Science Laboratory Technology',
-        'Microbiology',
-        'Plant Science',
-        'Zoology',
-        'Chemistry',
-        'Computer Science',
-        'Geology',
-        'Mathematics',
-        'Physics',
-        'Statistics &Operations Research',
-        'Architecture',
-        'Building',
-        'Geography',
-        'Industrial Design',
-        'Geoinformatics',
-        'Urban&Regional Planning',
-        'Accountancy',
-        'Banking & Finance',
-        'Economics',
-        'Information Technology',
-        'Library & Information Science',
-        'Management Technology',
-        'Science Education',
-        'Technology Education ',
-        'MBBS'
-    ])
-    const sortedDepartments=coursesList.filter(dpt=>dpt.toLocaleLowerCase().includes(mySearch.toLocaleLowerCase()))
-    
+    const [loading,setLoading]=useState(true)
+    const [coursesList,setCoourses]=useState([])
+    const sortedDepartments=coursesList.filter(dpt=>dpt.departmentName.toLocaleLowerCase().includes(mySearch.toLocaleLowerCase()))
+    useEffect(()=>{
+        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-department')
+        .then(res => {
+            res.json()
+                .then(data => {
+                    setLoading(false)
+                    setCoourses(data.message)
+                    
+                })
+        }).catch(err=>{
+            
+        })
+    },[])
+
     return (
         <ThemeProvider theme={theme}>
         <StyledContainer>
@@ -152,12 +126,13 @@ export default function CourseFinderScreen() {
 
         <div className='searchResult'>
         {
-            sortedDepartments.map(dpt=>(
-            <MyLinks key={dpt} route={`/course/${dpt}`} link={dpt}/>
+            sortedDepartments.map(dep=>(
+                <DepLink route={`/course/${dep.departmentId}`} key={dep.departmentId} link={dep.departmentName} id={dep.departmentId}/>
             ))
         }
          
          {
+             !loading&&
              sortedDepartments.length==0&&(
                  <div className='empty'>
                 <EmptyIcon style={{
@@ -165,6 +140,18 @@ export default function CourseFinderScreen() {
                     height:50
                 }}/>
                 <h4>No Record Found!!!</h4>
+                 </div>
+             )
+         }
+          {
+             loading&&
+             sortedDepartments.length==0&&(
+                 <div className='empty'>
+                <EmptyIcon style={{
+                    width: 50,
+                    height:50
+                }}/>
+                <h4>Loading Records......</h4>
                  </div>
              )
          }

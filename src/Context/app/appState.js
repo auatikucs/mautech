@@ -2,14 +2,17 @@ import React,{Children, useReducer,useEffect} from 'react'
 import AppContext from './appContext'
 import appReducer from './appReducer'
 import {
-LOAD_DATA, SET_LOADING,
+LOAD_DATA, 
+    LOAD_DEPARTMENT, 
+SET_LOADING,
 } from '../types'
 
 
 export default function AppState(props){
     const initState={
         triger:[],
-        loading:false
+        loading:false,
+        department:[]
     }
 const [state,dispatch]=useReducer(appReducer,initState)
 
@@ -27,8 +30,24 @@ const loadData=(id)=>{
         
     })
 }
+
+const loadDepartmet=(id)=>{
+    setIsLoading()
+    fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}`)
+    .then(res => {
+        res.json()
+            .then(data => {
+                loadDep(data.message)
+                setIsLoading()
+               
+            })
+    }).catch(err=>{
+        
+    })
+}
 const setIsLoading=()=>dispatch({type:SET_LOADING})
 const setLoading=(triger)=>dispatch({type:LOAD_DATA,payload:triger})
+const loadDep=(dep)=>dispatch({type:LOAD_DEPARTMENT,payload:dep})
 // const setIslogged=()=>dispatch({type:SET_ISLOGED})
 // const setStaff=(staff)=>dispatch({type:SET_STAFF,payload:staff})
 // const setChatter=(chatter)=>dispatch({type:SET_CHAT,payload:chatter})
@@ -40,7 +59,9 @@ return <AppContext.Provider
 value={{
     triger:state.triger,
     loadData,
-    loading:state.loading
+    loading:state.loading,
+    department:state.department,
+    loadDepartment:loadDepartmet
 }}
 >
 
