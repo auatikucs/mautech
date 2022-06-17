@@ -3,11 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledNews=styled.div`
-width: 30%;
+width: 25%;
 height: 90%;
 background-color:white;
 margin:20px;
-box-shadow:0 8px 20px 0 rgba( 31, 38, 135, 0.37 );
+/* box-shadow:0 8px 20px 0 rgba( 31, 38, 135, 0.37 ); */
 flex-shrink: 0;
 img{
     width: 100%;
@@ -47,9 +47,6 @@ export default function UniNews({image,heading='',body=''}) {
         {body} 
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button style={{backgroundColor:'#D07348'}} variant='contained' size="small">Read More</Button>
-      </CardActions>
     </Card>
 
         </StyledNews>

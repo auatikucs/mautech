@@ -51,16 +51,16 @@ opacity: 1;
 .tour{
   animation: glow 1.5s   infinite reverse;
 }
-.the-vc{
+/* .the-vc{
   background-image: url('../public/mau.png');
   background-repeat: no-repeat;
   background-size: contain;
   
-}
-.indi-news{
+} */
+/* .indi-news{
   animation: move 8s 2s infinite reverse;
   
-}
+} */
 
 .mapouter{
   position:relative;
@@ -73,7 +73,7 @@ opacity: 1;
   background:none!important;
   height:339px;width:414px;
 }
-body::-webkit-scrollbar{
+/* body::-webkit-scrollbar{
   background-color:#D07348;
   box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -82,4 +82,7 @@ body::-webkit-scrollbar-thumb{
   background: white;
   border-radius: 50px;
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.5);
+} */
+.mynav.hide{
+  top:-105px; 
 }

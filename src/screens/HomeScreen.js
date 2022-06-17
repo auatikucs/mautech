@@ -22,19 +22,29 @@ overflow-x: hidden;
 
 .vc-message{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
     min-height: 70vh;
     .message{
         width: 95%;
         height: 100%;
-        background-color:#f9f9f9;
+        background-color:#ececec;
         border-radius: 10px;
         margin:auto;
         display: flex;
+        grid-column: 1/4;
         .the-vc{
             width: 40%;
             height: 100%;
+            .vcImage{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            
+            
+            }
             img{
                 width:90%;
                 height:80%;
@@ -43,20 +53,20 @@ overflow-x: hidden;
             h4{
                 margin: 0px;
                 text-align: center;
-                color:#D07348;
+                color:white;
                 border-bottom: 1px solid #D07348;
+                background-color: rgba(0,0,0,0.5);
             }
         }
 
         .the-msg{
             width: 60%;
             height: 100%;
-            h3{
-                text-align: center;
-            }
+            
             p{
                 text-align: justify;
                 font-size: 18px;
+                margin-right: 10px;
             }
         }
     }
@@ -66,8 +76,9 @@ overflow-x: hidden;
         background-color:white;
         display:flex;
         flex-direction: column;
-        align-items: center;
-        margin-bottom: 40px;
+        /* align-items: center;
+        margin-bottom: 40px; */
+        grid-column: 4/6;
         h3{
             color:#D07348;
             text-align:center;
@@ -78,13 +89,44 @@ overflow-x: hidden;
 }
 
 .uni-news{
-    height: 70vh;
+    height: 60vh;
     width: 100%;
    flex-direction: row;
     display: flex;
-    overflow-x: scroll;
     margin-bottom: 20px;
     position: relative;
+    .indUpdates{
+        width: 50%;
+        min-height: 200px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        .mainIndUp{
+         display: flex;
+         flex-direction: row;
+         width: 90%;
+         height: 100px;
+         border-bottom: 1px solid lightgray;
+         margin-bottom: 10px;
+         img{
+             width: 100px;
+             height: 100px;
+         }
+         .mainIdCon{
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: flex-start;
+         h4{
+             line-height: 14px;
+         }
+         p{
+             line-height: 1px;
+         }
+         }
+        }
+    }
 }
 
 @media only screen 
@@ -166,6 +208,16 @@ and (max-device-width : 480px) {
     }
 
   }
+  .myDivider{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      h2{
+          width: 20%;
+      }
+  }
 `;
 
 export default function HomeScreen() {
@@ -232,7 +284,11 @@ export default function HomeScreen() {
                 zIndex: 150
 
             }} variant='contained' endIcon={<VideoIcon />}>TOUR</Button>
-
+    <h2 style={{
+        margin: 10,
+        textAlign:'center',
+        width:'50%'
+    }}>Welcome Message by Vice Chancellor</h2>
             <div className='vc-message'>
                 <div className='message'>
                     <div className='the-vc'>
@@ -240,10 +296,18 @@ export default function HomeScreen() {
                             !isLoading&&
                             homeData.length > 0&&(
                                 <>
-                        <img src={homeData[0].vc.image} />
-                        <h4>
-                           {homeData[0].vc.name}, Vice Chancellor. MAU-Yola.
+                        <div style={{
+                            background:`url(${homeData[0].vc.image})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover'
+                        }} className='vcImage'>
+                       <h4>
+                           {homeData[0].vc.name}
                        </h4>
+                        </div>
+                        {/* <img src={homeData[0].vc.image} /> */}
+                     
                                 </>
                             )
 
@@ -252,7 +316,6 @@ export default function HomeScreen() {
                     </div>
 
                     <div className='the-msg'>
-                        <h3>Vc's Message</h3>
                         <p>
                           {
                               !isLoading&&
@@ -260,13 +323,6 @@ export default function HomeScreen() {
                           }  
                         </p>
 
-                        <Button style={{
-                            marginLeft: '25%',
-                            marginTop: 20,
-                            backgroundColor: '#D07348',
-
-
-                        }} variant='contained'>Read More</Button>
                     </div>
                 </div>
 
@@ -283,16 +339,19 @@ export default function HomeScreen() {
                                 ))
                             )
                         }
-                    
+                    <p>View All Events</p>
                     </List>
                 </div>
             </div>
-
-            <Divider style={{ backgroundColor: '#D07348' }} />
-            <h4 style={{
-                color: '#D07348',
-                textAlign: 'center'
-            }}>News and Events</h4>
+            
+            <div className='myDivider'>
+            <h2 style={{
+    color: '#D07348',
+    textAlign: 'center'
+     }}>News & Updates</h2>
+            <Divider style={{ backgroundColor: '#D07348',width:'80%',height:5 }} />
+            </div>
+            
             <div className='uni-news'>
                 {
                     !isLoading&&
@@ -308,7 +367,27 @@ export default function HomeScreen() {
                     )
                 }
                 
-
+              <div className='indUpdates'>
+                  {
+                     !isLoading&&
+                     homeData.length > 0&&(
+                         homeData[0].newsEvents.map((nws,ind)=>(
+                            <div className='mainIndUp'>
+                            <img alt='im' src={nws.image}/>
+                            <div className='mainIdCon'>
+                                <h4>
+                                {nws.header}
+                                </h4>
+                                <p>
+                                15, April 2022
+                                </p>
+                            </div>
+                          </div>
+                         ))
+                     )  
+                  }
+              
+              </div>
 
             </div>
             <Divider style={{ backgroundColor: '#D07348', marginBottom: 20 }} />

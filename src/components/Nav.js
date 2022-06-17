@@ -16,7 +16,7 @@ max-height:130px;
 min-width: 100%;
 position: fixed;
 top:0;
-transition: all 0.3s;
+transition: all 1s;
 background:  rgba( 255, 255, 255, 0.25 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 4px );
@@ -26,53 +26,57 @@ z-index: 200;
 opacity: 1;
 box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 display: flex;
-flex-direction: row;
-.logo{
+flex-direction:column;
+
+.logoGroup.hide{
+    background-color: red;
+    transform: scaleY(0);
+}
+.logoGroup{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    transition: all 0.5s;
+    .logo{
     min-width: 30%;
-    min-height: 100%;
+    min-height:100px;
     background-color:transparent;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     img{
-        width: 100px;
-        height: 100px;
-        margin-top: 10px;
+        width: 70px;
+        height: 70px;
+        margin-top: 3px;
     }
     .logo-head{
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
         position: relative;
-        padding: 10px;
+        justify-content: flex-start;
         h4{
-         text-align: center;
-         font-size: 20px;
+         text-align:left;
+         font-size: 18px;
          font-weight: bold; 
          color:#D07348;
          text-transform: uppercase;
+         line-height: 20px;
+         width:80%;
         }
         p{
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            color: #D07348;
-            font-size: 18px;
-            width: 100%;
+            color:black;
+            font-size: 15px;
+            line-height:1px;
+            text-align: left;
+            margin-top: -15px;
+            width: 80%;
+           
             
             
         }
     }
 }
-
-.links{
-    width: 70%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    .main-links{
+.main-links{
         height: 50px;
         width: 100%;
         border-bottom-left-radius: 20px;
@@ -91,6 +95,7 @@ flex-direction: row;
             font-size: 16px;
             transition: all 0.3s;
             font-weight: lighter;
+
         }
         li:hover{
             color:yellowgreen;
@@ -99,41 +104,66 @@ flex-direction: row;
             color:yellowgreen;
         }
     }
+}
+
+
+.links{
+    width:100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: flex-end;
+    
 
     .sub-links{
         display: flex;
         width: 100%;
         flex: 1;
         background-color: white;
-        justify-content:flex-start;
+        justify-content:space-between;
         align-items:center;
         transition: all 0.4s;
+        ul{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+        }
         li{
           text-decoration: none;
-          color: #D07348;
+          color: black;
           display: inline;
           margin: 5px;
           text-transform: uppercase;
-          margin-left: 15px;
+          margin-left: 25px;
+          min-height: 40px;
+          min-width: 100px;
+          justify-content: center;
+          align-items: center;
+       
 
         }
         a{
             text-decoration: none;
-            color:#D07348 ;
+            color:black;
             font-size: 14px;
             font-weight: bold;
             transition: all 0.3s;
-            border-right: 1px solid lightgray;
-            padding-right: 10px;
+            padding: 10px;
+            width:100x;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             
 
         }
       
-        a:hover{
-            border-bottom:5px solid #D07348;
+        li:hover{
+            color:white;
+            background-color:#FFC53A;
         }
-        a:active{
-            border-bottom:5px solid #D07348;
+        a:hover{
+            color: white;
         }
         a:visited{
             border-bottom:5px solid #D07348;
@@ -239,6 +269,19 @@ h4{
 
 `;
 export default function Nav() {
+const [hide,setHide]=useState('')
+    useEffect(()=>{
+    let prevScrollpos = window.pageYOffset;
+    window.addEventListener('scroll',(e)=>{
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            setHide('')
+          } else {
+            setHide('hide')
+          }
+          prevScrollpos = currentScrollPos;
+    })
+    },[])
     const myParams=useLocation()
     const navRef=useRef()
     const [show, setShow] = useState('show')
@@ -247,18 +290,19 @@ export default function Nav() {
     
 
     return (
-        <MyNav>
-         <div className='logo'>
+        <MyNav className={`mynav ${hide}`}>
+        <div className={`logoGroup ${hide}`}>
+        <div className='logo'>
           <img src={require('../assets/mau.png')} alt='logo'/>
           <div className='logo-head'>
-          <h4>Modibbo Adama <br/> University</h4>
-          <i><p>Established in 1981</p></i>
-          </div>
-           
+          <h4>Modibbo Adama University, Yola</h4>
+         <p>Established in 1981</p>
+         
+          </div> 
          </div>
 
-         <div className='links'>
-          <div className='main-links'>
+
+         <div className='main-links'>
             <ul>
                 <li><a href='#'>Careers</a></li>
                 <li><a href='#'>Resources</a></li>
@@ -266,11 +310,18 @@ export default function Nav() {
                 <li><a href='#'>Services</a></li>
             </ul>
           </div>
+        </div>
+        
 
+         <div className='links'>
           <div className='sub-links'>
           <ul>
-                <li><Link style={{
-                    borderBottom:myParams.pathname=='/'?'5px solid #D07348':null
+                <li style={{
+                 backgroundColor:myParams.pathname=='/'?'#FFC53A':'transarent'
+                }}><Link style={{
+                    color:myParams.pathname=='/'?'white':'black',
+                    
+
                 }} to='/'>Home</Link></li>
                 <li>
                 <Link className='miniLink' style={{
@@ -301,12 +352,12 @@ export default function Nav() {
                 </li>
               
             </ul>
-            <Button style={{
+            {/* <Button style={{
                 marginLeft:'auto',
                 marginRight:20,
                 backgroundColor:'#D07348',
                 borderRadius:50
-            }} variant='contained' endIcon={<ForwardIcon/>}>Apply Now</Button>
+            }} variant='contained' endIcon={<ForwardIcon/>}>Apply Now</Button> */}
           </div>
          </div>
 
