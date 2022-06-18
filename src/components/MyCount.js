@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const StyledCount=styled.div`
 min-height: 50vh;
 width: 100%;
+margin-top: 50px;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 .mainCount{

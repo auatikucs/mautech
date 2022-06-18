@@ -392,9 +392,19 @@ export default function HomeScreen() {
             </div>
             <Divider style={{ backgroundColor: '#D07348', marginBottom: 20 }} />
             <OnlineLinks />
+            <Divider  sx={{
+    "&::before, &::after": {
+      borderColor: "#D07348",
+    },
+  }}     style={{
+            marginTop:20
+            }}><h2 style={{color:'#D07348'}}>
+            EXPLORE OUR MAJOR  PROGRAMS    
+             </h2></Divider>
+             <Explore />
             <MyCount />
-            <MyDivider />
-            <Explore />
+           
+            
             <Modal
                 open={openModel}
                 onClose={() => {

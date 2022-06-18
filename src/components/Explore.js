@@ -2,20 +2,68 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@
 import React from 'react'
 import styled from 'styled-components'
 import MyCard from '../sub-components/MyCard';
-
+const imgUrl=require('../assets/news1.jpg')
+const imgUrl2=require('../assets/und.jpg')
 const StyledExplore=styled.div`
-min-height: 80vh;
+min-height: 90vh;
 background-color: white;
-h1{
-    text-align: center;
-    color: #D07348;
-    font-size: 50px;
+width: 100%;
+margin-top: 20px;
+padding: 15px;
+display: flex;
+flex-direction: row;
+.indHolder{
+    min-width: 50%;
+    max-width: 50%;
+    min-height: 100%;
+    background: url(${imgUrl2});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .holderLinks{
+    min-height: 50%;
+    transition: all 1s;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    cursor: pointer;
+    h4{
+        color:white;
+        
+    }
+    }
+    .holderLinks:hover{
+        background-color: rgba(160, 50, 50,0.8);
+    }
 }
 .mainHolder{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
-    padding: 20px;
+    min-width: 50%;
+    max-width: 50%;
+    min-height: 100%;
+    background: linear-gradient(rgba(160, 50, 50, 0.5),rgba(160, 50, 50, 0.5)),url(${imgUrl});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+    text-align: center;
+    color:white;
+  
+}
+p{
+    color: white;
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 }
 @media only screen 
 and (min-device-width : 320px) 
@@ -35,30 +83,33 @@ and (max-device-width : 480px) {
 export default function Explore() {
     return (
         <StyledExplore>
-            <h1>EXPLORE OUR 60+<br/>
-MAJORS & PROGRAMS</h1>
-<div className='mainHolder'>
-<MyCard 
-link='program'
-image={require('../assets/und.jpg')}
-content='Explore a range of majors and minors with nearly 
-limitless opportunities to launch your career.'
-header='Undergradute Programs'/>
+            <div className='mainHolder'>
+                <h1>Programmes</h1>
+                <p>
+                Modibbo Adama University, Yola, Virtually runs all programmes ranging 
+                from Undergraduate Programs, 
+                Post Graduate, Diploma, Distance Learning and Sandwich programmes 
+                </p>
+            </div>
 
-<MyCard 
-link='program'
-image={require('../assets/post.jpg')}
-content='Grow as a leader and advance in your profession with one of our graduate programs for women and men.'
-header='PostGraduate Programs'/>
+            <div className='indHolder'>
+              <div className='holderLinks'>
+                <h4>Undergraduate 
+               Programmes</h4>
+              </div>
 
-<MyCard 
-link='program'
-image={require('../assets/car2.jpg')}
-content='Elevate your career with adult degree-completion programs and licensure/certificate programs.'
-header='Consultancy Unit'/>
+              <div className='holderLinks'>
+                <h4>Post Graduate Programmes</h4>
+              </div>
 
+              <div className='holderLinks'>
+                <h4>Distance Learning Programmes</h4>
+              </div>
 
-</div>
+              <div className='holderLinks'>
+                <h4>Others</h4>
+              </div>
+            </div>
         </StyledExplore>
     )
 }
