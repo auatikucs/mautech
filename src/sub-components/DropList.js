@@ -10,7 +10,7 @@ position: relative;
 .content{
     min-width: 250px;
     min-height: 250px;
-    background-color: rgba(208,115,72,0.85);
+    background-color: rgba(255,255,255,0.8);
     position: absolute;
     right: 0;
     z-index: 100;
@@ -18,6 +18,13 @@ position: relative;
     transform: scaleY(0);
     cursor: pointer;
     transform-origin: top;
+    .styleLis{
+        transition: all 0.5s;
+    }
+    .styleLis:hover{
+    background-color:rgba(208,115,72,1);
+    color: white;
+    }
     .content-lists{
         border-bottom: 2px solid rgba(208,115,72,1);
     }
@@ -72,11 +79,11 @@ export default function DropList({link='',route=''}) {
                             navigate(`/department/${fac.facultyId}`)
 
                          }} style={{
-                     color:'white',
+                     color:'rgba(208,115,72,1)',
                      textTransform:'capitalize',
                      fontWeight:'bold'
                  }} component="span" className='content-lists'>
-                  <ListItemText  primary={fac.facultyName} />
+                  <ListItemText className='styleLis'  primary={fac.facultyName} />
                        </ListItemButton>
                        ))
                        )

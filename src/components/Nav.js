@@ -124,7 +124,7 @@ flex-direction:column;
         justify-content:space-between;
         align-items:center;
         transition: all 0.4s;
-        ul{
+        ul.myFavList{
             display: flex;
             justify-content:space-between;
             align-items: center;
@@ -303,7 +303,7 @@ const [hide,setHide]=useState('')
 
 
          <div className='main-links'>
-            <ul>
+            <ul className='myFavList'>
                 <li><a href='#'>Careers</a></li>
                 <li><a href='#'>Resources</a></li>
                 <li><a href='#'>Alumni</a></li>

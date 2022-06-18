@@ -13,6 +13,7 @@ import CancelOutlined from '@mui/icons-material/CancelOutlined';
 import Explore from '../components/Explore';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from 'react';
+import Chat from '../components/Chat';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
@@ -445,6 +446,7 @@ export default function HomeScreen() {
                     </video>
                 </div>
             </Modal>
+            <Chat/>
         </MyContainer>
     )
 }
