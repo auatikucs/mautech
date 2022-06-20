@@ -6,6 +6,8 @@ import EmptyIcon from '@mui/icons-material/HourglassEmpty'
 import MyDepList from '../components/MyDepList';
 import MyAccordion from '../components/MyAccordion';
 import AppContext from '../Context/app/appContext';
+import Bg from '../assets/car3.jpg'
+import { Link } from 'react-router-dom';
 
 const StyledContainer=styled.div`
 margin-top: 130px;
@@ -64,29 +66,36 @@ h5{
     margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
+    min-height: 70vh;
     .hodImage{
-        min-height: 400px;
-        width: 40%;
+        height: 442px;
+        width: 462;
         background-color:white;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        border: 1px solid rgba(217, 217, 217, 1);
         img{
-            height:250px;
-            width: 250px;
-            border-radius: 50%;
+            height:330px;
+            width: 430px;
+           
+        }
+        h3,h4{
+            border-bottom: 1px solid rgba(217, 217, 217, 1);
+            width: 100%;
+            text-align: center;
         }
     }
     .depMission{
-        width: 70%;
-        background-color: #f9f9f9;
+        flex: 1;
+        background-color: white;
         .myBtn{
             display: flex;
             justify-content: space-around;
         }
         h4{
-            width: 80%;
+            width: 100%;
             text-align: center;
         }
         p{
@@ -101,7 +110,7 @@ h5{
 }
 .depHead{
     width: 100%;
-    min-height: 100px;
+    min-height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,7 +118,10 @@ h5{
     color:white;
     text-transform: uppercase;
     font-weight: bolder;
-    background:linear-gradient(to bottom,rgba(208, 115, 72,1),rgba(208, 115, 72,1),rgba(208, 115, 72, 0.5));
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${Bg});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 
@@ -169,6 +181,66 @@ h5{
 
 
 }
+
+.depVisonMision{
+    height:220px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgba(226, 223, 214, 1);
+    display: flex;
+    flex-direction: row;
+    
+    .depVis{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        h1{
+            text-align: center;
+            color: rgba(160, 50, 50, 1);
+        }
+        p{
+            text-align: justify;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.depProg{
+    margin-top: 20px;
+}
+.depStaff{
+    min-height: 300px;
+    width: 100%;
+    display: grid;
+    padding: 5px;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    .depIndStaff{
+     height:156px;
+     width: 100%;
+     background-color: white;
+     box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-top: 20px;
+     .stfDepCon{
+         flex: 1;
+         margin-left: 10px;
+     }
+     img{
+         width: 134px;
+         height:134px;
+         border-radius: 100%;
+     }
+
+    }
+}
 `;
 
 export default function DepartmentScreen() {
@@ -185,24 +257,23 @@ export default function DepartmentScreen() {
     myAppParam.department.length>0&&(
         <>
         <div className='depHead'>
- <h2>{myAppParam.department[0].departmentName} Department</h2>
+ <h2>{myAppParam.department[0].departmentName}</h2>
 </div>
 <div className='hodDetails'>
     {
         myAppParam.department[0].hod!=null&&(
         <div className='hodImage'>
-            <img src={myAppParam.department[0].hod.image}/>
+            <img src={`${myAppParam.department[0].hod.image}`} alt='HOD'/> 
             <h3>{myAppParam.department[0].hod.name}</h3>
-            <h4>{myAppParam.department[0].hod.qualification.map(ql=>ql+', ')}</h4>
-            <p>(Head Of Department)</p>
-            <h4>STAFF LIST</h4>
+            <h4>Head Of Department</h4>
+            {/* <h4>STAFF LIST</h4>
             {
                 myAppParam.department[0].staffList.length>0&&(
                     myAppParam.department[0].staffList.map(stf=>(
                         <MyAccordion key={stf.name} title={stf.name} qualification={stf.qualification.map(ql=>ql+', ')} topic={stf.major}/>
                     ))
                 )
-            }
+            } */}
             
            
         </div>
@@ -210,15 +281,15 @@ export default function DepartmentScreen() {
     }
  
  <div className='depMission'>
-   
+   <h4>Welcome To {myAppParam.department[0].departmentName}</h4>
      <p>{myAppParam.department[0].vission}</p>
-     {
+     {/* {
          myAppParam.department[0].programs.length>0&&(
             myAppParam.department[0].programs.map(prg=>(
                 <MyDepList key={prg.name} list={prg.admissionRequirement} title={prg.name} content={prg.mission} requirements=''/>
             ))
          )
-     }
+     } */}
 
     
    
@@ -244,7 +315,61 @@ export default function DepartmentScreen() {
 
 
 
+<div className='depVisonMision'>
+<div className='depVis'>
+    <h1>VISION</h1>
+    <p>
+    The vision of the department is to produce world class computer 
+    scientists that are in tune with the latest technologies and that can use their skills in 
+    finding solutions to real world problems for the benefit of mankind.
+    </p>
+</div>
 
+
+<div className='depVis'>
+    <h1>MISSION</h1>
+    <p>
+    The vision of the department is to produce world class computer 
+    scientists that are in tune with the latest technologies and that can use their skills in 
+    finding solutions to real world problems for the benefit of mankind.
+    </p>
+</div>
+</div>
+
+<div className='depProg'>
+<h1>Programmes</h1>
+<ul>
+{
+     myAppParam.department[0].programs.length>0&&(
+        myAppParam.department[0].programs.map(prg=>(
+          <li key={prg.name}>
+              <Link to='/'>{prg.name}</Link>
+          </li> 
+        ))
+     )
+}
+</ul>
+</div>
+<h1 style={{marginTop:'100px'}}>Departmental Staff Profile List</h1>
+<div className='depStaff'>
+{
+                myAppParam.department[0].staffList.length>0&&(
+                    myAppParam.department[0].staffList.map(stf=>(
+                 <div className='depIndStaff'>
+                        <img src={Bg} />
+                        <div className='stfDepCon'>
+                        <h2>{stf.name}</h2>
+                        <h4>{stf.major}</h4>
+                        <p>{stf.qualification[0]}</p>
+                        </div>
+                    </div>
+                    ))
+                )
+   } 
+    
+
+   
+</div>
         </StyledContainer>
     )
 }

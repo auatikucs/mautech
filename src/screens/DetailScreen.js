@@ -5,6 +5,7 @@ import MyLinks from '../components/MyLinks';
 import { Skeleton } from '@mui/material';
 import AppContext from '../Context/app/appContext';
 import DepLink from '../components/DepLink';
+import Bg from '../assets/car2.jpg'
 const StyledContainer=styled.div`
 margin-top: 130px;
 padding: 20px;
@@ -24,25 +25,37 @@ padding: 20px;
     margin-right: auto;
     flex:2;
     .mainDeanCont{
-     display: flex;
+     display:flex;
      flex-direction: row;
+     margin-top: 20px;
      width: 100%;
      background-color: transparent;
      min-height: 50vh;
      .deanPersonal{
-      width: 30%;
+      width:450px;
       background-color: transparent;
       display: flex;
       flex-direction: column;
       align-items: center;
-      img{
-          width: 250px;
-          height: 250px;
-          border-radius:50%;
+      .myDean{
+          height: 450px;
+          width: 425px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          .myDeanCont{
+          height: 100px;
+          width: 100%;
+          background-color: rgba(0,0,0,0.7);
+          h2,h4{
+              color: white;
+              text-align: center;
+          }
+          }
       }
      }
      .deanWelcome{
-      width: 70%;
+      flex: 1;
       min-height: 100%;
       background-color:transparent;
       p{
@@ -156,6 +169,28 @@ and (max-device-width : 480px) {
     }
     }
 }
+
+.fac-head{
+    width:100%;
+    height: 500px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    padding-left: 50px;
+    h1{
+        color: white;
+        font-size: 63px;
+    }
+    p{
+        color: white;
+        width: 60%;
+        text-align: justify;
+        font-size: 23px;
+        font-weight: 700px;
+    }
+
+}
 `;
 
 export default function DetailScreen() {
@@ -171,7 +206,7 @@ export default function DetailScreen() {
           })
         //   loadData()
         
-         console.log(myAppParam)
+         console.log(myAppParam,"___")
     },[])
     return (
         <StyledContainer>
@@ -194,11 +229,21 @@ export default function DetailScreen() {
            {
                !myAppParam.loading&&
                myAppParam.triger.length>0&&(
+                <>
+                 <div style={{
+                     background:`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${myAppParam.triger[0].image==null?Bg:myAppParam.triger[0].image})`,
+                     backgroundRepeat:'no-repeat',
+                     backgroundSize:'cover',
+                     backgroundPosition:'center'
+                     
+                 }} className='fac-head'>
+                   <h1>{myAppParam.triger[0].facultyName}</h1>
+                   <p>{myAppParam.triger[0].facultyDescription}</p>
+                </div>
                 <div className='faculty-cont'>
                 <div className='mainDean'>
                     <div className='mainDeanCont'>
                         <div className='deanPersonal'>
-                        <h3>{myAppParam.triger[0].facultyName} </h3>
                           {
                               myAppParam.triger[0].dean==null&&(
                                   <>
@@ -210,18 +255,26 @@ export default function DetailScreen() {
                           {
                              myAppParam.triger[0].dean!==null&&(
                            <>
-                            <img src={myAppParam.triger[0].dean.image}/>
-                            <h4>{myAppParam.triger[0].dean.name}</h4>
-                            <p>{myAppParam.triger[0].dean.qualification.map(ql=>ql+', ')}</p>
-                            <p>Dean {myAppParam.triger[0].facultyName}</p>
+                           <div style={{
+                     background:`url(${myAppParam.triger[0].dean.image==null?Bg:myAppParam.triger[0].dean.image})`,
+                     backgroundRepeat:'no-repeat',
+                     backgroundSize:'cover',
+                     backgroundPosition:'center'
+                     
+                 }} className='myDean'>
+                         <div className='myDeanCont'>
+                         <h2>{myAppParam.triger[0].dean.name}</h2>
+                         <h4>Dean {myAppParam.triger[0].facultyName}</h4>
+                         </div>
+                           </div>
                             </>
                             ) 
                           }
                             
                         </div>
                         <div className='deanWelcome'>
-                            <h3>{myAppParam.triger[0].shortNote}</h3>
-                            <p>{myAppParam.triger[0].facultyDescription}</p>
+                            <h3>About {myAppParam.triger[0].facultyName}</h3>
+                            <p>{myAppParam.triger[0].facultyDescription} </p>
                         </div>
                     </div>
                 </div>
@@ -238,6 +291,7 @@ export default function DetailScreen() {
                 }
                 </div>
                </div>
+               </>
                )
            }
 

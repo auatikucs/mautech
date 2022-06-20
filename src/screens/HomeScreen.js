@@ -20,7 +20,7 @@ min-width: 100%;
 background-color:white;
 margin-top: 130px;
 overflow-x: hidden;
-
+transition: all 1s;
 .vc-message{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

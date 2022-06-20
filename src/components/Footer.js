@@ -1,179 +1,81 @@
-import { FacebookOutlined, LinkedIn, MailOutline, Twitter } from '@mui/icons-material';
-import { Divider } from '@mui/material';
-import React from 'react'
-import styled from 'styled-components'
-import MyLinks from './MyLinks';
+import mau_pic_footer from '../assets/mau_pic_footer.jpg';
+import location from './location.png';
+import mau_logo from './mau_logo.png';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
-const StyledFooter=styled.div`
-min-height: 70vh;
-width: 100%;
-overflow-x: hidden;
-background-color: white;
-margin-bottom: 50px;
-.footer-cont{
-    min-width: 100%;
-    min-height: 65vh;
-    background-color:transparent;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    .sch-map{
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .quickLinks{
-        width: 80%;
-        height: 100%;
-        background-color:white;
-        display: flex;
-        flex-direction: column;
-        h3{
-            text-align: center;
-            color:#D07348;
-        }
-     
-    }
+import { AccessAlarm, Instagram, ThreeDRotation } from '@mui/icons-material';
 
-    .contact{
-        width: 100%;
-        height: 100%;
-        background-color:white;
-        display: flex;
-        flex-direction: column;
-        h3{
-            text-align: center;
-            color:#D07348;
-            width: 80%;
-        }
-        .footLogo{
-            width: 80%;
-            min-height: 200px;
-            background-color:#f9f9f9 ;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            h2{
-                color:#D07348;
-                text-align: center;
-                margin-right: 20px;
-                margin-left: 20px;
-            }
-            p{
-                color:#D07348;
-        
-            }
-            img{
-                width: 100px;
-                height: 100px;
-            }
-        }
-        .footIcons{
-            display: flex;
-            width: 80%;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-    }
-
-}
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    .footer-cont{
-       grid-template-columns: 1fr;
-       .quickLinks{
-        width: 100%;
-     
-     
-    }
-       .contact{
-           width: 90%;
-           h3{
-               width: 100%;
-           }
-           .footLogo{
-                   width: 90%;
-                   margin-left:auto;
-                   margin-right: auto;
-               }
-           .footIcons{
-            display: flex;
-            width: 90%;
-        
-        }
-       }
-    }
-}
-`;
-export default function Footer() {
-    return (
-        <StyledFooter>
-            <Divider style={{ backgroundColor: '#D07348',marginBottom:20 }} />
- <div className='footer-cont'>
-              <div className='sch-map'>
-
-    <div class="mapouter">
-    <div class="gmap_canvas">
-  <iframe width="414" height="339" 
-  id="gmap_canvas" 
-  src="https://maps.google.com/maps?q=Modibbo%20adama%20univ&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-   <a href="https://www.online-timer.net"></a><br></br>
-   <a href="https://www.embedgooglemap.net">embedded maps</a>
-  </div>
-  </div>
-  <h4>P.M.B. 2076, Yola Adamawa State Nigeria.</h4>
-
-              </div>
-              <div className='quickLinks'>
-                  <h3>Quick Links</h3>
-                  <MyLinks link='Admissions'/>
-                  <MyLinks link='Academics'/>
-                  <MyLinks link='Portal'/>
-                  <MyLinks link='Alumni'/>
-                  <MyLinks link='Campus Life'/>
-                  <MyLinks link='About Us'/>
-              </div>
-
-              <div className='contact'>
-              <h3>Contact Us</h3>
-              <div className='footLogo'>
-                  <img src={require('../assets/mau.png')}/>
-                  <h2>Modibbo Adama University, Yola</h2>
-                  <i><p>Established in 1981.</p></i>
-              </div>
-
-              <div className='footIcons'>
-              <FacebookOutlined style={{
-                  height:30,
-                  width:30,
-                  color:'#3b5998'
-              }}/>
-              <MailOutline style={{
-                  height:30,
-                  width:30,
-                  color:'#bb001b'
-              }}/>
-              <Twitter style={{
-                  height:30,
-                  width:30,
-                  color:'#00acee'
-              }}/>
-              <LinkedIn style={{
-                  height:30,
-                  width:30,
-                  color:'#0e76a8'}}/>
-
-              </div>
-              </div>
-
+import { Routes, Route, Link } from "react-router-dom";
+const Footer = () => {
+    return ( 
+        <div className="Footer-Section" styles={{ backgroundImage:`url(${mau_pic_footer})` }}>
+           <div >
+           {/* <img src={mau_pic_footer} alt="" srcset="" width='100%' /> */}
+           
+            <div className="Footer-Container">
+               <div className="Footer-Content">
+                  <h4>Discover Mau</h4>
+                  <nav>
+                    <div> <Link to='/'>Home </Link></div>
+                    <div> <Link to='/'>Admission </Link></div>
+                    <div> <Link to='/'>Academic</Link></div>
+                    <div> <Link to='/'>Service</Link></div>
+                    <div> <Link to='/'>Campus Life </Link></div>
+                    <div> <Link to='/'>Portal </Link></div>
+                    
+                  </nav>
+               </div>
+               <div className="Footer-Content">
+                  <h4>Quick Links</h4>
+                  <nav className='footerNav'>
+                    <div> <Link to='/'>Faculties </Link></div>
+                    <div> <Link to='/'>Colleges </Link></div>
+                    <div> <Link to='/'>Centres</Link></div>
+                    <div> <Link to='/'>Schools</Link></div>
+                    <div> <Link to='/'>Unit </Link></div>
+                    <div> <Link to='/'>R and D </Link></div>
+                  
+                  </nav>
+               </div>
+               <div className="Footer-Content">
+                  <h4>Contact Info</h4>
+                  <nav>
+                    <div> <p>Modibbo Adama University 
+                    Yola, <br></br>PMB 2435 Yola, Adamawa State </p> </div>
+                    <div> <Link to='/'>info@mau.edu.ng </Link></div>
+                    <div> <Link to='/'>09033333333</Link></div>
+                    <div>
+                       <div>
+                       <WhatsAppIcon/>
+                       <FacebookIcon/>
+                       <InstagramIcon/>
+                       <LinkedInIcon/>
+                        <TwitterIcon/>
+                        <YouTubeIcon/>
+                       </div>
+                    
+                    <img className='' src={mau_logo} alt="" srcset="" width='50px' height='50px' />
+                    </div>
+                   
+                  
+                  </nav>
+               </div>
+               <div className="Footer-Content">
+                  <h4 className='Site-Map-Header'>Site Map</h4>
+                 <div> <img className='Location-Img' src={location} alt="" srcset="" width='200px' height='200px' /></div> 
+                  </div>
+                  <div className="Footer-Content-Powered" >
+                     <h5>Powered by MAU Software Unit</h5>
+                  </div>
+               </div>
             </div>
-        </StyledFooter>
-    )
+        </div>
+     );
 }
+ 
+export default Footer;

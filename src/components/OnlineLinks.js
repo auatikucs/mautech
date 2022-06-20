@@ -8,9 +8,11 @@ min-height: 90vh;
 width: 100%;
 background-color:white;
 display: grid;
+grid-gap: 20px;
 grid-template-columns: 1fr 1fr;
 .onlineLinks{
 background-color:rgba(255, 197, 58, 0.3);
+width: 85%;
 .onlineLinsHead{
     height:100px;
     background-color: #A03232;
@@ -34,6 +36,7 @@ and (max-device-width : 480px) {
     grid-template-columns: 1fr;
 }
 .downlaods{
+    width: 85%;
     .onlineDosHead{
     height:100px;
     background-color:rgba(255, 197, 58, 1);
