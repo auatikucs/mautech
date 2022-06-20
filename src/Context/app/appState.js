@@ -8,6 +8,7 @@ SET_LOADING,
 } from '../types'
 
 
+
 export default function AppState(props){
     const initState={
         triger:[],
@@ -31,7 +32,8 @@ const loadData=(id)=>{
     })
 }
 
-const loadDepartmet=(id)=>{
+const loadDepartmet=({id,route})=>{
+   
     setIsLoading()
     fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}`)
     .then(res => {
@@ -40,7 +42,7 @@ const loadDepartmet=(id)=>{
                 loadDep(data.message)
                 setIsLoading()
                
-            })
+            })  
     }).catch(err=>{
         
     })
@@ -61,7 +63,8 @@ value={{
     loadData,
     loading:state.loading,
     department:state.department,
-    loadDepartment:loadDepartmet
+    loadDepartment:loadDepartmet,
+    loadDep
 }}
 >
 

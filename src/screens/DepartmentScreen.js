@@ -1,13 +1,12 @@
 import { Button } from '@mui/material';
 import React, { useContext, useEffect } from 'react'
-import { useParams } from 'react-router';
 import styled from 'styled-components'
 import EmptyIcon from '@mui/icons-material/HourglassEmpty'
 import MyDepList from '../components/MyDepList';
 import MyAccordion from '../components/MyAccordion';
 import AppContext from '../Context/app/appContext';
 import Bg from '../assets/car3.jpg'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 
 const StyledContainer=styled.div`
 margin-top: 130px;
@@ -229,6 +228,7 @@ h5{
      flex-direction: row;
      align-items: center;
      margin-top: 20px;
+     cursor: pointer;
      .stfDepCon{
          flex: 1;
          margin-left: 10px;
@@ -245,7 +245,9 @@ h5{
 
 export default function DepartmentScreen() {
     const myAppParam=useContext(AppContext)
+    const navigate=useNavigate()
     useEffect(()=>{
+    console.log(myAppParam)
         window.scrollTo({
             top:0,
             behavior: 'smooth',
@@ -313,9 +315,10 @@ export default function DepartmentScreen() {
     )
 }
 
-
-
-<div className='depVisonMision'>
+{
+     myAppParam.department.length!==0&&(
+         <>
+         <div className='depVisonMision'>
 <div className='depVis'>
     <h1>VISION</h1>
     <p>
@@ -355,7 +358,10 @@ export default function DepartmentScreen() {
 {
                 myAppParam.department[0].staffList.length>0&&(
                     myAppParam.department[0].staffList.map(stf=>(
-                 <div className='depIndStaff'>
+                
+                 <div onClick={()=>{
+                   navigate('/staff/01')
+                 }} className='depIndStaff'>
                         <img src={Bg} />
                         <div className='stfDepCon'>
                         <h2>{stf.name}</h2>
@@ -363,6 +369,7 @@ export default function DepartmentScreen() {
                         <p>{stf.qualification[0]}</p>
                         </div>
                     </div>
+                    
                     ))
                 )
    } 
@@ -370,7 +377,14 @@ export default function DepartmentScreen() {
 
    
 </div>
+         </>
+     )
+}
+
+
         </StyledContainer>
+  
+
     )
 }
 

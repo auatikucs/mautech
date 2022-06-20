@@ -1,5 +1,6 @@
 import { Divider, ListItemButton, ListItemText } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router';
 import styled from 'styled-components'
 
 const StyledContainer=styled.div`
@@ -9,6 +10,7 @@ box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 display: flex;
 flex-direction: row;
 margin-bottom: 10px;
+cursor: pointer;
 .date{
     display: flex;
     flex-direction: column;
@@ -29,8 +31,11 @@ margin-bottom: 10px;
 }
 `;
 export default function MyNews({news=''}) {
+    const navigate=useNavigate()
     return (
-        <StyledContainer>
+        <StyledContainer  onClick={()=>{
+            navigate('events/001')
+            }}>
         <div className='date'>
         <h2>01</h2>
         <h2>MAY</h2>

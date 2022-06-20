@@ -14,6 +14,7 @@ import Explore from '../components/Explore';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from 'react';
 import Chat from '../components/Chat';
+import { useNavigate } from 'react-router';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
@@ -225,6 +226,7 @@ export default function HomeScreen() {
     const [openModel, setModal] = useState(false)
     const [isLoading, setLoading] = useState(true)
     const [homeData, setHomeData] = useState([])
+    const navigate=useNavigate()
     useEffect(() => {
         fetch('https://new-modibbo-adama.herokuapp.com/admin/get-home-event')
             .then(res => {

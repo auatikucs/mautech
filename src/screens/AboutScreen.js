@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const imageUrl=require('../assets/mau.png')
 
 const StyledContainer=styled.div`
+margin-top:150px;
 .principals{
     width: 100%;
     min-height: 100vh;
@@ -291,7 +292,7 @@ export default function AboutScreen() {
     return (
         <ThemeProvider theme={theme}>
         <StyledContainer>
-
+{/* 
         <div className='principals'>
          <div className='selectPrincipal'>
          <Button onClick={()=>{
@@ -370,7 +371,7 @@ export default function AboutScreen() {
               </p>
                 </div>
              
-            </div>
+            </div> */}
         </StyledContainer>
         </ThemeProvider>
     )

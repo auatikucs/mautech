@@ -12,6 +12,8 @@ import AboutScreen from './screens/AboutScreen';
 import CampusScreen from './screens/CampusScreen';
 import PortalsScreen from './screens/PortalsScreen';
 import AppState from './Context/app/appState';
+import Staff from './screens/Staff';
+import Events from './screens/Events';
 
 function App() {
   return (
@@ -27,7 +29,8 @@ function App() {
     <Route exact path='/about' element={<AboutScreen/>}/>
     <Route exact path='/campus' element={<CampusScreen/>}/>
     <Route exact path='/portal' element={<PortalsScreen/>}/>
-
+    <Route exact path='/staff/:id' element={<Staff/>}/>
+    <Route exact path='/events/:id' element={<Events/>}/>
     </Routes>
     <Footer/>
    
