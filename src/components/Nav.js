@@ -8,11 +8,12 @@ import  CancelOutlined from '@mui/icons-material/CancelOutlined';
 import {Link, useLocation, useParams} from 'react-router-dom'
 import DropList from '../sub-components/DropList';
 import DropPortal from '../sub-components/DropPortal';
+import MainDrop from '../sub-components/MainDrop'
 
 
 const MyNav=styled.nav`
-min-height:130px;
-max-height:130px;
+min-height:120px;
+max-height:120px;
 min-width: 100%;
 position: fixed;
 top:0;
@@ -35,18 +36,18 @@ flex-direction:column;
 .logoGroup{
     display: flex;
     flex-direction: row;
-    height: 50%;
+    height: 100%;
     width: 100%;
     transition: all 0.5s;
     .logo{
-    min-width: 30%;
-    min-height:100px;
+    width: 30%;
+    min-height:50px;
     background-color:transparent;
     display: flex;
     flex-direction: row;
     img{
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
         margin-top: 3px;
     }
     .logo-head{
@@ -76,7 +77,12 @@ flex-direction:column;
         }
     }
 }
-.main-links{
+.newLink{
+    width:70%;
+    display: flex;
+    flex-direction: column;
+
+    .main-links{
         height: 50px;
         width: 100%;
         border-bottom-left-radius: 20px;
@@ -105,41 +111,37 @@ flex-direction:column;
         }
     }
 }
-
-
 .links{
     width:100%;
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
-    align-items: flex-end;
+    justify-content:flex-start;
+    align-items:flex-start;
     
 
     .sub-links{
         display: flex;
         width: 100%;
-        flex: 1;
         background-color: white;
         justify-content:space-between;
-        align-items:center;
+        align-items:flex-start;
         transition: all 0.4s;
         ul.myFavList{
             display: flex;
-            justify-content:space-between;
-            align-items: center;
+            
+           
         }
         li{
           text-decoration: none;
           color: black;
           display: inline;
-          margin: 5px;
+          margin-right: 10px;
           text-transform: uppercase;
-          margin-left: 25px;
           min-height: 40px;
           min-width: 100px;
-          justify-content: center;
-          align-items: center;
+          /* justify-content: center;
+          align-items: center; */
        
 
         }
@@ -151,8 +153,6 @@ flex-direction:column;
             transition: all 0.3s;
             padding: 10px;
             width:100x;
-            justify-content: center;
-            align-items: center;
             text-align: center;
             
 
@@ -171,6 +171,9 @@ flex-direction:column;
         
     }
 }
+}
+
+
 .phone-links{
     display: none;
 }
@@ -270,18 +273,18 @@ h4{
 `;
 export default function Nav() {
 const [hide,setHide]=useState('')
-    useEffect(()=>{
-    let prevScrollpos = window.pageYOffset;
-    window.addEventListener('scroll',(e)=>{
-        let currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-            setHide('')
-          } else {
-            setHide('hide')
-          }
-          prevScrollpos = currentScrollPos;
-    })
-    },[])
+    // useEffect(()=>{
+    // let prevScrollpos = window.pageYOffset;
+    // window.addEventListener('scroll',(e)=>{
+    //     let currentScrollPos = window.pageYOffset;
+    //     if (prevScrollpos > currentScrollPos) {
+    //         setHide('')
+    //       } else {
+    //         setHide('hide')
+    //       }
+    //       prevScrollpos = currentScrollPos;
+    // })
+    // },[])
     const myParams=useLocation()
     const navRef=useRef()
     const [show, setShow] = useState('show')
@@ -301,19 +304,22 @@ const [hide,setHide]=useState('')
           </div> 
          </div>
 
-
+<div className='newLink'>
          <div className='main-links'>
             <ul className='myFavList'>
+                <li><a href='#'>Download</a></li>
+                <li><a href='#'>Careers</a></li>
                 <li><a href='#'>Careers</a></li>
                 <li><a href='#'>Resources</a></li>
                 <li><a href='#'>Alumni</a></li>
                 <li><a href='#'>Services</a></li>
             </ul>
           </div>
-        </div>
-        
 
-         <div className='links'>
+
+
+      
+          <div className='links'>
           <div className='sub-links'>
           <ul>
                 <li style={{
@@ -336,8 +342,8 @@ const [hide,setHide]=useState('')
                     borderBottom:myParams.pathname=='/program'?'5px solid #D07348':null
                 }} to='/program'>Academics</Link></li> */}
 
-                <DropList/>
-
+                {/* <DropList/> */}
+                <MainDrop/>
                 <DropPortal/>
 
                 {/* <li>
@@ -360,6 +366,13 @@ const [hide,setHide]=useState('')
             }} variant='contained' endIcon={<ForwardIcon/>}>Apply Now</Button> */}
           </div>
          </div>
+    
+</div>
+     
+
+        </div>
+        
+
 
 
          <div className='phone-links'>

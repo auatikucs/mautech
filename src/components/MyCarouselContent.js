@@ -23,14 +23,16 @@ background: linear-gradient(to right,rgba(64,0,0,0.1),rgba(64,0,0,0.3),rgba(64,0
     display: flex;
     flex-direction: row;
     align-items: center;
+    
     h2{
         width: 10%;
         background-color: black;
         color: white;
         height: 100%;
+        
     }
     p{
-    height: 100%;
+    height: 50%;
     width: 80%;
     margin-left: 10px;
     color: white;
@@ -109,7 +111,7 @@ export default function MyCarouselContent({image,heading='',subheading='',body='
         <CarouselContainer>
         <div className='color-code'>
             <div className='latex'>
-                <h2>Bulleting:</h2>
+                <h2>Vision:</h2>
                 <p>Modibbo Adama University is Set to 
                     comission the new College of Medical Science at the end of the session</p>
             </div>

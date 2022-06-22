@@ -14,6 +14,7 @@ import Explore from '../components/Explore';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from 'react';
 import Chat from '../components/Chat';
+import Vc from '../assets/mau_pic_footer.jpg'
 import { useNavigate } from 'react-router';
 const MyContainer = styled.div`
 min-height: 150vh;
@@ -24,32 +25,38 @@ overflow-x: hidden;
 transition: all 1s;
 .vc-message{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
-    min-height: 70vh;
+    height: 70vh;
+    overflow: hidden;
     .message{
         width: 95%;
-        height: 100%;
-        background-color:#ececec;
+        height: 60vh;
+        background:url(${Vc});
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         border-radius: 10px;
         margin:auto;
         display: flex;
-        grid-column: 1/4;
+       
         .the-vc{
-            width: 40%;
-            height: 100%;
+            width: 50%;
+            height: 55vh;
+            margin: auto;
             .vcImage{
-            height: 100%;
-            width: 100%;
+            height:50vh;
+            width: 80%;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            margin: auto;
             
             
             }
             img{
                 width:90%;
-                height:80%;
+                height:70%;
                 
             }
             h4{
@@ -62,25 +69,25 @@ transition: all 1s;
         }
 
         .the-msg{
-            width: 60%;
-            height: 100%;
-            
+            width: 50%;
+            height: 60vh;
+            padding: 10px;
             p{
                 text-align: justify;
-                font-size: 18px;
-                margin-right: 10px;
+                font-size: 14px;
+            
             }
         }
     }
     .news{
         width: 100%;
-        height: 100%;
+        height:60vh;
         background-color:white;
         display:flex;
         flex-direction: column;
         /* align-items: center;
         margin-bottom: 40px; */
-        grid-column: 4/6;
+        
         h3{
             color:#D07348;
             text-align:center;
@@ -226,6 +233,7 @@ export default function HomeScreen() {
     const [openModel, setModal] = useState(false)
     const [isLoading, setLoading] = useState(true)
     const [homeData, setHomeData] = useState([])
+    const [stats,setStats]=useState([])
     const navigate=useNavigate()
     useEffect(() => {
         fetch('https://new-modibbo-adama.herokuapp.com/admin/get-home-event')
@@ -237,6 +245,14 @@ export default function HomeScreen() {
                             setHomeData(data.message)
 
                         }
+                      //Fetch stat
+                      fetch('https://new-modibbo-adama.herokuapp.com/admin/get-statistics')
+                      .then(res => {
+                          res.json()
+                              .then(data => {
+                                  setStats(data.result)
+                              })
+                      })
 
                     })
             })
@@ -405,7 +421,7 @@ export default function HomeScreen() {
             EXPLORE OUR MAJOR  PROGRAMS    
              </h2></Divider>
              <Explore />
-            <MyCount />
+            <MyCount stats={stats}/>
            
             
             <Modal

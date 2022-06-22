@@ -1,12 +1,12 @@
 import { Button } from '@mui/material';
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import EmptyIcon from '@mui/icons-material/HourglassEmpty'
 import MyDepList from '../components/MyDepList';
 import MyAccordion from '../components/MyAccordion';
 import AppContext from '../Context/app/appContext';
 import Bg from '../assets/car3.jpg'
-import { Link,useNavigate} from 'react-router-dom';
+import { Link,useNavigate, useParams} from 'react-router-dom';
 
 const StyledContainer=styled.div`
 margin-top: 130px;
@@ -244,34 +244,52 @@ h5{
 `;
 
 export default function DepartmentScreen() {
-    const myAppParam=useContext(AppContext)
+    const [department,setDep]=useState([])
     const navigate=useNavigate()
+    const [loading,setLoading]=useState(false)
+    const {id}=useParams()
+    const loadData=(id)=>{
+   
+        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}&activity=faculty`)
+        .then(res => {
+            res.json()
+                .then(data => {
+                  setDep(data.message)
+                  setLoading(false)
+                  console.log(data,"+++++++++")
+                })
+        }).catch(err=>{
+            
+        })
+    }
     useEffect(()=>{
-    console.log(myAppParam)
         window.scrollTo({
             top:0,
             behavior: 'smooth',
           })
+         
+        loadData(id)
+       
     },[])
     return (
         <StyledContainer>
            {
-    myAppParam.department.length>0&&(
+    department.length>0&&(
         <>
         <div className='depHead'>
- <h2>{myAppParam.department[0].departmentName}</h2>
+ <h2>{department[0].departmentName}</h2>
 </div>
 <div className='hodDetails'>
     {
-        myAppParam.department[0].hod!=null&&(
+        department[0].hod!=null&&(
         <div className='hodImage'>
-            <img src={`${myAppParam.department[0].hod.image}`} alt='HOD'/> 
-            <h3>{myAppParam.department[0].hod.name}</h3>
+            <img src={`${department[0].hod.image}`} alt='HOD'/> 
+            <h3>{department[0].hod.name}</h3>
             <h4>Head Of Department</h4>
             {/* <h4>STAFF LIST</h4>
             {
-                myAppParam.department[0].staffList.length>0&&(
-                    myAppParam.department[0].staffList.map(stf=>(
+                department[0].staffList.length>0&&(
+                    department[0].staffList.map(stf=>(
                         <MyAccordion key={stf.name} title={stf.name} qualification={stf.qualification.map(ql=>ql+', ')} topic={stf.major}/>
                     ))
                 )
@@ -283,11 +301,11 @@ export default function DepartmentScreen() {
     }
  
  <div className='depMission'>
-   <h4>Welcome To {myAppParam.department[0].departmentName}</h4>
-     <p>{myAppParam.department[0].vission}</p>
+   <h4>Welcome To {department[0].departmentName}</h4>
+     <p>{department[0].vission}</p>
      {/* {
-         myAppParam.department[0].programs.length>0&&(
-            myAppParam.department[0].programs.map(prg=>(
+         department[0].programs.length>0&&(
+            department[0].programs.map(prg=>(
                 <MyDepList key={prg.name} list={prg.admissionRequirement} title={prg.name} content={prg.mission} requirements=''/>
             ))
          )
@@ -304,7 +322,7 @@ export default function DepartmentScreen() {
     )
 }
 {
-    myAppParam.department.length==0&&(
+    department.length==0&&(
         <div className='emptyList'>
             <EmptyIcon style={{
         width: 50,
@@ -316,15 +334,13 @@ export default function DepartmentScreen() {
 }
 
 {
-     myAppParam.department.length!==0&&(
+     department.length!==0&&(
          <>
          <div className='depVisonMision'>
 <div className='depVis'>
     <h1>VISION</h1>
     <p>
-    The vision of the department is to produce world class computer 
-    scientists that are in tune with the latest technologies and that can use their skills in 
-    finding solutions to real world problems for the benefit of mankind.
+    {department[0].vission}
     </p>
 </div>
 
@@ -332,9 +348,7 @@ export default function DepartmentScreen() {
 <div className='depVis'>
     <h1>MISSION</h1>
     <p>
-    The vision of the department is to produce world class computer 
-    scientists that are in tune with the latest technologies and that can use their skills in 
-    finding solutions to real world problems for the benefit of mankind.
+    {department[0].mission}
     </p>
 </div>
 </div>
@@ -343,10 +357,10 @@ export default function DepartmentScreen() {
 <h1>Programmes</h1>
 <ul>
 {
-     myAppParam.department[0].programs.length>0&&(
-        myAppParam.department[0].programs.map(prg=>(
+     department[0].programs.length>0&&(
+        department[0].programs.map(prg=>(
           <li key={prg.name}>
-              <Link to='/'>{prg.name}</Link>
+              <Link to={`/program/${prg.programId}`}>{prg.name}</Link>
           </li> 
         ))
      )
@@ -356,8 +370,8 @@ export default function DepartmentScreen() {
 <h1 style={{marginTop:'100px'}}>Departmental Staff Profile List</h1>
 <div className='depStaff'>
 {
-                myAppParam.department[0].staffList.length>0&&(
-                    myAppParam.department[0].staffList.map(stf=>(
+                department[0].staffList.length>0&&(
+                    department[0].staffList.map(stf=>(
                 
                  <div onClick={()=>{
                    navigate('/staff/01')
@@ -381,9 +395,8 @@ export default function DepartmentScreen() {
      )
 }
 
+</StyledContainer>
 
-        </StyledContainer>
-  
 
     )
 }

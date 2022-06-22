@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {useParams} from 'react-router-dom'
 import MyLinks from '../components/MyLinks';
@@ -196,22 +196,35 @@ and (max-device-width : 480px) {
 export default function DetailScreen() {
     const {id}=useParams()
     const [myId,setMyid]=useState()
-    const [loading,setLoading]=useState(false)
-    const myAppParam=useContext(AppContext)
+    const [loading,setLoading]=useState(true)
+    const [triger,setTriger]=useState([])
 
-    useState(()=>{
+    const loadData=()=>{
+        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-faculty?eventId=${id}&activity=faculty&target=facultyId`)
+        .then(res => {
+            res.json()
+                .then(data => {
+                  setTriger([data.message])
+                  setLoading(false)
+                  console.log([data.message])
+                })
+        }).catch(err=>{
+            
+        })
+    }
+    useEffect(()=>{
         window.scrollTo({
             top:0,
             behavior: 'smooth',
           })
-        //   loadData()
-        
-         console.log(myAppParam,"___")
+         
+        loadData()
+         console.log("___")
     },[])
     return (
         <StyledContainer>
            {
-               myAppParam.loading&&(
+               loading&&(
                    <>
                 <Skeleton style={{
                 marginLeft:'auto',
@@ -227,25 +240,25 @@ export default function DetailScreen() {
            }
 
            {
-               !myAppParam.loading&&
-               myAppParam.triger.length>0&&(
+               !loading&&
+               triger.length>0&&(
                 <>
                  <div style={{
-                     background:`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${myAppParam.triger[0].image==null?Bg:myAppParam.triger[0].image})`,
+                     background:`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${triger[0].image==null?Bg:triger[0].image})`,
                      backgroundRepeat:'no-repeat',
                      backgroundSize:'cover',
                      backgroundPosition:'center'
                      
                  }} className='fac-head'>
-                   <h1>{myAppParam.triger[0].facultyName}</h1>
-                   <p>{myAppParam.triger[0].facultyDescription}</p>
+                   <h1>{triger[0].facultyName}</h1>
+                   <p>{triger[0].facultyDescription}</p>
                 </div>
                 <div className='faculty-cont'>
                 <div className='mainDean'>
                     <div className='mainDeanCont'>
                         <div className='deanPersonal'>
                           {
-                              myAppParam.triger[0].dean==null&&(
+                              triger[0].dean==null&&(
                                   <>
                                   <h3>No Dean Data!!</h3>
                                   <p>Contact the admin for complaints!</p>
@@ -253,18 +266,18 @@ export default function DetailScreen() {
                               )
                           }
                           {
-                             myAppParam.triger[0].dean!==null&&(
+                             triger[0].dean!==null&&(
                            <>
                            <div style={{
-                     background:`url(${myAppParam.triger[0].dean.image==null?Bg:myAppParam.triger[0].dean.image})`,
+                     background:`url(${triger[0].dean.image==null?Bg:triger[0].dean.image})`,
                      backgroundRepeat:'no-repeat',
                      backgroundSize:'cover',
                      backgroundPosition:'center'
                      
                  }} className='myDean'>
                          <div className='myDeanCont'>
-                         <h2>{myAppParam.triger[0].dean.name}</h2>
-                         <h4>Dean {myAppParam.triger[0].facultyName}</h4>
+                         <h2>{triger[0].dean.name}</h2>
+                         <h4>Dean {triger[0].facultyName}</h4>
                          </div>
                            </div>
                             </>
@@ -273,8 +286,8 @@ export default function DetailScreen() {
                             
                         </div>
                         <div className='deanWelcome'>
-                            <h3>About {myAppParam.triger[0].facultyName}</h3>
-                            <p>{myAppParam.triger[0].facultyDescription} </p>
+                            <h3>About {triger[0].facultyName}</h3>
+                            <p>{triger[0].facultyDescription} </p>
                         </div>
                     </div>
                 </div>
@@ -285,7 +298,7 @@ export default function DetailScreen() {
                 }}>List Of Departments</h3>
                 <div className='departmentList'>
                 {
-                    myAppParam.triger[0].departmentList.map(dep=>(
+                    triger[0].departmentList.map(dep=>(
                         <DepLink route={`/course/${dep.departmentId}`} key={dep.departmentId} link={dep.departmentName} id={dep.departmentId}/>
                     ))
                 }
@@ -296,7 +309,7 @@ export default function DetailScreen() {
            }
 
            {
-               !loading&&myAppParam.triger.length==0&&(
+               !loading&&triger.length==0&&(
                    <h3>No Data For This Faculty Yet!!!</h3>
                )
            }

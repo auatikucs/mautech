@@ -8,16 +8,16 @@ export default function DepLink({link='',route,id}) {
     return (
      <div>
 <ListItemButton onClick={()=>{
-fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}`)
-.then(res => {
-    res.json()
-        .then(data => {
-           myAppParam.loadDep(data.message)
-           navigate(route,{replace:true})
+// fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}`)
+// .then(res => {
+//     res.json()
+//         .then(data => {
+//            myAppParam.loadDep(data.message)
+//            navigate(route,{replace:true})
            
-        })  
-})
-
+//         })  
+// })
+navigate(route)
 
 }}  style={{
     color:'#D07348'

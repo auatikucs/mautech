@@ -152,3 +152,15 @@ body::-webkit-scrollbar-thumb{
   /* text-align: center; */
   color: #D33232;
 }
+.lii{
+  width: 100%;
+}
+.lii:hover .content2{
+  transform: scaleY(1);
+  transform: translateX(240px);
+    cursor: pointer;
+    transform-origin: top;
+    bottom:-240px;
+    opacity: 1;
+  
+}

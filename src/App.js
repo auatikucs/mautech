@@ -22,9 +22,9 @@ function App() {
     <Nav/>
     <Routes>
     <Route exact path='/' element={<HomeScreen/>}/>
-    <Route exact path='/program' element={<ProgramDetailScreen/>}/>
+    <Route exact path='/program/:id' element={<ProgramDetailScreen/>}/>
     <Route exact path='/department/:id' element={<DetailScreen/>}/>
-    <Route exact path='/course/:name' element={<DepartmentScreen/>}/>
+    <Route exact path='/course/:id' element={<DepartmentScreen/>}/>
     <Route exact path='/admissions' element={<CourseFinderScreen/>}/>
     <Route exact path='/about' element={<AboutScreen/>}/>
     <Route exact path='/campus' element={<CampusScreen/>}/>

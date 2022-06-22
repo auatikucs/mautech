@@ -113,15 +113,15 @@ export default function ProgramDetailScreen() {
 
     return (
         <StyledContainer>
-
-            {   
+<h1>prohgggggg</h1>
+            {/* {   
                 !loading&&
                 facList.length>0&&(
                     facList.map((fac,ind)=>(
                         <MyLinks id={fac.facultyId} key={ind} route={`/department/${fac.facultyId}`} link={fac.facultyName}/>
                     ))
                 )
-            }
+            } */}
             
         </StyledContainer>
     )

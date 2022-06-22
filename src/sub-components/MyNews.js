@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import styled from 'styled-components'
 
 const StyledContainer=styled.div`
-min-height: 70px;
+max-height: 50px;
 width: 90%;
 box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 display: flex;
@@ -16,11 +16,13 @@ cursor: pointer;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 10%;
     background-color:#BA6438;
-    h2{
-        line-height:3px;
+    height: 50px;
+    
+    span{
         color: white;
+
     }
 }
 .main{
@@ -37,8 +39,8 @@ export default function MyNews({news=''}) {
             navigate('events/001')
             }}>
         <div className='date'>
-        <h2>01</h2>
-        <h2>MAY</h2>
+        <span>01</span>
+        <span>MAY</span>
         </div> 
         <div className='main'>
          <p>
