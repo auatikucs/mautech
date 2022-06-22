@@ -164,3 +164,269 @@ body::-webkit-scrollbar-thumb{
     opacity: 1;
   
 }
+
+/* NEW LINE OF NIBRASS CSS */
+
+.Main-Container{
+  margin: 0px;
+  margin-top: 130px;
+}
+.Cart-Container-Programs{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: whitesmoke;
+  margin-bottom: 5px;
+}
+
+.Link-Wrapper div{
+  padding: 10px;
+}
+.Link-Wrapper a{
+  text-decoration: none;
+  padding: 20px;
+}
+.Apply_section p {
+  padding: 10px;
+  text-align: justify;
+}
+.Apply_section span{
+  margin: 10px;
+  text-align: justify;
+  /* font-size: 20px; */
+}
+h1{
+  padding-left: 30px;
+}
+h2{
+  text-align: center;
+  color: #ba6438;
+}
+.Main-Display-Image{
+  background-image: url(./assets/student.jpg);
+  background-size: cover;
+  /* opacity: 0.2; */
+  height: 300px;
+  width: auto;
+  margin-top: 0px;
+}
+.Main-Display-Image h1{
+  color: white;
+  padding: 50px 0px 10px 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 60px;
+}
+.Main-Display-Image p {
+  font-size: 25px;
+  color: white;
+  padding-left: 50px;
+}
+input[type='search']{
+  padding: 13px;
+  width: 70%;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid #ba6438;
+  outline: #ba6438;
+}
+.Search-Input div{
+  margin: 15px;
+}
+.Expand-Row{
+  text-align: center;
+  cursor: pointer;
+}
+
+
+/* NIBRASS DETAIL NEWS CSS */
+.News-Header{
+  display: grid;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 50px;
+}
+.News-Title{
+  font-size: 30px;
+  text-align: center;
+  font-weight: bolder;
+}
+.News-Date{
+  padding-top: 10px;
+  font-size: 19px;
+  color: #b6b6b6;
+}
+.News-Header h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+  text-align: left;
+}
+.News-Content{
+  padding: 10px;
+}
+.News-Content p{
+  text-align: justify;
+  line-height: 30px;
+}
+
+/* NIBRASS ABOUT CSS */
+
+
+
+.Mau-Display{
+  width: 100%;
+  margin-top: 20px;
+}
+.About-History-Container{
+  margin: 0 auto;
+ 
+  /* width: 900px; */
+  background-image: url(./assets/mau_pic_footer.jpg);
+  background-size: contain;
+  /* background-color: teal; */
+  /* padding: 15px;
+  padding-top: 0px; */
+
+}
+.About-History-Container p{
+  padding: 15px;
+  line-height: 30px;
+  text-align: justify;
+}
+.Logo-Content h3{
+  color: black;
+}
+.School-Name{
+  color: black;
+}
+.H2-Container{
+color: white;
+background-color: #D33232 ;
+padding: 10px;
+}
+.H2-Container h2{
+  color: white;
+}
+h3{
+  color: white;
+  text-align: center;
+}
+.H2-Container-Content{
+ padding: 10px;
+}
+.H2-Container p{
+  padding: 20px;
+}
+.Objectives-Container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+ padding: 20px;
+  grid-gap: 20px;
+  /* width: 900px; */
+}
+.Objectives-Container h3{
+  font-size: 40px;
+}
+.Objectives-Container p{
+  padding: 10px;
+  text-align: justify;
+  line-height: 30px;
+}
+.Objectives-Container-Card{
+  background-color: #9F3B3A;
+  color: white;
+  border-radius:12px;
+}
+.Objectives-Container-Card2{
+  background-color: #FFC53A;
+  border-radius:12px;
+}
+.Objectives-Container-Card3{
+  background-color: black;
+  color: white;
+  border-radius:12px;
+}
+.Objectives-Container-Card-Core-Values{
+  display: grid;
+  grid-column: 1/4;
+  background-color: #9F3B3A;
+  color: white;
+  padding: 10px;
+  border-radius:12px;
+}
+dl{
+  text-align: justify;
+  padding: 10px;
+}
+.Video_container{
+  display: grid;
+  grid-column: 1/4;
+  width: 100%;
+  align-items: center;
+}
+video{
+ 
+ 
+  border: 1px solid black;
+  height: 400px;
+}
+
+/* About Leadership css begins grom this site */
+.About-Leadership-Display_page{
+  background-image: url(./assets/mau_pic_footer.jpg);
+  background-size: cover;
+  height: 200px;
+
+}
+.About-Leadership-Display_page span{
+ 
+}
+.Pro-Chancellor-Container{
+  display: flex;
+  padding-right: 20px;
+ /* width: 900px;
+  margin: 0 auto; */
+ 
+  /* background-color: red; */
+}
+.Pro-Chancellor-Container p{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.AboutLeadership-Title{
+  color: #D33232;
+  text-align: left;
+  padding: 20px;
+  font-size: 20px;
+}
+.About-Leadership-Container{
+  margin-top: 120px;
+}
+.About-Leadership-Container h1{
+  color: black;
+  padding: 30px;
+}
+.About-Leadership-Container p{
+  padding-left: 20px;
+  text-align: justify;
+}
+.Pro-Chancellor-Img-Holder{
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 0 auto;
+  width: 300px;
+  margin-right: 100px;
+  margin-left: 100px;
+ 
+  /* background-color: #D33232; */
+}
+.Principal-Officers-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  padding: 30px;
+}
+.Principal-Officers-Card{
+ text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 205px;
+}

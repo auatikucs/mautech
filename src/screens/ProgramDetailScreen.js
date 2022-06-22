@@ -108,12 +108,12 @@ export default function ProgramDetailScreen() {
             top:0,
             behavior: 'smooth',
           })
-        loadData()
+        // loadData()
     },[])
 
     return (
         <StyledContainer>
-<h1>prohgggggg</h1>
+         <h1>prohgggggg</h1>
             {/* {   
                 !loading&&
                 facList.length>0&&(

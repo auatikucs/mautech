@@ -9,7 +9,8 @@ import {Link, useLocation, useParams} from 'react-router-dom'
 import DropList from '../sub-components/DropList';
 import DropPortal from '../sub-components/DropPortal';
 import MainDrop from '../sub-components/MainDrop'
-
+import AboutDrop from '../sub-components/AboutDrop'
+import AdmissionDrop from '../sub-components/AdmissionDrop'
 
 const MyNav=styled.nav`
 min-height:120px;
@@ -309,10 +310,11 @@ const [hide,setHide]=useState('')
             <ul className='myFavList'>
                 <li><a href='#'>Download</a></li>
                 <li><a href='#'>Careers</a></li>
-                <li><a href='#'>Careers</a></li>
-                <li><a href='#'>Resources</a></li>
                 <li><a href='#'>Alumni</a></li>
-                <li><a href='#'>Services</a></li>
+                <li><a href='#'>Gallery</a></li>
+                <li><a href='#'>R&D</a></li>
+                <li><a href='#'>OER</a></li>
+                <li><a href='#'>Login</a></li>
             </ul>
           </div>
 
@@ -330,21 +332,23 @@ const [hide,setHide]=useState('')
 
                 }} to='/'>Home</Link></li>
                 <li>
-                <Link className='miniLink' style={{
-                     borderBottom:myParams.pathname=='/about'?'5px solid #D07348':null
-                }} to='/about'>About Us</Link>
+                <AboutDrop/>
                 </li>
-                <li><Link style={{
-                    borderBottom:myParams.pathname=='/admissions'?'5px solid #D07348':null
-                }} to='/admissions'>Admissions</Link></li>
+                <li>
+                <MainDrop/>
+                </li>
+                <li>
+                    <AdmissionDrop/>
+                </li>
 
                 {/* <li><Link style={{
                     borderBottom:myParams.pathname=='/program'?'5px solid #D07348':null
                 }} to='/program'>Academics</Link></li> */}
 
                 {/* <DropList/> */}
-                <MainDrop/>
-                <DropPortal/>
+                
+               
+                
 
                 {/* <li>
                 <Link style={{
@@ -352,9 +356,23 @@ const [hide,setHide]=useState('')
                 }} to='/portal'>Portals</Link></li> */}
 
                 <li>
-                <Link to='/campus' style={{
+                <Link to='#' style={{
+                    borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
+                }}  >Facilities</Link>
+                </li>
+                <li>
+                <DropPortal/>
+                </li>
+                <li>
+                <Link to='#' style={{
                     borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
                 }}  >Campus Life</Link>
+                </li>
+
+                <li>
+                <Link to='#' style={{
+                    borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
+                }}  >Intervention</Link>
                 </li>
               
             </ul>

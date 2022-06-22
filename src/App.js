@@ -14,6 +14,9 @@ import PortalsScreen from './screens/PortalsScreen';
 import AppState from './Context/app/appState';
 import Staff from './screens/Staff';
 import Events from './screens/Events';
+import AboutMau from './screens/AboutMau';
+import AboutMauLeadership from './screens/AboutLeadership'
+import UnderGraduate from './screens/UnderGraduate'
 
 function App() {
   return (
@@ -26,11 +29,13 @@ function App() {
     <Route exact path='/department/:id' element={<DetailScreen/>}/>
     <Route exact path='/course/:id' element={<DepartmentScreen/>}/>
     <Route exact path='/admissions' element={<CourseFinderScreen/>}/>
-    <Route exact path='/about' element={<AboutScreen/>}/>
+    <Route exact path='/about' element={<AboutMau/>}/>
+    <Route path='/leadership' element={<AboutMauLeadership/>}/>
     <Route exact path='/campus' element={<CampusScreen/>}/>
     <Route exact path='/portal' element={<PortalsScreen/>}/>
     <Route exact path='/staff/:id' element={<Staff/>}/>
     <Route exact path='/events/:id' element={<Events/>}/>
+    <Route path='/undergraduate' element={<UnderGraduate/>}/>
     </Routes>
     <Footer/>
    

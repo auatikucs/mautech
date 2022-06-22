@@ -23,12 +23,14 @@ background: linear-gradient(to right,rgba(64,0,0,0.1),rgba(64,0,0,0.3),rgba(64,0
     display: flex;
     flex-direction: row;
     align-items: center;
+    overflow: hidden;
     
     h2{
         width: 10%;
         background-color: black;
         color: white;
-        height: 100%;
+        height: 70%;
+        
         
     }
     p{
