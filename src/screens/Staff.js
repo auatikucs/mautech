@@ -77,7 +77,7 @@ export default function Staff() {
     return (
         <StyledContainer>
          <div className='hodDet'>
-             <img src={require('../assets/news4.jpg')} alt='hod'/>
+             <img src={require('../assets/domy.jpeg')} alt='hod'/>
              <h3>Dr. Etemi Joshua Garba</h3>
              <Divider style={{width:'100%'}}/>
              <p>H O D Computer Science</p>

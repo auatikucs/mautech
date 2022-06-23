@@ -5,7 +5,8 @@ import EmptyIcon from '@mui/icons-material/HourglassEmpty'
 import MyDepList from '../components/MyDepList';
 import MyAccordion from '../components/MyAccordion';
 import AppContext from '../Context/app/appContext';
-import Bg from '../assets/car3.jpg'
+import Bg from '../assets/domy.jpeg'
+import Car2 from '../assets/car2.jpg'
 import { Link,useNavigate, useParams} from 'react-router-dom';
 
 const StyledContainer=styled.div`
@@ -117,10 +118,11 @@ h5{
     color:white;
     text-transform: uppercase;
     font-weight: bolder;
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${Bg});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://res.cloudinary.com/nutscoders/image/upload/v1646557952/IMG_9585_mpdo2q.jpg');
+   background-repeat:no-repeat;
+   background-size: cover;
+  background-position: center;
+    
 }
 
 
@@ -173,6 +175,7 @@ h5{
 
 }
 .depHead{
+ 
    h2.depHeading{
        text-align: center;
        color: white;
