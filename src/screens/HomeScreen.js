@@ -316,7 +316,7 @@ export default function HomeScreen() {
                  fontSize:35,
                  color:'white'
              }}/>
-             <span style={{color:'white'}}>TOUR</span>
+            
              </div>
     <h2 style={{
         margin: 10,

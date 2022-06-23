@@ -8,7 +8,7 @@ min-height: 50vh;
 width: 100%;
 margin-top: 50px;
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 .mainCount{
     height: 80%;
     width: 80%;
@@ -34,29 +34,34 @@ and (max-device-width : 480px) {
     grid-template-columns: 1fr;
 }
 `;
-export default function MyCount() {
+export default function MyCount({stats=[]}) {
     return (
         <StyledCount>
            <Zoom cascade={true} triggerOnce={true}>
-          <div className='mainCount'>
-           <img src={require('../assets/department.png')}/>
-           <CountUp style={{
-               color:'#D07348',
-               fontSize:55,
-               
-           }} end={40} />
-           <h4>Schools</h4>
-          </div>
+            {/* {
+                stats.map((st,ind)=>(
+                    <div className='mainCount'>
+                    <img src={require('../assets/department.png')}/>
+                    <CountUp style={{
+                        color:'#D07348',
+                        fontSize:55,
+                        
+                    }} end={40} />
+                    <h4>Schools</h4>
+                   </div>
+                ))
+            } */}
+         
 
 
-          <div className='mainCount'>
+           <div className='mainCount'>
            <img src={require('../assets/schools.png')}/>
            <CountUp delay={2} style={{
                color:'#D07348',
                fontSize:55,
                
-           }} end={140} />
-           <h4>Departments</h4>
+           }} end={2} />
+           <h4>Schools</h4>
           </div>
 
 
@@ -68,8 +73,8 @@ export default function MyCount() {
                color:'#D07348',
                fontSize:55,
                
-           }} end={200} />
-           <h4>Courses</h4>
+           }} end={7} />
+           <h4>Faculties</h4>
           </div>
 
 
@@ -81,7 +86,17 @@ export default function MyCount() {
                color:'#D07348',
                fontSize:55,
                
-           }} end={20} />
+           }} end={23} />
+           <h4>Programs</h4>
+          </div>
+
+          <div className='mainCount'>
+           <img src={require('../assets/courses.png')}/>
+           <CountUp delay={4}  style={{
+               color:'#D07348',
+               fontSize:55,
+               
+           }} end={2} />
            <h4>Units</h4>
           </div>
           </Zoom>
