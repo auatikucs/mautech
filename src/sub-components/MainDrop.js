@@ -12,7 +12,7 @@ flex-direction: column;
 .content{
     min-width: 250px;
     min-height: 150px;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(208,115,72,1);
     position: absolute;
     right: 0;
     z-index: 100px;
@@ -29,19 +29,19 @@ flex-direction: column;
     color: white;
     }
     .content-lists{
-        border-bottom: 2px solid rgba(208,115,72,1);
+        border-bottom: 2px solid white;
     }
 
 }
 .content2{
     min-width: 250px;
     min-height: 300px;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(208,115,72,1);
     position: absolute;
     opacity:0;
     right:0;
     z-index: 10px;
-    transition: all 0.5s;
+    transition: all 1s;
     transform: scale(0px);
     transform: translateX(1000px);
     cursor: pointer;
@@ -49,13 +49,41 @@ flex-direction: column;
     bottom:-270px;
     .styleLis{
         transition: all 0.5s;
+        color: white;
     }
     .styleLis:hover{
-    background-color:rgba(208,115,72,1);
-    color: white;
+    background-color:rgba(255,255,255,1);
+    color: rgba(208,115,72,1);
     }
     .content-lists{
-        border-bottom: 2px solid rgba(208,115,72,1);
+        border-bottom: 2px solid white;
+    }
+
+}
+.content3{
+    min-width: 250px;
+    min-height: 300px;
+    background-color: rgba(208,115,72,1);
+    position: absolute;
+    opacity:0;
+    right:0;
+    z-index: 10px;
+    transition: all 1s;
+    transform: scale(0px);
+    transform: translateX(1000px);
+    cursor: pointer;
+    transform-origin: top;
+    bottom:-270px;
+    .styleLis{
+        transition: all 0.5s;
+        color: white;
+    }
+    .styleLis:hover{
+    background-color:white;
+    color:rgba(208,115,72,1);
+    }
+    .content-lists{
+        border-bottom: 2px solid white;
     }
 
 }
@@ -69,6 +97,7 @@ export default function DropList({link='',route=''}) {
     const [allList,setAllList]=useState([])
     const myAppParam=useContext(AppContext)
     const [loading,setLoading]=useState(false)
+    const [show,setShow]=useState('show')
     useEffect(()=>{
         loadData()
     },[])
@@ -105,14 +134,14 @@ export default function DropList({link='',route=''}) {
                 !loading&&(
                     allList.map((dat,ind)=>(
                         <ListItemButton key={ind} style={{
-                            color:'rgba(208,115,72,1)',
+                            color:'white',
                             textTransform:'capitalize',
                             fontWeight:'bold'
                         }} component="div" className='content-lists'>
                             {/* <DropList/> */}
                          <span className='lii'>
                             {dat.name}
-                         <div className='content2'>
+                            <div className={`content${ind==0?'2':'3'}`} >
                          <List>
                                    
                          {
@@ -124,7 +153,7 @@ export default function DropList({link='',route=''}) {
              navigate(`/department/${dt.detail.id}`)
         
           }} style={{
-        color:'rgba(208,115,72,1)',
+        color:'white',
         textTransform:'capitalize',
         fontWeight:'bold',
         width:'100%',
@@ -139,12 +168,12 @@ export default function DropList({link='',route=''}) {
                  
                        </List>
                          </div>
-                           </span>
+                         </span>
                          
                          {/* <ListItemText className='li2'  primary='Undergraduate Portal' /> */}
                          
                  
-                 
+                    
                  
                          </ListItemButton>
                     ))

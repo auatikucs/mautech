@@ -74,8 +74,8 @@ const AboutMau = () => {
                 </div>
                
                 <div className='Video_container'>
-                    <video src="https://youtu.be/WrRUG_UyYZs">
-
+                <video controls>
+                        <source src='https://res.cloudinary.com/nutscoders/video/upload/v1646231311/mau-vid_gmyivp.mp4' type="video/mp4" />
                     </video>
                 </div>
             </div>

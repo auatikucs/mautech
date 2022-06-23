@@ -315,6 +315,7 @@ export default function DetailScreen() {
            }
             
         </StyledContainer>
+       
         
     )
 }

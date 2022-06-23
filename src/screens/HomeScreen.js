@@ -3,6 +3,7 @@ import Carousel from 'react-material-ui-carousel'
 import MyCarouselContent from '../components/MyCarouselContent';
 import { Button, Divider, List, Skeleton } from '@mui/material';
 import VideoIcon from '@mui/icons-material/VideoCallOutlined'
+import {PlayArrow} from '@mui/icons-material'
 import MyNews from '../sub-components/MyNews';
 import UniNews from '../sub-components/UniNews';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -235,7 +236,12 @@ export default function HomeScreen() {
     const [homeData, setHomeData] = useState([])
     const [stats,setStats]=useState([])
     const navigate=useNavigate()
+
     useEffect(() => {
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+          })
         fetch('https://new-modibbo-adama.herokuapp.com/admin/get-home-event')
             .then(res => {
                 res.json()
@@ -284,25 +290,34 @@ export default function HomeScreen() {
                 }
             </Carousel>
 
-
-            <Button onClick={() => {
+             <div onClick={() => {
                 setModal(true)
-            }} className='tour' style={{
-                marginLeft: 'auto',
-                marginRight: 20,
-                background: 'rgba( 64, 0, 0, 0.4 )',
-                borderRadius: 50,
-                height: 70,
-                width: 70,
-                boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-                position: 'fixed',
-                bottom: 0,
-                right: 0,
-                marginBottom: 50,
-                marginRight: 50,
-                zIndex: 150
-
-            }} variant='contained' endIcon={<VideoIcon />}>TOUR</Button>
+            }} style={{
+              marginLeft: 'auto',
+              marginRight: 20,
+              background: 'rgba( 64, 0, 0, 0.4 )',
+              borderRadius: 50,
+              height: 70,
+              width: 70,
+              boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+              position: 'fixed',
+              bottom: 0,
+              right: 0,
+              marginBottom: 50,
+              marginRight: 50,
+              zIndex: 150,
+              display:'flex',
+              flexDirection:'column',
+              justifyContent:'center',
+              alignItems:'center',
+              cursor:'pointer'
+             }} className='tour'>
+             <PlayArrow style={{
+                 fontSize:35,
+                 color:'white'
+             }}/>
+             <span style={{color:'white'}}>TOUR</span>
+             </div>
     <h2 style={{
         margin: 10,
         textAlign:'center',

@@ -325,7 +325,7 @@ const [hide,setHide]=useState('')
           <div className='sub-links'>
           <ul>
                 <li style={{
-                 backgroundColor:myParams.pathname=='/'?'#FFC53A':'transarent'
+                 backgroundColor:myParams.pathname=='/'?'#FFC53A':'transparent'
                 }}><Link style={{
                     color:myParams.pathname=='/'?'white':'black',
                     

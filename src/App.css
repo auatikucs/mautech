@@ -154,10 +154,22 @@ body::-webkit-scrollbar-thumb{
 }
 .lii{
   width: 100%;
+  height: 100%;
 }
 .lii:hover .content2{
   transform: scaleY(1);
-  transform: translateX(240px);
+  transform: translateX(220px);
+    cursor: pointer;
+    transform-origin: top;
+    bottom:-360px;
+    opacity: 1;
+    z-index: 200px;
+    
+  
+}
+.lii:hover .content3{
+  transform: scaleY(1);
+  transform: translateX(220px);
     cursor: pointer;
     transform-origin: top;
     bottom:-240px;
@@ -274,6 +286,7 @@ input[type='search']{
 .Mau-Display{
   width: 100%;
   margin-top: 20px;
+  height: 75vh;
 }
 .About-History-Container{
   margin: 0 auto;
@@ -362,11 +375,10 @@ dl{
   width: 100%;
   align-items: center;
 }
-video{
- 
- 
+.Video_container video{
+ width: 100%;
   border: 1px solid black;
-  height: 400px;
+  height:70vh;
 }
 
 /* About Leadership css begins grom this site */

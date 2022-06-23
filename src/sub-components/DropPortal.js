@@ -9,7 +9,7 @@ position: relative;
 .content{
     min-width: 250px;
     min-height: 250px;
-    background-color: rgba(208,115,72,0.85);
+    background-color: rgba(208,115,72,1);
     position: absolute;
     right: 0;
     z-index: 100;
@@ -18,7 +18,7 @@ position: relative;
     cursor: pointer;
     transform-origin: top;
     .content-lists{
-        border-bottom: 2px solid rgba(208,115,72,1);
+        border-bottom: 2px solid white;
     }
 
 }

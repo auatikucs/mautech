@@ -9,7 +9,7 @@ position: relative;
 .content{
     min-width: 250px;
     min-height: 100px;
-    background-color: rgba(208,115,72,0.85);
+    background-color: rgba(208,115,72,1);
     position: absolute;
     right: 0;
     z-index: 100;
@@ -18,7 +18,7 @@ position: relative;
     cursor: pointer;
     transform-origin: top;
     .content-lists{
-        border-bottom: 2px solid rgba(208,115,72,1);
+        border-bottom: 2px solid white;
     }
 
 }
@@ -32,7 +32,8 @@ export default function DropPortal({link='',route=''}) {
     return (
             <StyledLi>
                 <a href='#' style={{
-                    borderBottom:myParams.pathname.includes(`/portal`)?'5px solid #D07348':null
+                   backgroundColor:myParams.pathname.includes('leadership')||myParams.pathname.includes('about')?'#FFC53A':'transparent',
+                   color:myParams.pathname.includes('leadership')||myParams.pathname.includes('about')?'white':'black'
                 }}>{link}About</a>
                 <div className='content'>
                <List>
