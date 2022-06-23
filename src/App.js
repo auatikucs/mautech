@@ -25,7 +25,7 @@ function App() {
     <Nav/>
     <Routes>
     <Route exact path='/' element={<HomeScreen/>}/>
-    <Route exact path='/program/:id' element={<ProgramDetailScreen/>}/>
+    <Route exact path='/program/:id/:department' element={<ProgramDetailScreen/>}/>
     <Route exact path='/department/:id' element={<DetailScreen/>}/>
     <Route exact path='/course/:id' element={<DepartmentScreen/>}/>
     <Route exact path='/admissions' element={<CourseFinderScreen/>}/>

@@ -173,8 +173,9 @@ h5{
 
 }
 .depHead{
-   h2{
+   h2.depHeading{
        text-align: center;
+       color: white;
    }
 }
 
@@ -182,13 +183,14 @@ h5{
 }
 
 .depVisonMision{
-    height:220px;
+    min-height:240px;
     width: 98%;
     margin-left: auto;
     margin-right: auto;
     background-color:rgba(226, 223, 214, 1);
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
     
     .depVis{
         width: 45%;
@@ -196,7 +198,7 @@ h5{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        padding: 10px;
         h1{
             text-align: center;
             color: rgba(160, 50, 50, 1);
@@ -277,7 +279,7 @@ export default function DepartmentScreen() {
     department.length>0&&(
         <>
         <div className='depHead'>
- <h2>{department[0].departmentName}</h2>
+ <h2 style={{color:'white'}} className='depHeading'>{department[0].departmentName}</h2>
 </div>
 <div className='hodDetails'>
     {
@@ -360,7 +362,7 @@ export default function DepartmentScreen() {
      department[0].programs.length>0&&(
         department[0].programs.map(prg=>(
           <li key={prg.name}>
-              <Link to={`/program/${prg.programId}`}>{prg.name}</Link>
+              <Link to={`/program/${prg.programId}/${department[0].departmentName}`}>{prg.name}</Link>
           </li> 
         ))
      )
