@@ -286,7 +286,7 @@ export default function DetailScreen() {
                             
                         </div>
                         <div className='deanWelcome'>
-                            <h3>About {triger[0].facultyName}</h3>
+                            <h3 style={{color:'black'}}>About {triger[0].facultyName}</h3>
                             <p>{triger[0].facultyDescription} </p>
                         </div>
                     </div>

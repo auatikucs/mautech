@@ -286,7 +286,7 @@ export default function DepartmentScreen() {
         department[0].hod!=null&&(
         <div className='hodImage'>
             <img src={`${department[0].hod.image}`} alt='HOD'/> 
-            <h3>{department[0].hod.name}</h3>
+            <h3 style={{color:'black'}}>{department[0].hod.name}</h3>
             <h4>Head Of Department</h4>
             {/* <h4>STAFF LIST</h4>
             {
@@ -304,7 +304,7 @@ export default function DepartmentScreen() {
  
  <div className='depMission'>
    <h4>Welcome To {department[0].departmentName}</h4>
-     <p>{department[0].vission}</p>
+     <p style={{color:'black'}}>{department[0].hod.introduction}</p>
      {/* {
          department[0].programs.length>0&&(
             department[0].programs.map(prg=>(
@@ -336,13 +336,13 @@ export default function DepartmentScreen() {
 }
 
 {
-     department.length!==0&&(
+     department.length>0&&(
          <>
          <div className='depVisonMision'>
 <div className='depVis'>
     <h1>VISION</h1>
     <p>
-    {department[0].vission}
+    {department[0].hod.vission}
     </p>
 </div>
 

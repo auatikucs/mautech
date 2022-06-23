@@ -64,7 +64,15 @@ export default function MyCount({stats=[]}) {
            <h4>Schools</h4>
           </div>
 
-
+          <div className='mainCount'>
+           <img src={require('../assets/units.png')}/>
+           <CountUp delay={3}  style={{
+               color:'#D07348',
+               fontSize:55,
+               
+           }} end={1} />
+           <h4>College</h4>
+          </div>
 
 
           <div className='mainCount'>
