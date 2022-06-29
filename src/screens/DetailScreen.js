@@ -180,13 +180,12 @@ and (max-device-width : 480px) {
     padding-left: 50px;
     h1{
         color: white;
-        font-size: 63px;
+        font-size:60px;
     }
     p{
         color: white;
         width: 60%;
         text-align: justify;
-        font-size: 23px;
         font-weight: 700px;
     }
 
@@ -251,7 +250,7 @@ export default function DetailScreen() {
                      
                  }} className='fac-head'>
                    <h1>{triger[0].facultyName}</h1>
-                   <p>{triger[0].facultyDescription}</p>
+                   {/* <p>{triger[0].facultyDescription}</p> */}
                 </div>
                 <div className='faculty-cont'>
                 <div className='mainDean'>
@@ -286,7 +285,7 @@ export default function DetailScreen() {
                             
                         </div>
                         <div className='deanWelcome'>
-                            <h3 style={{color:'black'}}>About {triger[0].facultyName}</h3>
+                            {/* <h3 style={{color:'black'}}>About {triger[0].facultyName}</h3> */}
                             <p>{triger[0].facultyDescription} </p>
                         </div>
                     </div>
@@ -295,7 +294,7 @@ export default function DetailScreen() {
                 <h3 style={{
                     textAlign:'center',
                     color:'#D07348'
-                }}>List Of Departments</h3>
+                }}>Departments</h3>
                 <div className='departmentList'>
                 {
                     triger[0].departmentList.map(dep=>(

@@ -19,18 +19,6 @@ const Footer = () => {
            
             <div className="Footer-Container">
                <div className="Footer-Content">
-                  <h4>Discover Mau</h4>
-                  <nav>
-                    <div> <Link to='/'>Home </Link></div>
-                    <div> <Link to='/'>Admission </Link></div>
-                    <div> <Link to='/'>Academic</Link></div>
-                    <div> <Link to='/'>Service</Link></div>
-                    <div> <Link to='/'>Campus Life </Link></div>
-                    <div> <Link to='/'>Portal </Link></div>
-                    
-                  </nav>
-               </div>
-               <div className="Footer-Content">
                   <h4>Quick Links</h4>
                   <nav className='footerNav'>
                     <div> <Link to='/'>Faculties </Link></div>

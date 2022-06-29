@@ -8,6 +8,7 @@ import AppContext from '../Context/app/appContext';
 import Bg from '../assets/domy.jpeg'
 import Car2 from '../assets/car2.jpg'
 import { Link,useNavigate, useParams} from 'react-router-dom';
+import Wave from 'react-wavify'
 
 const StyledContainer=styled.div`
 margin-top: 130px;
@@ -68,7 +69,7 @@ h5{
     margin-top: 20px;
     min-height: 70vh;
     .hodImage{
-        height: 442px;
+        height: 400px;
         width: 462;
         background-color:white;
         display: flex;
@@ -76,20 +77,31 @@ h5{
         justify-content: flex-start;
         align-items: center;
         border: 1px solid rgba(217, 217, 217, 1);
+       
         img{
             height:330px;
             width: 430px;
            
         }
-        h3,h4{
+        span{
             border-bottom: 1px solid rgba(217, 217, 217, 1);
             width: 100%;
             text-align: center;
+            font-weight: bold;
+            height: 30px;
+            font-size: 20px;
+            
+        }
+        span.linkVie{
+            color: blue;
+            font-size: 14px;
+            border-bottom:none;
         }
     }
     .depMission{
         flex: 1;
         background-color: white;
+        position: relative;
         .myBtn{
             display: flex;
             justify-content: space-around;
@@ -105,6 +117,7 @@ h5{
             margin-right: auto;
             
         }
+       
     }
 
 }
@@ -190,10 +203,11 @@ h5{
     width: 98%;
     margin-left: auto;
     margin-right: auto;
-    background-color:rgba(226, 223, 214, 1);
+    background-color:rgba(226, 223, 214, 0.5);
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    position: relative;
     
     .depVis{
         width: 45%;
@@ -202,6 +216,7 @@ h5{
         justify-content: center;
         align-items: center;
         padding: 10px;
+        z-index: 100;
         h1{
             text-align: center;
             color: rgba(160, 50, 50, 1);
@@ -212,6 +227,15 @@ h5{
             margin-right: 10px;
         }
     }
+    .wavy{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 20;
+        }
 }
 
 .depProg{
@@ -224,9 +248,10 @@ h5{
     padding: 5px;
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
     .depIndStaff{
-     height:156px;
-     width: 100%;
+     height:120px;
+     width: 80%;
      background-color: white;
      box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
      display: flex;
@@ -234,14 +259,29 @@ h5{
      align-items: center;
      margin-top: 20px;
      cursor: pointer;
+    
+     h4,p{
+         text-align: center;
+     }
      .stfDepCon{
          flex: 1;
          margin-left: 10px;
+         display: flex;
+         flex-direction: column;
+         span{
+             text-align: center;
+         }
+         .stfH{
+             font-size: 20px;
+             color: rgba(160, 50, 50, 1);
+             font-weight: bold;
+         }
      }
      img{
-         width: 134px;
-         height:134px;
+         width: 100px;
+         height:100px;
          border-radius: 100%;
+         margin-left: 5px;
      }
 
     }
@@ -289,8 +329,9 @@ export default function DepartmentScreen() {
         department[0].hod!=null&&(
         <div className='hodImage'>
             <img src={`${department[0].hod.image}`} alt='HOD'/> 
-            <h3 style={{color:'black'}}>{department[0].hod.name}</h3>
-            <h4>Head Of Department</h4>
+            <span style={{color:'black'}}>{department[0].hod.name}</span>
+            <span style={{color:'black'}}>Head Of Department</span>
+            <span className='linkVie'>View Profile</span>
             {/* <h4>STAFF LIST</h4>
             {
                 department[0].staffList.length>0&&(
@@ -304,7 +345,7 @@ export default function DepartmentScreen() {
         </div>
         )
     }
- 
+
  <div className='depMission'>
    <h4>Welcome To {department[0].departmentName}</h4>
      <p style={{color:'black'}}>{department[0].hod.introduction}</p>
@@ -338,10 +379,22 @@ export default function DepartmentScreen() {
     )
 }
 
+
 {
      department.length>0&&(
          <>
-         <div className='depVisonMision'>
+ <div className='depVisonMision'>
+<div className='wavy'>
+<Wave fill='#e2dfd6'
+        paused={false}
+        options={{
+          height: 20,
+          amplitude: 20,
+          speed: 0.15,
+          points: 3
+        }}
+  />
+</div>
 <div className='depVis'>
     <h1>VISION</h1>
     <p>
@@ -372,7 +425,7 @@ export default function DepartmentScreen() {
 }
 </ul>
 </div>
-<h1 style={{marginTop:'100px'}}>Departmental Staff Profile List</h1>
+<h1 style={{marginTop:'10px'}}>Staff</h1>
 <div className='depStaff'>
 {
                 department[0].staffList.length>0&&(
@@ -383,9 +436,9 @@ export default function DepartmentScreen() {
                  }} className='depIndStaff'>
                         <img src={Bg} />
                         <div className='stfDepCon'>
-                        <h2>{stf.name}</h2>
-                        <h4>{stf.major}</h4>
-                        <p>{stf.qualification[0]}</p>
+                        <span className='stfH'>{stf.name}</span>
+                        <span>{stf.name}</span>
+                        <span>{stf.name}</span>
                         </div>
                     </div>
                     

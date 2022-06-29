@@ -26,32 +26,35 @@ overflow-x: hidden;
 transition: all 1s;
 .vc-message{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
     overflow: hidden;
     .message{
-        width: 95%;
-        height: 60vh;
+        width: 100%;
+        height: 80vh;
         background:url(${Vc});
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        border-radius: 10px;
         margin:auto;
         display: flex;
        
         .the-vc{
             width: 50%;
-            height: 55vh;
+            height: 70vh;
             margin: auto;
             .vcImage{
-            height:50vh;
-            width: 80%;
+            height:70vh;
+            width: 85%;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            align-items: center;
             margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: rgba(0,0,0,1);
             
             
             }
@@ -66,6 +69,7 @@ transition: all 1s;
                 color:white;
                 border-bottom: 1px solid #D07348;
                 background-color: rgba(0,0,0,0.5);
+                width: 50%;
             }
         }
 
@@ -75,7 +79,8 @@ transition: all 1s;
             padding: 10px;
             p{
                 text-align: justify;
-                font-size: 14px;
+                font-size: 20px;
+                line-height: 50px;
             
             }
         }
@@ -84,8 +89,8 @@ transition: all 1s;
         width: 100%;
         height:60vh;
         background-color:white;
-        display:flex;
-        flex-direction: column;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
         /* align-items: center;
         margin-bottom: 40px; */
         
@@ -119,9 +124,11 @@ transition: all 1s;
          height: 100px;
          border-bottom: 1px solid lightgray;
          margin-bottom: 10px;
+         padding: 10px;
          img{
              width: 100px;
              height: 100px;
+             margin-right: 20px;
          }
          .mainIdCon{
          display: flex;
@@ -256,6 +263,7 @@ export default function HomeScreen() {
                       .then(res => {
                           res.json()
                               .then(data => {
+                                  console.log(data.result,"+=+=+=+=+=+")
                                   setStats(data.result)
                               })
                       })
@@ -273,7 +281,7 @@ export default function HomeScreen() {
                             height: '70vh'
                         }} variant="rectangular" />
                     )
-                }
+            }
             <Carousel  autoPlay stopAutoPlayOnHover>
                 {
                     !isLoading && (
@@ -321,7 +329,7 @@ export default function HomeScreen() {
     <h2 style={{
         margin: 10,
         textAlign:'center',
-        width:'50%'
+        width:'100%'
     }}>Welcome Message by Vice Chancellor</h2>
             <div className='vc-message'>
                 <div className='message'>
@@ -334,7 +342,7 @@ export default function HomeScreen() {
                             background:`url(${homeData[0].vc.image})`,
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: 'center',
-                            backgroundSize: 'cover'
+                            backgroundSize: 'contain'
                         }} className='vcImage'>
                        <h4>
                            {homeData[0].vc.name}
@@ -361,8 +369,9 @@ export default function HomeScreen() {
                 </div>
 
                 <div className='news'>
-                    <h3>Upcoming/Ongoing School Events</h3>
+                    <img src={require('../assets/cal3.png')} alt='cal'/>
                     <List>
+                    <h3>Upcoming/Ongoing School Events</h3>
                         {
                             !isLoading&&
                             homeData.length > 0&&(

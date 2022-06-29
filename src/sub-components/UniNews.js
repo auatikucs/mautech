@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const StyledNews=styled.div`
 width: 25%;
-height: 90%;
+height: 80%;
 background-color:white;
 margin:20px;
 /* box-shadow:0 8px 20px 0 rgba( 31, 38, 135, 0.37 ); */

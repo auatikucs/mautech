@@ -10,6 +10,7 @@ background-color:white;
 display: grid;
 grid-gap: 20px;
 grid-template-columns: 1fr 1fr;
+padding: 20px;
 .onlineLinks{
 background-color:rgba(255, 197, 58, 0.3);
 width: 85%;

@@ -105,7 +105,7 @@ body::-webkit-scrollbar-thumb{
 }
 .Footer-Container{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   position: relative;
 }
 /* .Footer-Content{
@@ -130,7 +130,7 @@ body::-webkit-scrollbar-thumb{
 .Footer-Content-Powered{
   display: grid;
   text-align: center;
-  grid-column: 1/5;
+  grid-column: 1/4;
   padding: 5px;
   background-color: black;
   color: white;

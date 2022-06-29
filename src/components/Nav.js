@@ -19,14 +19,14 @@ min-width: 100%;
 position: fixed;
 top:0;
 transition: all 1s;
-background:  rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
+background:  rgba( 255, 255, 255, 1 );
+box-shadow: 0 8px 8px 0 rgba(31, 38, 135, 0.37 );
+/* backdrop-filter: blur( 4px ); */
+/* -webkit-backdrop-filter: blur( 4px ); */
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 z-index: 200;
 opacity: 1;
-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+/* box-shadow: 0px 0px 10px rgba(0,0,0,0.5); */
 display: flex;
 flex-direction:column;
 

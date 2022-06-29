@@ -69,9 +69,9 @@ export default function Chat() {
             setHide('')
         }} src={require('../assets/mau.png')}/>
         <div className='txtCh'>
-        <h2>Modibbo Adama University</h2>
-        <p>How can we Help ? were here for you !</p>
-        <TextField style={{width:'90%'}} label='Reply To MAU university'/>
+        <h2>Chat With Us</h2>
+        {/* <p>How can we Help ? were here for you !</p> */}
+        <TextField style={{width:'90%'}} label='Type Message'/>
         <CancelOutlined onClick={()=>{
             setHide('chatHide')
         }} style={{fontSize:30,cursor:'pointer'}}/>
