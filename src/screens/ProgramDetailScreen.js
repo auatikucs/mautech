@@ -6,7 +6,10 @@ import MyCard from '../sub-components/MyCard'
 import MyLinks from '../components/MyLinks';
 import AppContext from '../Context/app/appContext';
 import Img from '../assets/mau_cover.jpg'
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
 const StyledContainer=styled.div`
 width: 100%;
 min-height: 60vh;
@@ -75,11 +78,30 @@ clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
       }
     }
 }
+.btnSelect{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.prgmainRe{
+    width: 100%;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
 `;
+
+  
 export default function ProgramDetailScreen() {
     const [progList,setList]=useState([])
     const [loading,setLoading]=useState(false)
     const {id,department}=useParams()
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
     const navigate=useNavigate()
     const loadData=(id)=>{
         setLoading(true)
@@ -133,10 +155,23 @@ export default function ProgramDetailScreen() {
                     <div className='mainProgh2'>
                         <span>Admission  Requirements</span>
                     </div>
-                    
-                    {progList[0].admissionRequirement.map((rq,ind)=>(
+            
+
+                     <div className='btnSelect'>
+                     <Button onClick={()=>{
+            navigate(-1)
+        }} variant='contained' color='error'>UTME</Button>
+            <Button color='error' onClick={()=>{
+            navigate(-1)
+        }}  variant='outlined'>DE</Button>
+           
+                     </div>
+            <div className='prgmainRe'>
+            {progList[0].admissionRequirement.map((rq,ind)=>(
                         <p key={ind}>✔{rq}</p>
                     ))}
+            </div>
+                   
           
                     
                     <div className='mainProgh2'>

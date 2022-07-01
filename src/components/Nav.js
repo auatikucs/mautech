@@ -356,23 +356,19 @@ const [hide,setHide]=useState('')
                 }} to='/portal'>Portals</Link></li> */}
 
                 <li>
-                <Link to='#' style={{
-                    borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
-                }}  >Facilities</Link>
+                <Link to='#'>Facilities</Link>
                 </li>
                 <li>
                 <DropPortal/>
                 </li>
                 <li>
-                <Link to='#' style={{
+                <Link to='/campus' style={{
                     borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
                 }}  >Campus Life</Link>
                 </li>
 
                 <li>
-                <Link to='#' style={{
-                    borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
-                }}  >Intervention</Link>
+                <Link to='#'>Intervention</Link>
                 </li>
               
             </ul>

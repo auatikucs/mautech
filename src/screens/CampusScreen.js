@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import MyVideo from '../components/MyVideo';
 
 const StyledContainer=styled.div`
 width: 100%;
@@ -138,7 +139,8 @@ export default function CampusScreen() {
     },[])
     return (
         <StyledContainer>
-        <div className='campusImage'>
+        <MyVideo/>
+        {/* <div className='campusImage'>
          <div className='campusHead'>
         <div className='welcomeDean'>
         <h1>Welcome Message</h1>
@@ -155,7 +157,7 @@ concerned only with what is written out in the curricula end up as defective pro
         </div>
           
          </div>
-        </div>
+        </div> */}
           <div className='campusDetails'>
               <h1>THERE’S MORE TO LIFE THAN CLASS.</h1>
               <p>You’re not just choosing a school — you’re choosing a home. 
