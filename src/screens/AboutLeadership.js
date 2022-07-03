@@ -5,6 +5,8 @@ import dvc_Academics from '../assets/dvc_Academics.jpeg';
 import dvc_Admin from '../assets/dvc_Admin.jpeg';
 import avatar from '../assets/avatar.png';
 import { useEffect } from 'react';
+import VcAbout from '../components/VcAbout';
+
 
 const AboutLeadership = () => {
     useEffect(()=>{
@@ -155,6 +157,9 @@ const AboutLeadership = () => {
                 </ul>
             </div>
            </div>
+
+
+<VcAbout/>
         </div>
      );
 }

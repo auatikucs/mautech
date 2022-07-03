@@ -17,6 +17,7 @@ import Events from './screens/Events';
 import AboutMau from './screens/AboutMau';
 import AboutMauLeadership from './screens/AboutLeadership'
 import UnderGraduate from './screens/UnderGraduate'
+import Principal from './screens/Principal';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
     <Route exact path='/staff/:id' element={<Staff/>}/>
     <Route exact path='/events/:id' element={<Events/>}/>
     <Route path='/undergraduate' element={<UnderGraduate/>}/>
+    <Route path='/pricipal/:id' element={<Principal/>}/>
     </Routes>
     <Footer/>
    

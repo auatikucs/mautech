@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import mau_cover from '../assets/mau_cover.jpg';
+import MyVideo from '../components/MyVideo';
 const AboutMau = () => {
     useEffect(()=>{
         window.scrollTo({
@@ -10,9 +11,10 @@ const AboutMau = () => {
     return ( 
         <div style={{marginTop:110}}>
         <div className="AboutMau-Container">
-            <div>
+            {/* <div>
                 <img className='Mau-Display' src={mau_cover} alt="" srcset="" />
-            </div>
+            </div> */}
+        <MyVideo/>
             <div className='About-History-Container' styles={{ backgroundImage:`url(${mau_cover})` }}>
                 <div className='H2-Container'>
                     <h2>BRIEF HISTORY OF MODIBBO ADAMA UNIVERSITY YOLA</h2>

@@ -13,8 +13,8 @@ import AboutDrop from '../sub-components/AboutDrop'
 import AdmissionDrop from '../sub-components/AdmissionDrop'
 
 const MyNav=styled.nav`
-min-height:120px;
-max-height:120px;
+min-height:107px;
+max-height:107px;
 min-width: 100%;
 position: fixed;
 top:0;
