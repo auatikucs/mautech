@@ -2,17 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledContainer=styled.div`
-width: 100%;
+min-width: 100%;
 height: 80vh;
 background-color: white;
 position: relative;
 video{
- position:absolute;
-  right: 0;
+  position:absolute;
+  right:0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width:100% ;
+  min-height:100%;
+
+  
   z-index: 20px;
+
+  
 
 }
 .vidContent{
@@ -44,7 +48,7 @@ export default function MyVideo() {
     return (
         <StyledContainer>
            <video autoPlay muted loop>
-                        <source src='https://player.vimeo.com/progressive_redirect/playback/687124814/rendition/720p?loc=external&signature=63e858749bc8667ad15a0d28863c2590847d7d56978b870ab0a2f1c27ffe8308' type="video/mp4" />
+                        <source src='https://res.cloudinary.com/nutscoders/video/upload/v1656936967/bgViiii_dx81hl.mp4' type="video/mp4" />
             </video>
             <div className='vidContent'>
                 <span>Campus Life</span>

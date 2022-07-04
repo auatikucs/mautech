@@ -41,7 +41,7 @@ flex-direction: column;
     opacity:0;
     right:0;
     z-index: 10px;
-    transition: all 1s;
+    transition: all 0.05s;
     transform: scale(0px);
     transform: translateX(1000px);
     cursor: pointer;
@@ -68,14 +68,14 @@ flex-direction: column;
     opacity:0;
     right:0;
     z-index: 10px;
-    transition: all 1s;
+    transition: all 0.05s;
     transform: scale(0px);
     transform: translateX(1000px);
     cursor: pointer;
     transform-origin: top;
     bottom:-270px;
     .styleLis{
-        transition: all 0.5s;
+        transition: all 0.2s;
         color: white;
     }
     .styleLis:hover{

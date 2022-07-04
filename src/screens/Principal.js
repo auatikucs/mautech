@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { Divider, List,ListItem, ListItemButton, ListItemText} from '@mui/material';
+import { Facebook, LinkedIn, LocalPrintshopOutlined, Mail, Twitter } from '@mui/icons-material';
+import MyList from '../sub-components/MyList';
 
 const StyledContainer=styled.div`
 margin-top: 107px;
@@ -14,7 +17,11 @@ height: 80vh;
     .icons01{
         min-width: 10%;
         min-height: 100%;
-        background-color: red;
+        background-color:white;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: flex-end;
     }
     .main002{
         min-width: 90%;
@@ -46,12 +53,24 @@ height: 80vh;
             text-align: justify;
         }
         }
+        .mainSecond{
+            display: flex;
+            flex-direction: column;
+            color: black;
+            padding: 20px;
+        }
         
     }
 
 }
 `;
 export default function Principal() {
+    useEffect(()=>{
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+          })
+    },[])
     return (
         <StyledContainer>
             <div style={{
@@ -62,7 +81,10 @@ export default function Principal() {
             }} className='mainPrinPic'></div>
             <div className='princContent'>
              <div className='icons01'>
-
+              <Twitter style={{cursor:'pointer'}}/>
+              <Facebook style={{cursor:'pointer'}}/>
+              <LinkedIn style={{cursor:'pointer'}}/>
+              <Mail style={{cursor:'pointer'}}/>
              </div>
              <div className='main002'>
                  <div className='mainFirst'>
@@ -78,7 +100,63 @@ export default function Principal() {
                  </div>
 
 
-                 <div className='mainSecond'></div>
+                 <div className='mainSecond'>
+                     <List>
+                     <div>
+<ListItemButton style={{
+    color:'black'
+}} component="a" href="#simple-list">
+  <ListItemText primary='Vice Chancellor' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9'}}/>
+ </div>
+
+ <div>
+<ListItemButton style={{
+    color:'black'
+}} component="a" href="#simple-list">
+  <ListItemText primary='DVC Admin' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9'}}/>
+ </div>
+
+ <div>
+<ListItemButton style={{
+    color:'black'
+}} component="a" href="#simple-list">
+  <ListItemText primary='DVC Academics' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9'}}/>
+ </div>
+
+ <div>
+<ListItemButton style={{
+    color:'black'
+}} component="a" href="#simple-list">
+  <ListItemText primary='Registrer' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9'}}/>
+ </div>
+
+ <div>
+<ListItemButton style={{
+    color:'black'
+}} component="a" href="#simple-list">
+  <ListItemText primary='Bursar' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9'}}/>
+ </div>
+
+ <div>
+<ListItemButton style={{
+    color:'black'
+}} component="a" href="#simple-list">
+  <ListItemText primary='Librarian' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9'}}/>
+ </div>
+                     </List>
+                 </div>
                 
              </div>
             </div>

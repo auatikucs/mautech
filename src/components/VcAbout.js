@@ -212,7 +212,7 @@ animation: scaleStroke 2s 1 forwards;
 export default function VcAbout() {
     const route=useNavigate()
     return (
-        <Reveal>
+        <Fade triggerOnce fraction={0.7}>
         <StyledVc>
        
         <div onClick={()=>{
@@ -286,6 +286,6 @@ export default function VcAbout() {
         <div className='stroke05'></div>
         </StyledVc>
         
-        </Reveal>
+        </Fade>
     )
 }

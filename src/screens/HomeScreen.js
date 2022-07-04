@@ -21,7 +21,7 @@ const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
 background-color:white;
-margin-top: 130px;
+margin-top: 110px;
 overflow-x: hidden;
 transition: all 1s;
 .vc-message{
@@ -69,7 +69,7 @@ transition: all 1s;
                 color:white;
                 border-bottom: 1px solid #D07348;
                 background-color: rgba(0,0,0,0.5);
-                width: 50%;
+                width: 70%;
             }
         }
 
@@ -80,7 +80,7 @@ transition: all 1s;
             p{
                 text-align: justify;
                 font-size: 20px;
-                line-height: 50px;
+                
             
             }
         }
