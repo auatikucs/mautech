@@ -201,7 +201,11 @@ export default function CampusScreen() {
     },[])
     return (
         <StyledContainer>
-        <MyVideo/>
+        <MyVideo title='Campus Life'
+        content='The critical irreducible element is therefore learning whether in a 
+        formal or in an informal way. Consequently, whenever learning takes place, 
+        education has equally taken place.'
+        />
         <div className='mainDean'>
                     <div className='mainDeanCont'>
                         <div className='deanPersonal'>

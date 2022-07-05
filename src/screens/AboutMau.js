@@ -14,7 +14,7 @@ const AboutMau = () => {
             {/* <div>
                 <img className='Mau-Display' src={mau_cover} alt="" srcset="" />
             </div> */}
-        <MyVideo/>
+        <MyVideo title='About MAU' content=''/>
             <div className='About-History-Container' styles={{ backgroundImage:`url(${mau_cover})` }}>
                 <div className='H2-Container'>
                     <h2>BRIEF HISTORY OF MODIBBO ADAMA UNIVERSITY YOLA</h2>

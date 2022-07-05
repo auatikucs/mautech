@@ -368,7 +368,7 @@ const [hide,setHide]=useState('')
                 </li>
 
                 <li>
-                <Link to='#'>Intervention</Link>
+                <Link to='/intervention'>Intervention</Link>
                 </li>
               
             </ul>

@@ -10,8 +10,9 @@ video{
   position:absolute;
   right:0;
   bottom: 0;
-  min-width:100% ;
-  min-height:100%;
+  width:100% ;
+  height:100%;
+  object-fit:cover ;
 
   
   z-index: 20px;
@@ -44,18 +45,16 @@ span{
 }
 }
 `;
-export default function MyVideo() {
+export default function MyVideo({title='',content=''}) {
     return (
         <StyledContainer>
            <video autoPlay muted loop>
                         <source src='https://res.cloudinary.com/nutscoders/video/upload/v1656936967/bgViiii_dx81hl.mp4' type="video/mp4" />
             </video>
             <div className='vidContent'>
-                <span>Campus Life</span>
+                <span>{title}</span>
                 <span>
-                The critical irreducible element is therefore learning whether in a 
-                formal or in an informal way. Consequently, whenever learning takes place, 
-                education has equally taken place. 
+                {content} 
                 </span>
             </div>
         </StyledContainer>
