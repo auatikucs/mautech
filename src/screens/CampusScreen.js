@@ -205,6 +205,7 @@ export default function CampusScreen() {
         content='The critical irreducible element is therefore learning whether in a 
         formal or in an informal way. Consequently, whenever learning takes place, 
         education has equally taken place.'
+        source='https://res.cloudinary.com/nutscoders/video/upload/v1657108281/WhatsApp_Video_2022-07-04_at_9.43.53_PM_lohmle.mp4'
         />
         <div className='mainDean'>
                     <div className='mainDeanCont'>
@@ -317,9 +318,9 @@ concerned only with what is written out in the curricula end up as defective pro
             </div>
           </div> */}
           <h1>THERE’S MORE TO LIFE THAN CLASS.</h1>
-        <CampusCard begin={true}/>
-        <CampusCard/>
-        <CampusCard begin={true}/>
+        <CampusCard title='Accomodation' begin={true}/>
+        <CampusCard title='Sports And Fitness'/>
+        <CampusCard title='Students Union' begin={true}/>
         </StyledContainer>
     )
 }

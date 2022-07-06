@@ -21,7 +21,7 @@ margin:30px;
     p{
         font-size:20px;
         text-align:justify ;
-        margin-right:30px;
+        margin-right:70px;
     }
 }
 img{
@@ -29,7 +29,7 @@ img{
     height:100% ;
 }
 `;
-export default function CampusCard({begin=false}) {
+export default function CampusCard({begin=false,title=''}) {
   return (
     <StyledContainer>
     {
@@ -37,7 +37,7 @@ export default function CampusCard({begin=false}) {
             <>
             <img src='https://images.unsplash.com/photo-1576495199011-eb94736d05d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eSUyMGNhbXB1c3xlbnwwfHwwfHw%3D&w=1000&q=80' alt='me'/>
             <div className='ccon'>
-                <span className='cconHd'>Accomodation</span>
+                <span className='cconHd'>{title}</span>
                 <p>
                       One of the most important services delivered by the Student Affairs 
                           Department is arranging and providing not only acceptable but affordable 
@@ -49,7 +49,7 @@ export default function CampusCard({begin=false}) {
         ):(
         <>
     <div className='ccon'>
-        <span className='cconHd'>Accomodation</span>
+        <span className='cconHd'>{title}</span>
         <p>
               One of the most important services delivered by the Student Affairs 
                   Department is arranging and providing not only acceptable but affordable 

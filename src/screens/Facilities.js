@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Divider, List, ListItemButton, ListItemText } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import EmptyIcon from '@mui/icons-material/HourglassEmpty'
@@ -9,6 +9,7 @@ import Bg from '../assets/domy.jpeg'
 import Car2 from '../assets/car2.jpg'
 import { Link,useNavigate, useParams} from 'react-router-dom';
 import Wave from 'react-wavify'
+import Carousel from 'react-material-ui-carousel'
 
 const StyledContainer=styled.div`
 margin-top: 110px;
@@ -77,26 +78,31 @@ h5{
         justify-content: flex-start;
         align-items: center;
         border: 1px solid rgba(217, 217, 217, 1);
-       
+        position:relative ;
+        .dirName{
+        position: absolute;
+        bottom:0;
+        width:100%;
+        min-height:70px;
+        background-color:rgba(255,255,255,0.8);
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        }
         img{
-            height:330px;
+            height:400px;
             width: 430px;
            
         }
-        span{
-            border-bottom: 1px solid rgba(217, 217, 217, 1);
+        span.dirMain{
             width: 100%;
             text-align: center;
             font-weight: bold;
-            height: 30px;
             font-size: 20px;
             
         }
-        span.linkVie{
-            color: blue;
-            font-size: 14px;
-            border-bottom:none;
-        }
+       
     }
     .depMission{
         flex: 1;
@@ -123,11 +129,10 @@ h5{
 }
 .depHead{
     width: 100%;
-    min-height: 230px;
+    min-height:70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:flex-end;
     color:white;
     text-transform: uppercase;
     font-weight: bolder;
@@ -135,6 +140,15 @@ h5{
    background-repeat:no-repeat;
    background-size: cover;
   background-position: center;
+  h2{
+    background-color:rgba(0,0,0,0.6);
+    margin-top:auto ;
+    text-align:left ;
+    margin:0px ;
+    height:50px;
+    padding:10px ;
+   
+  }
     
 }
 
@@ -286,9 +300,49 @@ h5{
 
     }
 }
+.servicesMain{
+    min-height:50vh;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    margin-top:30px;
+    .servicesList{
+        grid-column:1/2;
+        background-color:white;
+        min-height:100px;
+        width:100%;
+        padding:20px ;
+        overflow:hidden ;
+    }
+    .servicesData{
+        grid-column:2/4;
+        background-color:white;
+        min-height:100px;
+        width:90%;
+        padding:20px ;
+        display:flex;
+        flex-direction:column;
+       /* align-items:center ; */
+        span{
+            text-align:center;
+            font-weight:bold;
+            font-size:20px;
+            width:100%;
+        }
+      .carContServ{
+        min-width:100%;
+        min-height:65vh;
+       img{
+        min-width:100%;
+        height:55vh ;
+       }
+      }
+    }
+
+}
 `;
 
-export default function DepartmentScreen() {
+export default function Facilities() {
     const [department,setDep]=useState([])
     const navigate=useNavigate()
     const [loading,setLoading]=useState(false)
@@ -313,7 +367,7 @@ export default function DepartmentScreen() {
             behavior: 'smooth',
           })
          
-        loadData(id)
+        loadData('b9DyaAUU')
        
     },[])
     return (
@@ -322,33 +376,39 @@ export default function DepartmentScreen() {
     department.length>0&&(
         <>
         <div className='depHead'>
- <h2 style={{color:'white'}} className='depHeading'>{department[0].departmentName}</h2>
+ <h2 style={{color:'white'}} className='depHeading'>CENTRAL LABORATORY</h2>
 </div>
 <div className='hodDetails'>
     {
         department[0].hod!=null&&(
         <div className='hodImage'>
-            <img src={`${department[0].hod.image}`} alt='HOD'/> 
-            <span style={{color:'black'}}>{department[0].hod.name}</span>
-            <span style={{color:'black'}}>Head Of Department</span>
-            <span className='linkVie'>View Profile</span>
-            {/* <h4>STAFF LIST</h4>
-            {
-                department[0].staffList.length>0&&(
-                    department[0].staffList.map(stf=>(
-                        <MyAccordion key={stf.name} title={stf.name} qualification={stf.qualification.map(ql=>ql+', ')} topic={stf.major}/>
-                    ))
-                )
-            } */}
-            
+            <img src={`https://res.cloudinary.com/nutscoders/image/upload/v1657102678/WhatsApp_Image_2022-07-06_at_11.17.29_AM_u6bz04.jpg`} alt='HOD'/> 
+            <div className='dirName'>
+                <span className='dirMain'>Dr. James Hamuel</span>
+                <span>DIRECTOR CENTRAL LABORATORY</span>
+                <span>08164942224</span>
+            </div>
            
-        </div>
+            
+     </div>
         )
     }
 
  <div className='depMission'>
-   <h4>Welcome To {department[0].departmentName}</h4>
-     <p style={{color:'black'}}>{department[0].hod.introduction}</p>
+     <p style={{color:'black',lineHeight:'30px'}}>
+     The Central Laboratory of the Modibbo Adama University, Yola was 
+     established in order to offer effective and efficient services with 
+     great flexibility, efficient management, and excellent technical and 
+     scientific standards. The laboratory is equipped with state of the art 
+     facilities divided into 5 specialized units which include Biochemical and 
+     Toxicological, Analytical Chemistry and Quality Control, Geophysics and 
+     Geochemical, Biophysics and Material Science and Microbiology and Molecular
+      Biology units to cater for the diverse research needs of the academic and 
+      research communities in various areas of science, health, agriculture and
+       engineering. We thrive to meet your research needs through timely 
+       and efficient professional approach. 
+     You are therefore very much welcome to patronize our services.
+     </p>
      {/* {
          department[0].programs.length>0&&(
             department[0].programs.map(prg=>(
@@ -410,49 +470,65 @@ export default function DepartmentScreen() {
     </p>
 </div>
 </div>
-
-<div className='depProg'>
-<h1>Programmes</h1>
-<ul>
-{
-     department[0].programs.length>0&&(
-        department[0].programs.map(prg=>(
-          <li key={prg.name}>
-              <Link to={`/program/${prg.programId}/${department[0].departmentName}`}>{prg.name}</Link>
-          </li> 
-        ))
-     )
-}
-</ul>
-</div>
-<h1 style={{marginTop:'10px'}}>Staff</h1>
-<div className='depStaff'>
-{
-                department[0].staffList.length>0&&(
-                    department[0].staffList.map(stf=>(
-                
-                 <div onClick={()=>{
-                   navigate('/staff/01')
-                 }} className='depIndStaff'>
-                        <img src={Bg} />
-                        <div className='stfDepCon'>
-                        <span className='stfH'>{stf.name}</span>
-                        <span>{stf.name}</span>
-                        <span>{stf.name}</span>
-                        </div>
-                    </div>
-                    
-                    ))
-                )
-   } 
-    
-
-   
-</div>
          </>
      )
 }
 
+<div className='servicesMain'>
+<div className='servicesList'>
+<List>
+<ListItemButton style={{
+    color:'black',
+    width:'80%'
+}} component="a" href="#simple-list">
+  <ListItemText primary='Biochemical and Toxicological Laboratory' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9',width:'80%'}}/>
+<ListItemButton style={{
+    color:'black',
+    width:'80%'
+}} component="a" href="#simple-list">
+  <ListItemText primary='Vice Chancellor' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9',width:'80%'}}/>
+<ListItemButton style={{
+    color:'black',
+    width:'80%'
+}} component="a" href="#simple-list">
+  <ListItemText primary='Vice Chancellor' />
+</ListItemButton>
+<Divider style={{backgroundColor:'#f9f9f9',width:'80%'}}/>
+
+
+</List>
+
+</div>
+<div className='servicesData'>
+<span>Biochemical and Toxicological Laboratory</span>
+<Carousel navButtonsAlwaysVisible={true} className='carContServ' indicators={false}>
+    <div className='carContServ'>
+     <img src='https://media.istockphoto.com/photos/medical-research-laboratory-portrait-of-a-beautiful-female-scientist-picture-id1354172647?b=1&k=20&m=1354172647&s=170667a&w=0&h=13SIt0U5v32bjaNHIlpWleLTgzcEHtAKYLAolMX_CPg=' alt='img'/>
+     <span className='imgLab'>Label1</span>
+    </div>
+    
+
+    <div className='carContServ'>
+     <img src='https://media.istockphoto.com/photos/science-laboratory-research-and-development-concept-microscope-with-picture-id842452752?k=20&m=842452752&s=612x612&w=0&h=awmur8CZkHiBm0vbaSY5dPT_jTJWdY3vu5aVEhm0vFA=' alt='img'/>
+     <span className='imgLab'>Label2</span>
+    </div>
+</Carousel>
+<span>Operations and Services</span>
+<ul>
+ <li>
+ Identification, quantification and
+  purification of individual components of a mixture of drug, food, beverage etc.
+ </li>
+ <li>
+ Determination of refractive index of liquid mixtures
+ </li>
+</ul>
+</div>
+</div>
 </StyledContainer>
 
 

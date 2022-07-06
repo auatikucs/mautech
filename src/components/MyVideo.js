@@ -45,11 +45,11 @@ span{
 }
 }
 `;
-export default function MyVideo({title='',content=''}) {
+export default function MyVideo({title='',content='',source=''}) {
     return (
         <StyledContainer>
            <video autoPlay muted loop>
-                        <source src='https://res.cloudinary.com/nutscoders/video/upload/v1656936967/bgViiii_dx81hl.mp4' type="video/mp4" />
+                        <source src={source} type="video/mp4" />
             </video>
             <div className='vidContent'>
                 <span>{title}</span>

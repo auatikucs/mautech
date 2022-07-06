@@ -11,6 +11,7 @@ import DropPortal from '../sub-components/DropPortal';
 import MainDrop from '../sub-components/MainDrop'
 import AboutDrop from '../sub-components/AboutDrop'
 import AdmissionDrop from '../sub-components/AdmissionDrop'
+import DropFaci from '../sub-components/DropFaci';
 
 const MyNav=styled.nav`
 min-height:107px;
@@ -20,7 +21,7 @@ position: fixed;
 top:0;
 transition: all 1s;
 background:  rgba( 255, 255, 255, 1 );
-box-shadow: 0 8px 8px 0 rgba(31, 38, 135, 0.37 );
+box-shadow: 0 3px 3px 0 rgba(31, 38, 135, 0.37 );
 /* backdrop-filter: blur( 4px ); */
 /* -webkit-backdrop-filter: blur( 4px ); */
 border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -356,7 +357,7 @@ const [hide,setHide]=useState('')
                 }} to='/portal'>Portals</Link></li> */}
 
                 <li>
-                <Link to='#'>Facilities</Link>
+               <DropFaci/>
                 </li>
                 <li>
                 <DropPortal/>

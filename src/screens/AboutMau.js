@@ -14,7 +14,7 @@ const AboutMau = () => {
             {/* <div>
                 <img className='Mau-Display' src={mau_cover} alt="" srcset="" />
             </div> */}
-        <MyVideo title='About MAU' content=''/>
+        <MyVideo title='About MAU' content='' source='https://res.cloudinary.com/nutscoders/video/upload/v1656936967/bgViiii_dx81hl.mp4'/>
             <div className='About-History-Container' styles={{ backgroundImage:`url(${mau_cover})` }}>
                 <div className='H2-Container'>
                     <h2>BRIEF HISTORY OF MODIBBO ADAMA UNIVERSITY YOLA</h2>

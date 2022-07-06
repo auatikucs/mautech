@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styled from 'styled-components'
 
 
@@ -97,6 +97,14 @@ background-color:white ;
 `;
 
 export default function Intervention() {
+    useEffect(()=>{
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+          })
+      
+       
+    },[])
   return (
     <StyledContainer>
         <div className='indInter'>
