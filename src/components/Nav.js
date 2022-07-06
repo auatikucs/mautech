@@ -362,14 +362,20 @@ const [hide,setHide]=useState('')
                 <li>
                 <DropPortal/>
                 </li>
-                <li>
+                <li style={{
+                 backgroundColor:myParams.pathname=='/campus'?'#FFC53A':'transparent'
+                }}>
                 <Link to='/campus' style={{
-                    borderBottom:myParams.pathname=='/campus'?'5px solid #D07348':null
+                 color:myParams.pathname=='/campus'?'#FFFFFF':'black'
                 }}  >Campus Life</Link>
                 </li>
 
-                <li>
-                <Link to='/intervention'>Intervention</Link>
+                <li style={{
+                 backgroundColor:myParams.pathname=='/intervention'?'#FFC53A':'transparent'
+                }}>
+                <Link style={{
+                 color:myParams.pathname=='/intervention'?'#FFFFFF':'black'
+                }} to='/intervention'>Intervention</Link>
                 </li>
               
             </ul>

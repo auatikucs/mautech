@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import mau_cover from '../assets/mau_cover.jpg';
+import  './AboutMau.css';
 import MyVideo from '../components/MyVideo';
 const AboutMau = () => {
     useEffect(()=>{
@@ -11,11 +12,8 @@ const AboutMau = () => {
     return ( 
         <div style={{marginTop:110}}>
         <div className="AboutMau-Container">
-            {/* <div>
-                <img className='Mau-Display' src={mau_cover} alt="" srcset="" />
-            </div> */}
-        <MyVideo title='About MAU' content='' source='https://res.cloudinary.com/nutscoders/video/upload/v1656936967/bgViiii_dx81hl.mp4'/>
-            <div className='About-History-Container' styles={{ backgroundImage:`url(${mau_cover})` }}>
+        <MyVideo title='About MAU' content='To be a centre of academic excellence, innovation and community development' source='https://res.cloudinary.com/nutscoders/video/upload/v1656936967/bgViiii_dx81hl.mp4'/>
+        <div className='About-History-Container' styles={{ backgroundImage:`url(${mau_cover})` }}>
                 <div className='H2-Container'>
                     <h2>BRIEF HISTORY OF MODIBBO ADAMA UNIVERSITY YOLA</h2>
                 </div>
@@ -32,55 +30,49 @@ const AboutMau = () => {
                     </p>
                 </div>
             </div>
-            <div className="Objectives-Container">
-                <div className='Objectives-Container-Card'>
-                    <div>
-                        <h3>Vision</h3>
-                    </div>
-                    <div>
-                        <p>To be a centre of academic excellence, innovation and community development</p>
-                    </div>
+            <div className='University-Objectives-Container'>
+                <div className='University-Objectiver-Container-Head'>
+                   <div className='Header-Banner'></div> <h1>Vision, Mission, Philosophy & Core Values</h1>
                 </div>
-                <div className='Objectives-Container-Card2'>
-                    <div>
-                        <h3>Mission</h3>
-                    </div>
-                    <div>
-                        <p>To set the path for knowledge by providing educational and entrepreneurial services for
-                        sustainable growth and development</p>
-                    </div>
+                <div>
+                    <span className='Objective-Title'>Vision</span>
+                    <p>To be a centre of academic excellence, innovation and community development</p>
                 </div>
-                <div className='Objectives-Container-Card3'>
-                    <div>
-                        <h3>Philosophy</h3>
-                    </div>
-                    <div>
-                        <p>The philosophy of Modibbo Adama University, Yola is to recognise the worth and dignity of academic pursuit by respecting all cultural affiliations and diversity of staff and students, by helping students reach their potentials within standard timeframes and by a committed to community service to address gaps that hinder development and sustainability.</p>
-                    </div>
+                <div>
+                    <span className='Objective-Title'>Mission</span>
+                    <p>To set the path for knowledge by providing educational and entrepreneurial services for sustainable growth and development</p>
                 </div>
-                <div className='Objectives-Container-Card-Core-Values'>
-                    <div>
-                        <h3>Core Values</h3>
-                    </div>
-                    <div>
-                        <dt>
-                            <dl>Integrity: maintaining the highest ethical standards in teaching, research, public engagement and service.</dl>
-                            <dl> Innovation: encouraging, considering and supporting development of ideas by fostering individual ingenuity and creativity.</dl>
-                            <dl>Accountability: ensuring that the values of transparency and stewardship are embedded and practiced by every member of the community.</dl>
-                            <dl>Rationality: seeking always the best solution to issues, ensuring the satisfaction of the wider proportion of the patriotic interest and efficient resource mobilization. </dl>
-                            <dl>Excellence: pursuit of outstanding performance, abhorring mediocrity and promoting excellence in research, teaching and service through a merit-based recruitment and nurturing of staff and students.</dl>
-                            <dl>Sustainability: acting in a manner that is environmentally, economically and socially sustainable academic and research activities.</dl>
-                            <dl>Collaboration: working toward common goals with other institutions, organizations and communities while valuing teamwork, participation and diversity of ideas and perspectives.</dl>
-                        </dt>
-                    </div>
+                <div>
+                    <span className='Objective-Title'>Philosophy</span>
+                    <p>The philosophy of Modibbo Adama University, Yola is to recognise the worth and dignity of academic pursuit by respecting all cultural affiliations and diversity of staff and students, by helping students reach their potentials within standard timeframes and by a committed to community service to address gaps that hinder development and sustainability.
+
+                    </p>
                 </div>
-               
-                <div className='Video_container'>
-                <video controls>
-                        <source src='https://res.cloudinary.com/nutscoders/video/upload/v1646231311/mau-vid_gmyivp.mp4' type="video/mp4" />
-                    </video>
+                <div>
+                    <div>
+                    <span className='Objective-Title'>Core Values</span>
+                    </div>
+                   <div className='Core-Values-Items'> 
+                    <div>
+                        <span className='Sub-Objective-Title'>Integrity</span><br></br>
+                        <span>maintaining the highest ethical standards in teaching, research, public engagement and service.</span>
+                    </div>
+                    <div>
+                        <span className='Sub-Objective-Title'>Innovation</span><br></br>
+                        <span>encouraging, considering and supporting development of ideas by fostering individual ingenuity and creativity.</span>
+                    </div>
+                    <div>
+                        <span className='Sub-Objective-Title'>Excellence</span><br></br>
+                        <span> pursuit of outstanding performance, abhorring mediocrity and promoting excellence in research, teaching and service through a merit-based recruitment and nurturing of staff and students.</span>
+                    </div>
+                    <div>
+                        <span className='Sub-Objective-Title'>Colloboration</span><br></br>
+                        <span> working toward common goals with other institutions, organizations and communities while valuing teamwork, participation and diversity of ideas and perspectives.</span>
+                    </div>
+                    </div>
                 </div>
             </div>
+            
         </div>
         </div>
      );

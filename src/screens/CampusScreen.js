@@ -213,15 +213,15 @@ export default function CampusScreen() {
                        
                          
                            <div style={{
-                     background:`url('https://media.gettyimages.com/photos/american-singer-actor-and-comedian-dean-martin-circa-1960-picture-id153078983?s=612x612')`,
+                     background:`url('https://radiologyseminars.co.uk/wp-content/uploads/2021/11/avatar-male.jpg')`,
                      backgroundRepeat:'no-repeat',
                      backgroundSize:'cover',
                      backgroundPosition:'center'
                      
                  }} className='myDean'>
                          <div className='myDeanCont'>
-                         <h2>Meeeeeeee</h2>
-                         <h4>Dean Meee</h4>
+                         <h2>Name</h2>
+                         <h4>Dean Student Affairs</h4>
                          </div>
                            </div>
                           

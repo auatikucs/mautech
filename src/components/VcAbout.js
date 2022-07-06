@@ -1,5 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Registrar from '../assets/Registrar.jpeg';
+import dvc_Academics from '../assets/dvc_Academics.jpeg';
+import dvc_Admin from '../assets/dvc_Admin.jpeg';
+import avatar from '../assets/avatar.png';
 import { Fade,Zoom,Bounce,Reveal } from 'react-awesome-reveal';
 import { useNavigate } from 'react-router';
 const StyledVc=styled.div`
@@ -85,6 +89,7 @@ span{
 span{
     z-index: 2;
     font-weight: bold;
+    font-size: 10px;
     
 }
 .bgv{
@@ -229,20 +234,20 @@ export default function VcAbout() {
       
         <div className='others001 bur'>
         <img 
-        src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' 
+        src={dvc_Academics} 
         alt='img'/> 
-        <span>Prof. Liman Tukur</span>
-        <span>Vice Chancellor</span>
+        <span>Prof Muhammad Inuwa Jaafaru</span>
+        <span>DVC Academics</span>
         <div className='bgv'></div>
         </div>
         
        
         <div className='others001 reg'>
         <img 
-        src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' 
+        src={dvc_Admin} 
         alt='img'/> 
-        <span>Prof. Liman Tukur</span>
-        <span>Vice Chancellor</span>
+        <span>Prof Muhammad Musa Malgwi</span>
+        <span>DVC Admins</span>
         <div className='bgv'></div>
         </div>
 
@@ -250,10 +255,10 @@ export default function VcAbout() {
 
         <div className='others001 lib'>
         <img 
-        src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' 
+        src={Registrar} 
         alt='img'/> 
-        <span>Prof. Liman Tukur</span>
-        <span>Vice Chancellor</span>
+        <span>Haj. Halima Mohammed Bala</span>
+        <span>Registrar</span>
         <div className='bgv'></div>
         </div>
 
@@ -261,10 +266,10 @@ export default function VcAbout() {
 
         <div className='others001 dvc1'>
         <img 
-        src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' 
+        src={avatar} 
         alt='img'/> 
-        <span>Prof. Liman Tukur</span>
-        <span>Vice Chancellor</span>
+        <span>Alh Ismail Umar</span>
+        <span>Bursar</span>
         <div className='bgv'></div>
         </div>
 
@@ -272,8 +277,8 @@ export default function VcAbout() {
         <img 
         src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' 
         alt='img'/> 
-        <span>Prof. Liman Tukur</span>
-        <span>Vice Chancellor</span>
+        <span>Dr. Tukur Abba</span>
+        <span>Librarian</span>
         <div className='bgv'></div>
         </div>
     

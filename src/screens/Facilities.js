@@ -136,10 +136,10 @@ h5{
     color:white;
     text-transform: uppercase;
     font-weight: bolder;
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://res.cloudinary.com/nutscoders/image/upload/v1646557952/IMG_9585_mpdo2q.jpg');
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://res.cloudinary.com/nutscoders/image/upload/v1657144990/cent_klm13k.png');
    background-repeat:no-repeat;
    background-size: cover;
-  background-position: center;
+  background-position:top;
   h2{
     background-color:rgba(0,0,0,0.6);
     margin-top:auto ;
@@ -386,7 +386,7 @@ export default function Facilities() {
             <div className='dirName'>
                 <span className='dirMain'>Dr. James Hamuel</span>
                 <span>DIRECTOR CENTRAL LABORATORY</span>
-                <span>08164942224</span>
+                <span>+2347025599712</span>
             </div>
            
             
@@ -404,9 +404,9 @@ export default function Facilities() {
      Toxicological, Analytical Chemistry and Quality Control, Geophysics and 
      Geochemical, Biophysics and Material Science and Microbiology and Molecular
       Biology units to cater for the diverse research needs of the academic and 
-      research communities in various areas of science, health, agriculture and
-       engineering. We thrive to meet your research needs through timely 
-       and efficient professional approach. 
+      research communities in various areas of science, health, agriculture and 
+      engineering. We thrive to meet your research needs through timely and efficient
+       professional approach. 
      You are therefore very much welcome to patronize our services.
      </p>
      {/* {
@@ -434,7 +434,7 @@ export default function Facilities() {
         width: 50,
         height:50
     }}/>
-    <h4>Department Data Not Added Yet!!!</h4>
+    <h4>loading.....</h4>
         </div>
     )
 }
@@ -458,7 +458,8 @@ export default function Facilities() {
 <div className='depVis'>
     <h1>VISION</h1>
     <p>
-    {department[0].hod.vission}
+    To be a leading center for advanced research that will spear-head ground-breaking 
+    novel scientific and technological discoveries and innovations for an all-encompassing national development.
     </p>
 </div>
 
@@ -466,7 +467,9 @@ export default function Facilities() {
 <div className='depVis'>
     <h1>MISSION</h1>
     <p>
-    {department[0].mission}
+    To provide a multidisciplinary, multifaceted and inclusive approach to advanced 
+    research for the attainment of highest research potentials in science and technology for a 
+    knowledge- driven socio-economic and capital development of the nation.
     </p>
 </div>
 </div>
@@ -488,14 +491,7 @@ export default function Facilities() {
     color:'black',
     width:'80%'
 }} component="a" href="#simple-list">
-  <ListItemText primary='Vice Chancellor' />
-</ListItemButton>
-<Divider style={{backgroundColor:'#f9f9f9',width:'80%'}}/>
-<ListItemButton style={{
-    color:'black',
-    width:'80%'
-}} component="a" href="#simple-list">
-  <ListItemText primary='Vice Chancellor' />
+  <ListItemText primary='Analytical Chemistry and Quality Control Laboratory' />
 </ListItemButton>
 <Divider style={{backgroundColor:'#f9f9f9',width:'80%'}}/>
 
@@ -525,6 +521,15 @@ export default function Facilities() {
  </li>
  <li>
  Determination of refractive index of liquid mixtures
+ </li>
+ <li>
+ dentification of compounds such as compounded in plastics, blends, fillers, 
+ paints, rubbers, coatings, resins, and adhesives
+ </li>
+ <li>
+ Analysis  and measurement of toxic substances and compounds in soil,
+  air or drinking/wastewater, 
+ sludge, air-borne pollutants, drugs, oil spills, essential oils etc
  </li>
 </ul>
 </div>

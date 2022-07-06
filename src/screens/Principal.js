@@ -74,8 +74,8 @@ export default function Principal() {
     return (
         <StyledContainer>
             <div style={{
-             background:`url('https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/bcar_Richardson4.jpg?itok=KuJy5IA3')`,
-             backgroundPosition:'center',
+             background:`url('https://res.cloudinary.com/nutscoders/image/upload/v1657144167/Noor-Takaful-Photo-1-scaled_vrtjpg.jpg')`,
+             backgroundPosition:'top',
              backgroundRepeat:'no-repeat',
              backgroundSize:'cover',
             }} className='mainPrinPic'></div>

@@ -1,0 +1,246 @@
+/* About Mau Css Begins Here
+Make sure you Check very 
+well Malam Tapaswi......... */
+
+.Mau-Display{
+    width: 100%;
+    margin-top: 20px;
+}
+.About-History-Container{
+    margin: 0 auto;
+   
+    /* width: 900px; */
+    background-image: url(../assets/mau_pic_footer.jpg);
+    background-size: contain;
+   
+
+}
+.About-History-Container p{
+    padding: 15px;
+    line-height: 30px;
+    text-align: justify;
+}
+.Logo-Content h3{
+    color: black;
+}
+.School-Name{
+    color: black;
+}
+.H2-Container{
+  color: white;
+  background-color: #D07348 ;
+  padding: 10px;
+}
+.H2-Container h2{
+    color: white;
+}
+h3{
+    color: white;
+    text-align: center;
+}
+.H2-Container-Content{
+   padding: 10px;
+}
+.H2-Container p{
+    padding: 20px;
+}
+.University-Objectives-Container{
+    display: grid;
+    margin: 0 auto;
+    width: 80%;
+    /* background-color: #9F3B3A; */
+    padding: 20px;
+    /* color: white; */
+   
+}
+.University-Objectiver-Container-Head{
+    display: flex;
+}
+.Header-Banner{
+    width: 40px;
+    height: 60px;
+    background-color: #ffbc3b;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+@keyframes example {
+    from {background-color: #9F3B3A;}
+    to {background-color: #ffbc3b;}
+  }
+.Objective-Title{
+    font-size: 22px;
+    font-weight: bolder;
+}
+.Core-Values-Items{
+    padding-left: 30px;
+}
+.Core-Values-Items div{
+    padding-top: 10px;
+}
+.Sub-Objective-Title{
+    font-size: 16px;
+    /* Margin-top: 30px; */
+    font-weight: bold;
+    opacity: 0.7;
+    
+}
+.Objectives-Container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   padding: 20px;
+   background-color: whitesmoke;
+    /* grid-gap: 20px; */
+    /* width: 900px; */
+}
+.Objectives-Container h3{
+    font-size: 30px;
+    color: #9F3B3A;
+}
+.Objectives-Container p{
+    padding-top: 0px;
+    padding: 10px;
+    /* text-align: justify; */
+    line-height: 30px;
+}
+.Objectives-Container-Card{
+    background-color: whitesmoke;
+    /* color: white; */
+    border-radius:12px;
+}
+.Objectives-Container-Card2{
+    /* background-color: #FFC53A; */
+    border-radius:12px;
+}
+.Objectives-Container-Card3{
+    /* background-color: black; */
+    /* color: white; */
+    border-radius:12px;
+    /* display: grid;
+    grid-column: 3/5; */
+}
+.Objectives-Container-Card-Core-Values{
+    display: grid;
+    grid-column: 1/4;
+    background-color: #9F3B3A;
+    color: white;
+    padding: 10px;
+    border-radius:12px;
+}
+dl{
+    text-align: justify;
+    padding: 10px;
+}
+
+
+
+
+/* About Leadership css begins grom this site */
+.About-Leadership-Container{
+    margin-top: 110px;
+}
+.Chancellor-Container{
+    margin-bottom: 80px;
+    
+}
+.Mau-Leadership-Container-Head{
+    display: flex;
+    /* background-image: url(../assets/mau_pic_footer.jpg); */
+    height: 50PX;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(78, 75, 75);
+    color: white;
+}
+.Governing_Council_New{
+    display: flex;
+}
+
+
+.Pro-Chancellor-Container{
+    /* display: flex; */
+    /* padding-right: 20px; */
+   /* width: 900px;
+    margin: 0 auto; */
+   
+    /* background-color: red; */
+}
+.Header-Banner-Leadership{
+    width: 10px;
+    height: 30px;
+    background-color: #ffbc3b;
+    animation-name:banner;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    padding-left: 20px;
+}
+@keyframes banner {
+    from {background-color: #9F3B3A;}
+    to {background-color: #ffbc3b;}
+  }
+.Governing-Council-Members{
+    display: flex;
+    /* background-color: antiquewhite; */
+}
+.Pro-Chancellor-Container p{
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 30px;
+    
+    /* font-weight: lighter; */
+}
+.AboutLeadership-Title{
+    /* color: white; */
+    text-align: left;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    /* margin-top: 10px; */
+}
+.Council-Members-Title{
+    font-size: 26px;
+    padding: 20px;
+}
+.About-Leadership-Container h1{
+    color: black;
+    padding: 30px;
+}
+.About-Leadership-Container p{
+    padding-left: 20px;
+    text-align: justify;
+}
+.Pro-Chancellor-Img-Holder{
+    /* border: 1px solid #ddd; */
+    padding: 10px;
+    margin: 0 auto;
+    /* width: 300px; */
+    margin-right: 20px;
+    margin-left: 20px;
+   
+    /* background-color: #D33232; */
+}
+.Pro-Chancellor-Img-Holder img{
+    padding-top: 10px;
+}
+.Pro-Chancellor-Img-Holder span{
+    text-align: center;
+    line-height: 30px;
+}
+
+table{
+    width: 100%;
+    padding: 20px;
+}
+td {
+    padding: 2px;
+    text-align: justify;
+    padding-left: 10px;
+}
+tr:nth-child(even){
+    background-color: rgb(241, 241, 241);
+   
+   
+    
+}

@@ -8,7 +8,7 @@ min-height: 50vh;
 width: 100%;
 margin-top: 50px;
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 .mainCount{
     height: 80%;
     width: 80%;
@@ -35,26 +35,35 @@ and (max-device-width : 480px) {
 }
 `;
 export default function MyCount({stats=[]}) {
+    const sources=[
+        {src:require('../assets/bui.gif')},
+        {src:require('../assets/coll.gif')},
+        {src:require('../assets/sch.gif')},
+        {src:require('../assets/cen.gif')} ,
+        {src:require('../assets/uni.gif')} ,
+        {src:require('../assets/pr.gif')} 
+        
+    ]
     return (
         <StyledCount>
            <Zoom cascade={true} triggerOnce={true}>
-            {/* {
+            {
                 stats.map((st,ind)=>(
-                    <div className='mainCount'>
-                    <img src={require('../assets/department.png')}/>
+                    <div key={ind} className='mainCount'>
+                    <img src={sources[ind].src}/>
                     <CountUp style={{
                         color:'#D07348',
                         fontSize:55,
                         
-                    }} end={40} />
-                    <h4>Schools</h4>
+                    }} end={st.count} />
+                    <h4>{st.name}</h4>
                    </div>
                 ))
-            } */}
+            }
          
 
 
-           <div className='mainCount'>
+           {/* <div className='mainCount'>
            <img src={require('../assets/schools.png')}/>
            <CountUp delay={2} style={{
                color:'#D07348',
@@ -106,7 +115,7 @@ export default function MyCount({stats=[]}) {
                
            }} end={2} />
            <h4>Units</h4>
-          </div>
+          </div> */}
           </Zoom>
         </StyledCount>
     )
