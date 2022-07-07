@@ -7,8 +7,8 @@ import AppContext from '../Context/app/appContext';
 import DepLink from '../components/DepLink';
 import Bg from '../assets/car2.jpg'
 const StyledContainer=styled.div`
-margin-top: 130px;
-padding: 20px;
+margin-top: 90px;
+
 
 .faculty-cont{
     min-height: 80vh;
@@ -171,13 +171,13 @@ and (max-device-width : 480px) {
 }
 
 .fac-head{
-    width:100%;
+    min-width:100%;
     height: 500px;
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 20px;
-    padding-left: 50px;
+    /* padding: 20px; */
+   
     h1{
         color: white;
         font-size:60px;

@@ -437,8 +437,8 @@ export default function DepartmentScreen() {
                         <img src={Bg} />
                         <div className='stfDepCon'>
                         <span className='stfH'>{stf.name}</span>
-                        <span>{stf.name}</span>
-                        <span>{stf.name}</span>
+                        <span>Senior Lecturer</span>
+                        <span>Medical Biochemistry</span>
                         </div>
                     </div>
                     

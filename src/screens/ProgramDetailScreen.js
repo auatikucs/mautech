@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 const StyledContainer=styled.div`
 width: 100%;
 min-height: 60vh;
-margin-top: 130px;
+margin-top: 110px;
 .programHead{
     min-height: 40vh;
     width: 100%;
@@ -22,7 +22,7 @@ margin-top: 130px;
     justify-content: flex-end;
     .progCoverHead{
     height:70px;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     h3{
         text-align: center;
@@ -98,6 +98,7 @@ export default function ProgramDetailScreen() {
     const [loading,setLoading]=useState(false)
     const {id,department}=useParams()
     const [value, setValue] = React.useState(0);
+    const [active,setActive]=useState(0)
 
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -158,20 +159,34 @@ export default function ProgramDetailScreen() {
             
 
                      <div className='btnSelect'>
-                     <Button onClick={()=>{
-            navigate(-1)
-        }} variant='contained' color='error'>UTME</Button>
-            <Button color='error' onClick={()=>{
-            navigate(-1)
+                     <Button color={active==1?'error':'inherit'} style={{
+                       backgroundColor:active==0?'#D07348':'white' 
+                     }} onClick={()=>{
+                        setActive(0)
+        }} variant='outlined'>UTME</Button>
+            <Button color={active==0?'error':'inherit'} style={{
+                       backgroundColor:active==1?'#D07348':'white' 
+                     }}  onClick={()=>{
+            setActive(1)
         }}  variant='outlined'>DE</Button>
            
                      </div>
             <div className='prgmainRe'>
             {progList[0].admissionRequirement.map((rq,ind)=>(
-                        <p key={ind}>✔{rq}</p>
+                        <p key={ind}>{rq}</p>
                     ))}
             </div>
-                   
+                 <div className='mainProgh2'>
+                        <span>Graduation Requirements</span>
+                    </div>
+                    {progList[0].graduationRequirement.map((rq,ind)=>(
+                        <>
+                        <p key={ind}>{rq}</p>
+                        <Button onClick={()=>{
+            console.log('0mm')
+        }} style={{backgroundColor:'rgba(186, 100, 56, 1)',margin:'auto',width:'50%'}} variant='contained'>Curriculums</Button>
+                        </>
+                    ))} 
           
                     
                     <div className='mainProgh2'>
@@ -182,29 +197,8 @@ export default function ProgramDetailScreen() {
                        progList[0].careerProspect
                    }
                     </p>
-                    <div className='mainProgh2'>
-                        <span>Graduation Requirements</span>
-                    </div>
-                    {progList[0].graduationRequirement.map((rq,ind)=>(
-                        <p key={ind}>✔{rq}</p>
-                    ))}
-                    <div className='mainProgh2'>
-                        <span>Programme Duration</span>
-                    </div>
-                    <p>
-                   {progList[0].programDuration}
-                    </p>
-                    <div className='mainProgh2'>
-                        <span>Schedule Of Fees</span>
-                    </div>
-                    <p>
-                    The Programme Duration for UTME Candidfate is 5years while 
-                    those who comes in through DE is  4yeras 
-                    </p>
-                    <div className='mainProgh2'>
-                        <span>Courseware/ Course Curriculumn</span>
-                    </div>
-                    <p>✔Course Curriculum from 100-500level</p>
+                   
+                   
                   </div>
                 )
             )

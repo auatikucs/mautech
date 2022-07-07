@@ -12,8 +12,8 @@ const Main = () => {
     },[])
     return ( 
         
-        <div className="Main-Container">
-            <div className="Main-Display-Image" styles={{ backgroundImage:`url(${student})` },{opacity:0.2}}>
+        <div style={{marginTop:110}} className="Main-Container">
+            <div className="Main-Display-Image" styles={{ backgroundImage:`url(${student})` ,opacity:0.2}}>
                <h1>Undergraduate Programmes</h1>
                <p>
                    Commited to producing world class graduate through quality <br></br>research
@@ -66,7 +66,7 @@ const Main = () => {
                 </div>
                
             </div>
-            <h4 className='Expand-Row'>click to expand more</h4>
+            <h4 className='Expand-Row'>More....</h4>
             <div className='Apply_section'>
                 <h1>How to Apply</h1>
                 <div>

@@ -26,7 +26,7 @@ const Footer = () => {
                     <div> <Link to='/'>Centres</Link></div>
                     <div> <Link to='/'>Schools</Link></div>
                     <div> <Link to='/'>Unit </Link></div>
-                    <div> <Link to='/'>R and D </Link></div>
+                    <div> <Link to='/'>CENRAD</Link></div>
                   
                   </nav>
                </div>
@@ -34,7 +34,7 @@ const Footer = () => {
                   <h4>Contact Info</h4>
                   <nav>
                     <div> <p>Modibbo Adama University 
-                    Yola, <br></br>PMB 2435 Yola, Adamawa State </p> </div>
+                    Yola, <br></br>PMB 2076 Yola, Adamawa State </p> </div>
                     <div> <Link to='/'>info@mau.edu.ng </Link></div>
                     <div> <Link to='/'>09033333333</Link></div>
                     <div>
