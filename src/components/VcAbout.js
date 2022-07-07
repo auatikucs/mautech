@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Registrar from '../assets/Registrar.jpeg';
 import dvc_Academics from '../assets/dvc_Academics.jpeg';
 import dvc_Admin from '../assets/dvc_Admin.jpeg';
+import bur from '../assets/bur.jpeg';
+import libb from '../assets/libb.jpeg';
 import avatar from '../assets/avatar.png';
 import { Fade,Zoom,Bounce,Reveal } from 'react-awesome-reveal';
 import { useNavigate } from 'react-router';
@@ -125,7 +127,7 @@ bottom: 0;
 margin-bottom: 140px;
 margin-left: 250px;
 animation: scaleStroke 2s 1 forwards;
-animation-delay: 4s;
+animation-delay: 3s;
 }
 .others001.dvc1{
 right: 0;
@@ -133,13 +135,13 @@ bottom: 0;
 margin-right: 250px;
 margin-bottom: 140px;
 animation: scaleStroke 2s 1 forwards;
-animation-delay: 5s;
+animation-delay: 3s;
 }
 .others001.dvc2{
 animation: scaleStroke 6s 1 forwards;
 bottom: 0;
 margin-bottom: 50px;
-animation-delay: 7s;
+animation-delay: 5s;
 
 
 }
@@ -217,7 +219,7 @@ animation: scaleStroke 2s 1 forwards;
 export default function VcAbout() {
     const route=useNavigate()
     return (
-        <Fade triggerOnce fraction={0.7}>
+        <Fade triggerOnce fraction={0.5}>
         <StyledVc>
        
         <div onClick={()=>{
@@ -266,7 +268,7 @@ export default function VcAbout() {
 
         <div className='others001 dvc1'>
         <img 
-        src={avatar} 
+        src={bur} 
         alt='img'/> 
         <span>Alh Ismail Umar</span>
         <span>Bursar</span>
@@ -275,7 +277,7 @@ export default function VcAbout() {
 
         <div className='others001 dvc2'>
         <img 
-        src='https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png' 
+        src={libb} 
         alt='img'/> 
         <span>Dr. Tukur Abba</span>
         <span>Librarian</span>
