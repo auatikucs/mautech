@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 import Chat from '../components/Chat';
 import Vc from '../assets/mau_pic_footer.jpg'
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
@@ -77,6 +78,10 @@ transition: all 1s;
             width: 50%;
             height: 60vh;
             padding: 10px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
             p{
                 text-align: justify;
                 font-size: 20px;
@@ -382,7 +387,9 @@ export default function HomeScreen() {
                                 ))
                             )
                         }
-                    <p>View All Events</p>
+                    <p>
+                        <Link to='allevents'>View All Events</Link>
+                    </p>
                     </List>
                 </div>
             </div>

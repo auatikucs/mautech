@@ -5,9 +5,7 @@ import styled from 'styled-components'
 
 const StyledContainer=styled.div`
 width: 380px;
-
 height: 220px;
-background-color: white;
 position: fixed;
 bottom: 0;
 right: 0;
@@ -21,6 +19,8 @@ border-top-left-radius: 10px;
 margin-bottom: 30px;
 margin-right: 30px;
 justify-content: flex-start;
+box-shadow:0px 0px 2px rgba(0,0,0,0.5);
+
 img{
     width: 100px;
     height: 100px;
@@ -28,7 +28,7 @@ img{
     margin-left: 20px;
 }
 .txtCh{
-    transform: translateY(-70px);
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,9 +37,13 @@ img{
 .chatSt{
 min-height:24px;
 min-width: 100%;
-background-color:rgba(158, 58, 58, 1);
+/* background-color:rgba(158, 58, 58, 1); */
 border-top-right-radius: 10px;
 border-top-left-radius: 10px;
+
+background-color:transparent;
+
+
 }
 h2{
     line-height: 3px;
@@ -61,20 +65,20 @@ export default function Chat() {
     }, 5000);
     },[])
     return (
-        <StyledContainer  className={hide}>
+        <StyledContainer   className={hide} style={{backgroundColor:hide?'rgba(64, 0, 0, 0.8)':'white'}}>
         <div onClick={()=>{
             setHide('')
         }} className='chatSt'></div>
-        <img  onClick={()=>{
-            setHide('')
-        }} src={require('../assets/mau.png')}/>
+        
         <div className='txtCh'>
         <h2>Chat With Us</h2>
         {/* <p>How can we Help ? were here for you !</p> */}
-        <TextField style={{width:'90%'}} label='Type Message'/>
+        <TextField onClick={()=>{
+            setHide('')
+        }}  style={{width:'90%',marginTop:20}} label='Type Message'/>
         <CancelOutlined onClick={()=>{
             setHide('chatHide')
-        }} style={{fontSize:30,cursor:'pointer'}}/>
+        }} style={{fontSize:30,cursor:'pointer',marginTop:10}}/>
         </div>
         
             

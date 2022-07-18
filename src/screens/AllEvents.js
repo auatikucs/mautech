@@ -25,12 +25,9 @@ p{
     width: 80%;
     text-align: justify;
 }
-.evLinks{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    .eveDonl{
+.eveDonl{
     display: flex;
-    width: 100%;
+    width: 50%;
     justify-content: center;
     align-items: center;
     p{
@@ -40,16 +37,9 @@ p{
         font-weight: bold;
     }
 }
-img{
-    height:400px;
-    width:400px;
-}
-}
-
 .univCal{
     min-height: 60vh;
     width: 100%;
-    margin-top: 30px;
     background-color:transparent;
     padding: 20px;
     display: flex;
@@ -85,7 +75,7 @@ img{
 }
 .eveHead2{
     height: 50px;
-    width:100%;
+    width:95%;
     background-color: rgba(160, 50, 50, 0.1);
     display: flex;
     justify-content: center;
@@ -105,7 +95,7 @@ img{
     padding: 20px;
 }
 `;
-export default function Events() {
+export default function AllEvents() {
     useEffect(()=>{
         window.scrollTo({
             top:0,
@@ -114,34 +104,49 @@ export default function Events() {
     },[])
     return (
         <StyledContainer>
-           <div className='eveHead'>
-               <h2>Registration to commence on 23rd, May 2022</h2>
+        <div className='univCal'>
+            <div className='theCal'>
+            <h2>Calender</h2>
+            <Calendar/>
+            </div>
+            <div className='theDet'>
+            <div className='eveHead2'>
+               <h2>University Upcoming Events</h2>
             </div> 
-            <p>
-               The Registration for new student both UTME and DE will commence 
-               this week student are therefore advise to follow all procedures 
-               and do their registration themselves to avoid being defraud 
-            </p>
-        
-        <div className='evLinks'>
-        <div className='allLink'>
-        <div className='eveDonl'>
-                <p>Registration Procedures</p>
-                <span>Click To Download</span>
-            </div>
-            <div className='eveDonl'>
-                <p>Schedule of Fees</p>
-                <span>Click To Download</span>
-            </div>
-        </div>
-
-
-        <img src={require('../assets/cal3.png')} alt='cal'/>
-        </div>
-           
             
-    
-       
+            <div className='detMainEv'>
+            <div className='det1st'>
+            <span className='labHead'>Senate General Conference and Key Notes </span>
+            <span className='labDt'>22nd, May 2022</span>
+            </div>
+            <span>Multi Purpose Hall </span>
+            </div>
+
+
+            <div className='detMainEv'>
+            <div className='det1st'>
+            <span className='labHead'>Senate General Conference and Key Notes </span>
+            <span className='labDt'>22nd, May 2022</span>
+            </div>
+            <span>Multi Purpose Hall </span>
+            </div>
+
+            <div className='detMainEv'>
+            <div className='det1st'>
+            <span className='labHead'>Senate General Conference and Key Notes </span>
+            <span className='labDt'>22nd, May 2022</span>
+            </div>
+            <span>Multi Purpose Hall </span>
+            </div>
+            </div>
+        </div>
+        <div className='eveHead2'>
+               <h2>University Past Events</h2>
+         </div> 
+         <div className='pastEv'>
+        <MyNews news='Registration for 2022/2023 will commence on Monday 23rd March 2022'/>
+        <MyNews news='Registration for 2022/2023 will commence on Monday 23rd March 2022'/>
+         </div>
         </StyledContainer>
     )
 }

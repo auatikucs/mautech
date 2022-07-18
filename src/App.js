@@ -20,6 +20,9 @@ import UnderGraduate from './screens/UnderGraduate'
 import Principal from './screens/Principal';
 import Intervention from './screens/Intervention';
 import Facilities from './screens/Facilities';
+import Careers from './screens/Careers';
+import AllEvents from './screens/AllEvents';
+import Downloads from './screens/Downloads';
 
 function App() {
   return (
@@ -42,6 +45,9 @@ function App() {
     <Route path='/pricipal/:id' element={<Principal/>}/>
     <Route path='/intervention' element={<Intervention/>}/>
     <Route path='/facility/:id' element={<Facilities/>}/>
+    <Route path='/careers' element={<Careers/>}/>
+    <Route exact path='/allevents' element={<AllEvents/>}/>
+    <Route path='/downloads' element={<Downloads/>}/>
     </Routes>
     <Footer/>
    

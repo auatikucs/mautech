@@ -41,7 +41,7 @@ export default function MyCount({stats=[]}) {
         {src:require('../assets/sch.gif')},
         {src:require('../assets/cen.gif')} ,
         {src:require('../assets/uni.gif')} ,
-        {src:require('../assets/pr.gif')} 
+        {src:require('../assets/prr.gif')} 
         
     ]
     return (

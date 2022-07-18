@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import MyLinks from './MyLinks';
 
 const StyledContainer=styled.div`
-min-height: 90vh;
+min-height: 70vh;
+max-height:70vh;
 width: 100%;
 background-color:white;
 display: grid;
@@ -47,6 +48,9 @@ and (max-device-width : 480px) {
     align-items: center; 
     }
 }
+.vMoree{
+    margin-top:auto;
+}
 `;
 export default function OnlineLinks() {
     return (
@@ -59,6 +63,10 @@ export default function OnlineLinks() {
                  <MyLinks link='2021/2022 Registration Procedures Download'/>
                  <MyLinks link='Senate Approved 2021/2022 Academic Calender Download'/>
                  <MyLinks link='Registration for 2022/2023 will commence on Monday 23rd March 2022'/>
+                 <div className='vMoree'>
+                 <MyLinks link='View More'/>
+                 </div>
+                 
                
            </div>
             <div className='onlineLinks'>
@@ -73,6 +81,7 @@ export default function OnlineLinks() {
                  <MyLinks link='Student Portal(undergradute) '/>
                  <MyLinks link='Postgradute Portal '/>
                  <MyLinks link='Staff Portal'/>
+                 <MyLinks link='View More'/>
             </div>
         </StyledContainer>
         </Fade>
