@@ -23,6 +23,9 @@ import Facilities from './screens/Facilities';
 import Careers from './screens/Careers';
 import AllEvents from './screens/AllEvents';
 import Downloads from './screens/Downloads';
+import Alumni from './screens/Alumni';
+import GalleryScreen from './screens/GalleryScreen';
+import Oer from './screens/Oer';
 
 function App() {
   return (
@@ -48,6 +51,9 @@ function App() {
     <Route path='/careers' element={<Careers/>}/>
     <Route exact path='/allevents' element={<AllEvents/>}/>
     <Route path='/downloads' element={<Downloads/>}/>
+    <Route path='/alumni' element={<Alumni/>}/>
+    <Route path='/gallery' element={<GalleryScreen/>}/>
+    <Route path='/oer' element={<Oer/>}/>
     </Routes>
     <Footer/>
    

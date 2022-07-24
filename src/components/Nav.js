@@ -311,10 +311,10 @@ const [hide,setHide]=useState('')
             <ul className='myFavList'>
                 <li><Link to='/downloads'>Downloads</Link> </li>
                 <li><Link to='/careers'>Careers</Link> </li>
-                <li><a href='#'>Alumni</a></li>
-                <li><a href='#'>Gallery</a></li>
+                <li><Link to='/alumni'>Alumni</Link> </li>
+                <li><Link to='/gallery'>Gallery</Link> </li>
                 <li><a href='#'>R&D</a></li>
-                <li><a href='#'>OER</a></li>
+                <li><Link to='/oer'>OER</Link> </li>
                 <li><a href='#'>Login</a></li>
             </ul>
           </div>
