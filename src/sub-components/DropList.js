@@ -63,7 +63,7 @@ export default function DropList({link='',route=''}) {
                 <a href='#' style={{
                     borderBottom:myParams.pathname.includes(`/department`)?'5px solid #D07348':null
                 }}>{link}Academics</a>
-                {/* <div className='content'>
+                <div className='content'>
                <List>
                    {
                        loading&&(
@@ -93,7 +93,7 @@ export default function DropList({link='',route=''}) {
 
             
                </List>
-                </div> */}
+                </div>
                 
             </StyledLi>
  

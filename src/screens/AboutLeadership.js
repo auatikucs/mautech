@@ -1,9 +1,5 @@
 import vc from '../assets/vc.jpg'
 import proChancellor from '../assets/proChancellor.jpeg';
-import Registrar from '../assets/Registrar.jpeg';
-import dvc_Academics from '../assets/dvc_Academics.jpeg';
-import dvc_Admin from '../assets/dvc_Admin.jpeg';
-import avatar from '../assets/avatar.png';
 import Oba from '../assets/Oba.jpg';
 import { useEffect } from 'react';
 import VcAbout from '../components/VcAbout';

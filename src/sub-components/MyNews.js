@@ -32,11 +32,12 @@ cursor: pointer;
     padding: 10px;
 }
 `;
-export default function MyNews({news=''}) {
+export default function MyNews({news='',id,prog}) {
     const navigate=useNavigate()
     return (
         <StyledContainer  onClick={()=>{
-            navigate('events/001')
+            navigate(`events/${id}`)
+            console.log(prog)
             }}>
         <div className='date'>
         <span>01</span>

@@ -1,9 +1,10 @@
 import { Divider } from '@mui/material';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import MyNews from '../sub-components/MyNews';
+import {useParams} from 'react-router'
 const StyledContainer=styled.div`
 min-height: 70vh;
 width: 100%;
@@ -106,7 +107,16 @@ img{
 }
 `;
 export default function Events() {
+    const {id}=useParams()
+    const [news,setNews]=useState(null)
     useEffect(()=>{
+    fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-program-event?eventId=${id}`)
+    .then(res=>{
+        res.json()
+        .then(data=>{
+          setNews(data.result)
+        })
+    })
         window.scrollTo({
             top:0,
             behavior: 'smooth',
@@ -115,24 +125,30 @@ export default function Events() {
     return (
         <StyledContainer>
            <div className='eveHead'>
-               <h2>Registration to commence on 23rd, May 2022</h2>
+               <h2>{news==null?"":`${news.header} || ${news.dayOfEvent}`}</h2>
             </div> 
             <p>
-               The Registration for new student both UTME and DE will commence 
-               this week student are therefore advise to follow all procedures 
-               and do their registration themselves to avoid being defraud 
+               {
+                news==null?"":news.description
+               }
             </p>
         
         <div className='evLinks'>
         <div className='allLink'>
-        <div className='eveDonl'>
-                <p>Registration Procedures</p>
-                <span>Click To Download</span>
-            </div>
-            <div className='eveDonl'>
-                <p>Schedule of Fees</p>
-                <span>Click To Download</span>
-            </div>
+        {
+            news==null?null:
+            news.links.length>0&&(
+                news.links.map((link,ind)=>(
+                 <div className='eveDonl'>
+                    <p>{link.desc}</p>
+                    <a href={link.link} download>
+                    <span>Click To Download</span>
+                    </a>
+                </div>
+                ))
+            )
+        }
+       
         </div>
 
 

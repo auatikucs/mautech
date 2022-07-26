@@ -45,9 +45,6 @@ export default function MyDepList({title,content,requirements,list=[]}) {
           <h4>Admission Requirements</h4>
         </AccordionSummary>
         <AccordionDetails>
-          {/* <p>
-            {requirements}
-          </p> */}
          {
              list.map(reqLi=>(
                  <li key={reqLi}>{reqLi}</li>

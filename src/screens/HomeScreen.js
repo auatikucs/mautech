@@ -380,10 +380,13 @@ export default function HomeScreen() {
                         {
                             !isLoading&&
                             homeData.length > 0&&(
-                                homeData[0].programs.map((prg,ind)=>(
+                                homeData[0].programs.slice(0,7).map((prg,ind)=>(
                                     <MyNews
                                     key={ind}
-                                    news={prg.description}/>
+                                    news={prg.description}
+                                    id={prg.evntId}
+                                    
+                                    />
                                 ))
                             )
                         }
@@ -406,7 +409,7 @@ export default function HomeScreen() {
                 {
                     !isLoading&&
                     homeData.length > 0&&(
-                        homeData[0].newsEvents.map((nws,ind)=>(
+                        homeData[0].newsEvents.slice(0,2).map((nws,ind)=>(
                             <UniNews
                             key={ind}
                             image={nws.image}
@@ -421,7 +424,7 @@ export default function HomeScreen() {
                   {
                      !isLoading&&
                      homeData.length > 0&&(
-                         homeData[0].newsEvents.map((nws,ind)=>(
+                         homeData[0].newsEvents.slice(2,6).map((nws,ind)=>(
                             <div className='mainIndUp'>
                             <img alt='im' src={nws.image}/>
                             <div className='mainIdCon'>
