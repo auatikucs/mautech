@@ -150,7 +150,7 @@ export default function DropList({link='',route=''}) {
     dat.list.map((dt,ind)=>(
     <ListItemButton key={ind} onClick={()=>{
             //  myAppParam.loadData(dt.id)
-             navigate(`/department/${dt.detail.id}`)
+             navigate(`/department/${dt.detail.id}/${dat.name}`)
         
           }} style={{
         color:'white',

@@ -292,10 +292,10 @@ export default function DepartmentScreen() {
     const [department,setDep]=useState([])
     const navigate=useNavigate()
     const [loading,setLoading]=useState(false)
-    const {id}=useParams()
+    const {id,activity}=useParams()
     const loadData=(id)=>{
    
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}&activity=faculty`)
+        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}&activity=${activity}`)
         .then(res => {
             res.json()
                 .then(data => {
@@ -348,7 +348,7 @@ export default function DepartmentScreen() {
 
  <div className='depMission'>
    <h4>Welcome To {department[0].departmentName}</h4>
-     <p style={{color:'black'}}>{department[0].hod.introduction}</p>
+     <p style={{color:'black'}}>{department[0].hod==null?"":department[0].hod.introduction}</p>
      {/* {
          department[0].programs.length>0&&(
             department[0].programs.map(prg=>(
@@ -398,7 +398,7 @@ export default function DepartmentScreen() {
 <div className='depVis'>
     <h1>VISION</h1>
     <p>
-    {department[0].hod.vission}
+    {department[0].hod==null?"":department[0].hod.vission}
     </p>
 </div>
 

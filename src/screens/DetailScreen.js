@@ -193,19 +193,19 @@ and (max-device-width : 480px) {
 `;
 
 export default function DetailScreen() {
-    const {id}=useParams()
+    const {id,activity}=useParams()
     const [myId,setMyid]=useState()
     const [loading,setLoading]=useState(true)
     const [triger,setTriger]=useState([])
 
     const loadData=()=>{
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-faculty?eventId=${id}&activity=faculty&target=facultyId`)
+        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-faculty?eventId=${id}&activity=${activity}&target=${activity}Id`)
         .then(res => {
             res.json()
                 .then(data => {
                   setTriger([data.message])
                   setLoading(false)
-                  console.log([data.message])
+                  console.log(data,activity)
                 })
         }).catch(err=>{
             
@@ -249,7 +249,7 @@ export default function DetailScreen() {
                      backgroundPosition:'center'
                      
                  }} className='fac-head'>
-                   <h1>{triger[0].facultyName}</h1>
+                   <h1>{triger[0][`${activity}Name`]}</h1>
                    {/* <p>{triger[0].facultyDescription}</p> */}
                 </div>
                 <div className='faculty-cont'>
@@ -276,7 +276,7 @@ export default function DetailScreen() {
                  }} className='myDean'>
                          <div className='myDeanCont'>
                          <h2>{triger[0].dean.name}</h2>
-                         <h4>Dean {triger[0].facultyName}</h4>
+                         <h4>Dean {triger[0][`${activity}Name`]}</h4>
                          </div>
                            </div>
                             </>
@@ -285,8 +285,8 @@ export default function DetailScreen() {
                             
                         </div>
                         <div className='deanWelcome'>
-                            {/* <h3 style={{color:'black'}}>About {triger[0].facultyName}</h3> */}
-                            <p>{triger[0].facultyDescription} </p>
+                            {/* <h3 style={{color:'black'}}>About {triger[0][`${activity}Name`]}</h3> */}
+                            <p>{triger[0][`${activity}Description`]} </p>
                         </div>
                     </div>
                 </div>
@@ -297,8 +297,8 @@ export default function DetailScreen() {
                 }}>Departments</h3>
                 <div className='departmentList'>
                 {
-                    triger[0].departmentList.map(dep=>(
-                        <DepLink route={`/course/${dep.departmentId}`} key={dep.departmentId} link={dep.departmentName} id={dep.departmentId}/>
+                    triger[0][activity=='center'?'programList':'departmentList'].map(dep=>(
+                        <DepLink route={`/course/${dep.departmentId}/${activity}`} key={dep.departmentId} link={dep.departmentName} id={dep.departmentId}/>
                     ))
                 }
                 </div>

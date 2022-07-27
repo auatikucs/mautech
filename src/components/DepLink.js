@@ -5,7 +5,13 @@ import AppContext from '../Context/app/appContext'
 export default function DepLink({link='',route,id}) {
     const myAppParam=useContext(AppContext)
     const navigate=useNavigate()
-    const filtered=link.split('of')
+    let filtered=''
+    if (link.includes('of')) {
+        filtered=link.split('of')[1]
+    }else{
+        filtered=link
+    }
+    
     return (
      <div>
 <ListItemButton onClick={()=>{
@@ -23,7 +29,7 @@ navigate(route)
 }}  style={{
     color:'#D07348'
 }}>
-  <ListItemText primary={filtered[1]} />
+  <ListItemText primary={filtered} />
 </ListItemButton>
 <Divider style={{backgroundColor:'#D07348'}}/>
         </div>
