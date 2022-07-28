@@ -418,7 +418,7 @@ export default function DepartmentScreen() {
      department[0].programs.length>0&&(
         department[0].programs.map(prg=>(
           <li key={prg.name}>
-              <Link to={`/program/${prg.programId}/${department[0].departmentName}`}>{prg.name}</Link>
+              <Link to={`/program/${prg.programId}/${department[0].departmentName}/${activity}`}>{prg.name}</Link>
           </li> 
         ))
      )

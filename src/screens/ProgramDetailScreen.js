@@ -96,7 +96,7 @@ clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
 export default function ProgramDetailScreen() {
     const [progList,setList]=useState([])
     const [loading,setLoading]=useState(false)
-    const {id,department}=useParams()
+    const {id,department,activity}=useParams()
     const [value, setValue] = React.useState(0);
     const [active,setActive]=useState(0)
 
@@ -106,7 +106,7 @@ export default function ProgramDetailScreen() {
     const navigate=useNavigate()
     const loadData=(id)=>{
         setLoading(true)
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-program?programId=${id}&activity=faculty`)
+        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-program?programId=${id}&activity=${activity}`)
         .then(res => {
             res.json()
                 .then(data => {
