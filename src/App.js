@@ -26,6 +26,9 @@ import Downloads from './screens/Downloads';
 import Alumni from './screens/Alumni';
 import GalleryScreen from './screens/GalleryScreen';
 import Oer from './screens/Oer';
+import All_News from './screens/All_News';
+import DetailNews from './screens/Detail_News';
+import Admission from './screens/Admission';
 
 function App() {
   return (
@@ -37,23 +40,26 @@ function App() {
     <Route exact path='/program/:id/:department/:activity' element={<ProgramDetailScreen/>}/>
     <Route exact path='/department/:id/:activity' element={<DetailScreen/>}/>
     <Route exact path='/course/:id/:activity' element={<DepartmentScreen/>}/>
-    <Route exact path='/admissions' element={<CourseFinderScreen/>}/>
+    {/* <Route exact path='/admissions' element={<CourseFinderScreen/>}/> */}
     <Route exact path='/about' element={<AboutMau/>}/>
     <Route path='/leadership' element={<AboutMauLeadership/>}/>
     <Route exact path='/campus' element={<CampusScreen/>}/>
     <Route exact path='/portal' element={<PortalsScreen/>}/>
     <Route exact path='/staff/:id' element={<Staff/>}/>
     <Route exact path='/events/:id' element={<Events/>}/>
+    <Route exact path='/news/:id' element={<DetailNews/>}/>
     <Route path='/undergraduate' element={<UnderGraduate/>}/>
     <Route path='/pricipal/:id' element={<Principal/>}/>
     <Route path='/intervention' element={<Intervention/>}/>
     <Route path='/facility/:id' element={<Facilities/>}/>
     <Route path='/careers' element={<Careers/>}/>
     <Route exact path='/allevents' element={<AllEvents/>}/>
+    <Route exact path='/allnews' element={<All_News/>}/>
     <Route path='/downloads' element={<Downloads/>}/>
     <Route path='/alumni' element={<Alumni/>}/>
     <Route path='/gallery' element={<GalleryScreen/>}/>
     <Route path='/oer' element={<Oer/>}/>
+    <Route path='/admissions' element={<Admission/>}/>
     </Routes>
     <Footer/>
    

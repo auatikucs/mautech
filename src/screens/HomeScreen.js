@@ -415,6 +415,8 @@ export default function HomeScreen() {
                             image={nws.image}
                             heading={nws.header}
                             body={nws.description}
+                            link={`news/${nws.evntId}`}
+                           
                         />
                         ))
                     )
@@ -432,13 +434,16 @@ export default function HomeScreen() {
                                 {nws.header}
                                 </h4>
                                 <p>
-                                15, April 2022
+                               {nws.dateEntered}
                                 </p>
                             </div>
                           </div>
                          ))
                      )  
                   }
+                   <p>
+                        <Link to='allnews'>View All News</Link>
+                    </p>
               
               </div>
 

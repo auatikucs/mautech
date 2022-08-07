@@ -1,0 +1,97 @@
+.Admission_Background_Container{
+    /* display: none; */
+    margin-top: 0px;
+    padding-top: 0px;
+   background-size: cover;
+   text-align: center;
+   height: 300px;
+   margin-bottom: 20px;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+.Admission_Header_Title{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 130px;
+    color: white;
+    font-weight: bolder;
+    font-family: Montserrat,sans-serif;
+    text-align: center;
+}
+.Admission-Note{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+.hype{
+    padding-top: 120px;
+}
+.Admission-Cards{
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding: 20px;
+}
+.Admission-individual-title{
+    /* color: rgb(208, 115, 72); */
+    font-weight: bolder;
+    font-size: 22px;
+    padding-bottom: 0px;
+}
+.Admissions-content{
+    font-weight: lighter;
+    text-align: justify;
+}
+.Admission-Cards-Content{
+    border: 1px solid #ddd;
+    border-bottom: 2px solid rgb(208, 115, 72);;
+    padding: 10px;
+    /* height: fit-content; */
+}
+.Admission-Cards-Content p{
+    color: rgb(208, 115, 72);;
+}
+/* phone view of Admission Page  */
+@media screen and (max-width:650px){
+    .Admission-Cards{
+        margin: 0 auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 20px;
+    }
+    
+    .Admission_Header_Title{
+        font-size: 20px;
+        text-align: center;
+       padding: 30px;
+        color: white;
+        font-weight: bolder;
+        font-family: Montserrat,sans-serif;
+        text-align: center;
+    }
+    .Admission-Note{
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+       padding: 10px;
+        text-align: center;
+    }
+    
+}
+/* tablets view of the all admission page css starts here */
+@media screen and (max-width:963px){
+    .Admission-Cards{
+        margin: 0 auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        padding: 20px;
+    }
+}

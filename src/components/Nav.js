@@ -338,9 +338,18 @@ const [hide,setHide]=useState('')
                 <li>
                 <MainDrop/>
                 </li>
-                <li>
+
+                <li style={{
+                 backgroundColor:myParams.pathname=='/admission'?'#FFC53A':'transparent'
+                }}><Link style={{
+                    color:myParams.pathname=='/admission'?'white':'black',
+                    
+
+                }} to='/admissions'>Admissions</Link></li>
+               
+                {/* <li>
                     <AdmissionDrop/>
-                </li>
+                </li> */}
 
                 {/* <li><Link style={{
                     borderBottom:myParams.pathname=='/program'?'5px solid #D07348':null
