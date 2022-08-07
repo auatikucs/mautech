@@ -48,7 +48,6 @@ function App() {
     <Route exact path='/staff/:id' element={<Staff/>}/>
     <Route exact path='/events/:id' element={<Events/>}/>
     <Route exact path='/news/:id' element={<DetailNews/>}/>
-    <Route path='/undergraduate' element={<UnderGraduate/>}/>
     <Route path='/pricipal/:id' element={<Principal/>}/>
     <Route path='/intervention' element={<Intervention/>}/>
     <Route path='/facility/:id' element={<Facilities/>}/>
@@ -60,6 +59,7 @@ function App() {
     <Route path='/gallery' element={<GalleryScreen/>}/>
     <Route path='/oer' element={<Oer/>}/>
     <Route path='/admissions' element={<Admission/>}/>
+    <Route path='/admission/:id' element={<UnderGraduate/>}/>
     </Routes>
     <Footer/>
    

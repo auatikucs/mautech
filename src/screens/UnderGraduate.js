@@ -1,10 +1,26 @@
 import { Button } from "@mui/material";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate, useParams } from 'react-router';
 import student from '../assets/student.jpg';
 const Main = () => {
+    const [programs,setAllPrograms]=useState([])
+    const {id}=useParams()
+    const navigate=useNavigate()
+    const loadData=()=>{
+        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-all-programs`)
+        .then(res => {
+            res.json()
+                .then(data => {
+               setAllPrograms(data[`${id}`])
+
+                })
+        }).catch(err=>{
+            
+        })
+    }
     useEffect(()=>{
+        loadData()
         window.scrollTo({
             top:0,
             behavior: 'smooth',
@@ -14,7 +30,7 @@ const Main = () => {
         
         <div style={{marginTop:110}} className="Main-Container">
             <div className="Main-Display-Image" styles={{ backgroundImage:`url(${student})` ,opacity:0.2}}>
-               <h1>Undergraduate Programmes</h1>
+               <h1>{id} Programmes</h1>
                <p>
                    Commited to producing world class graduate through quality <br></br>research
                    and development in a glance 
@@ -34,34 +50,53 @@ const Main = () => {
                 <div>
                     <h1>A</h1>
                     <div className='Link-Wrapper'>
-                    <div> <Link to='/'>Animal Science </Link></div>
-                    <div> <Link to='/'>Architecture </Link></div>
-                    <div> <Link to='/'>Agric Economic and Extension</Link></div>
-                    <div> <Link to='/'>Animal Husbandary</Link></div>
-                    <div> <Link to='/'>Accounting </Link></div>
-                    <div> <Link to='/'>Animal range management </Link></div>
+                    {
+                        programs.length>0&&(
+                            programs.map((prg,ind)=>{
+                            if (!prg.name.startsWith('A')) {
+                               return null; 
+                            }
+                            return(
+                                <div key={prg.name}> <Link to={`/program/${prg.programId}/${prg.name}/${prg.activity}`}>{prg.name}</Link></div>
+                            )
+                            })
+                        )
+                    }
+                    
                     </div>
                 </div>
                 <div>
                     <h1>B</h1>
                     <div className='Link-Wrapper'>
-                    <div> <Link to='/'>Animal Science </Link></div>
-                    <div> <Link to='/'>Architecture </Link></div>
-                    <div> <Link to='/'>Agric Economic and Extension</Link></div>
-                    <div> <Link to='/'>Animal Husbandary</Link></div>
-                    <div> <Link to='/'>Accounting </Link></div>
-                    <div> <Link to='/'>Animal range management </Link></div>
+                    {
+                        programs.length>0&&(
+                            programs.map((prg,ind)=>{
+                            if (!prg.name.startsWith('B')) {
+                               return null; 
+                            }
+                            return(
+                                <div key={prg.name}> <Link to={`/program/${prg.programId}/${prg.name}/${prg.activity}`}>{prg.name}</Link></div>
+                            )
+                            })
+                        )
+                    }
                     </div>
                 </div>
                 <div>
                     <h1>C</h1>
                     <div className='Link-Wrapper'>
-                    <div> <Link to='/'>Animal Science </Link></div>
-                    <div> <Link to='/'>Architecture </Link></div>
-                    <div> <Link to='/'>Agric Economic and Extension</Link></div>
-                    <div> <Link to='/'>Animal Husbandary</Link></div>
-                    <div> <Link to='/'>Accounting </Link></div>
-                    <div> <Link to='/'>Animal range management </Link></div>
+                    {
+                        programs.length>0&&(
+                            programs.map((prg,ind)=>{
+                            if (!prg.name.startsWith('C')) {
+                               return null; 
+                            }
+                            return(
+                                <div key={prg.name}> <Link to={`/program/${prg.programId}/${prg.name}/${prg.activity}`}>{prg.name}</Link></div>
+                            )
+                            })
+                        )
+                    }
                     </div>
                 </div>
                

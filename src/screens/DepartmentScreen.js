@@ -244,7 +244,7 @@ h5{
     margin-bottom:20px;
     .progLIst{
         display:grid;
-        grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         grid-gap:10px;
         width:80%;
         margin-left:auto;
@@ -340,9 +340,8 @@ export default function DepartmentScreen() {
         <div className='hodImage'>
             <img src={`${department[0].hod.image}`} alt='HOD'/> 
             <span style={{color:'black'}}>{department[0].hod.name}</span>
-            <span style={{color:'black'}}>{department[0].hod.mail}</span>
             <span style={{color:'black'}}>Head Of Department</span>
-            <span className='linkVie'>View Profile</span>
+            <span className='linkVie'>{department[0].hod.mail}</span>
             {/* <h4>STAFF LIST</h4>
             {
                 department[0].staffList.length>0&&(
@@ -441,7 +440,7 @@ export default function DepartmentScreen() {
                     department[0].staffList.map(stf=>(
                
                  <div onClick={()=>{
-                    window.open('https://www.google.com', '_blank');
+                    window.open(`${stf.mail}`, '_blank');
                  }} className='depIndStaff'>
                         <img src={Bg} />
                         <div className='stfDepCon'>

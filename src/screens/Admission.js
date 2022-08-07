@@ -2,14 +2,16 @@ import './Admission.css';
 import Student_Gown from '../assets/matric.jpeg';
 import { ArrowForwardOutlined, ArrowRight } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 const Admission = () => {
     const [programs,setAllPrograms]=useState([])
+    const navigate=useNavigate()
     const loadData=()=>{
         fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-all-programs`)
         .then(res => {
             res.json()
                 .then(data => {
-                 console.log(data)
+                 setAllPrograms(Object.keys(data))
 
                 })
         }).catch(err=>{
@@ -37,11 +39,17 @@ const Admission = () => {
                 <div className='Admission-Cards'>
              {
                 programs.length>0&&(
-                    programs.map((program,ind)=>(
-                        <div key={ind} className='Admission-Cards-Content'>
+                    programs.map((program,ind)=>{
+                    if (program=='success') {
+                        return null
+                    }
+                    return(
+                        <div onClick={()=>{
+                            navigate(`/admission/${program}`)
+                        }} key={ind} className='Admission-Cards-Content'>
                 
                         <div className='Admission-Cards-Heading'>
-                                <span className='Admission-individual-title'>{}</span><br />
+                                <span className='Admission-individual-title'>{program}</span><br />
                                 <div style={{
                                     display:'flex',
                                     justifyContent:'space-between',
@@ -53,7 +61,8 @@ const Admission = () => {
                                 
                                </div>
                             </div>
-                    ))
+                    )
+                    })
                 )
              }
 
