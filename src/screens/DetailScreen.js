@@ -47,9 +47,18 @@ margin-top: 90px;
           height: 100px;
           width: 100%;
           background-color: rgba(0,0,0,0.7);
-          h2,h4{
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          span{
               color: white;
               text-align: center;
+              font-weight:bold;
+              width:100%;
+          }
+        .d3{
+           font-size:20px;
           }
           }
       }
@@ -58,10 +67,14 @@ margin-top: 90px;
       flex: 1;
       min-height: 100%;
       background-color:transparent;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       p{
           text-align: justify;
           margin-right: 20px;
           margin-left: 20px;
+          font-size:20px;
       }
       h3{
           text-align: center;
@@ -275,8 +288,9 @@ export default function DetailScreen() {
                      
                  }} className='myDean'>
                          <div className='myDeanCont'>
-                         <h2>{triger[0].dean.name}</h2>
-                         <h4>Dean {triger[0][`${activity}Name`]}</h4>
+                         <span className='1'>{triger[0].dean.name}</span>
+                         <span className='2'>{triger[0].dean.mail}</span>
+                         <span className='d3'>Dean {triger[0][`${activity}Name`]}</span>
                          </div>
                            </div>
                             </>

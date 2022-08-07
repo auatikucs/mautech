@@ -28,7 +28,7 @@ well Malam Tapaswi......... */
 }
 .H2-Container{
   color: white;
-  background-color: #D07348 ;
+  background-color:#D07348;
   padding: 10px;
 }
 .H2-Container h2{
@@ -44,6 +44,53 @@ h3{
 .H2-Container p{
     padding: 20px;
 }
+/* New Css for University Objective container */
+.New-Objective-Container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    margin: 0 auto;
+    width: 95%;
+    grid-gap: 30px;
+    /* background-color: whitesmoke; */
+}
+.Vision-Mission-Container-New{
+    /* background-color: #4ec46e;
+    color: white; */
+    /* border: 1px solid #dddd; */
+    padding: 10px;
+}
+.philo-cont{
+    line-height: 20px;
+    
+    /* text-align: justify; */
+}
+.Philosophy-Container-New{
+    /* background-color: #344ea3 ;
+    color: white; */
+    padding: 10px;
+    box-shadow: 5px 10px #f7f6f6;
+    /* border: 1px solid #ddd; */
+}
+.Objective-Container-New{
+    /* background-color: rgb(208, 115, 72);
+    color: white; */
+    padding: 10px;
+    /* border: 1px solid #ddd;
+     */
+     box-shadow: 5px 10px #f7f6f6;
+}
+.mission-border{
+    /* border: 1px solid #ddd; */
+    box-shadow: 5px 10px #f7f6f6;
+    margin-top :15px;
+    padding: 10px;
+}
+.vision-border{
+    /* border: 1px solid#ddd; */
+    padding: 10px;
+    box-shadow: 5px 10px #f7f6f6;
+
+}
 .University-Objectives-Container{
     display: grid;
     margin: 0 auto;
@@ -52,6 +99,58 @@ h3{
     padding: 20px;
     /* color: white; */
    
+}
+.Student-Info{
+    display: flex;
+    /* position: relative; */
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 35px;
+    
+}
+.Student-Display-photo{
+    position: absolute;
+    
+}
+.Student-Pic{
+    border-radius: 10%;
+}
+.Student-Content{
+    position: relative;
+    background-color: rgb(250, 249, 249);
+    padding: 10px;
+    padding-bottom: 0px;
+   /* margin-top: 10px; */
+    line-height: 30px;
+    height: fit-content;
+}
+.Qoute{
+    font-size: 50px;
+    font-weight: bolder;
+}
+/* alumni css info */
+.Alumni-Info{
+    display: flex;
+    /* position: relative; */
+    margin: 0 auto;
+    width: 95%;
+    margin-top: 35px;
+}
+.Alumni-Display-photo{
+    position: absolute;
+}
+.Alumni-Content{
+    position: relative;
+    background-color: rgb(250, 249, 249);
+    padding:10px;
+    padding-bottom: 0px;
+   /* margin-top: 10px; */
+    line-height: 30px;
+    height: fit-content;
+}
+.Qoute{
+    font-size: 50px;
+    font-weight: bolder;
 }
 .University-Objectiver-Container-Head{
     display: flex;
@@ -86,6 +185,7 @@ h3{
     opacity: 0.7;
     
 }
+
 .Objectives-Container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -132,14 +232,198 @@ dl{
     text-align: justify;
     padding: 10px;
 }
-
-
+/* Tablet view of aboutMau */
+@media screen and (max-width: 986px) {
+    h2{
+        font-size: 22px;
+    }
+    .New-Objective-Container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        width: 95%;
+        grid-gap: 30px;
+        /* background-color: whitesmoke; */
+    }
+    .Objective-Container-New{
+        display: grid;
+        grid-column: 1/3;
+    }
+    .Philosophy-Container-New{
+        display: grid;
+        grid-column: 1/3;
+    }
+    .Vision-Mission-Container-New{
+        display: grid;
+        grid-column: 1/3;
+    }
+    .Student-Info {
+        display: flex;
+        /* grid-template-columns: repeat(2, 1fr); */
+        margin: 0 auto;
+        width:90%;
+        /* border: 1px solid #ddd; */
+        border-radius: 9px;
+        background-color: whitesmoke;
+        margin-top: 35px;
+    }
+    .Student-Content{
+        position: relative;
+        background-color: rgb(250, 249, 249);
+        padding: 25px;
+        padding-bottom: 0px;
+       margin-top: 10px;
+        line-height: 20px;
+        height: fit-content;
+    }
+    .Alumni-Info {
+        display: flex;
+        /* grid-template-columns: repeat(2, 1fr); */
+        margin: 0 auto;
+        width:90%;
+        margin-top: 35px;
+    }
+    .Student-Display-photo{
+        /* position: absolute; */
+    }
+    .Student-Pic{
+        /* position: relative; */
+        border-radius: 50%;
+        width: 250px;
+        padding: 10px;
+        height: 250px;
+        /* border: 1px solid #ddd; */
+        /* margin-left: 50px; */
+     
+     
+    }
+}
+/* phone view of aboutMau CSS 
+starts here */
+@media screen and (max-width: 660px) {
+    body{
+        margin: 0 auto;
+        width: 100%;
+    }
+    .AboutMau-Container{
+        margin: 0 auto;
+        width: 100%;
+    }
+    h2{
+        font-size: 14px;
+    }
+    .New-Objective-Container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        width: 95%;
+        grid-gap: 30px;
+        /* background-color: whitesmoke; */
+    }
+    .Student-Info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        width:90%;
+        margin-top: 35px;
+    }
+    .Alumni-Info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        width:90%;
+        margin-top: 35px;
+    }
+    .Student-Display-Photo{
+       align-content: center;
+       justify-items: center;
+       align-self: center;
+    }
+    .Student-Pic{
+        /* position: relative; */
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ddd;
+        margin-left: 50px;
+        vertical-align: middle;
+     
+     
+    }
+    .Student-Content .Alumni-Content{
+        /* position: fixed; */
+       /* margin: 200px; */
+        /* position: relative; */
+        background-color: rgb(247, 246, 246);
+        line-height: 25px; 
+        /* font-size: 14px; */
+        text-align: justify;
+        /* padding: 35px; */
+        padding-bottom: 0px;
+       /* margin-top: 10px;
+        line-height: 30px; 
+        /* height: fit-content; */
+    }
+    .Qoute{
+        font-size: 50px;
+        font-weight: bolder;
+    }
+}
+/* Tablet view css  */
+/* @media screen and (min-width: 506px) {
+    .New-Objective-Container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        width: 98%;
+        grid-gap: 30px;
+       
+    }
+    .Student-Info {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin: 0 auto;
+        width:90%;
+        margin-top: 35px;
+    }
+    .Alumni-Info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        width:90%;
+        margin-top: 35px;
+    }
+    .Student-Display-photo{
+       
+    }
+    .Student-Pic{
+       
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ddd;
+        margin-left: 50px;
+     
+     
+    }
+    .Student-Content .Alumni-Content{
+       
+        background-color: rgb(247, 246, 246);
+        line-height: 25px; 
+      
+        text-align: justify;
+       
+        padding-bottom: 0px;
+       
+    }
+    .Qoute{
+        font-size: 50px;
+        font-weight: bolder;
+    }
+} */
 
 
 /* About Leadership css begins grom this site */
-.About-Leadership-Container{
-    margin-top: 110px;
-}
 .Chancellor-Container{
     margin-bottom: 80px;
     
@@ -154,7 +438,8 @@ dl{
     color: white;
 }
 .Governing_Council_New{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
 
@@ -184,11 +469,13 @@ dl{
     display: flex;
     /* background-color: antiquewhite; */
 }
+.Council_Members_List_container{
+    /* background-color: #ffbc3b; */
+}
 .Pro-Chancellor-Container p{
     padding-left: 20px;
     padding-right: 20px;
     line-height: 30px;
-    
     /* font-weight: lighter; */
 }
 .AboutLeadership-Title{
@@ -216,8 +503,8 @@ dl{
     padding: 10px;
     margin: 0 auto;
     /* width: 300px; */
-    margin-right: 20px;
-    margin-left: 20px;
+    /* margin-right: 20px; */
+    /* margin-left: 20px; */
    
     /* background-color: #D33232; */
 }
@@ -230,17 +517,70 @@ dl{
 }
 
 table{
-    width: 100%;
+    width: 90%;
     padding: 20px;
 }
 td {
     padding: 2px;
-    text-align: justify;
+    /* text-align: justify; */
     padding-left: 10px;
 }
 tr:nth-child(even){
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(237, 237, 237);
+    color: #202e03;
    
    
     
+}
+/* Tablet view of AbouLeadership */
+@media screen and (max-width: 986px) {
+    .Chancellor-pic{
+        width: 50%;
+        height: 200px;
+    }
+    .Governing_Council_New{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       
+       
+    }
+    .Pro-Chancellor-Img-Holder{
+        display: grid;
+        grid-column: 1/3;
+    }
+    .Council_Members_List_container{
+        display: grid;
+        grid-column: 1/3;
+        background-color: white;
+    }
+    table{
+        width: 98%;
+        font-size: 16px;
+    }.Management-Senate-Content span {
+        padding: 10px;
+        margin: 20px;
+        text-align: justify;
+        padding-right: 10px;
+    }
+}
+
+/* phone view of aboutLeadership starts here */
+@media screen and (max-width: 660px) {
+    .AboutLeadership-Title{
+        font-size: 23px;
+        padding: 5px;
+    }
+    .Chancellor-pic{
+        width: 80%;
+        height: 200px;
+    }
+    .Mau-Leadership-Container-Head{
+        display: flex;
+        /* background-image: url(../assets/mau_pic_footer.jpg); */
+        height: 20PX;
+        padding: 20px;
+        /* margin-bottom: 20px; */
+        background-color: whitesmoke;
+        color: #9F3B3A;
+    }
 }

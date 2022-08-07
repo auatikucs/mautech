@@ -9,6 +9,7 @@ import Bg from '../assets/domy.jpeg'
 import Car2 from '../assets/car2.jpg'
 import { Link,useNavigate, useParams} from 'react-router-dom';
 import Wave from 'react-wavify'
+import DepLink from '../components/DepLink';
 
 const StyledContainer=styled.div`
 margin-top: 110px;
@@ -69,7 +70,7 @@ h5{
     margin-top: 20px;
     min-height: 70vh;
     .hodImage{
-        height: 400px;
+        height: 460px;
         width: 462;
         background-color:white;
         display: flex;
@@ -79,7 +80,7 @@ h5{
         border: 1px solid rgba(217, 217, 217, 1);
        
         img{
-            height:330px;
+            height:350px;
             width: 430px;
            
         }
@@ -240,6 +241,15 @@ h5{
 
 .depProg{
     margin-top: 20px;
+    margin-bottom:20px;
+    .progLIst{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-gap:10px;
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+    }
 }
 .depStaff{
     min-height: 300px;
@@ -330,6 +340,7 @@ export default function DepartmentScreen() {
         <div className='hodImage'>
             <img src={`${department[0].hod.image}`} alt='HOD'/> 
             <span style={{color:'black'}}>{department[0].hod.name}</span>
+            <span style={{color:'black'}}>{department[0].hod.mail}</span>
             <span style={{color:'black'}}>Head Of Department</span>
             <span className='linkVie'>View Profile</span>
             {/* <h4>STAFF LIST</h4>
@@ -348,7 +359,7 @@ export default function DepartmentScreen() {
 
  <div className='depMission'>
    <h4>Welcome To {department[0].departmentName}</h4>
-     <p style={{color:'black'}}>{department[0].hod==null?"":department[0].hod.introduction}</p>
+     <p style={{color:'black'}}>{department[0].hod==null?"":department[0].introduction}</p>
      {/* {
          department[0].programs.length>0&&(
             department[0].programs.map(prg=>(
@@ -398,7 +409,7 @@ export default function DepartmentScreen() {
 <div className='depVis'>
     <h1>VISION</h1>
     <p>
-    {department[0].hod==null?"":department[0].hod.vission}
+    {department[0].hod==null?"":department[0].vission}
     </p>
 </div>
 
@@ -413,34 +424,33 @@ export default function DepartmentScreen() {
 
 <div className='depProg'>
 <h1>Programmes</h1>
-<ul>
+<div className='progLIst'>
 {
      department[0].programs.length>0&&(
         department[0].programs.map(prg=>(
-          <li key={prg.name}>
-              <Link to={`/program/${prg.programId}/${department[0].departmentName}/${activity}`}>{prg.name}</Link>
-          </li> 
+            <DepLink route={`/program/${prg.programId}/${department[0].departmentName}/${activity}`} key={prg.name} link={`${prg.honor} ${prg.name}`} id={prg.name}/>
         ))
      )
 }
-</ul>
+</div>
 </div>
 <h1 style={{marginTop:'10px'}}>Staff</h1>
 <div className='depStaff'>
 {
                 department[0].staffList.length>0&&(
                     department[0].staffList.map(stf=>(
-                
+               
                  <div onClick={()=>{
-                   navigate('/staff/01')
+                    window.open('https://www.google.com', '_blank');
                  }} className='depIndStaff'>
                         <img src={Bg} />
                         <div className='stfDepCon'>
                         <span className='stfH'>{stf.name}</span>
-                        <span>Senior Lecturer</span>
-                        <span>Medical Biochemistry</span>
+                        <span>{stf.rank}</span>
+                        <span>{stf.major}</span>
                         </div>
                     </div>
+                 
                     
                     ))
                 )

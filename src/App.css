@@ -162,7 +162,7 @@ body::-webkit-scrollbar-thumb{
   transform: translateX(220px);
     cursor: pointer;
     transform-origin: top;
-    bottom:-360px;
+    bottom:-430px;
     opacity: 1;
     z-index: 200px;
     

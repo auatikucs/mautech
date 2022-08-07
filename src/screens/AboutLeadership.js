@@ -1,11 +1,14 @@
 import vc from '../assets/vc.jpg'
+import mau_pic_footer from '../assets/mau_pic_footer.jpg';
 import proChancellor from '../assets/proChancellor.jpeg';
+import Registrar from '../assets/Registrar.jpeg';
+import dvc_Academics from '../assets/dvc_Academics.jpeg';
+import dvc_Admin from '../assets/dvc_Admin.jpeg';
+import bursar from '../assets/bur.jpeg';
+import avatar from '../assets/avatar.png';
 import Oba from '../assets/Oba.jpg';
 import { useEffect } from 'react';
 import VcAbout from '../components/VcAbout';
-import mau_pic_footer from '../assets/mau_pic_footer.jpg';
-
-
 
 const AboutLeadership = () => {
     useEffect(()=>{
@@ -15,8 +18,8 @@ const AboutLeadership = () => {
           })
     },[])
     return ( 
-        <div className='About-Leadership-Container'>
-        <div className='Mau-Leadership-Container-Head' styles={{ backgroundImage:`url(${mau_pic_footer})` }} >
+        <div style={{marginTop:110}} className='About-Leadership-Container'>
+           <div className='Mau-Leadership-Container-Head' styles={{ backgroundImage:`url(${mau_pic_footer})` }} >
                <div className='Header-Banner-Leadership'></div>
                <div><span className='AboutLeadership-Title'>MAU Leadership</span></div>
                {/* <p>The University administrative structure is composed of the Council, Senate, Management and other Committees. </p> */}
@@ -25,7 +28,7 @@ const AboutLeadership = () => {
            <div className='Chancellor-Container'>
               
                <div>
-                   <center> <div><img src={Oba} alt="" srcset="" width='500px' height='300px' /><br></br>
+                   <center> <div><img className='Chancellor-pic' src={Oba} alt="" srcset="" width='500px' height='300px' /><br></br>
                    <span>HRM Okuku (Dr.) Uwa Umoh Adiaka III,</span><br></br>
                    <span>JP. Paramount Ruler/Ekporikpo of Obot</span><br></br>
                    <span>Chancellor, Modibbo Adama University</span><br></br>
@@ -43,7 +46,14 @@ const AboutLeadership = () => {
                        is appointed by the Federal Government.</p>
                        <span className='Council-Members-Title'>Council Members</span>
                  </div>     
-                       <div className='Governing_Council_New'>
+                    <div className='Governing_Council_New'>
+                       <div className='Pro-Chancellor-Img-Holder'>
+               
+                            <img src={proChancellor} alt="" srcset="" height='350px' width='300px'/><br></br>
+                                <span>Alh, Bashir Mohammed Dalhatu</span><br></br>
+                                <span>Pro Chancellor and Chairman</span>
+                        </div>
+                        <div className='Council_Members_List_container'>
                            <table>
                                <tr>
                                    <td>Alh. Bashir Mohammed Dalhatu </td>
@@ -111,12 +121,7 @@ const AboutLeadership = () => {
                                    <td>Rep. Congregation on Council</td>
                                </tr>
                            </table>
-                           <div className='Pro-Chancellor-Img-Holder'>
-               
-                        <img src={proChancellor} alt="" srcset="" height='350px' width='300px'/><br></br>
-                         <span>Alh, Bashir Mohammed Dalhatu</span><br></br>
-                         <span>Pro Chancellor and Chairman</span>
-                        </div>
+                           </div>
                        </div>
                 
               
@@ -126,8 +131,15 @@ const AboutLeadership = () => {
            
           
            <div><h1 className='AboutLeadership-Title'>Principal Officers</h1></div>
+           <div >
+             
            <VcAbout/>
-        <div>
+               
+          
+           
+          
+        </div>
+        <div className='Management-Senate-Content'>
                {/* <h1 className='AboutLeadership-Title'>University Senate </h1> */}
                <p>Senate has the supreme authority on all academic matters of the University.  It is composed of the Vice-Chancellor, as Chairman, the Deputy Vice-Chancellors, Deans of Schools, all Professors, the University Librarian, Representative of Schools Boards and those appointed by the Vice-Chancellor in accordance with the University law.  </p>
 
@@ -137,9 +149,6 @@ const AboutLeadership = () => {
                <p>The University Management is composed of all principal Officers (Vice Chancellor, Deputy Vice Chancellor Admin, Deputy Vice Chancellor Academics, Registrar, Bursar and Librarian), deans and directors.</p>
 
            </div>
-
-
-
         </div>
      );
 }

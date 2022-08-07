@@ -42,6 +42,7 @@ margin-top: 110px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
+    background-color:white;
     .mainProgh2{
         height: 50px;
         border-bottom: 1px solid rgba(208, 115, 72, 1);
@@ -50,10 +51,24 @@ margin-top: 110px;
             font-size: 31px;
         }
     }
+    .rq{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    
+    span{
+        font-size:20px;
+        font-weight:bold;
+
+    }
     p{
+       margin-left:10px;
+    }
+}
+    /* p{
         text-align: justify;
         
-    }
+    } */
 }
 
 @media only screen 
@@ -87,7 +102,7 @@ clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
 }
 .prgmainRe{
     width: 100%;
-    background-color: #f9f9f9;
+    background-color:white;
     margin-top: 20px;
 }
 `;
@@ -111,6 +126,7 @@ export default function ProgramDetailScreen() {
             res.json()
                 .then(data => {
                     setLoading(false)
+                    console.log(data,"++++")
                     setList(data.message)
                 })
         }).catch(err=>{
@@ -142,7 +158,7 @@ export default function ProgramDetailScreen() {
                 <h1>{department}</h1>
             </div>
             <div className='progCoverHead'>
-           <h3>{progList[0].name}</h3>
+           <h3>{progList[0].honor} {progList[0].name}</h3>
             </div>
             </>
             )
@@ -158,33 +174,28 @@ export default function ProgramDetailScreen() {
                     </div>
             
 
-                     <div className='btnSelect'>
-                     <Button color={active==1?'error':'inherit'} style={{
-                       backgroundColor:active==0?'#D07348':'white' 
-                     }} onClick={()=>{
-                        setActive(0)
-        }} variant='outlined'>UTME</Button>
-            <Button color={active==0?'error':'inherit'} style={{
-                       backgroundColor:active==1?'#D07348':'white' 
-                     }}  onClick={()=>{
-            setActive(1)
-        }}  variant='outlined'>DE</Button>
-           
-                     </div>
+                  
             <div className='prgmainRe'>
-            {progList[0].admissionRequirement.map((rq,ind)=>(
-                        <p key={ind}>{rq}</p>
-                    ))}
+            {progList[0].admissionRequirement.map((rq,ind)=>{
+                if (rq.content==null) {
+                    return null
+                }
+                return(
+                    <div className='rq' key={ind}>
+                     <span>{rq.header.split('admissionRequirement')[1]}</span>
+                     <p>{rq.content}</p>
+                    </div>
+                    
+                )
+               }
+                    )}
             </div>
                  <div className='mainProgh2'>
                         <span>Graduation Requirements</span>
                     </div>
                     {progList[0].graduationRequirement.map((rq,ind)=>(
                         <>
-                        <p key={ind}>{rq}</p>
-                        <Button onClick={()=>{
-            console.log('0mm')
-        }} style={{backgroundColor:'rgba(186, 100, 56, 1)',margin:'auto',width:'50%'}} variant='contained'>Curriculums</Button>
+                        <p key={ind}>{rq} <a href='#'>View Curriculum</a></p>
                         </>
                     ))} 
           
