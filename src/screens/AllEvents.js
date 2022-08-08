@@ -1,9 +1,10 @@
 import { Divider } from '@mui/material';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import MyNews from '../sub-components/MyNews';
+import { useNavigate } from 'react-router';
 const StyledContainer=styled.div`
 min-height: 70vh;
 width: 100%;
@@ -96,7 +97,16 @@ p{
 }
 `;
 export default function AllEvents() {
+    const [allevents,setAllEvents]=useState([])
+    const navigate=useNavigate()
     useEffect(()=>{
+        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-home-event`)
+        .then(res=>{
+            res.json()
+            .then(data=>{
+              setAllEvents(data.message[0]['programs'])
+            })
+        })
         window.scrollTo({
             top:0,
             behavior: 'smooth',
@@ -113,31 +123,27 @@ export default function AllEvents() {
             <div className='eveHead2'>
                <h2>University Upcoming Events</h2>
             </div> 
-            
-            <div className='detMainEv'>
-            <div className='det1st'>
-            <span className='labHead'>Senate General Conference and Key Notes </span>
-            <span className='labDt'>22nd, May 2022</span>
-            </div>
-            <span>Multi Purpose Hall </span>
-            </div>
+            {
+                allevents.length>0&&(
+                    allevents.map((eve,ind)=>(
+                    <div style={{backgroundColor:'yellow'}} onClick={()=>{
+                    navigate(`events/${eve.evntId}`)
+                    }} key={ind} className='detMainEv'>
+                        <div className='det1st'>
+                        <span className='labHead'>{eve.description}</span>
+                        <span className='labDt'>{eve.dateEntered}</span>
+                        </div>
+                        <span>Powered By MAU</span>
+                     </div>
+                    ))
+                )
+            }
+           
 
 
-            <div className='detMainEv'>
-            <div className='det1st'>
-            <span className='labHead'>Senate General Conference and Key Notes </span>
-            <span className='labDt'>22nd, May 2022</span>
-            </div>
-            <span>Multi Purpose Hall </span>
-            </div>
+           
 
-            <div className='detMainEv'>
-            <div className='det1st'>
-            <span className='labHead'>Senate General Conference and Key Notes </span>
-            <span className='labDt'>22nd, May 2022</span>
-            </div>
-            <span>Multi Purpose Hall </span>
-            </div>
+           
             </div>
         </div>
         <div className='eveHead2'>

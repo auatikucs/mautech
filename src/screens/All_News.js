@@ -5,8 +5,10 @@ import fmc from '../assets/fmc.jpeg';
 import matric from '../assets/matric.jpeg';
 import  './Detail_News.css';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 const All_News = () => {
 const [allNews,setAllNews]=useState([])
+const navigate=useNavigate()
     useEffect(()=>{
         fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-home-event`)
         .then(res=>{
@@ -36,14 +38,14 @@ const [allNews,setAllNews]=useState([])
                     {
                         allNews.length>0&&(
                          allNews.map((news,ind)=>(
-                     <div key={ind} className='Other-News-Cards-Content'>
+                     <div onClick={()=>{
+                        navigate(`/news/${news.evntId}`)
+                     }} key={ind} className='Other-News-Cards-Content'>
                         <div className='Other-News-Cards-Img-Holder1'><img src={news.image} alt="News Image" srcset="" height='250px' width='100%' /></div>
                         <div className='Other-News-Cards-Heading'>
                         <span className='date-news'>{news.dateEntered}</span>
                         <p className='all-new-individual-title'>{news.header}</p><br />
-                        {/* <span className='all-news-content'>The Modibbo Adama University, Yola, has admitted 3,141 students for the 2020/2021 academic session.
-                             Vice Chancellor of the University, Prof Abdullahi Tukur, who disclosed this on Saturday, said the number falls short of the 4,755 n
-                             ew students that the University has capacity for.</span> */}
+
                         </div>
                     </div>
                          ))

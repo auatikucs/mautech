@@ -5,13 +5,19 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import MyNews from '../sub-components/MyNews';
 import {useParams} from 'react-router'
+import { Link } from 'react-router-dom';
 const StyledContainer=styled.div`
 min-height: 70vh;
-width: 100%;
+width: 90%;
 background-color:white;
 margin-top: 155px;
 padding: 20px;
-.eveHead{
+.evhCon{
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px;
+    .eveHead{
     height: 50px;
     width:60%;
     background-color: rgba(160, 50, 50, 0.1);
@@ -22,6 +28,8 @@ padding: 20px;
         color: rgba(160, 50, 50, 1);
     }
 }
+}
+
 p{
     width: 80%;
     text-align: justify;
@@ -124,9 +132,13 @@ export default function Events() {
     },[])
     return (
         <StyledContainer>
-           <div className='eveHead'>
-               <h2>{news==null?"":`${news.header} || ${news.dayOfEvent}`}</h2>
-            </div> 
+        <div className='evhCon'>
+        <div className='eveHead'>
+               <h2>{news==null?"":`${news.header} || ${news.dayOfEvent.slice(0,10)}`}</h2>
+        </div>
+        <Link style={{marginRight:30}} to='/allevents'>Link To All Events</Link>
+        </div>
+           
             <p>
                {
                 news==null?"":news.description

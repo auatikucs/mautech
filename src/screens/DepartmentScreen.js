@@ -443,7 +443,10 @@ export default function DepartmentScreen() {
                     department[0].staffList.map(stf=>(
                
                  <div onClick={()=>{
-                    window.open(`${stf.mail}`, '_blank');
+                    if (stf.email=='') {
+                    return
+                    }
+                    window.open(`${stf.email}`, '_blank');
                  }} className='depIndStaff'>
                         <img src={Bg} />
                         <div className='stfDepCon'>

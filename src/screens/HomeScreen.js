@@ -76,7 +76,7 @@ transition: all 1s;
 
         .the-msg{
             width: 50%;
-            height: 60vh;
+            height: 100%;
             padding: 10px;
             display:flex;
             flex-direction:column;
@@ -85,6 +85,7 @@ transition: all 1s;
             p{
                 text-align: justify;
                 font-size: 20px;
+                margin-right:20px;
                 
             
             }
