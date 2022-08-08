@@ -32,7 +32,7 @@ export default function DropPortal({link='',route=''}) {
     return (
             <StyledLi>
                 <a href='#' style={{
-                   backgroundColor:myParams.pathname.includes('leadership')||myParams.pathname.includes('about')?'#FFC53A':'transparent',
+                   backgroundColor:myParams.pathname.includes('leadership')||myParams.pathname.includes('about')?'black':'transparent',
                    color:myParams.pathname.includes('leadership')||myParams.pathname.includes('about')?'white':'black'
                 }}>{link}About</a>
                 <div className='content'>

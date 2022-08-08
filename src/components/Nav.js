@@ -326,9 +326,10 @@ const [hide,setHide]=useState('')
           <div className='sub-links'>
           <ul>
                 <li style={{
-                 backgroundColor:myParams.pathname=='/'?'#FFC53A':'transparent'
+                 backgroundColor:myParams.pathname=='/'?'black':'transparent',
                 }}><Link style={{
                     color:myParams.pathname=='/'?'white':'black',
+                    
                     
 
                 }} to='/'>Home</Link></li>
@@ -340,9 +341,9 @@ const [hide,setHide]=useState('')
                 </li>
 
                 <li style={{
-                 backgroundColor:myParams.pathname=='/admission'?'#FFC53A':'transparent'
+                 backgroundColor:myParams.pathname.includes('admission')?'black':'transparent'
                 }}><Link style={{
-                    color:myParams.pathname=='/admission'?'white':'black',
+                    color:myParams.pathname.includes('admission')?'white':'black',
                     
 
                 }} to='/admissions'>Admissions</Link></li>
@@ -372,7 +373,7 @@ const [hide,setHide]=useState('')
                 <DropPortal/>
                 </li>
                 <li style={{
-                 backgroundColor:myParams.pathname=='/campus'?'#FFC53A':'transparent'
+                 backgroundColor:myParams.pathname=='/campus'?'black':'transparent'
                 }}>
                 <Link to='/campus' style={{
                  color:myParams.pathname=='/campus'?'#FFFFFF':'black'
@@ -380,10 +381,10 @@ const [hide,setHide]=useState('')
                 </li>
 
                 <li style={{
-                 backgroundColor:myParams.pathname=='/intervention'?'#FFC53A':'transparent'
+                 backgroundColor:myParams.pathname.includes('interven')?'black':'transparent'
                 }}>
                 <Link style={{
-                 color:myParams.pathname=='/intervention'?'#FFFFFF':'black'
+                 color:myParams.pathname.includes('interven')?'#FFFFFF':'black'
                 }} to='/intervention'>Intervention</Link>
                 </li>
               

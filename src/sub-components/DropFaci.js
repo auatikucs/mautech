@@ -32,7 +32,8 @@ export default function DropFaci({link='',route=''}) {
     return (
             <StyledLi>
                 <a href='#' style={{
-                    borderBottom:myParams.pathname.includes(`/portal`)?'5px solid #D07348':null
+                    backgroundColor:myParams.pathname.includes(`/facility`)?'black':'transparent',
+                    color:myParams.pathname.includes(`/facility`)?'white':'black'
                 }}>{link}Facilities</a>
                 <div className='content'>
                <List>

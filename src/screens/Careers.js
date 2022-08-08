@@ -59,7 +59,7 @@ export default function Careers() {
     <StyledContainer>
 <div className='carWrite'>
   <span className='carHe'>
-  Join us at Salesforce.
+  Join us at MAU.
   </span>
   <span className='carBod'>
   We believe that business is the greatest platform for change — and that together, 

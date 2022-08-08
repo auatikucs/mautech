@@ -121,7 +121,8 @@ export default function DropList({link='',route=''}) {
     return (
             <StyledLi>
                 <a href='#' style={{
-                    borderBottom:myParams.pathname.includes(`/department`)?'5px solid #D07348':null
+                    backgroundColor:myParams.pathname.includes(`/department`)||myParams.pathname.includes(`/course`)||myParams.pathname.includes(`/program`)?'black':'transparent',
+                    color:myParams.pathname.includes(`/department`)||myParams.pathname.includes(`/course`)||myParams.pathname.includes(`/program`)?'white':'black'
                 }}>{link}Academics</a>
                 <div className='content'>
                <List>

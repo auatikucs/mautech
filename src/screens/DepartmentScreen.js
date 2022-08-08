@@ -80,7 +80,7 @@ h5{
         border: 1px solid rgba(217, 217, 217, 1);
        
         img{
-            height:350px;
+            height:370px;
             width: 430px;
            
         }
@@ -103,6 +103,8 @@ h5{
         flex: 1;
         background-color: white;
         position: relative;
+        justify-content:center;
+        align-items:center;
         .myBtn{
             display: flex;
             justify-content: space-around;
@@ -116,6 +118,7 @@ h5{
             text-align: justify;
             margin-left: auto;
             margin-right: auto;
+            font-size:20px;
             
         }
        
