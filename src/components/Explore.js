@@ -1,5 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react'
+import { useNavigate } from 'react-router';
 import styled from 'styled-components'
 import MyCard from '../sub-components/MyCard';
 const imgUrl=require('../assets/news1.jpg')
@@ -81,6 +82,7 @@ and (max-device-width : 480px) {
 
 `;
 export default function Explore() {
+  const navigate=useNavigate()
     return (
         <StyledExplore>
             <div className='mainHolder'>
@@ -93,12 +95,16 @@ export default function Explore() {
             </div>
 
             <div className='indHolder'>
-              <div className='holderLinks'>
+              <div onClick={()=>{
+                navigate('admission/undergraduate')
+              }} className='holderLinks'>
                 <h4>Undergraduate 
                Programmes</h4>
               </div>
 
-              <div className='holderLinks'>
+              <div onClick={()=>{
+                navigate('admission/postgraduate')
+              }} className='holderLinks'>
                 <h4>Post Graduate Programmes</h4>
               </div>
 
@@ -106,7 +112,9 @@ export default function Explore() {
                 <h4>Distance Learning Programmes</h4>
               </div>
 
-              <div className='holderLinks'>
+              <div onClick={()=>{
+                navigate('/admissions')
+              }} className='holderLinks'>
                 <h4>Others</h4>
               </div>
             </div>
