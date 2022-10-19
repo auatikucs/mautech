@@ -25,7 +25,8 @@ const DetailNews = () => {
     return ( 
         <div style={{
             marginTop:110,
-            width:'80%'
+            width:'80%',
+            position:'relative'
             }} className='Deatail-News-Container'>
 
         {
@@ -42,7 +43,7 @@ const DetailNews = () => {
         )
         }
             
-        <span onClick={()=>{
+        <span className='AllNews' onClick={()=>{
             navigate('/allnews')
         }} to='allnews'>
          All News   

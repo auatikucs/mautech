@@ -32,16 +32,17 @@ cursor: pointer;
     padding: 10px;
 }
 `;
-export default function MyNews({news='',id,prog}) {
+const month=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+export default function MyNews({news='',id,prog,date=null}) {
+    const myDate=new Date(date!=null?date:'')
     const navigate=useNavigate()
     return (
         <StyledContainer  onClick={()=>{
             navigate(`events/${id}`)
-            console.log(prog)
             }}>
         <div className='date'>
-        <span>01</span>
-        <span>MAY</span>
+        <span>{date!=null?myDate.getDate():''}</span>
+        <span>{date!=null?month[myDate.getMonth()]:''}</span>
         </div> 
         <div className='main'>
          <p>

@@ -136,7 +136,7 @@ export default function Events() {
         <div className='eveHead'>
                <h2>{news==null?"":`${news.header} || ${news.dayOfEvent.slice(0,10)}`}</h2>
         </div>
-        <Link style={{marginRight:30}} to='/allevents'>Link To All Events</Link>
+        <Link style={{marginRight:30}} to='/allevents'>All Events</Link>
         </div>
            
             <p>

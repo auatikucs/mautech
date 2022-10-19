@@ -99,6 +99,7 @@ p{
 export default function AllEvents() {
     const [allevents,setAllEvents]=useState([])
     const navigate=useNavigate()
+    const currentDate=new Date()
     useEffect(()=>{
         fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-home-event`)
         .then(res=>{
@@ -116,6 +117,7 @@ export default function AllEvents() {
         <StyledContainer>
         <div className='univCal'>
             <div className='theCal'>
+                {console.log(currentDate.getMonth(),new Date('2022-06-23T09:07:23.325Z').getMonth(),"curre")}
             <h2>Calender</h2>
             <Calendar/>
             </div>
@@ -125,17 +127,22 @@ export default function AllEvents() {
             </div> 
             {
                 allevents.length>0&&(
-                    allevents.map((eve,ind)=>(
-                    <div style={{backgroundColor:'yellow'}} onClick={()=>{
-                    navigate(`events/${eve.evntId}`)
-                    }} key={ind} className='detMainEv'>
-                        <div className='det1st'>
-                        <span className='labHead'>{eve.description}</span>
-                        <span className='labDt'>{eve.dateEntered}</span>
-                        </div>
-                        <span>Powered By MAU</span>
-                     </div>
-                    ))
+                    allevents.map((eve,ind)=>{
+                    if (currentDate.getTime()<(new Date(eve.dayOfEvent).getTime())) {
+                      return (
+                        <div style={{cursor:'pointer'}} onClick={()=>{
+                        navigate(`/events/${eve.evntId}`)
+                        }} key={ind} className='detMainEv'>
+                            {console.log('++doneee',eve)}
+                            <div className='det1st'>
+                            <span className='labHead'>{eve.description}</span>
+                            <span className='labDt'>{eve.dateEntered}</span>
+                            </div>
+                            <span>Powered By MAU</span>
+                         </div>
+                        )  
+                    }
+                   })
                 )
             }
            
@@ -150,8 +157,18 @@ export default function AllEvents() {
                <h2>University Past Events</h2>
          </div> 
          <div className='pastEv'>
-        <MyNews news='Registration for 2022/2023 will commence on Monday 23rd March 2022'/>
-        <MyNews news='Registration for 2022/2023 will commence on Monday 23rd March 2022'/>
+         {
+                allevents.length>0&&(
+                    allevents.map((eve,ind)=>{
+                    if (currentDate.getTime()>(new Date(eve.dayOfEvent).getTime())) {
+                      return (
+                        <MyNews date={eve.dayOfEvent} key={ind} news={eve.description}/>
+                        )  
+                    }
+                   })
+                )
+            }
+        
          </div>
         </StyledContainer>
     )

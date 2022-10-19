@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal';
 import styled from 'styled-components'
 import MyLinks from './MyLinks';
@@ -12,6 +12,7 @@ display: grid;
 grid-gap: 20px;
 grid-template-columns: 1fr 1fr;
 padding: 20px;
+margin-bottom:70px ;
 .onlineLinks{
 background-color:rgba(255, 197, 58, 0.3);
 width: 85%;
@@ -53,6 +54,16 @@ and (max-device-width : 480px) {
 }
 `;
 export default function OnlineLinks() {
+const [downlods,setDownlods]=useState([])
+    useEffect(()=>{
+        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-download-with-pagination?page=1&limit=10')
+        .then(res=>{
+            res.json()
+            .then(data=>{
+                setDownlods(data.result)
+            })
+        }) 
+    },[])
     return (
         <Fade triggerOnce>     
         <StyledContainer>
@@ -60,9 +71,16 @@ export default function OnlineLinks() {
            <div className='onlineDosHead'>
                 <h4>Quick  Download</h4>
                 </div>
-                 <MyLinks link='2021/2022 Registration Procedures Download'/>
+                {
+                    downlods.length>0&&(
+                        downlods.map((dl,ind)=>(
+                            <MyLinks key={ind} link={dl.downloadName}/>
+                        ))
+                    )
+                }
+                 {/* <MyLinks link='2021/2022 Registration Procedures Download'/>
                  <MyLinks link='Senate Approved 2021/2022 Academic Calender Download'/>
-                 <MyLinks link='Registration for 2022/2023 will commence on Monday 23rd March 2022'/>
+                 <MyLinks link='Registration for 2022/2023 will commence on Monday 23rd March 2022'/> */}
                  <div className='vMoree'>
                  <MyLinks link='View More'/>
                  </div>

@@ -47,6 +47,27 @@
     /* position: relative;
     margin-top: 192px; */
 }
+.AllNews{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 80px;
+    width: 100px;
+    height: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #333333;
+    transition: all 0.3s;
+    
+}
+.AllNews:hover{
+    opacity: 0.6;
+}
 
 .date-news{
     /* font-size: 12px; */

@@ -378,6 +378,7 @@ export default function HomeScreen() {
                     <img src={require('../assets/cal3.png')} alt='cal'/>
                     <List>
                     <h3>Upcoming/Ongoing School Events</h3>
+                    {console.log(homeData,'+_+_+_+')}
                         {
                             !isLoading&&
                             homeData.length > 0&&(
@@ -386,6 +387,7 @@ export default function HomeScreen() {
                                     key={ind}
                                     news={prg.description}
                                     id={prg.evntId}
+                                    date={prg.dayOfEvent}
                                     
                                     />
                                 ))
