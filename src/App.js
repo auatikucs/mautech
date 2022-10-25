@@ -29,6 +29,7 @@ import Oer from './screens/Oer';
 import All_News from './screens/All_News';
 import DetailNews from './screens/Detail_News';
 import Admission from './screens/Admission';
+import Portals from './screens/Portals';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
     <Route exact path='/about' element={<AboutMau/>}/>
     <Route path='/leadership' element={<AboutMauLeadership/>}/>
     <Route exact path='/campus' element={<CampusScreen/>}/>
-    <Route exact path='/portal' element={<PortalsScreen/>}/>
+    <Route exact path='/portals' element={<Portals/>}/>
     <Route exact path='/staff/:id' element={<Staff/>}/>
     <Route exact path='/events/:id' element={<Events/>}/>
     <Route exact path='/news/:id' element={<DetailNews/>}/>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal';
 import styled from 'styled-components'
+import HomeList from '../sub-components/HomeList';
 import MyLinks from './MyLinks';
 
 const StyledContainer=styled.div`
@@ -55,12 +56,22 @@ and (max-device-width : 480px) {
 `;
 export default function OnlineLinks() {
 const [downlods,setDownlods]=useState([])
+const [programs,setAllPrograms]=useState(null)
     useEffect(()=>{
-        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-download-with-pagination?page=1&limit=10')
+        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-download-with-pagination?page=1&limit=8')
         .then(res=>{
             res.json()
             .then(data=>{
                 setDownlods(data.result)
+                fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-all-portals-with-pagination?page=1&limit=8`)
+                .then(res => {
+                    res.json()
+                        .then(data => {
+                         setAllPrograms(data.result)
+                        })
+                }).catch(err=>{
+                    
+                })
             })
         }) 
     },[])
@@ -74,7 +85,7 @@ const [downlods,setDownlods]=useState([])
                 {
                     downlods.length>0&&(
                         downlods.map((dl,ind)=>(
-                            <MyLinks key={ind} link={dl.downloadName}/>
+                            <HomeList route={dl.downloadLink} key={ind} link={dl.downloadName}/>
                         ))
                     )
                 }
@@ -82,24 +93,23 @@ const [downlods,setDownlods]=useState([])
                  <MyLinks link='Senate Approved 2021/2022 Academic Calender Download'/>
                  <MyLinks link='Registration for 2022/2023 will commence on Monday 23rd March 2022'/> */}
                  <div className='vMoree'>
-                 <MyLinks link='View More'/>
+                 <HomeList id={'/downloads'} link='View More'/>
                  </div>
                  
                
            </div>
             <div className='onlineLinks'>
                 <div className='onlineLinsHead'>
-                <h4>Quick Links to Portal </h4>
+                <h4>Quick Links to Portal</h4>
                 </div>
-                 <MyLinks link='Undergraduate Applications '/>
-                 <MyLinks link='Post-graduate Applications '/>
-                 <MyLinks link='Diploma Applications'/>
-                 <MyLinks link='Distance Learning Application'/>
-                 <MyLinks link='Sandwich Applications'/>
-                 <MyLinks link='Student Portal(undergradute) '/>
-                 <MyLinks link='Postgradute Portal '/>
-                 <MyLinks link='Staff Portal'/>
-                 <MyLinks link='View More'/>
+               {
+               programs!=null&&(
+                programs.map((prog,ind)=>(
+                <HomeList route={prog.portalLinkValue} isLink={true} link={prog.portalName}/>   
+                ))
+               )
+               }
+                 <HomeList id={'/portals'} link='View More'/>
             </div>
         </StyledContainer>
         </Fade>
