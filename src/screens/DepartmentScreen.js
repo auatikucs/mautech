@@ -217,10 +217,11 @@ h5{
         width: 45%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        
         align-items: center;
         padding: 10px;
         z-index: 100;
+        
         h1{
             text-align: center;
             color: rgba(160, 50, 50, 1);
@@ -314,7 +315,7 @@ export default function DepartmentScreen() {
                 .then(data => {
                   setDep(data.message)
                   setLoading(false)
-                  console.log(data,"+++++++++")
+                
                 })
         }).catch(err=>{
             

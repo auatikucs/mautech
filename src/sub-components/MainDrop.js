@@ -41,7 +41,7 @@ flex-direction: column;
     opacity:0;
     right:0;
     z-index: 10px;
-    transition: all 0.05s;
+    transition: all 0.5s;
     transform: scale(0px);
     transform: translateX(1000px);
     cursor: pointer;

@@ -239,7 +239,7 @@ export default function VcAbout() {
         src={dvc_Academics} 
         alt='img'/> 
         <span>Prof Muhammad Inuwa Jaafaru</span>
-        <span>DVC Academics</span>
+        <span>DVC Administration</span>
         <div className='bgv'></div>
         </div>
         
@@ -249,7 +249,7 @@ export default function VcAbout() {
         src={dvc_Admin} 
         alt='img'/> 
         <span>Prof Muhammad Musa Malgwi</span>
-        <span>DVC Admins</span>
+        <span>DVC Academics</span>
         <div className='bgv'></div>
         </div>
 

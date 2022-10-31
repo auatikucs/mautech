@@ -53,8 +53,8 @@ margin-top: 110px;
     }
     .rq{
     display:flex;
-    flex-direction:row;
-    align-items:center;
+    flex-direction:column;
+    justify-content:center;
     
     span{
         font-size:20px;
@@ -182,7 +182,7 @@ export default function ProgramDetailScreen() {
                 }
                 return(
                     <div className='rq' key={ind}>
-                     <span>{rq.header.split('admissionRequirement')[1]}</span>
+                     <span>{rq.header.split('admissionRequirement')[1].toUpperCase()}</span>
                      <p>{rq.content}</p>
                     </div>
                     

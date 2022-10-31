@@ -381,5 +381,12 @@ dl{
   border: 1px solid black;
   height:70vh;
 }
+.deanWelcome{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 

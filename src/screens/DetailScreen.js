@@ -299,7 +299,7 @@ export default function DetailScreen() {
                             
                         </div>
                         <div className='deanWelcome'>
-                            {/* <h3 style={{color:'black'}}>About {triger[0][`${activity}Name`]}</h3> */}
+                            <h3 style={{color:'black'}}>Dean's welcome message</h3>
                             <p>{triger[0][`${activity}Description`]} </p>
                         </div>
                     </div>

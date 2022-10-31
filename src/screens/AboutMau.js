@@ -112,24 +112,25 @@ const AboutMau = () => {
                    <div className='Core-Values-Items'> 
                     <div>
                         <span className='Sub-Objective-Title'>Integrity</span><br></br>
-                        <span>maintaining the highest ethical standards in teaching, research, public engagement and service.</span>
+                        <span>➡maintaining the highest ethical standards in teaching, research, public engagement and service.</span>
                     </div>
                     <div>
                         <span className='Sub-Objective-Title'>Innovation</span><br></br>
-                        <span>encouraging, considering and supporting development of ideas by fostering individual ingenuity and creativity.</span>
+                        <span>➡encouraging, considering and supporting development of ideas by fostering individual ingenuity and creativity.</span>
                     </div>
                     <div>
                         <span className='Sub-Objective-Title'>Excellence</span><br></br>
-                        <span> pursuit of outstanding performance, abhorring mediocrity and promoting excellence in research, teaching and service through a merit-based recruitment and nurturing of staff and students.</span>
+                        <span>➡pursuit of outstanding performance, abhorring mediocrity and promoting excellence in research, teaching and service through a merit-based recruitment and nurturing of staff and students.</span>
                     </div>
                     <div>
                         <span className='Sub-Objective-Title'>Colloboration</span><br></br>
-                        <span> working toward common goals with other institutions, organizations and communities while valuing teamwork, participation and diversity of ideas and perspectives.</span>
+                        <span>➡working toward common goals with other institutions, organizations and communities while valuing teamwork, participation and diversity of ideas and perspectives.</span>
                     </div>
                     </div>
                 </div> 
             </div>
              </div>
+             <h2>TESTIMONIALS</h2>
              <div className='Student-Info'> 
                     <div className='Student-Display-Photo'>
                     <img className='Student-Pic' src={SUG} alt="" srcset="" height='200px' width='200px'/>

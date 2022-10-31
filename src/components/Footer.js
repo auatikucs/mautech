@@ -21,12 +21,11 @@ const Footer = () => {
                <div className="Footer-Content">
                   <h4>Quick Links</h4>
                   <nav className='footerNav'>
-                    <div> <Link to='/'>Faculties </Link></div>
-                    <div> <Link to='/'>Colleges </Link></div>
-                    <div> <Link to='/'>Centres</Link></div>
-                    <div> <Link to='/'>Schools</Link></div>
-                    <div> <Link to='/'>Unit </Link></div>
-                    <div> <Link to='/'>CENRAD</Link></div>
+                    <div> <Link to='/'>Admissions</Link></div>
+                    <div> <Link to='/'>Portals</Link></div>
+                    <div> <Link to='/'>Downloads</Link></div>
+                    <div> <Link to='/'>Careers</Link></div>
+                   
                   
                   </nav>
                </div>

@@ -16,7 +16,8 @@ well Malam Tapaswi......... */
 
 }
 .About-History-Container p{
-    padding: 15px;
+    padding: 20px;
+    padding-top:10px;
     line-height: 30px;
     text-align: justify;
 }
