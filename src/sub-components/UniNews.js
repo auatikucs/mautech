@@ -16,16 +16,11 @@ img{
    
 }
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    width:90%;
+and (max-width : 1060px){
+   width:100%;
+   margin:0px;
+   margin-top:20px;
 }
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    height: 70%;
-  }
 `;
 export default function UniNews({image,heading='',body='',link=''}) {
   const navigate=useNavigate()

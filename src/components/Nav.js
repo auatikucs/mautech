@@ -239,6 +239,7 @@ min-height:100px;
 max-height:100px;
 .logoGroup{
     .logo{
+    width:50%;
     .logo-head{
         h4{
             font-size: 14px;
@@ -247,7 +248,8 @@ max-height:100px;
         }
         p{
         font-size: 9px;
-        margin-left: 20px;
+        margin-left:0px;
+        text-align:center;
        
         }
     }
@@ -272,6 +274,34 @@ transform:scale(0);
 .phone-links{
     display: flex;
     align-items: center;
+}
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .logoGroup{
+  
+   width:100%;
+   height:100px;
+    .logo{
+    min-width:60%;
+    .logo-head{
+        h4{
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+            width:100%;
+        }
+       
+    }
+    img{
+    width: 65px;
+    height: 65px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+}
 }
 }
 `;

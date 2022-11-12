@@ -6,7 +6,6 @@ import MyLinks from './MyLinks';
 
 const StyledContainer=styled.div`
 min-height: 70vh;
-max-height:70vh;
 width: 100%;
 background-color:white;
 display: grid;
@@ -34,11 +33,6 @@ img{
     width: 100%;
     height: 100%;
 }
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    grid-template-columns: 1fr;
-}
 .downlaods{
     width: 85%;
     .onlineDosHead{
@@ -52,6 +46,19 @@ and (max-device-width : 480px) {
 }
 .vMoree{
     margin-top:auto;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    grid-template-columns: 1fr;
+    padding:5px;
+    margin-bottom:30px;
+    .onlineLinks{
+        width:95%;
+    }
+    .downlaods{
+        width:95%;
+    }
 }
 `;
 export default function OnlineLinks() {
@@ -80,7 +87,7 @@ const [programs,setAllPrograms]=useState(null)
         <StyledContainer>
            <div className='downlaods'>
            <div className='onlineDosHead'>
-                <h4>Quick  Download</h4>
+                <h4>Quick  Downloads</h4>
                 </div>
                 {
                     downlods.length>0&&(

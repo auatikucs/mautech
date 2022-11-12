@@ -2,6 +2,7 @@
   --x:0;
   --y:0;
 }
+
 @keyframes glow{
   0%{
     background-color: rgba( 64, 0, 0, 0.4 );
@@ -103,11 +104,13 @@ body::-webkit-scrollbar-thumb{
 .Footer-Section{
   background-image: url(./assets/mau_pic_footer.jpg);
   background-size: contain;
+  overflow: hidden;
 }
 .Footer-Container{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:1fr 1fr 1fr;
   position: relative;
+  
 }
 /* .Footer-Content{
   padding: 20px;
@@ -168,6 +171,7 @@ body::-webkit-scrollbar-thumb{
     
   
 }
+
 .lii:hover .content3{
   transform: scaleY(1);
   transform: translateX(220px);
@@ -177,6 +181,7 @@ body::-webkit-scrollbar-thumb{
     opacity: 1;
   
 }
+
 
 /* NEW LINE OF NIBRASS CSS */
 
@@ -390,3 +395,10 @@ dl{
 
 
 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .Footer-Container{
+    grid-template-columns:1fr;
+    
+  }
+}

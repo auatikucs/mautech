@@ -29,6 +29,10 @@ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 }
 @media only screen 
+and (max-width : 1060px){
+    grid-template-columns:1fr 1fr;
+}
+@media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
     grid-template-columns: 1fr;

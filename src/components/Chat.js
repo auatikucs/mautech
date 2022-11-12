@@ -56,6 +56,12 @@ p{
     text-align: center;
 
 }
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    width:280px;
+    height:200px;
+}
 `;
 export default function Chat() {
     const [hide,setHide]=useState('chatHide')

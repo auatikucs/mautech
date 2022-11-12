@@ -107,6 +107,11 @@ object-fit: cover;
     }
 }
 }
+.color-code{
+    .latex{
+        display:none;
+    }
+}
 `;
 export default function MyCarouselContent({image,heading='',subheading='',body=''}) {
     return (

@@ -16,6 +16,7 @@ import Modal from '@mui/material/Modal';
 import { useEffect, useState } from 'react';
 import Chat from '../components/Chat';
 import Vc from '../assets/mau_pic_footer.jpg'
+import Cal from '../assets/cal3.png';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 const MyContainer = styled.div`
@@ -33,7 +34,7 @@ transition: all 1s;
     overflow: hidden;
     .message{
         width: 100%;
-        height: 80vh;
+        min-height: 80vh;
         background:url(${Vc});
         background-position: center;
         background-size: cover;
@@ -43,10 +44,10 @@ transition: all 1s;
        
         .the-vc{
             width: 50%;
-            height: 70vh;
+            min-height:50vh;
             margin: auto;
             .vcImage{
-            height:70vh;
+            min-height:70vh;
             width: 85%;
             display: flex;
             flex-direction: column;
@@ -93,7 +94,7 @@ transition: all 1s;
     }
     .news{
         width: 100%;
-        height:60vh;
+        min-height:30vh;
         background-color:white;
         display:grid;
         grid-template-columns: 1fr 1fr;
@@ -110,7 +111,7 @@ transition: all 1s;
 }
 
 .uni-news{
-    height: 60vh;
+    min-height: 60vh;
     width: 100%;
    flex-direction: row;
     display: flex;
@@ -153,50 +154,190 @@ transition: all 1s;
 }
 
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+and (max-width : 1060px){
     margin-top: 100px;
-   
+   .myDivider{
+    .evDiv{
+        width:100%;
+    }
+   }
     .vc-message{
-        grid-template-columns: 1fr;
-        min-height: 80vh;
-
-        .message{
-            flex-direction:column;
-            .the-vc{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                img{
-                height: 80%;
-                width: 90%;
-
-              
-                }
-                h4{
-                    margin-top: 20px;
-                }
-            }
-            .the-msg{
+    min-height:60vh;
+    .message{
+       flex-direction:column;
+       min-height:70vh;
+       max-height:400vh;
+        .the-vc{
             width: 100%;
-            height: 100%;
-            h3{
-                margin-top: 100px;
+            min-height: 70vh;
+            margin: auto;
+            .vcImage{
+            width: 100%;
             }
-            p{
-                text-align: justify;
-                font-size: 15px;
-                margin-left: 10px;
-                margin-right: 10px;
+            img{
+                width:100%;
+                height:50vh;
+                
+            }
+            h4{
+               
+                width: 80%;
             }
         }
+
+        .the-msg{
+            width: 100%;
+            height: 100%;
+            p{
+                text-align: justify;
+                font-size: 20px;
+                margin-right:20px;
+                
+            
+            }
+        }
+    }
+    .news{
+        width: 100%;
+        min-height:100px;
+        display:grid;
+        grid-template-columns: 1fr;
+        max-height:50vh;
+       img{
+        display:none;
+       }
+        /* align-items: center;
+        margin-bottom: 40px; */
+        
+        h3{
+            color:#D07348;
+            text-align:center;
+            
+
+        }
+        .linkEv{
+            margin-left:30px;
         }
     }
 }
 
+.uni-news{
+    width: 90%;
+   flex-direction:column;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-gap:10px;
+    margin-bottom: 20px;
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+    .indUpdates{
+        width: 100%;
+        grid-column:1/3;
+        min-height: 200px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        padding:0px;
+        .mainIndUp{
+         display: flex;
+         flex-direction: row;
+         width: 95%;
+         min-height: 100px;
+         border-bottom: 1px solid lightgray;
+         margin-bottom: 10px;
+         padding: 0px;
+         img{
+             width: 100px;
+             height: 100px;
+             margin-right: 20px;
+         }
+         .mainIdCon{
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: flex-start;
+         h4{
+             line-height: 14px;
+         }
+         p{
+             line-height: 1px;
+         }
+         }
+        }
+    }
+}
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .vc-message{
+    min-height:60vh;
+    .message{
+     display:flex;
+       flex-direction:column;
+       min-height:50vh;
+        .the-vc{
+            width: 100%;
+            max-height:10vh;
+            margin: auto;
+            display:flex;
+           flex-direction:column;
+           min-height:50vh;
+            .vcImage{
+            width: 100%;
+            min-height:50vh;
+            max-height:50vh;
+            margin-top:5px;
+            margin-bottom:5px;
+            }
+           
+            h4{
+               
+                width: 100%;
+            }
+        }
 
+        .the-msg{
+            width: 100%;
+            margin-top:0px;
+            
+            p{
+                text-align: justify;
+                font-size: 20px;
+                margin-right:20px;
+                
+            
+            }
+        }
+    }
+    .news{
+        width: 100%;
+        min-height:100px;
+        display:grid;
+        grid-template-columns: 1fr;
+        max-height:50vh;
+       img{
+        display:none;
+       }
+        /* align-items: center;
+        margin-bottom: 40px; */
+        
+        h3{
+            color:#D07348;
+            text-align:center;
+            
+
+        }
+        .linkEv{
+            margin-left:30px;
+        }
+    }
+}
+}  
+
+`;
+/* 
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
@@ -241,7 +382,7 @@ and (max-device-width : 480px) {
           width: 20%;
       }
   }
-`;
+`; */
 
 export default function HomeScreen() {
     const [openModel, setModal] = useState(false)
@@ -378,7 +519,7 @@ export default function HomeScreen() {
                     <img src={require('../assets/cal3.png')} alt='cal'/>
                     <List>
                     <h3>Upcoming/Ongoing School Events</h3>
-                    {console.log(homeData,'+_+_+_+')}
+                    
                         {
                             !isLoading&&
                             homeData.length > 0&&(
@@ -393,7 +534,7 @@ export default function HomeScreen() {
                                 ))
                             )
                         }
-                    <p>
+                    <p className='linkEv'>
                         <Link to='allevents'>View All Events</Link>
                     </p>
                     </List>
@@ -405,7 +546,7 @@ export default function HomeScreen() {
     color: '#D07348',
     textAlign: 'center'
      }}>News & Updates</h2>
-            <Divider style={{ backgroundColor: '#D07348',width:'80%',height:5 }} />
+            <Divider className='evDiv' style={{ backgroundColor: '#D07348',width:'100%',height:5 }} />
             </div>
             
             <div className='uni-news'>

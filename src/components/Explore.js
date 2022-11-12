@@ -6,11 +6,10 @@ import MyCard from '../sub-components/MyCard';
 const imgUrl=require('../assets/news1.jpg')
 const imgUrl2=require('../assets/und.jpg')
 const StyledExplore=styled.div`
-min-height: 90vh;
+min-height: 80vh;
 background-color: white;
 width: 100%;
 margin-top: 20px;
-padding: 15px;
 display: flex;
 flex-direction: row;
 .indHolder{
@@ -67,14 +66,23 @@ p{
 }
 }
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+and (max-width : 1060px){
+  flex-direction:column;
+  min-height:60vh;
+  .indHolder{
+    min-width:100%;
+    max-width:100%;
+    min-height:30vh;
+  }
   h1{
     margin-right: 10px;
     margin-left: 10px;
     font-size: 40px;
   }
   .mainHolder{
+    min-width:100%;
+    max-width:100%;
+    min-height:50vh;
   grid-template-columns: 1fr;
   padding: 0px;
   }
