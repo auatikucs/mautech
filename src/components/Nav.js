@@ -1,10 +1,11 @@
-import { Button, Drawer, List } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Button, Drawer, List, Typography } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react'
 import ForwardIcon from '@mui/icons-material/ArrowForward'
 import DrawerIcon from '@mui/icons-material/MenuOutlined'
 import styled from 'styled-components'
 import MyList from '../sub-components/MyList';
 import  CancelOutlined from '@mui/icons-material/CancelOutlined';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {Link, useLocation, useParams} from 'react-router-dom'
 import DropList from '../sub-components/DropList';
 import DropPortal from '../sub-components/DropPortal';
@@ -12,6 +13,7 @@ import MainDrop from '../sub-components/MainDrop'
 import AboutDrop from '../sub-components/AboutDrop'
 import AdmissionDrop from '../sub-components/AdmissionDrop'
 import DropFaci from '../sub-components/DropFaci';
+import { loadAllFac } from '../helpers/loadAllFac';
 
 const MyNav=styled.nav`
 min-height:107px;
@@ -308,7 +310,7 @@ and (max-device-width : 480px) {
 
 const MobileLinks=styled.div`
 min-height: 100vh;
-min-width: 250px;
+min-width:100vw;
 background-color:#400000;
 a{
 text-decoration: none;
@@ -326,24 +328,24 @@ h4{
 `;
 export default function Nav() {
 const [hide,setHide]=useState('')
-    // useEffect(()=>{
-    // let prevScrollpos = window.pageYOffset;
-    // window.addEventListener('scroll',(e)=>{
-    //     let currentScrollPos = window.pageYOffset;
-    //     if (prevScrollpos > currentScrollPos) {
-    //         setHide('')
-    //       } else {
-    //         setHide('hide')
-    //       }
-    //       prevScrollpos = currentScrollPos;
-    // })
-    // },[])
+const [allUnits,setAllUnits]=useState([])
     const myParams=useLocation()
     const navRef=useRef()
     const [show, setShow] = useState('show')
     const [index,setIndex]=useState(1)
     const [isDrawerOpen,setIsDrawerOpen]=useState(false)
+    useEffect(()=>{
+        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-faculties-schools-college')
+        .then(res => {
+            res.json()
+                .then(data => {
+                console.log(data.message,"|||")
+                setAllUnits(data.message)  
+                })
+        }).catch(err=>{
     
+        })
+    },[])
 
     return (
         <MyNav className={`mynav ${hide}`}>
@@ -495,14 +497,53 @@ const [hide,setHide]=useState('')
              color:'white'
              
          }}/>
-          <h4>LINKS</h4>
+          <h4>MENU</h4>
           <List>
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/'><MyList title='Home'/></Link>
-               <Link onClick={()=>{
-                  setIsDrawerOpen(false)
-              }} to='/program'><MyList title='Academics'/></Link>
+            <Accordion>
+        <AccordionSummary
+          style={{backgroundColor:'#400000'}}
+          expandIcon={<ExpandMoreIcon style={{color:'#ffffff'}} />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography style={{color:'#ffffff'}}>Academics</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+           
+         {
+            allUnits.length>0&&(
+                allUnits.map((un,ind)=>(
+                    <Accordion key={ind.toString()}>
+                    <AccordionSummary
+                      style={{backgroundColor:'#400000'}}
+                      expandIcon={<ExpandMoreIcon style={{color:'#ffffff'}} />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography style={{color:'#ffffff'}}>{un.name}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        {
+                            un.list.map((sub,ind)=>(
+                                <Typography key={ind}>{sub.detail.name}</Typography>
+                            ))
+                        }
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                ))
+            )
+         }
+
+       
+
+
+        </AccordionDetails>
+      </Accordion>
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/admissions'><MyList title='Admissions'/></Link>
