@@ -70,9 +70,11 @@ and (max-width : 1060px){
   flex-direction:column;
   min-height:60vh;
   .indHolder{
-    min-width:100%;
-    max-width:100%;
+    min-width:95%;
+    max-width:95%;
     min-height:30vh;
+    margin-left:auto;
+    margin-right:auto;
   }
   h1{
     margin-right: 10px;
@@ -80,9 +82,11 @@ and (max-width : 1060px){
     font-size: 40px;
   }
   .mainHolder{
-    min-width:100%;
-    max-width:100%;
+    min-width:95%;
+    max-width:95%;
     min-height:50vh;
+    margin-left:auto;
+    margin-right:auto;
   grid-template-columns: 1fr;
   padding: 0px;
   }

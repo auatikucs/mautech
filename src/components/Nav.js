@@ -281,7 +281,6 @@ transform:scale(0);
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
     .logoGroup{
-  
    width:100%;
    height:100px;
     .logo{
@@ -303,6 +302,7 @@ and (max-device-width : 480px) {
 }
 }
 }
+
 }
 `;
 
@@ -471,7 +471,7 @@ const [hide,setHide]=useState('')
              width:40,
              position:'absolute',
              right:0,
-             marginRight:40,
+             marginRight:50,
              top:0,
              marginTop:40
          }}/>

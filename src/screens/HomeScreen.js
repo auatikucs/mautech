@@ -190,7 +190,7 @@ and (max-width : 1060px){
             height: 100%;
             p{
                 text-align: justify;
-                font-size: 20px;
+                font-size: 16px;
                 margin-right:20px;
                 
             
@@ -304,7 +304,7 @@ and (max-device-width : 480px) {
             
             p{
                 text-align: justify;
-                font-size: 20px;
+                font-size: 14px;
                 margin-right:20px;
                 
             
