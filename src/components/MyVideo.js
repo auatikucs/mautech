@@ -6,6 +6,7 @@ min-width: 100%;
 height: 80vh;
 background-color: white;
 position: relative;
+overflow:hidden;
 video{
   position:absolute;
   right:0;
@@ -42,6 +43,26 @@ span{
         font-size: 20px;
         text-align: justify;
     }
+}
+}
+@media only screen 
+and (max-width : 1060px) 
+{
+height:50vh;
+.vidContent{
+
+span{
+    color: white;
+    width: 80%;
+    :first-child{
+    font-weight: bold;
+    font-size: 30px;
+    }
+    :nth-child(2){
+        font-size: 14px;
+        text-align: justify;
+    }
+}
 }
 }
 `;

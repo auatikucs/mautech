@@ -495,6 +495,9 @@ starts here */
     font-size: 26px;
     padding: 20px;
 }
+.About-Leadership-Container{
+    overflow: hidden; 
+}
 .About-Leadership-Container h1{
     color: black;
     padding: 30px;
@@ -537,6 +540,12 @@ tr:nth-child(even){
    
     
 }
+.Management-Senate-Content p{
+    width:90%;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: justify;
+}
 /* Tablet view of AbouLeadership */
 @media screen and (max-width: 986px) {
     .Chancellor-pic{
@@ -567,6 +576,7 @@ tr:nth-child(even){
         text-align: justify;
         padding-right: 10px;
     }
+
 }
 
 /* phone view of aboutLeadership starts here */

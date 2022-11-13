@@ -44,11 +44,11 @@ margin-top: 110px;
     flex-direction: column;
     background-color:white;
     .mainProgh2{
-        height: 50px;
+        min-height: 50px;
         border-bottom: 1px solid rgba(208, 115, 72, 1);
         span{
             color: rgba(208, 115, 72, 1);
-            font-size: 31px;
+            font-size: 20px;
         }
     }
     .rq{
@@ -70,29 +70,6 @@ margin-top: 110px;
         
     } */
 }
-
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    margin-top: 100px;
-    .sch-list{
-        grid-template-columns: 1fr;
-    }
-    .pr-detail{
-      .first-wave{
-          min-width: 100%;
-          max-width: 100%;
-          -webkit-clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
-clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
-          .second-wave{
-            min-width: 100%;
-          max-width: 100%;
-          -webkit-clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
-clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
-          }
-      }
-    }
-}
 .btnSelect{
     width: 200px;
     display: flex;
@@ -105,6 +82,72 @@ clip-path: polygon(100% 0, 100% 36%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
     background-color:white;
     margin-top: 20px;
 }
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    margin-top: 100px;
+    .programHead{
+    min-height: 30vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .progCoverHead{
+    height:70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    h3{
+        text-align: center;
+        color: white;
+        font-size:14px;
+    }
+    }
+.progCont{
+    align-self: center;
+    h1{
+        text-align: center;
+        color: white;
+        font-size:20px;
+    }
+}
+}
+
+
+.mainProgCont{
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    .mainProgh2{
+        border-bottom: 1px solid rgba(208, 115, 72, 1);
+        span{
+            color: rgba(208, 115, 72, 1);
+            font-size: 31px;
+        }
+    }
+    .rq{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    
+    span{
+        font-size:20px;
+        font-weight:bold;
+
+    }
+    p{
+       margin-left:10px;
+       text-align:justify;
+    }
+}
+    /* p{
+        text-align: justify;
+        
+    } */
+}
+}
+
 `;
 
   

@@ -144,7 +144,7 @@ const AboutLeadership = () => {
                <p>Senate has the supreme authority on all academic matters of the University.  It is composed of the Vice-Chancellor, as Chairman, the Deputy Vice-Chancellors, Deans of Schools, all Professors, the University Librarian, Representative of Schools Boards and those appointed by the Vice-Chancellor in accordance with the University law.  </p>
 
            </div>
-           <div>
+           <div className='Management-Senate-Content'>
                {/* <h1 className='AboutLeadership-Title'>University Management</h1> */}
                <p>The University Management is composed of all principal Officers (Vice Chancellor, Deputy Vice Chancellor Admin, Deputy Vice Chancellor Academics, Registrar, Bursar and Librarian), deans and directors.</p>
 

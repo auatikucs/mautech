@@ -11,6 +11,7 @@ width: 100%;
 background-color:white;
 margin-top: 155px;
 padding: 20px;
+overflow:hidden;
 .eveHead{
     height: 50px;
     width:60%;
@@ -94,6 +95,93 @@ p{
     margin-right: auto;
     min-height: 100px;
     padding: 20px;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    min-height: 70vh;
+width: 100%;
+background-color:white;
+margin-top: 155px;
+padding:0px;
+overflow:hidden;
+.eveHead{
+    height: 50px;
+    width:90%;
+    background-color: rgba(160, 50, 50, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2{
+        color: rgba(160, 50, 50, 1);
+    }
+}
+p{
+    width: 80%;
+    text-align: justify;
+}
+.eveDonl{
+    display: flex;
+    flex-direction:column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    p{
+        width: 50%;
+    }
+    span{
+        font-weight: bold;
+    }
+}  
+
+
+
+.univCal{
+    min-height: 60vh;
+    width: 100%;
+    background-color:transparent;
+    padding: 20px;
+    display: flex;
+    flex-direction:column;
+    .theCal{
+        width: 90%;
+        height: 50vh;
+        h2{
+            color: rgba(160, 50, 50, 1);
+        }
+    }
+    .theDet{
+    width: 60%;
+    min-height:60vh;
+    background-color:transparent;
+  
+    .detMainEv{
+    height: 60px;
+    border-bottom:1px solid lightgray;
+    margin-top: 10px;
+    .det1st{
+        display: flex;
+        flex-direction: row;
+        .labDt{
+            margin-left: auto;
+        }
+        .labHead{
+            font-weight: bold;
+        }
+    }
+    }
+    }
+}
+.pastEv{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90%;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100px;
+    padding: 10px;
+}
 }
 `;
 export default function AllEvents() {

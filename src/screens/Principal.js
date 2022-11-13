@@ -6,6 +6,7 @@ import MyList from '../sub-components/MyList';
 
 const StyledContainer=styled.div`
 margin-top: 107px;
+overflow:hidden;
 .mainPrinPic{
 height: 80vh;
 }
@@ -62,6 +63,67 @@ height: 80vh;
         
     }
 
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .princContent{
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .icons01{
+        min-width: 10%;
+        min-height: 100%;
+        background-color:white;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: flex-end;
+    }
+    .main002{
+        min-width: 80%;
+        min-height: 100%;
+        background-color: white;
+        transform: translateY(-100px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .mainFirst{
+            grid-column: 1/3;
+            display: flex;
+            flex-direction: column;
+            padding:5px;
+            .main002Head{
+            color: black;
+            font-size: 30px;
+            font-weight: bolder;
+            
+
+        }
+        .main003Head{
+            color: black;
+            font-size: 20px;
+            
+            
+
+        }
+        p{
+            text-align: justify;
+            margin-right:20px;
+            
+        }
+        }
+        .mainSecond{
+            display: flex;
+            flex-direction: column;
+            color: black;
+            padding:0px;
+        }
+        
+    }
+
+}
 }
 `;
 export default function Principal() {

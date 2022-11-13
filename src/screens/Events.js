@@ -12,6 +12,7 @@ width: 90%;
 background-color:white;
 margin-top: 155px;
 padding: 20px;
+overflow:hidden;
 .evhCon{
 width:100%;
 display:flex;
@@ -112,6 +113,40 @@ img{
     margin-right: auto;
     min-height: 100px;
     padding: 20px;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    padding:0px;
+    .evhCon{
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:5px;
+}
+.evLinks{
+    display:grid;
+    grid-template-columns:1fr;
+    .eveDonl{
+    display: flex;
+    flex-direction:column;
+
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    p{
+        width: 90%;
+    }
+    span{
+        font-weight: bold;
+    }
+}
+img{
+    height:400px;
+    width:400px;
+}
+}
+
 }
 `;
 export default function Events() {

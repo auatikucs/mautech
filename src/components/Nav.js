@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import MyList from '../sub-components/MyList';
 import  CancelOutlined from '@mui/icons-material/CancelOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {Link, useLocation, useParams} from 'react-router-dom'
+import {Link, useLocation, useNavigate, useParams} from 'react-router-dom'
 import DropList from '../sub-components/DropList';
 import DropPortal from '../sub-components/DropPortal';
 import MainDrop from '../sub-components/MainDrop'
@@ -329,6 +329,7 @@ h4{
 export default function Nav() {
 const [hide,setHide]=useState('')
 const [allUnits,setAllUnits]=useState([])
+const navigate=useNavigate()
     const myParams=useLocation()
     const navRef=useRef()
     const [show, setShow] = useState('show')
@@ -529,7 +530,12 @@ const [allUnits,setAllUnits]=useState([])
                       <Typography>
                         {
                             un.list.map((sub,ind)=>(
-                                <Typography key={ind}>{sub.detail.name}</Typography>
+                                <Typography onClick={()=>{
+                                    navigate(`/department/${sub.detail.id}/${un.name}`)
+                                    setIsDrawerOpen(false)
+                                }} style={{
+                                    borderBottom:'1px solid gray'
+                                }} key={ind}>{sub.detail.name}➤</Typography>
                             ))
                         }
                       </Typography>
@@ -544,6 +550,37 @@ const [allUnits,setAllUnits]=useState([])
 
         </AccordionDetails>
       </Accordion>
+
+
+      <Accordion>
+                    <AccordionSummary
+                      style={{backgroundColor:'#400000'}}
+                      expandIcon={<ExpandMoreIcon style={{color:'#ffffff'}} />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography style={{color:'#ffffff'}}>About</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography onClick={()=>{
+                                    navigate('/about')
+                                    setIsDrawerOpen(false)
+                            }} style={{
+                                    borderBottom:'1px solid gray'
+                                }}>
+                        About MAU➤
+                      </Typography>
+                      <Typography onClick={()=>{
+                                    navigate('/leadership')
+                                    setIsDrawerOpen(false)
+                            }} style={{
+                                    borderBottom:'1px solid gray'
+                                }}>
+                        MAU Leadership➤
+                      </Typography>
+                    </AccordionDetails>
+         </Accordion>
+
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/admissions'><MyList title='Admissions'/></Link>

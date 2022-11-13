@@ -9,7 +9,26 @@ import Bg from '../assets/car2.jpg'
 const StyledContainer=styled.div`
 margin-top: 90px;
 
+.fac-head{
+    min-width:100%;
+    height: 500px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* padding: 20px; */
+   
+    h1{
+        color: white;
+        font-size:60px;
+    }
+    p{
+        color: white;
+        width: 60%;
+        text-align: justify;
+        font-weight: 700px;
+    }
 
+}
 .faculty-cont{
     min-height: 80vh;
     background-color: white;
@@ -118,45 +137,83 @@ margin-top: 90px;
     grid-gap: 10px;
 }
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    margin-top: 100px;
-    padding: 0px;
-    .departmentList{
-        grid-template-columns: 1fr;
-        grid-gap: 0px;
+and (max-width : 1060px) 
+{
+    .fac-head{
+    /* padding: 20px; */
+   
+    h1{
+        color: white;
+        font-size:50px;
     }
-    h3{
-        margin-left: 0px;
-        text-align: center;
+    p{
+        color: white;
+        width: 60%;
+        text-align: justify;
+        font-weight: 700px;
     }
-    .faculty-cont{
-    width: 90%;
+
+}
+
+.faculty-cont{
     .mainDean{
     display: flex;
-    width: 90%;
+    background-color:transparent;
+    width: 100%;
+    flex:1;
     .mainDeanCont{
      flex-direction:column;
+     margin-top: 20px;
+     width:100%;
      .deanPersonal{
-      width: 100%;
+      width:100%;
       background-color: transparent;
       display: flex;
       flex-direction: column;
       align-items: center;
-      img{
-          width: 250px;
-          height: 250px;
-          border-radius:50%;
+      .myDean{
+          height:50vh;
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          .myDeanCont{
+          height: 100px;
+          width: 100%;
+          background-color: rgba(0,0,0,0.7);
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          span{
+              color: white;
+              text-align: center;
+              font-weight:bold;
+              width:100%;
+          }
+        .d3{
+           font-size:20px;
+          }
+          }
       }
      }
      .deanWelcome{
-      width: 100%;
-      min-height: 100%;
+      flex: 1;
+      min-height: 100px;
+      min-width:100%;
       background-color:transparent;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       p{
           text-align: justify;
           margin-right: 20px;
           margin-left: 20px;
+          font-size:14px;
+          width:90%;
+      }
+      h3{
+          text-align: center;
       }
      }
     }
@@ -167,42 +224,48 @@ and (max-device-width : 480px) {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    flex-direction:column;
-    justify-content: center;
+    flex: 1;
+    justify-content:space-evenly;
+    align-items: center;
     .facultyStaff{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
-        margin-bottom: 20px;
-        border-bottom: 0.5px solid lightgray;
+    }
+    img{
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
     }
 
-    }
+
     }
 }
-
-.fac-head{
-    min-width:100%;
-    height: 500px;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) 
+    {
+    .fac-head{
+    height:300px;
     /* padding: 20px; */
    
     h1{
         color: white;
-        font-size:60px;
-    }
-    p{
-        color: white;
-        width: 60%;
-        text-align: justify;
-        font-weight: 700px;
+        font-size:30px;
     }
 
+
 }
+}
+.departmentList{
+    
+    grid-template-columns: 1fr;
+    
+}
+
 `;
 
 export default function DetailScreen() {
@@ -231,7 +294,6 @@ export default function DetailScreen() {
           })
          
         loadData()
-         console.log("___")
     },[])
     return (
         <StyledContainer>
@@ -280,6 +342,7 @@ export default function DetailScreen() {
                           {
                              triger[0].dean!==null&&(
                            <>
+                           
                            <div style={{
                      background:`url(${triger[0].dean.image==null?Bg:triger[0].dean.image})`,
                      backgroundRepeat:'no-repeat',
@@ -299,8 +362,9 @@ export default function DetailScreen() {
                             
                         </div>
                         <div className='deanWelcome'>
+                            {console.log(triger,"nowwww",activity)}
                             <h3 style={{color:'black'}}>Dean's welcome message</h3>
-                            <p>{triger[0][`${activity}Description`]} </p>
+                            <p style={{color:'black'}}>{triger[0][`${activity}Description`]} </p>
                         </div>
                     </div>
                 </div>

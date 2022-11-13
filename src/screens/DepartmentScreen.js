@@ -17,6 +17,7 @@ min-height: 50vh;
 width: 100%;
 background-color: white;
 margin-bottom: 30px;
+overflow:hidden;
 .emptyList{
     min-height: 50vh;
     width: 100%;
@@ -143,65 +144,6 @@ h5{
 }
 
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    margin-top: 100px;
-margin-bottom: 30px;
-h5{
-    width: 90%;
-
-}
-.depTerms{
-    width: 100%;
-    flex-direction: column;
-    img{
-        width: 100%;  
-    }
-    .mainReq{
-        width: 90%;
-    h4{
-        text-align: center;
-
-    }
-    p{
-        text-align: justify;
-    }
-
-    }
-}
-.hodDetails{
-    flex-direction:column;
- 
-    .hodImage{
-        width: 100%;
-
-    }
-    .depMission{
-        width: 100%;
-        h4{
-            width: 100%;
-          
-        }
-        p{
-            width: 95%;
-            
-            
-        }
-    }
-
-}
-.depHead{
- 
-   h2.depHeading{
-       text-align: center;
-       color: white;
-   }
-}
-
-
-}
-
 .depVisonMision{
     min-height:240px;
     width: 98%;
@@ -216,9 +158,8 @@ h5{
     .depVis{
         width: 45%;
         display: flex;
-        flex-direction: column;
-        
-        align-items: center;
+        flex-direction:column;
+        align-items:center;
         padding: 10px;
         z-index: 100;
         
@@ -300,6 +241,300 @@ h5{
 
     }
 }
+
+
+@media only screen 
+and (max-width : 1060px) 
+{
+    .hodDetails{
+    display:flex;
+    flex-direction:column;
+    width: 95%;
+   
+    .hodImage{
+        height: 620px;
+        width: 100%;
+        background-color:white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border: 1px solid rgba(217, 217, 217, 1);
+       
+        img{
+            height:520px;
+            width: 100%;
+           
+        }
+        span{
+            border-bottom: 1px solid rgba(217, 217, 217, 1);
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            height: 30px;
+            font-size: 20px;
+            
+        }
+        span.linkVie{
+            color: blue;
+            font-size: 14px;
+            border-bottom:none;
+        }
+    }
+    .depMission{
+        flex: 1;
+        background-color: white;
+        position: relative;
+        justify-content:center;
+        align-items:center;
+        .myBtn{
+            display: flex;
+            justify-content: space-around;
+        }
+        h4{
+            width: 100%;
+            text-align: center;
+        }
+        p{
+            width: 100%;
+            text-align: justify;
+            margin-left: auto;
+            margin-right: auto;
+            font-size:14px;
+            
+        }
+       
+    }
+
+}   
+.depStaff{
+    min-height: 300px;
+    width: 100%;
+    display: grid;
+    padding: 0px;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    .depIndStaff{
+     height:120px;
+     width: 80%;
+     background-color: white;
+     box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-top: 20px;
+     cursor: pointer;
+    
+     h4,p{
+         text-align: center;
+     }
+     .stfDepCon{
+         flex: 1;
+         margin-left: 10px;
+         display: flex;
+         flex-direction: column;
+         span{
+             text-align: center;
+         }
+         .stfH{
+             font-size: 20px;
+             color: rgba(160, 50, 50, 1);
+             font-weight: bold;
+         }
+     }
+     img{
+         width: 100px;
+         height:100px;
+         border-radius: 100%;
+         margin-left: 5px;
+     }
+
+    }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    margin-top:100px;
+    .depHead{
+    min-height:100px;
+    
+    }
+    .hodDetails{
+    display:flex;
+    flex-direction:column;
+    width: 95%;
+   
+    .hodImage{
+        height: 480px;
+        width: 100%;
+        background-color:white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border: 1px solid rgba(217, 217, 217, 1);
+       
+        img{
+            height:380px;
+            width: 100%;
+           
+        }
+        span{
+            border-bottom: 1px solid rgba(217, 217, 217, 1);
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            height: 30px;
+            font-size: 20px;
+            
+        }
+        span.linkVie{
+            color: blue;
+            font-size: 14px;
+            border-bottom:none;
+        }
+    }
+    .depMission{
+        flex: 1;
+        background-color: white;
+        position: relative;
+        justify-content:center;
+        align-items:center;
+        .myBtn{
+            display: flex;
+            justify-content: space-around;
+        }
+        h4{
+            width: 100%;
+            text-align: center;
+        }
+        p{
+            width: 100%;
+            text-align: justify;
+            margin-left: auto;
+            margin-right: auto;
+            font-size:14px;
+            
+        }
+       
+    }
+
+} 
+
+.depVisonMision{
+    min-height:240px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgba(226, 223, 214, 0.5);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+    
+    .depVis{
+        width: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        padding:0px;
+        z-index: 100;
+        
+        h1{
+            text-align: center;
+            color: rgba(160, 50, 50, 1);
+        }
+        p{
+            text-align: justify;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    .wavy{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 20;
+        }
+}
+.depProg{
+    margin-top: 20px;
+    margin-bottom:20px;
+    .progLIst{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-gap:0px;
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+.depStaff{
+    min-height: 300px;
+    width: 100%;
+    display: grid;
+    padding: 0px;
+    grid-gap: 0px;
+    grid-template-columns:1fr;
+    padding: 10px;
+    .depIndStaff{
+     height:120px;
+     width: 90%;
+     background-color: white;
+     box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-top: 20px;
+     cursor: pointer;
+    
+     h4,p{
+         text-align: center;
+     }
+     .stfDepCon{
+         flex: 1;
+         margin-left: 10px;
+         display: flex;
+         flex-direction: column;
+         span{
+             text-align: center;
+         }
+         .stfH{
+             font-size: 20px;
+             color: rgba(160, 50, 50, 1);
+             font-weight: bold;
+         }
+     }
+     img{
+         width: 100px;
+         height:100px;
+         border-radius: 100%;
+         margin-left: 5px;
+     }
+
+    }
+}
+}
+
+
+
+
 `;
 
 export default function DepartmentScreen() {

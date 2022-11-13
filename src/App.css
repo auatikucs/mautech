@@ -393,11 +393,14 @@ dl{
   align-items: center;
 }
 
-
+.stroke1, .stroke2, .stroke3, .stroke4, .stroke5{
+display: none;
+}
 
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   body{
-    background-color: red;
+    background-color: white;
+    
   }
 }
