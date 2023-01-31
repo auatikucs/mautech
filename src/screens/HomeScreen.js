@@ -396,7 +396,7 @@ export default function HomeScreen() {
             top:0,
             behavior: 'smooth',
           })
-        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-home-event')
+        fetch('https://mau-web-server.fly.dev/admin/get-home-event')
             .then(res => {
                 res.json()
                     .then(data => {
@@ -406,7 +406,7 @@ export default function HomeScreen() {
 
                         }
                       //Fetch stat
-                      fetch('https://new-modibbo-adama.herokuapp.com/admin/get-statistics')
+                      fetch('https://mau-web-server.fly.dev/admin/get-statistics')
                       .then(res => {
                           res.json()
                               .then(data => {
