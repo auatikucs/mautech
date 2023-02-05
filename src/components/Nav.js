@@ -309,7 +309,7 @@ and (max-device-width : 480px) {
 `;
 
 const MobileLinks=styled.div`
-min-height: 100vh;
+min-height: 200vh;
 min-width:100vw;
 background-color:#400000;
 a{
@@ -592,15 +592,29 @@ const navigate=useNavigate()
               }} to='/campus'> <MyList title='Campus Life'/></Link>
                <Link onClick={()=>{
                   setIsDrawerOpen(false)
-              }} to='/about'><MyList title='About Us'/></Link>
-          </List>
-          <h4>Units</h4>
-          <List>
-              <MyList title='Careers'/>
-              <MyList title='Resources'/>
-              <MyList title='Alumni'/>
-              <MyList title='Services'/>
-             
+              }} to='/facilities'><MyList title='Facilities'/></Link>
+              <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/intervention'><MyList title='Interventions'/></Link>
+                <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/downloads'><MyList title='Downloads'/></Link>
+                <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/careers'><MyList title='Careers'/></Link>
+                <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/alumni'><MyList title='Alumni'/></Link>
+                <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/gallery'><MyList title='Gallery'/></Link>
+                <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='#'><MyList title='R & D'/></Link>
+                <Link onClick={()=>{
+                  setIsDrawerOpen(false)
+              }} to='/oer'><MyList title='OER'/></Link>
+
           </List>
       </MobileLinks>
     </Drawer>
