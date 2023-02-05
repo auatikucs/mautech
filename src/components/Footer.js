@@ -57,7 +57,7 @@ const Footer = () => {
                  <div> <img className='Location-Img' src={location} alt="" srcset="" width='200px' height='200px' /></div> 
                   </div>
                   <div className="Footer-Content-Powered" >
-                     <h5>Powered by MAU Software Unit</h5>
+                     <h5>Powered by MAU Software Development and Audit Department</h5>
                   </div>
                </div>
             </div>

@@ -19,7 +19,7 @@ const [state,dispatch]=useReducer(appReducer,initState)
 
 const loadData=(id)=>{
     setIsLoading()
-    fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-faculty?facultyId=${id}`)
+    fetch(`https://mau-web-server.fly.dev/admin/get-single-faculty?facultyId=${id}`)
     .then(res => {
         res.json()
             .then(data => {
@@ -35,7 +35,7 @@ const loadData=(id)=>{
 const loadDepartmet=({id,route})=>{
    
     setIsLoading()
-    fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}`)
+    fetch(`https://mau-web-server.fly.dev/admin/get-single-department?departmentId=${id}`)
     .then(res => {
         res.json()
             .then(data => {

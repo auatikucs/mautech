@@ -336,7 +336,7 @@ const navigate=useNavigate()
     const [index,setIndex]=useState(1)
     const [isDrawerOpen,setIsDrawerOpen]=useState(false)
     useEffect(()=>{
-        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-faculties-schools-college')
+        fetch('https://mau-web-server.fly.dev/admin/get-all-faculties-schools-college')
         .then(res => {
             res.json()
                 .then(data => {

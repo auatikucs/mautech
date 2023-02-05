@@ -8,7 +8,7 @@ const Main = () => {
     const {id}=useParams()
     const navigate=useNavigate()
     const loadData=()=>{
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-all-programs`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-all-programs`)
         .then(res => {
             res.json()
                 .then(data => {

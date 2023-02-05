@@ -65,12 +65,12 @@ export default function OnlineLinks() {
 const [downlods,setDownlods]=useState([])
 const [programs,setAllPrograms]=useState(null)
     useEffect(()=>{
-        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-download-with-pagination?page=1&limit=8')
+        fetch('https://mau-web-server.fly.dev/admin/get-all-download-with-pagination?page=1&limit=8')
         .then(res=>{
             res.json()
             .then(data=>{
                 setDownlods(data.result)
-                fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-all-portals-with-pagination?page=1&limit=8`)
+                fetch(`https://mau-web-server.fly.dev/admin/get-all-portals-with-pagination?page=1&limit=8`)
                 .then(res => {
                     res.json()
                         .then(data => {

@@ -86,7 +86,7 @@ export default function CourseFinderScreen() {
     const [coursesList,setCoourses]=useState([])
     const sortedDepartments=coursesList.filter(dpt=>dpt.departmentName.toLocaleLowerCase().includes(mySearch.toLocaleLowerCase()))
     useEffect(()=>{
-        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-department')
+        fetch('https://mau-web-server.fly.dev/admin/get-all-department')
         .then(res => {
             res.json()
                 .then(data => {

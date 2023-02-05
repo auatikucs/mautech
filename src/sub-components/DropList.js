@@ -44,7 +44,7 @@ export default function DropList({link='',route=''}) {
 
     const loadData=()=>{
         setLoading(true)
-        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-faculties')
+        fetch('https://mau-web-server.fly.dev/admin/get-all-faculties')
         .then(res => {
             res.json()
                 .then(data => {

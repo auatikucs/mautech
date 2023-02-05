@@ -275,7 +275,7 @@ export default function DetailScreen() {
     const [triger,setTriger]=useState([])
 
     const loadData=()=>{
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-faculty?eventId=${id}&activity=${activity}&target=${activity}Id`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-single-faculty?eventId=${id}&activity=${activity}&target=${activity}Id`)
         .then(res => {
             res.json()
                 .then(data => {

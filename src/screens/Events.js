@@ -153,7 +153,7 @@ export default function Events() {
     const {id}=useParams()
     const [news,setNews]=useState(null)
     useEffect(()=>{
-    fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-program-event?eventId=${id}`)
+    fetch(`https://mau-web-server.fly.dev/admin/get-single-program-event?eventId=${id}`)
     .then(res=>{
         res.json()
         .then(data=>{

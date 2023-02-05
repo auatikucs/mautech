@@ -7,7 +7,7 @@ const Portals = () => {
     const [programs,setAllPrograms]=useState([])
     const navigate=useNavigate()
     const loadData=()=>{
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-all-portals-with-pagination?page=1&limit=10`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-all-portals-with-pagination?page=1&limit=10`)
         .then(res => {
             res.json()
                 .then(data => {

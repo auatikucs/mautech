@@ -10,7 +10,7 @@ const DetailNews = () => {
     const navigate=useNavigate()
     const [singleNews,setSingleNews]=useState(null)
     useEffect(()=>{
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-news-event?eventId=${id}`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-single-news-event?eventId=${id}`)
         .then(res=>{
             res.json()
             .then(data=>{

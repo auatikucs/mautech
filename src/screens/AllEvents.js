@@ -189,7 +189,7 @@ export default function AllEvents() {
     const navigate=useNavigate()
     const currentDate=new Date()
     useEffect(()=>{
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-home-event`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-home-event`)
         .then(res=>{
             res.json()
             .then(data=>{

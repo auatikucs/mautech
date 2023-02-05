@@ -544,7 +544,7 @@ export default function DepartmentScreen() {
     const {id,activity}=useParams()
     const loadData=(id)=>{
    
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}&activity=${activity}`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-single-department?departmentId=${id}&activity=${activity}`)
         .then(res => {
             res.json()
                 .then(data => {

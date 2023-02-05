@@ -164,7 +164,7 @@ export default function ProgramDetailScreen() {
     const navigate=useNavigate()
     const loadData=(id)=>{
         setLoading(true)
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-program?programId=${id}&activity=${activity}`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-single-program?programId=${id}&activity=${activity}`)
         .then(res => {
             res.json()
                 .then(data => {

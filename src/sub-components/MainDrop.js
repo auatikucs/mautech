@@ -104,7 +104,7 @@ export default function DropList({link='',route=''}) {
 
     const loadData=()=>{
         setLoading(true)
-        fetch('https://new-modibbo-adama.herokuapp.com/admin/get-all-faculties-schools-college')
+        fetch('https://mau-web-server.fly.dev/admin/get-all-faculties-schools-college')
         .then(res => {
             res.json()
                 .then(data => {

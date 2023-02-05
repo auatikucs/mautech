@@ -349,7 +349,7 @@ export default function Facilities() {
     const {id}=useParams()
     const loadData=(id)=>{
    
-        fetch(`https://new-modibbo-adama.herokuapp.com/admin/get-single-department?departmentId=${id}&activity=faculty`)
+        fetch(`https://mau-web-server.fly.dev/admin/get-single-department?departmentId=${id}&activity=faculty`)
         .then(res => {
             res.json()
                 .then(data => {
