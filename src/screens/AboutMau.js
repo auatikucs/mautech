@@ -140,7 +140,7 @@ const AboutMau = () => {
                         <span>Moddibo Adama University is one of the leading citadels across west Africa. It has passed through turmoils of times and seasons to appear today in its immaculate repute socially, morally and academically. 
 M.A.U has had interesting transitions within the cause of its historic evolutions and has been able to shape and produce leading entrepreneurs, leaders and veterans in the scientific administrative sphere.
 With its hitherto wide range of staff banks that are reckoned to International standards and decorum full, it is indeed a Citadel to start your journey of success to life.  </span>
-                            <p><strong>~Jerry John Dickson</strong></p>
+                            <p><strong>John Jerry Dickson</strong></p>
                     </div>
              </div>
              <div className='Alumni-Info'> 
@@ -152,7 +152,7 @@ With its hitherto wide range of staff banks that are reckoned to International s
                         <span>Hi! My name is Stephanie Di Sciullo, I am from Montreal and I speak English and French. I am part of the School of Physical and Occupational Therapy (SPOT), majoring in physical therapy and I just finished my first year (U1). Other than academics, I enjoy being involved in student life. I am part of POTUS (Physical and Occupational Therapy Undergraduate Society), where I was the U1 representative. In this role, 
                             I voiced the comments and concerns of my cohort at council meetings. I am honoured to have 
                             the position of U2 representative this September.  </span>
-                            <p><strong>~Mubarak, Ibrahim FariB</strong></p>
+                            <p><strong>Mubarak, Ibrahim</strong></p>
                     </div>
              </div>
         </div>

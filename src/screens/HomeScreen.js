@@ -643,7 +643,7 @@ export default function HomeScreen() {
                         marginRight: 'auto',
                         marginTop: 10
                     }} controls>
-                        <source src='https://res.cloudinary.com/nutscoders/video/upload/v1646231311/mau-vid_gmyivp.mp4' type="video/mp4" />
+                        <source src='https://res.cloudinary.com/diwnlud5x/video/upload/v1675773053/mau/students_x510ee.mp4' type="video/mp4" />
                     </video>
                 </div>
             </Modal>

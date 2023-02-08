@@ -136,7 +136,7 @@ export default function Principal() {
     return (
         <StyledContainer>
             <div style={{
-             background:`url('https://res.cloudinary.com/nutscoders/image/upload/v1657144167/Noor-Takaful-Photo-1-scaled_vrtjpg.jpg')`,
+             background:`url('https://res.cloudinary.com/diwnlud5x/image/upload/v1675802340/mau/VC_eggrtk.png')`,
              backgroundPosition:'top',
              backgroundRepeat:'no-repeat',
              backgroundSize:'cover',
@@ -151,14 +151,20 @@ export default function Principal() {
              <div className='main002'>
                  <div className='mainFirst'>
                  <span className='main002Head'>Vice-Chancellor</span>
-                 <span className='main003Head'>Prof. Abdullahi Liman Tukur (Phd,Msc)</span>
+                 <span className='main003Head'>Prof. Abdullahi Liman Tukur</span>
                  <p>
-                 Professor Louise Richardson became Vice-Chancellor of the University of 
-                 Oxford on 1 January 2016, having previously served as Principal and Vice-Chancellor
-                  of the University of St Andrews, Scotland, for seven years. On 2 June 2022, 
-                  Louise Richardson was appointed a Dame Commander of the Most Excellent Order of the 
-                 British Empire (DBE) in recognition of her service to Higher Education.
+                 Prof. Abdullahi Liman Tukur was Born on 8th April, 1961 at Kilbawo Ward of Jada Local Government Area of Adamawa State, Professor Tukur attended Senior (now Jada 1) Primary School, Jada from 1968 to 1974. He proceeded to Government Secondary School Ganye, from 1974 to 1979. Between 1979 and 1981, Professor Tukur attended the School of General Studies, Kano. Subsequently in 1981 pursued a degree in Geography at the Bayero University Kano, where he graduated with a Bachelor of Science degree in Geography in 1984. His quest for additional qualifications fuelled by a burning desire to acquire knowledge made him proceed to the University of Maiduguri for his Master’s degree in Resources and Development in 1988 and later the University of Jos where he bagged a PhD in Environmental and Resources Planning in 1997. Professor Tukur later attended Durham University, United Kingdom, for a six months certificate course in Remote Sensing (RS) and Geographic Information System (GIS) in 1993.
                  </p>
+                 <p>
+                 He joined the services of the then Federal University of Technology, Yola, (now Modibbo Adama University of Technology, Yola) in 1986 as a Graduate Assistant in the Department of Geography and rose through the ranks to the position of Professor in 2009.  He has held various academic and administrative positions within and outside the university, some of which include Council Member (FUTY), from 1997 to 1999; Coordinator, Consultancy Services Unit of the University from 1995 to 1999.
+                 </p>
+                 <p>
+                 In 2001, Professor A. L. Tukur was appointed acting Dean of the School of Environmental Sciences till 2003 and later became substantive Dean from 2012 to 2014. He was also appointed Secretary to the Adamawa State Government in 2014. The Professor served as a Member of the Adamawa State Government Transition Committee from April – June, 1999. Before his selection as the Vice Chancellor of Mautech, he was the Director Centre for Distance Learning, a post he held from 2017 to 2019. In addition, Professor Tukur had at various times served as Member/Secretary, Adamawa State University Steering Committee (February 2001-2002); Chairman, Governing Council, Adamawa State Polytechnic (2001-2004); Executive Chairman, Adamawa State Universal Basic Education Board (ADSUBEB) in January 2004. During his tenure at ADSUBEB, a remarkable achievements were recorded, with the first set of mega library and computer centres with full internet facilities provided.  His tenure also saw the erection of first storey buildings at the Basic Education level in Adamawa State. 
+                 </p>
+                 <p>
+                 As an astute scholar, Professor Tukur has co-edited two textbooks and published several research papers in reputable national and international scientific journals. He has supervised quite a number of postgraduate Ph.D and Masters students successfully.  He is a member of several learned/professional bodies, such as the Association of Nigerian Geographers and the International Geographical Union.  In the course of his career, Professor Tukur has also attended several seminars and conferences and received several fellowships and awards within and outside the country. He was a Federal Government of Nigeria/World Bank Fellow to Durham University in 1993. International Geographical Congress Glasgow (UK), 2004; National Merit Awards recipient from both the National Parent Teachers Association (2007), and the Nigerian Civil Service Union (2005). Prof. Abdullahi Liman Tukur emerged as Vice Chancellor of the Modibbo Adama University Yola on the 10th of June 2019.
+                 </p>
+
                  </div>
 
 
