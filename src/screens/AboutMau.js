@@ -5,7 +5,7 @@ import philosophy1 from '../assets/philosophy1.png';
 import mission4 from '../assets/mission4.png';
 import values1 from '../assets/values1.png';
 import student_pic2 from '../assets/student_pic2.jpg';
-import student_pic from '../assets/student_pic.jpg';
+import student_pic from '../assets/mubarak.jpg';
 import MyVideo from '../components/MyVideo';
 import SUG from '../assets/SUG.jpeg';
 import { useEffect } from 'react';
@@ -149,10 +149,8 @@ With its hitherto wide range of staff banks that are reckoned to International s
                     </div>
                     <div className='Alumni-Content'>
                         {/* <span className='Qoute'>"</span><br></br> */}
-                        <span>Hi! My name is Stephanie Di Sciullo, I am from Montreal and I speak English and French. I am part of the School of Physical and Occupational Therapy (SPOT), majoring in physical therapy and I just finished my first year (U1). Other than academics, I enjoy being involved in student life. I am part of POTUS (Physical and Occupational Therapy Undergraduate Society), where I was the U1 representative. In this role, 
-                            I voiced the comments and concerns of my cohort at council meetings. I am honoured to have 
-                            the position of U2 representative this September.  </span>
-                            <p><strong>Mubarak, Ibrahim</strong></p>
+                        <span>I graduated from Computer Science department in Modibbo Adama University, Yola. The training and experience I had in MAU has contributed to my success in my IT career. </span>
+                            <p><strong>Mubarak Ibrahim</strong></p>
                     </div>
              </div>
         </div>
