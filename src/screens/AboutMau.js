@@ -4,7 +4,6 @@ import vision1 from '../assets/vision1.png';
 import philosophy1 from '../assets/philosophy1.png';
 import mission4 from '../assets/mission4.png';
 import values1 from '../assets/values1.png';
-import student_pic2 from '../assets/student_pic2.jpg';
 import student_pic from '../assets/mubarak.jpg';
 import MyVideo from '../components/MyVideo';
 import SUG from '../assets/SUG.jpeg';
