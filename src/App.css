@@ -105,11 +105,13 @@ body::-webkit-scrollbar-thumb{
   background-image: url(./assets/mau_pic_footer.jpg);
   background-size: contain;
   overflow: hidden;
+ 
 }
 .Footer-Container{
   display: grid;
   grid-template-columns:1fr 1fr 1fr;
   position: relative;
+  
   
 }
 /* .Footer-Content{
@@ -398,9 +400,46 @@ display: none;
 }
 
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  body{
-    background-color: white;
-    
+@media screen and (max-width: 730px){
+  
+  .Cart-Container-Programs{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: whitesmoke;
+    margin-bottom: 5px;
   }
+  .Footer-Container{
+    display: grid;
+    /* margin: 0 auto; */
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+  }
+  .Footer-Content{
+    display: grid;
+    grid-column: 1/5;
+  }
+  .Main-Display-Image h1{
+    color: white;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+  }
+  .Main-Display-Image p {
+    font-size: 18px;
+    color: white;
+    padding-left: 0px;
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  /* .Sub-Links{
+    display: none;
+  }
+  .Nav-Links{
+    display: none;
+  } */
+  
 }

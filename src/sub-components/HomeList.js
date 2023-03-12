@@ -15,6 +15,7 @@ if (!isLink) {
  el.setAttribute('download',`${link}`)
 }
 el.setAttribute('href',`${route}`)
+el.setAttribute('target','_blank')
 // console.log(el)
 el.click()
 }}  style={{

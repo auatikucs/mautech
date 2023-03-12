@@ -153,64 +153,7 @@ h5{
 }
 
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-    margin-top: 100px;
-margin-bottom: 30px;
-h5{
-    width: 90%;
 
-}
-.depTerms{
-    width: 100%;
-    flex-direction: column;
-    img{
-        width: 100%;  
-    }
-    .mainReq{
-        width: 90%;
-    h4{
-        text-align: center;
-
-    }
-    p{
-        text-align: justify;
-    }
-
-    }
-}
-.hodDetails{
-    flex-direction:column;
- 
-    .hodImage{
-        width: 100%;
-
-    }
-    .depMission{
-        width: 100%;
-        h4{
-            width: 100%;
-          
-        }
-        p{
-            width: 95%;
-            
-            
-        }
-    }
-
-}
-.depHead{
- 
-   h2.depHeading{
-       text-align: center;
-       color: white;
-   }
-}
-
-
-}
 
 .depVisonMision{
     min-height:240px;
@@ -219,7 +162,7 @@ h5{
     margin-right: auto;
     background-color:rgba(226, 223, 214, 0.5);
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     margin-top: 20px;
     position: relative;
     
@@ -340,6 +283,135 @@ h5{
     }
 
 }
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    margin-top: 100px;
+margin-bottom: 30px;
+h5{
+    width: 90%;
+
+}
+.depTerms{
+    width: 100%;
+    flex-direction: column;
+    img{
+        width: 100%;  
+    }
+    .mainReq{
+        width: 90%;
+    h4{
+        text-align: center;
+
+    }
+    p{
+        text-align: justify;
+    }
+
+    }
+}
+.hodDetails{
+    flex-direction:column;
+ 
+    .hodImage{
+        width: 100%;
+
+    }
+    .depMission{
+        width: 100%;
+        h4{
+            width: 100%;
+          
+        }
+        p{
+            width: 95%;
+            
+            
+        }
+    }
+
+}
+.depHead{
+ 
+   h2.depHeading{
+       text-align: center;
+       color: white;
+   }
+}
+
+.depVisonMision{
+    min-height:240px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgba(226, 223, 214, 0.5);
+    display: flex;
+    flex-direction:column;
+    margin-top: 20px;
+    position: relative;
+    
+    .depVis{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        z-index: 100;
+        h1{
+            text-align: center;
+            color: rgba(160, 50, 50, 1);
+        }
+        p{
+            text-align: justify;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    .servicesMain{
+    min-height:50vh;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    margin-top:30px;
+    .servicesList{
+        grid-column:1/2;
+        background-color:white;
+        min-height:100px;
+        width:100%;
+        padding:0px ;
+        overflow:hidden ;
+    }
+    .servicesData{
+        grid-column:1/2;
+        background-color:white;
+        min-height:100px;
+        width:90%;
+        padding:0px ;
+        display:flex;
+        flex-direction:column;
+       /* align-items:center ; */
+        span{
+            text-align:center;
+            font-weight:bold;
+            font-size:20px;
+            width:100%;
+        }
+      .carContServ{
+        min-width:100%;
+        min-height:65vh;
+       img{
+        min-width:100%;
+        height:55vh ;
+       }
+      }
+    }
+
+}
+}
+}
+
 `;
 
 export default function Facilities() {

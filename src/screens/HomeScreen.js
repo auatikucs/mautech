@@ -647,7 +647,7 @@ export default function HomeScreen() {
                     </video>
                 </div>
             </Modal>
-            <Chat/>
+            {/* <Chat/> */}
         </MyContainer>
     )
 }

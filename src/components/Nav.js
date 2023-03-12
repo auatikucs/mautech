@@ -586,13 +586,13 @@ const navigate=useNavigate()
               }} to='/admissions'><MyList title='Admissions'/></Link>
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
-              }} to='/portal'><MyList title='Portals'/></Link>
+              }} to='/portals'><MyList title='Portals'/></Link>
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/campus'> <MyList title='Campus Life'/></Link>
                <Link onClick={()=>{
                   setIsDrawerOpen(false)
-              }} to='/facilities'><MyList title='Facilities'/></Link>
+              }} to='/facility/001'><MyList title='Facilities'/></Link>
               <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/intervention'><MyList title='Interventions'/></Link>

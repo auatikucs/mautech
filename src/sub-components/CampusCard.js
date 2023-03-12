@@ -8,6 +8,7 @@ background-color:white;
 display:grid ;
 grid-template-columns:1fr 1fr;
 margin:30px;
+overflow:hidden;
 .ccon{
     width:100%;
     height:100%;
@@ -27,6 +28,16 @@ margin:30px;
 img{
     width:100%;
     height:100% ;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    grid-template-columns:1fr;
+    .ccon{
+    width:100%;
+    height:100%;
+    background-color:white;
+    padding: 0px;
 }
 `;
 export default function CampusCard({begin=false,title=''}) {

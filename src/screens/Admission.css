@@ -1,16 +1,86 @@
+
+/* .Admission_Header_Title{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 130px;
+    color: white;
+    font-weight: bolder;
+    font-family: Montserrat,sans-serif;
+    text-align: center;
+}
+.Admission-Note{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+.hype{
+    padding-top: 120px;
+}
+.Admission-Cards{
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding: 20px;
+} */
+
+
+
+/* phone view of Admission Page 
+@media screen and (max-width:650px){
+    .Admission-Cards{
+        margin: 0 auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 20px;
+    }
+    
+    .Admission_Header_Title{
+        font-size: 20px;
+        text-align: center;
+       padding: 30px;
+        color: white;
+        font-weight: bolder;
+        font-family: Montserrat,sans-serif;
+        text-align: center;
+    }
+    .Admission-Note{
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+       padding: 10px;
+        text-align: center;
+    }
+    
+}
+/* tablets view of the all admission page css starts here */
+/* @media screen and (max-width:963px){
+    .Admission-Cards{
+        margin: 0 auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        padding: 20px;
+    }
+} */ 
+
 .Admission_Background_Container{
     /* display: none; */
     margin-top: 0px;
     padding-top: 0px;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url(https://media.istockphoto.com/illustrations/admission-concept-on-keyboard-button-3d-rendering-illustration-id675073328?k=20&m=675073328&s=612x612&w=0&h=pIKoyQH3dOzHovks61KmkkMl6pWdk2oMmrVpGvijBuI=);
    background-size: cover;
    text-align: center;
-   height: 400px;
+   height: 300px;
    margin-bottom: 20px;
-   background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url(https://media.istockphoto.com/illustrations/admission-concept-on-keyboard-button-3d-rendering-illustration-id675073328?k=20&m=675073328&s=612x612&w=0&h=pIKoyQH3dOzHovks61KmkkMl6pWdk2oMmrVpGvijBuI=);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
-   /* background-color: rgba(0, 0, 0, 0.7); */
+   overflow: hidden;
 }
 .Admission_Header_Title{
     font-size: 40px;
@@ -54,7 +124,6 @@
     border: 1px solid #ddd;
     border-bottom: 2px solid rgb(208, 115, 72);;
     padding: 10px;
-    cursor: pointer;
     /* height: fit-content; */
 }
 .Admission-Cards-Content p{
@@ -67,14 +136,22 @@
         width: 90%;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 30px;
-        padding: 20px;
+        grid-gap: 0px;
+        padding: 0px;
+    }
+    .Admission-Note{
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: center;
     }
     
     .Admission_Header_Title{
         font-size: 20px;
         text-align: center;
-       padding: 30px;
+       padding: 0px;
         color: white;
         font-weight: bolder;
         font-family: Montserrat,sans-serif;
@@ -84,7 +161,7 @@
         color: white;
         font-size: 14px;
         font-weight: bold;
-       padding: 10px;
+       padding: 0px;
         text-align: center;
     }
     
@@ -95,8 +172,9 @@
         margin: 0 auto;
         width: 90%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 30px;
-        padding: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+        padding: 0px;
+        overflow: hidden;
     }
 }

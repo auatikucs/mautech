@@ -94,6 +94,55 @@ background-color:white ;
     }
 
 }
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .indInter{
+    display:grid ;
+    grid-template-columns:1fr;
+    width:90%;
+    margin-left:auto ;
+    margin-right: auto;
+    margin-top:20px;
+    padding: 0px;
+    grid-gap:0px;
+
+    .indINterHead{
+        text-align: center;
+        grid-column:1/2 ;
+        font-size:30px;
+        font-weight:bold ;
+        
+    }
+    .indIntSty{
+        text-align: center;
+        grid-column:1/2 ;
+        font-weight:bold ; 
+        min-height:10px;
+        min-width:100px ;
+        max-width:100px ;
+        max-height: 10px;
+        background-color:#D07348;
+        margin-left:auto ;
+        margin-right:auto ;
+    }
+    .indCardBtn{
+    grid-column:1/2;
+    min-height:100px;
+    min-width:100%;
+    background-color:white;
+    display: flex;
+    justify-content:center ;
+    align-items:center ;
+    flex-direction:column ;
+    img{
+        width:100px;
+        height:100px ;
+        cursor: pointer;
+    }
+}
+}
+}
 `;
 
 export default function Intervention() {

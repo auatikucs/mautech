@@ -92,7 +92,7 @@ and (max-device-width : 480px) {
         .welcomeDean{
             margin-right: auto;
             width: 90%;
-            margin-top:50%;
+            margin-top:10px;
             p{
             text-align: justify;
             margin-left: auto;
@@ -136,11 +136,12 @@ and (max-device-width : 480px) {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    flex:2;
+    flex-direction:column;
+    flex:1;
     .mainDeanCont{
      display:flex;
-     flex-direction: row;
-     margin-top: 20px;
+     flex-direction: column;
+     margin-top: 0px;
      width: 100%;
      background-color: transparent;
      min-height: 50vh;
@@ -155,7 +156,7 @@ and (max-device-width : 480px) {
           width: 425px;
           display: flex;
           flex-direction: column;
-          justify-content: flex-end;
+          justify-content: flex-start;
           .myDeanCont{
           height: 100px;
           width: 100%;
