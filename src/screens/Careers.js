@@ -62,12 +62,7 @@ export default function Careers() {
   Join us at MAU.
   </span>
   <span className='carBod'>
-  We believe that business is the greatest platform for change — and that together, 
-  we can improve the state of the world. With the world’s #1 customer relationship 
-  management (CRM) platform, your work will help businesses and communities achieve 
-  their most ambitious business plans, solve their biggest challenges, and harness 
-  their successes to leave our planet a little better than we found it. Are you ready 
-  to build a rewarding career and a better future for all?
+  At our institution, we are committed to providing our students with the tools and resources they need to succeed in their careers after graduation. Whether you are a recent graduate looking for your first job, or an experienced professional seeking to advance your career, we are here to support you.
 
   </span>
   <Button color='error' style={{backgroundColor:'#D07348',color:'white',width:'60%',marginTop:20}} variant='outlined'>View openings</Button>
