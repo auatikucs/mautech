@@ -531,7 +531,13 @@ const navigate=useNavigate()
                         {
                             un.list.map((sub,ind)=>(
                                 <Typography onClick={()=>{
-                                    navigate(`/department/${sub.detail.id}/${un.name}`)
+                                    if (un.name=='center') {
+                                        navigate(`/center/${sub.detail.id}/${un.name}`)
+                                    } else {
+                                        navigate(`/department/${sub.detail.id}/${un.name}`)   
+                                    }
+                                   
+                                    console.log(un.name)
                                     setIsDrawerOpen(false)
                                 }} style={{
                                     borderBottom:'1px solid gray'

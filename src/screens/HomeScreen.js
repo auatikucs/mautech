@@ -128,7 +128,7 @@ transition: all 1s;
          display: flex;
          flex-direction: row;
          width: 90%;
-         height: 100px;
+         height: 130px;
          border-bottom: 1px solid lightgray;
          margin-bottom: 10px;
          padding: 10px;

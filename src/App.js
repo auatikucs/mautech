@@ -30,6 +30,7 @@ import All_News from './screens/All_News';
 import DetailNews from './screens/Detail_News';
 import Admission from './screens/Admission';
 import Portals from './screens/Portals';
+import CenterScreen from './screens/CenterScreen';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
     <Route exact path='/program/:id/:department/:activity' element={<ProgramDetailScreen/>}/>
     <Route exact path='/department/:id/:activity' element={<DetailScreen/>}/>
     <Route exact path='/course/:id/:activity' element={<DepartmentScreen/>}/>
+    <Route exact path='/center/:id/:activity' element={<CenterScreen/>}/>
     {/* <Route exact path='/admissions' element={<CourseFinderScreen/>}/> */}
     <Route exact path='/about' element={<AboutMau/>}/>
     <Route path='/leadership' element={<AboutMauLeadership/>}/>

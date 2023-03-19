@@ -5,7 +5,7 @@ import MyLinks from '../components/MyLinks';
 import { Skeleton } from '@mui/material';
 import AppContext from '../Context/app/appContext';
 import DepLink from '../components/DepLink';
-import Bg from '../assets/car2.jpg'
+import Bg from '../assets/faculty.jpg'
 const StyledContainer=styled.div`
 margin-top: 90px;
 

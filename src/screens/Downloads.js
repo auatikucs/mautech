@@ -79,7 +79,7 @@ export default function Downloads() {
   const [programs, setAllPrograms] = useState(null);
   useEffect(() => {
     fetch(
-      "https://mau-web-server.fly.dev/admin/get-all-download-with-pagination?page=1&limit=8"
+      "https://mau-web-server.fly.dev/admin/get-all-download-with-pagination?page=1&limit=100"
     ).then((res) => {
       res.json().then((data) => {
         setDownlods(data.result);
