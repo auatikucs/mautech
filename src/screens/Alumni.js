@@ -227,8 +227,8 @@ export default function Alumni() {
                      
                  }} className='myDean'>
                          <div className='myDeanCont'>
-                         <h2>Name</h2>
-                         <h4>Dean Student Affairs</h4>
+                         <h2>Dr. Adamu Alkali</h2>
+                         <h4>Coordinator, Alumni</h4>
                          </div>
                            </div>
                           
@@ -238,14 +238,7 @@ export default function Alumni() {
                         <div className='deanWelcome'>
                             {/* <h3 style={{color:'black'}}>About {triger[0].facultyName}</h3> */}
                             <p> 
-                            The critical irreducible element is therefore learning whether in a formal 
-          or in an informal way. Consequently, whenever learning takes place, education
-           has equally taken place.
-In reality, there is no watertight division between formal education and the informal 
-aspects of education. Sometimes, we find that even within formal education settings there
- are informal aspects. Those who pursue the informal aspects along with the formal become 
- complete products while those who are strictly 
-concerned only with what is written out in the curricula end up as defective products.
+                            If you are a graduate of MAU we want to stay in touch with you! We are keen to foster a vibrant and active alumni community and need your participation to achieve that. The MAU Alumni Association is one that spans many countries. There are currently over 15,000 graduates who reside in over 17 countries worldwide. Whether you are interested in meeting other graduates in your part of the world, joining or setting up a local chapter or just staying in contact with the University, we are here to help you! We invite your contributions towards strengthening our Association and moving the Modibbo Adama University, Yola forward as Nigeria's best University.
                             </p>
                         </div>
                     </div>
