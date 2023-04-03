@@ -32,8 +32,8 @@ export default function UniNews({image,heading='',body='',link=''}) {
      className='indi-news'>
          <Card sx={{
              width:'100%',
-             minHeight:'100%',
-             maxHeight:'100%'
+             minHeight:300,
+             maxHeight:300
          }}>
       <CardMedia
         height='150'

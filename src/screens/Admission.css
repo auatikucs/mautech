@@ -124,10 +124,16 @@
     border: 1px solid #ddd;
     border-bottom: 2px solid rgb(208, 115, 72);;
     padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
     /* height: fit-content; */
 }
 .Admission-Cards-Content p{
     color: rgb(208, 115, 72);;
+}
+.Admission-Cards-Content:hover{
+    opacity: 0.6;
+    background-color: rgba(208, 115, 72,0.2);
 }
 /* phone view of Admission Page  */
 @media screen and (max-width:650px){

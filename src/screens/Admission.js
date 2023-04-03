@@ -44,7 +44,7 @@ const Admission = () => {
                         return null
                     }
                     return(
-                        <div onClick={()=>{
+                        <div style={{cursor:'pointer'}} onClick={()=>{
                             navigate(`/admission/${program}`)
                         }} key={ind} className='Admission-Cards-Content'>
                 
