@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Registrar from '../assets/Registrar.jpeg';
 import dvc_Academics from '../assets/dvc_Academics.jpeg';
@@ -384,6 +384,22 @@ and (max-device-width : 480px) {
 }
 `;
 export default function VcAbout() {
+    const[leadershipData, setLeadershipData] = useState([]);
+    const[isLoading, setLoading]= useState(true);
+
+    useEffect(()=>{
+        fetch('https://mau-web-server.fly.dev/admin/get-about-leadership')
+        .then(res=>{
+           return res.json()
+        })
+        .then(data=>{
+            setLoading(false)
+       
+            setLeadershipData(data.result);
+          console.log(data.result)
+        })
+    },[])
+
     const route=useNavigate()
     return (
         <Fade triggerOnce>
@@ -446,7 +462,7 @@ export default function VcAbout() {
         <img 
         src={libb} 
         alt='img'/> 
-        <span>Dr. Tukur Abba</span>
+        <span>Dr. Tukur AbbaPr</span>
         <span>Librarian</span>
         <div className='bgv'></div>
         </div>
@@ -524,7 +540,12 @@ export default function VcAbout() {
         </div>
         </div>
         </StyledVc>
-        
+        {leadershipData && leadershipData.map((officer)=>(
+           <div>
+             <span>{officer.chancellor.name}</span>
+            <span>{officer.chancellor.rank}</span>
+           </div>
+        ))}
         </Fade>
     )
 }

@@ -20,6 +20,7 @@ and (max-width : 1060px){
    width:100%;
    margin:0px;
    margin-top:20px;
+   background-color:red;
 }
 `;
 export default function UniNews({image,heading='',body='',link='', timePosted=''}) {
@@ -49,6 +50,7 @@ export default function UniNews({image,heading='',body='',link='', timePosted=''
         {/* {body}  */}
         </Typography>
         <span>{timePosted}</span>
+      
       </CardContent>
     </Card>
 

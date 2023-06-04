@@ -100,6 +100,11 @@ opacity: 1;
     padding: 10px;
   }
 }
+.Social-Media-Icons{
+  font-size: 40px;
+  color: white;
+  padding: 15px;
+}
 .chatHide{
   max-width: 30px;
   max-height: 30px;

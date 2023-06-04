@@ -34,57 +34,57 @@ const Footer = () => {
               </div>
               <div>
                 {" "}
-                <Link to="/">About</Link>
+                <Link to="/about">About</Link>
               </div>
               <div>
                 {" "}
-                <Link to="/">News & Events</Link>
+                <Link to="/allnews">News & Events</Link>
               </div>
               <div>
                 {" "}
-                <Link to="/">Careers</Link>
-              </div>
-            </nav>
-          </div>
-          <div className="Footer-Content">
-            <h4>Division & Units</h4>
-            <nav className="footerNav">
-              <div>
-                {" "}
-                <Link to="/">Home Page</Link>
-              </div>
-              <div>
-                {" "}
-                <Link to="/">About</Link>
-              </div>
-              <div>
-                {" "}
-                <Link to="/">News & Events</Link>
-              </div>
-              <div>
-                {" "}
-                <Link to="/">Careers</Link>
+                <Link to="/">Contact</Link>
               </div>
             </nav>
           </div>
           <div className="Footer-Content">
-            <h4>Services</h4>
+            <h4>Facilities & Services</h4>
             <nav className="footerNav">
               <div>
                 {" "}
-                <Link to="/">Home Page</Link>
+                <Link to="/facility/001">Central Lab</Link>
               </div>
               <div>
                 {" "}
-                <Link to="/">About</Link>
+                <Link to="/">CEMIT</Link>
               </div>
               <div>
                 {" "}
-                <Link to="/">News & Events</Link>
+                <Link to="/">Publishing Centre</Link>
               </div>
               <div>
                 {" "}
-                <Link to="/">Careers</Link>
+                <Link to="/">Chevron Biotech</Link>
+              </div>
+            </nav>
+          </div>
+          <div className="Footer-Content">
+            <h4>Portals</h4>
+            <nav className="footerNav">
+              <div>
+                {" "}
+                <Link to="/admissions">Admission </Link>
+              </div>
+              <div>
+                {" "}
+                <Link to="https://mautech_postutme.admissions.cloud/">Undergraduate </Link>
+              </div>
+              <div>
+                {" "}
+                <Link to="https://pgmau.safsrms.com/">Post-Graduate </Link>
+              </div>
+              <div>
+                {" "}
+                <Link to="https://cdlmautech.admissions.cloud/">Distance Learning </Link>
               </div>
             </nav>
           </div>
@@ -154,13 +154,13 @@ const Footer = () => {
       </div>
      <center> <div className="Footer-Content-Powered1"><hr></hr>
             <h3 style={{color:'white'}}>Follow us </h3>
-            <div>
-                  <WhatsAppIcon  style={{color:'white', fontSize:40, padding:15}}/>
-                  <FacebookIcon style={{color:'white', fontSize:40, padding:15}}/>
-                  <InstagramIcon style={{color:'white', fontSize:40, padding:15}} />
-                  <LinkedInIcon style={{color:'white', fontSize:40, padding:15}}/>
-                  <TwitterIcon style={{color:'white', fontSize:40, padding:15}}/>
-                  <YouTubeIcon style={{color:'white', fontSize:40, padding:15}}/>
+            <div className="Social-Media-Container">
+                  <WhatsAppIcon className="Social-Media-Icons" />
+                  <FacebookIcon className="Social-Media-Icons"/>
+                  <InstagramIcon className="Social-Media-Icons" />
+                  <LinkedInIcon className="Social-Media-Icons"/>
+                  <TwitterIcon className="Social-Media-Icons"/>
+                  <YouTubeIcon className="Social-Media-Icons"/>
                 </div>
           </div></center>
     </div>
