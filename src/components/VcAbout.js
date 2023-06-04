@@ -544,6 +544,8 @@ export default function VcAbout() {
            <div>
              <span>{officer.chancellor.name}</span>
             <span>{officer.chancellor.rank}</span>
+            <span>{officer.principalOfficer.name}</span>
+            <span>{officer.principalOfficer.rank}</span>
            </div>
         ))}
         </Fade>

@@ -99,13 +99,13 @@ const Footer = () => {
                   State{" "}
                 </p>{" "}
               </div>
-              <div>
+              <div style={{display:'flex'}}>
                 {" "}
-                <EmailOutlined style={{padding:10}}><span to="/" style={{color:'white', textDecoration:'none', padding:12,}}>info@mau.edu.ng </span></EmailOutlined>
+                <EmailOutlined style={{padding:10}}/><span to="/" style={{color:'white', textDecoration:'none', paddingTop:10,}}>info@mau.edu.ng </span>
               </div>
-              <div>
-                {" "}
-                <PhoneInTalkRounded><Link to="/">08060534900</Link></PhoneInTalkRounded>
+              <div style={{display: 'flex'}}>
+             
+                <PhoneInTalkRounded style={{padding:5}}/><Link to="/" style={{color:'white', textDecoration:'none', padding:5,}}>08060534900</Link>
               </div>
               <div>
                 {/* <div>

@@ -489,3 +489,14 @@ display: none;
   } */
   
 }
+ /* foteer @tabletView css */
+ @media screen and (max-width: 1178px){
+  .Footer-Container{
+    display: grid;
+    /* margin: 0 auto; */
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+  }
+ }
