@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardMedia, imageListClasses, Typography } from '@mui/material';
-import React from 'react'
-import { useNavigate } from 'react-router';
-import styled from 'styled-components'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 const StyledNews=styled.div`
 width: 25%;
@@ -22,7 +22,7 @@ and (max-width : 1060px){
    margin-top:20px;
 }
 `;
-export default function UniNews({image,heading='',body='',link=''}) {
+export default function UniNews({image,heading='',body='',link='', timePosted=''}) {
   const navigate=useNavigate()
     return (
      <StyledNews
@@ -42,12 +42,13 @@ export default function UniNews({image,heading='',body='',link=''}) {
         alt="News"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="span" component="div">
          {heading}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        {body} 
+        {/* {body}  */}
         </Typography>
+        <span>{timePosted}</span>
       </CardContent>
     </Card>
 

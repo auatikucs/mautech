@@ -5,14 +5,15 @@ import fmc from '../assets/fmc.jpeg';
 import matric from '../assets/matric.jpeg';
 import  './Detail_News.css';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
+import { formatDate } from '../components/FormatDate';
 const All_News = () => {
 const [allNews,setAllNews]=useState([])
 const navigate=useNavigate()
     useEffect(()=>{
         fetch(`https://mau-web-server.fly.dev/admin/get-home-event`)
         .then(res=>{
-            res.json()
+           return res.json()
             .then(data=>{
               setAllNews(data.message[0]['newsEvents'])
               console.log(data.message[0]['newsEvents'])
@@ -43,7 +44,7 @@ const navigate=useNavigate()
                      }} key={ind} className='Other-News-Cards-Content'>
                         <div className='Other-News-Cards-Img-Holder1'><img src={news.image} alt="News Image" srcset="" height='250px' width='100%' /></div>
                         <div className='Other-News-Cards-Heading'>
-                        <span className='date-news'>{news.dateEntered}</span>
+                        <span className='date-news'>{formatDate(news.dateEntered)}</span>
                         <p className='all-new-individual-title'>{news.header}</p><br />
 
                         </div>

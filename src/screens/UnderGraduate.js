@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate, useParams} from 'react-router-dom';
 import student from "../assets/student.jpg";
 const Main = () => {
   const [programs, setAllPrograms] = useState([]);

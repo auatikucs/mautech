@@ -2,7 +2,7 @@ import student from '../assets/student.jpg';
 import news_pic1 from '../assets/news_pic1.jpeg';
 import mau_cover from '../assets/mau_cover.jpg';
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams} from 'react-router';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const DetailNews = () => {

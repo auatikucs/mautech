@@ -2,7 +2,7 @@ import './Admission.css';
 import Student_Gown from '../assets/matric.jpeg';
 import { ArrowForwardOutlined, ArrowRight } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 const Admission = () => {
     const [programs,setAllPrograms]=useState([])
     const navigate=useNavigate()

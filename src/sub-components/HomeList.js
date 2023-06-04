@@ -1,6 +1,6 @@
 import { Divider, ListItemButton, ListItemText } from '@mui/material'
-import React, { useContext } from 'react'
-import {useNavigate} from 'react-router'
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 export default function HomeList({link='',route,id=null,isLink=false}) {
     const navigate=useNavigate()
     return (

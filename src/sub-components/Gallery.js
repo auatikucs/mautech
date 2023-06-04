@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const StyledContainer=styled.div`
@@ -41,6 +41,7 @@ padding:20px;
 `;
 
 export default function Gallery() {
+
   return (
     <StyledContainer>
         <div className='galleryAlum'>

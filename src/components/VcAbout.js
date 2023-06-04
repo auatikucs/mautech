@@ -7,7 +7,7 @@ import bur from '../assets/bur.jpeg';
 import libb from '../assets/libb.jpeg';
 import avatar from '../assets/avatar.png';
 import { Fade,Zoom,Bounce,Reveal } from 'react-awesome-reveal';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 const StyledVc=styled.div`
 @keyframes scaleStroke{
     from{

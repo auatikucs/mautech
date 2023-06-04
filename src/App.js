@@ -31,6 +31,7 @@ import DetailNews from './screens/Detail_News';
 import Admission from './screens/Admission';
 import Portals from './screens/Portals';
 import CenterScreen from './screens/CenterScreen';
+import MainGallery from './sub-components/MainGallery';
 
 function App() {
   return (
@@ -59,7 +60,7 @@ function App() {
     <Route exact path='/allnews' element={<All_News/>}/>
     <Route path='/downloads' element={<Downloads/>}/>
     <Route path='/alumni' element={<Alumni/>}/>
-    <Route path='/gallery' element={<GalleryScreen/>}/>
+    <Route path='/gallery' element={<MainGallery/>}/>
     <Route path='/oer' element={<Oer/>}/>
     <Route path='/admissions' element={<Admission/>}/>
     <Route path='/admission/:id' element={<UnderGraduate/>}/>

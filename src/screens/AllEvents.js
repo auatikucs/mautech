@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import MyNews from '../sub-components/MyNews';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 const StyledContainer=styled.div`
 min-height: 70vh;
 width: 100%;

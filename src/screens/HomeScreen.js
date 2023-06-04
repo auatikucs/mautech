@@ -17,8 +17,9 @@ import { useEffect, useState } from 'react';
 import Chat from '../components/Chat';
 import Vc from '../assets/mau_pic_footer.jpg'
 import Cal from '../assets/cal3.png';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { formatDate } from '../components/FormatDate';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
@@ -385,6 +386,7 @@ and (max-device-width : 480px) {
 `; */
 
 export default function HomeScreen() {
+    
     const [openModel, setModal] = useState(false)
     const [isLoading, setLoading] = useState(true)
     const [homeData, setHomeData] = useState([])
@@ -400,6 +402,7 @@ export default function HomeScreen() {
             .then(res => {
                 res.json()
                     .then(data => {
+                        // console.log(data);
                         setLoading(false)
                         if (data.success) {
                             setHomeData(data.message)
@@ -560,6 +563,8 @@ export default function HomeScreen() {
                             heading={nws.header}
                             body={nws.description}
                             link={`news/${nws.evntId}`}
+                            timePosted={(nws.dayOfEvent)}
+                         
                            
                         />
                         ))
@@ -578,7 +583,8 @@ export default function HomeScreen() {
                                 {nws.header}
                                 </h4>
                                 <p>
-                               {nws.dateEntered}
+                               {formatDate(nws.dateEntered)}
+                              { console.log(formatDate(nws.dateEntered))}
                                 </p>
                             </div>
                           </div>

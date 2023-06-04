@@ -8,7 +8,11 @@ import student_pic from '../assets/mubarak.jpg';
 import MyVideo from '../components/MyVideo';
 import SUG from '../assets/SUG.jpeg';
 import { useEffect } from 'react';
+import ReadMore from '../components/ReadMore';
+
+
 const AboutMau = () => {
+    const aboutMessage =' The University is located at Sangere, a Village in Girei Local Government Area of Adamawa State, and some 10km from Jimeta. In 1980 the Federal Government in response to the nationally acclaimed need for skilled, innovative and technologically oriented high-level manpower required to develop and nurture a technology based economy and society established seven new Universities of Technology.  Federal University of Technology, Yola, along with those of Abeokuta, Akure, Bauchi, Makurdi, Minna and Owerri, came into being in 1981.  This University admitted its first batch of students (214 numbers) in the 1982/83 academic session.  The Current population of regular undergraduates is 14600. The University had barely taken off when the succeeding Military Government abolished four of the seven new Universities of Technology and merged them with older Universities in October, 1984.  Federal University of Technology, Yola was merged with University of Maiduguri and became known as Modibbo Adama College of the University of Maiduguri.  Four years later, on 1st January 1988 the University was granted its former name and full autonomy as the Federal University of Technology, Yola.  A substantive Vice-Chancellor was therefore appointed to run the affairs of the University.';
     useEffect(()=>{
         window.scrollTo({
             top:0,
@@ -24,17 +28,8 @@ const AboutMau = () => {
                     <h2>BRIEF HISTORY OF MODIBBO ADAMA UNIVERSITY YOLA</h2>
                 </div>
                 <div>
-                    <p>
-                    The University is located at Sangere, a Village in Girei Local Government Area of Adamawa State, and some 10km from Jimeta.
-
-                    In 1980 the Federal Government in response to the nationally acclaimed need for skilled, innovative and technologically oriented high-level manpower required to develop and nurture a technology based economy and society established seven new Universities of Technology.  Federal University of Technology, Yola, along with those of Abeokuta, Akure, Bauchi, Makurdi, Minna and Owerri, came into being in 1981.  This University admitted its first batch of students (214 numbers) in the 1982/83 academic session.  The Current population of regular undergraduates is 14600.
-
-                    The University had barely taken off when the succeeding Military Government abolished four of the seven new Universities of Technology and merged them with older Universities in October, 1984.  Federal University of Technology, Yola was merged with University of Maiduguri and became known as Modibbo Adama College of the University of Maiduguri.  Four years later, on 1st January 1988 the University was granted its former name and full autonomy as the Federal University of Technology, Yola.  A substantive Vice-Chancellor was therefore appointed to run the affairs of the University.
-
-                    {/* The University from inception has run the School system of Administration with two Schools, the School of Science and Technology Education and the School of Management Sciences.  Presently, the University has six Schools, namely, the School of Agriculture and Agricultural Technology, Engineering and Engineering Technology, Environmental Sciences, Management and Information Technology, Pure and Applied Sciences and Technology and Science Education.The then President, Dr. Goodluck Ebele Jonathan, GCFR, approved the change of name of the University from: Federal University of Technology, Yola (FUT,Yola) To Modibbo Adama University of Technology, Yola (MAUTECH,Yola), supposedly named after Modibbo Adama Ibn Hassan(1809-1847), a great scholar, an erudite educationist, an outstanding leader and the founder of the Fombina Kingdom (The Present Adamawa Emirate). As the first ruler and founder of the Emirate, Modibbo Adama Ibn Hassan was one of the disciples and flag bearers of Sheikh Usman Ibn Fodio of the Sokoto Caliphate. The new name took effect from 1st October, 2011. Subsequently,  President Muhammadu Buhari assented to the Modibbo Adama University Yola establishment bill on the 6th of January 2021. */} 
-                    <strong>  Read more{'>>>'}</strong>
-
-                    </p>
+                   <ReadMore textSlice={aboutMessage}/>
+                    
                 </div>
             </div>
             {/* <div className='University-Objectives-Container'> */}

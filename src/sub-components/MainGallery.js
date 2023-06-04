@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 const StyledContainer=styled.div`
 height:40vh;
@@ -41,22 +41,46 @@ padding:20px;
 `;
 
 export default function MainGallery() {
-  return (
-    <StyledContainer>
-        <div className='galleryAlum'>
-         <img src='https://www.dominican.edu/sites/default/files/styles/width_1160/public/2020-12/Alumni-Homepage-Image.jpg?itok=kJYPIwY9' alt='img'/>
-        </div>
 
+const [isGallery, setGallery] = useState([]);
+const [isLoading, setLoading] = useState(true);
 
-        <div className='ev'>
-        <span className='eventName'>
-            MAU Alumni meets with partners at abuja
-        </span>
-        <span className='eventDate'>
-            01,May 2020
-        </span>
-        </div>
+useEffect(()=>{
+    fetch('https://mau-web-server.fly.dev/admin/get-all-gallery')
+    .then(res=>{
+        return res.json();
+      })
+      .then(data =>{
+        setLoading(false)
+       
+            setGallery(data.message);
+          console.log(data.message)
         
-    </StyledContainer>
+      })
+},[]);
+
+
+  return (
+    <div className='Gallery-Container'>
+        <h2>Picture Gallery</h2>
+        {isLoading && <div>Loading.....</div>}
+        {isGallery && isGallery.map((gallery)=>(
+            <div className='Inner-Gallery'>
+                <div>
+                <span>{gallery.header}</span>
+                <img src={gallery.image} alt='' width='100%' height='300px'/>
+                </div>
+                
+                
+            </div>
+        )
+        )
+        
+        }
+        
+    </div>
+   
+    
+    
   )
 }

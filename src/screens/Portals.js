@@ -2,7 +2,7 @@ import './Admission.css';
 import Student_Gown from '../assets/portal.png';
 import { ArrowForwardOutlined, ArrowRight } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 const Portals = () => {
     const [programs,setAllPrograms]=useState([])
     const navigate=useNavigate()
@@ -43,7 +43,7 @@ const Portals = () => {
                         <div onClick={()=>{
     
                             window.location=`${program.portalLinkValue}`
-                            // navigate(`/admission/${program.portalLinkValue}`)
+                            navigate(`/admission/${program.portalLinkValue}`)
                         }} key={ind} className='Admission-Cards-Content'>
                 
                         <div className='Admission-Cards-Heading'>
