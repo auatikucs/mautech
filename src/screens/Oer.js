@@ -1,6 +1,7 @@
 import { Download } from '@mui/icons-material';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 import DownloadImg from '../assets/oer.gif'
 const StyledContainer=styled.div`
 margin-top:100px;
@@ -42,31 +43,48 @@ align-items:center;
 }
 `;
 export default function Oer() {
+  const[isOER, setIsOER] = useState([]);
+  const[isLoading, setLoading] = useState(true);
+  
+useEffect(()=>{
+  fetch('https://mau-web-server.fly.dev/admin/get-all-oer')
+  .then(res=>{
+   return res.json()
+  })
+  .then(data=>{
+    setLoading(false);
+    setIsOER(data.message)
+    console.log(data.message);
+  })
+},[])
+
   return (
     <StyledContainer>
         <div className='mainDownlo'>
             <span className='donHe'>Open Educational Research</span>
-            <div className='downFil'>
-                <span>2020 schedule school fess</span>
-                <Download fill='#000000'/>
-            </div>
+            {isLoading && <div>Loading......</div>}
+           {isOER && isOER.map((oer)=>(
+             <div className='downFil' 
+             onClick={() => {
+              const el = document.createElement("a");
+              el.setAttribute("href", `${oer.oerLink}`);
+              el.setAttribute("download", "doc");
+              el.setAttribute("target", "_blank");
+              // console.log(el)
+              el.click();
+            }}>
+             <span>{oer.oerName}</span>
+            <Link to={oer.oerLink} target="_blank"><Download/></Link>
+           
+         </div>
+           ))}
 
-            <div className='downFil'>
-                <span>2020 schedule school fess</span>
-                <Download fill='#000000'/>
-            </div>
-
-
-            <div className='downFil'>
-                <span>2020 schedule school fess</span>
-                <Download fill='#000000'/>
-            </div>
 
 
           </div>
-        <div className='downLBg'>
+        {/* <div className='downLBg'>
           <img src={DownloadImg} alt='img'/>
-        </div>
+        </div> */}
     </StyledContainer>
   )
 }

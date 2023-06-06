@@ -1,0 +1,91 @@
+.Campus-Life-Container{
+    display: grid;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .Dean-image-container{
+    border: 1px solid #ddd;
+    background-color: #efeeee;
+    text-align: center;
+  }
+   .Dean-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+   }
+   .Dean-welcome-message-container p{
+  line-height: 30px;
+   }
+   .Student-activities-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+   }
+   .Student-card{
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+    padding: 10px;
+    border-radius: 18px;
+   }
+   .Student-card:hover{
+    border-top: 3px solid #D33232;
+   }
+   .Student-card p{
+    font-weight: lighter;
+    line-height: 20px;
+    font-size: 15px;
+   }
+
+
+   /* tablets view css */
+   @media screen and (max-width: 1178px){
+    .Student-activities-card-container{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+     }
+
+   }
+/* phone view css */
+   @media screen and (max-width: 850px){
+    .Campus-Life-Container{
+      display: grid;
+      margin: 0 auto;
+      width: 90%;
+      margin-top: 30px;
+    }
+    .Dean-image-container{
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+     .Dean-container{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      grid-gap: 30px;
+     }
+     .Dean-welcome-message-container p{
+    line-height: 30px;
+     }
+     .Student-activities-card-container{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 30px;
+     }
+     .Student-card{
+      border: 1px solid #ddd;
+      box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+      padding: 10px;
+      border-radius: 18px;
+     }
+     .Student-card:hover{
+      border-top: 5px solid #D33232;
+     }
+     .Student-card p{
+      font-weight: lighter;
+      line-height: 20px;
+      font-size: 15px;
+     }
+
+   }

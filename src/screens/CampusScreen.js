@@ -1,7 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MyVideo from '../components/MyVideo';
 import CampusCard from '../sub-components/CampusCard';
+import Dean from '../assets/domy.jpeg'
+import sport from '../assets/sport.jpg'
+import hostel from '../assets/hostel.jpg'
+import SUG from '../assets/student_union_banner.jpg'
+import './Campus.css';
+
 
 const StyledContainer=styled.div`
 width: 100%;
@@ -194,10 +200,21 @@ and (max-device-width : 480px) {
         }
 `;
 export default function CampusScreen() {
+    const[campusData, setcampusData] = useState([]);
+    const[isloading, setLoading] = useState(true)
     useEffect(()=>{
         window.scrollTo({
             top:0,
             behavior: 'smooth',
+          })
+          fetch('https://mau-web-server.fly.dev/admin/get-campus-life')
+          .then(res=>{
+            return res.json()
+          })
+          .then(data=>{
+            setLoading(false);
+            setcampusData(data.message);
+            console.log(data.message);
           })
     },[])
     return (
@@ -206,122 +223,62 @@ export default function CampusScreen() {
         content='The critical irreducible element is therefore learning whether in a 
         formal or in an informal way. Consequently, whenever learning takes place, 
         education has equally taken place.'
+        // source='https://youtu.be/wu4fF4D-JMo'
         source='https://res.cloudinary.com/nutscoders/video/upload/v1657108281/WhatsApp_Video_2022-07-04_at_9.43.53_PM_lohmle.mp4'
         />
-        <div className='mainDean'>
-                    <div className='mainDeanCont'>
-                        <div className='deanPersonal'>
-                       
-                         
-                           <div style={{
-                     background:`url('https://radiologyseminars.co.uk/wp-content/uploads/2021/11/avatar-male.jpg')`,
-                     backgroundRepeat:'no-repeat',
-                     backgroundSize:'cover',
-                     backgroundPosition:'center'
-                     
-                 }} className='myDean'>
-                         <div className='myDeanCont'>
-                         <h2>Name</h2>
-                         <h4>Dean Student Affairs</h4>
-                         </div>
-                           </div>
-                          
-                         
-                            
-                        </div>
-                        <div className='deanWelcome'>
-                            {/* <h3 style={{color:'black'}}>About {triger[0].facultyName}</h3> */}
-                            <p> 
-                            The critical irreducible element is therefore learning whether in a formal 
-          or in an informal way. Consequently, whenever learning takes place, education
-           has equally taken place.
-In reality, there is no watertight division between formal education and the informal 
-aspects of education. Sometimes, we find that even within formal education settings there
- are informal aspects. Those who pursue the informal aspects along with the formal become 
- complete products while those who are strictly 
-concerned only with what is written out in the curricula end up as defective products.
-                            </p>
-                        </div>
-                    </div>
+
+
+        <div className='Campus-Life-Container'>
+            {campusData && campusData.map((deanInfo)=>(
+                <div className='Dean-container'>
+                <div className='Dean-image-container'>
+                    {/* <img src={deanInfo.dean.image} alt='' width='100%' height='300px'/><br></br> */}
+                    <img src={Dean} alt='' width='100%' height='300px'/><br></br>
+                    {/* <span>{deanInfo.dean.name}</span><br></br>
+                    <span>{deanInfo.dean.rank}</span> */}
+                      <span>Dean Name</span><br></br>
+                    <span>Dean Student Affairs Division</span>
                 </div>
-        {/* <div className='campusImage'>
-         <div className='campusHead'>
-        <div className='welcomeDean'>
-        <h1>Welcome Message</h1>
-          <p>
-          The critical irreducible element is therefore learning whether in a formal 
-          or in an informal way. Consequently, whenever learning takes place, education
-           has equally taken place.
-In reality, there is no watertight division between formal education and the informal 
-aspects of education. Sometimes, we find that even within formal education settings there
- are informal aspects. Those who pursue the informal aspects along with the formal become 
- complete products while those who are strictly 
-concerned only with what is written out in the curricula end up as defective products.
-          </p>
-        </div>
-          
-         </div>
-        </div> */}
-          {/* <div className='campusDetails'>
-              <h1>THERE’S MORE TO LIFE THAN CLASS.</h1>
-              <p>You’re not just choosing a school — you’re choosing a home. 
-                  On MAU's beautiful campus you’ll find a diverse, welcoming community 
-                  of students and faculty, plus opportunities to learn, 
-                  lead, explore and give back, not to mention have fun.</p>
-            <div className='moreCampusDetails'>
-              <div>
-                  <h3>Hostel Accomodation</h3>
-                  <p>
-                  One of the most important services delivered by the Student Affairs 
-                  Department is arranging and providing not only acceptable but affordable 
-                  accommodation. This is a duty of an outstanding importance especially to the 
-                  first students who, in most cases, are complete ‘strangers’ in the environment.
-                  </p>
-              </div>
-
-
-              <div>
-                  <h3>Students’ Associations</h3>
-                  <p>
-                  One of the ways of helping students to appreciate the advantages of living and 
-                  working together in society is to encourage them to associate with themselves and thus 
-                  form associations. These associations are of many varieties and background. Some are based 
-                  on communities, local governments or on states of origin. Others are of cultural, 
-                  religious and social origins, going beyond consanguine and ancestral boundaries.
-                  </p>
-              </div>
-
-              <div>
-                  <h3>Medical Center</h3>
-                  <p>
-                  The Medical Centre was established to take care of the health needs of 
-                  the staff, students and the close relatives of the staff. It is also one of the
-                   avenues through which the University carries out a much needed 
-                  community service to the rural population around the University.
-                  </p>
-              </div>
-
-
-              <div>
-                  <h3>The Student Union Government (SUG)</h3>
-                  <p>
-                  There is no doubt, whatsoever, that student unionism is desirable in the University. 
+                <div className='Dean-welcome-message-container'>
+                    <p> There is no doubt, whatsoever, that student unionism is desirable in the University. 
                   What the authorities expect, however, is mature and responsible leadership from members
                    of the student union executive, as they are a critical link between the students and the 
                    authorities. Towards this end, and in order to have responsible and visionary student 
                    leadership, the authorities have put in place a number of quality control measures for 
                    those who are aspiring to be student leaders. One of these measures is that such students 
                    must have made a minimum cumulative grade point average (CGPA) of 3.5. The authorities have 
-                   always consciously 
-                  encouraged students to join the body, and have always insisted on good quality leadership.
-                  </p>
-              </div>
+                   always consciously </p>
+                </div>
             </div>
-          </div> */}
-          <h1>THERE’S MORE TO LIFE THAN CLASS.</h1>
-        <CampusCard title='Accomodation' begin={true}/>
-        <CampusCard title='Sports And Fitness'/>
-        <CampusCard title='Students Union' begin={true}/>
+            ))}
+            <div>
+                <div>
+                    <h2>Student Activities</h2>
+                </div>
+                <div className='Student-activities-card-container'>
+                    <div className='Student-card'>
+                        <div><img src={SUG} alt='' width='100%' height='300px'/></div>
+                        <div><h4>Student Union Government</h4></div>
+                        <div><p>There is no doubt, whatsoever, that student unionism is desirable in the University. 
+                  What the authorities expect, however, is mature and responsible leadership from members
+                   of the student union executive, as they are a critical link between the students and the 
+                   authorities.</p></div>
+                    </div>
+                    <div className='Student-card'>
+                        <div><img src={hostel} alt='' width='100%' height='300px'/></div>
+                        <div><h4>Accomodation</h4></div>
+                        <div><p>One of the most important services delivered by the Student Affairs Department is arranging and providing not only acceptable but affordable accommodation. This is a duty of an outstanding importance especially to the first students who, in most cases, are complete ‘strangers’ in the environment.</p></div>
+                    </div>
+                    <div className='Student-card'>
+                        <div><img src={sport} alt='' width='100%' height='300px'/></div>
+                        <div><h4>Sport & Fitness</h4></div>
+                        <div><p>Our programs at MAU Yola are designed to offer you with information and guidance so that you can reach your full health potential. We provide a number of services to assist you in reaching your fitness goals and maintaining a healthy lifestyle. We have highly qualified fitness professionals on hand to help you achieve your health objectives.</p></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
         </StyledContainer>
     )
 }
