@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import styled from 'styled-components'
 
 
@@ -146,71 +146,57 @@ and (max-device-width : 480px) {
 `;
 
 export default function Intervention() {
+    const[isIntervention, setIsIntervention] = useState([]);
+    const[isLoading, setLoading] = useState(true);
     useEffect(()=>{
         window.scrollTo({
             top:0,
             behavior: 'smooth',
+          })
+
+          fetch('https://mau-web-server.fly.dev/admin/get-all-interventions')
+          .then(res=>{
+            return res.json()
+          })
+          .then(data=>{
+            setLoading(false);
+            setIsIntervention(data.result);
+            console.log(data.result);
           })
       
        
     },[])
   return (
     <StyledContainer>
-        <div className='indInter'>
+        {isIntervention.length > 0 && isIntervention.map((interventionData)=>(
+            <div className='indInter'>
             <span className='indINterHead'>
-                TETFUND Intervention
+               {interventionData.interventionName}
             </span>
             <span className='indIntSty'></span>
-            <div className='indCardInte'>
-            <div className='indCardSt'>
-             <span>02,OCT</span>
-            </div>
-             <img src='https://guardian.ng/wp-content/uploads/2020/06/TETfund.jpg' alt='pic'/>
-             <span className='titleIndInt'>Construction Of Fire Service</span>
-             <p>
-             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-             </p>
-            </div>
+            {isIntervention && isIntervention[0].interventionList.map((interventionData)=>(
+                <div className='indCardInte'>
+                <div className='indCardSt'>
+                 <span>{interventionData.createdAt.slice(5,10)}</span>
+                </div>
+                 <img src={interventionData.image} alt='pic'/>
+                 <span className='titleIndInt'>{interventionData.name}</span>
+                 <p>
+                {interventionData.description}
+                 </p>
+                </div>
+    
+            ))}
 
 
 
-
-            <div className='indCardInte'>
-            <div className='indCardSt'>
-             <span>02,OCT</span>
-            </div>
-             <img src='https://blog.owis.org/hubfs/Secondary.jpg' alt='pic'/>
-             <span className='titleIndInt'>New Multipurpose Hall Constructed</span>
-             <p>
-             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-             </p>
-            </div>
-
-
-
-
-
-            <div className='indCardInte'>
-            <div className='indCardSt'>
-             <span>02,OCT</span>
-            </div>
-             <img src='https://www.thenicheng.com/wp-content/uploads/2021/11/website.jpg' alt='pic'/>
-             <span className='titleIndInt'>TETFUND Website Sponsorship!</span>
-             <p>
-             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-             </p>
-            </div>
+            
 
         <div className='indCardBtn'>
           <img src={require('../assets/arr.png')} alt='img' />
         </div>
         </div>
+        ))}
 
 
 
@@ -226,7 +212,7 @@ export default function Intervention() {
 
 
 
-        <div className='indInter'>
+        {/* <div className='indInter'>
             <span className='indINterHead'>
                 PTDF Intervention
             </span>
@@ -280,7 +266,7 @@ export default function Intervention() {
         <div className='indCardBtn'>
           <img src={require('../assets/arr.png')} alt='img' />
         </div>
-        </div>
+        </div> */}
     </StyledContainer>
   )
 }
