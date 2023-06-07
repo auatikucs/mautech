@@ -7,7 +7,7 @@ const ReadMore = ({textSlice}) => {
     };
     return ( 
         <p className="text">
-      {isReadMore ? textSlice.slice(0, 250) : textSlice}
+      {isReadMore ? textSlice.slice(0, 532) : textSlice}
       <span onClick={toggleReadMore} className="read-or-hide" style={{fontWeight:'bolder', pointerEvents:'stroke'}}>
         {isReadMore ? " ..Read More >>>" : " <<< show less"}
       </span>

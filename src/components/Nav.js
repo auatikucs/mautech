@@ -13,6 +13,7 @@ import MainDrop from '../sub-components/MainDrop'
 import AboutDrop from '../sub-components/AboutDrop'
 import AdmissionDrop from '../sub-components/AdmissionDrop'
 import DropFaci from '../sub-components/DropFaci';
+import DropIntervention from '../sub-components/InterventionDrop';
 import { loadAllFac } from '../helpers/loadAllFac';
 
 const MyNav=styled.nav`
@@ -443,11 +444,11 @@ const navigate=useNavigate()
                 <li style={{
                  backgroundColor:myParams.pathname.includes('interven')?'black':'transparent'
                 }}>
-                <Link style={{
+                {/* <Link style={{
                  color:myParams.pathname.includes('interven')?'#FFFFFF':'black'
-                }} to='/intervention'>Intervention</Link>
+                }} to='/intervention'>Intervention</Link> */}
                 </li>
-              
+              <li><DropIntervention/></li>
             </ul>
             {/* <Button style={{
                 marginLeft:'auto',
@@ -599,9 +600,39 @@ const navigate=useNavigate()
                <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/facility/001'><MyList title='Facilities'/></Link>
-              <Link onClick={()=>{
+              {/* <Link onClick={()=>{
                   setIsDrawerOpen(false)
-              }} to='/intervention'><MyList title='Interventions'/></Link>
+              }} to='/intervention'><MyList title='Interventions'/></Link> */}
+
+<Accordion>
+                    <AccordionSummary
+                      style={{backgroundColor:'#400000'}}
+                      expandIcon={<ExpandMoreIcon style={{color:'#ffffff'}} />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography style={{color:'#ffffff'}}>Intervention</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography onClick={()=>{
+                                    navigate('/intervention')
+                                    setIsDrawerOpen(false)
+                            }} style={{
+                                    borderBottom:'1px solid gray'
+                                }}>
+                        TETFUND Intervention➤
+                      </Typography>
+                      <Typography onClick={()=>{
+                                    navigate('/#')
+                                    setIsDrawerOpen(false)
+                            }} style={{
+                                    borderBottom:'1px solid gray'
+                                }}>
+                        PTDF Intervention➤
+                      </Typography>
+                    </AccordionDetails>
+         </Accordion>
+
                 <Link onClick={()=>{
                   setIsDrawerOpen(false)
               }} to='/downloads'><MyList title='Downloads'/></Link>
