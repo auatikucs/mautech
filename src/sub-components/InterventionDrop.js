@@ -59,9 +59,35 @@ export default function DropIntervention({link='',route=''}) {
         <ListItemText  primary='PTDF INTERVENTION'/>
              </ListItemButton>
 
+             <ListItemButton  onClick={()=>{
+                   navigate('/#')
+               }} style={{
+           color:'white',
+           textTransform:'capitalize',
+           fontWeight:'bold'
+       }} component="span" className='content-lists'>
+        <ListItemText  primary='NITDA INTERVENTION'/>
+             </ListItemButton>
 
+             <ListItemButton  onClick={()=>{
+                   navigate('/#')
+               }} style={{
+           color:'white',
+           textTransform:'capitalize',
+           fontWeight:'bold'
+       }} component="span" className='content-lists'>
+        <ListItemText  primary='NCC INTERVENTION'/>
+             </ListItemButton>
 
-            
+             <ListItemButton  onClick={()=>{
+                   navigate('/#')
+               }} style={{
+           color:'white',
+           textTransform:'capitalize',
+           fontWeight:'bold'
+       }} component="span" className='content-lists'>
+        <ListItemText  primary='OTHER INTERVENTIONS'/>
+             </ListItemButton>
                </List>
                 </div>
                 

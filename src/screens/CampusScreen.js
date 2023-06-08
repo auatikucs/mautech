@@ -214,7 +214,7 @@ export default function CampusScreen() {
           .then(data=>{
             setLoading(false);
             setcampusData(data.message);
-            console.log(data.message);
+            // console.log(data.message);
           })
     },[])
     return (

@@ -281,7 +281,7 @@ export default function DetailScreen() {
                 .then(data => {
                   setTriger([data.message])
                   setLoading(false)
-                  console.log(data,activity)
+                //   console.log(data,activity)
                 })
         }).catch(err=>{
             

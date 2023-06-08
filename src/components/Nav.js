@@ -341,7 +341,7 @@ const navigate=useNavigate()
         .then(res => {
             res.json()
                 .then(data => {
-                console.log(data.message,"|||")
+                // console.log(data.message,"|||")
                 setAllUnits(data.message)  
                 })
         }).catch(err=>{
@@ -629,6 +629,30 @@ const navigate=useNavigate()
                                     borderBottom:'1px solid gray'
                                 }}>
                         PTDF Intervention➤
+                      </Typography>
+                      <Typography onClick={()=>{
+                                    navigate('/#')
+                                    setIsDrawerOpen(false)
+                            }} style={{
+                                    borderBottom:'1px solid gray'
+                                }}>
+                        NITDA Intervention➤
+                      </Typography>
+                      <Typography onClick={()=>{
+                                    navigate('/#')
+                                    setIsDrawerOpen(false)
+                            }} style={{
+                                    borderBottom:'1px solid gray'
+                                }}>
+                        NCC Intervention➤
+                      </Typography>
+                      <Typography onClick={()=>{
+                                    navigate('/#')
+                                    setIsDrawerOpen(false)
+                            }} style={{
+                                    borderBottom:'1px solid gray'
+                                }}>
+                        Other Interventions➤
                       </Typography>
                     </AccordionDetails>
          </Accordion>

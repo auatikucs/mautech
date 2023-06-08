@@ -413,7 +413,7 @@ export default function HomeScreen() {
                       .then(res => {
                           res.json()
                               .then(data => {
-                                  console.log(data.result,"+=+=+=+=+=+")
+                                //   console.log(data.result,"+=+=+=+=+=+")
                                   setStats(data.result)
                               })
                       })

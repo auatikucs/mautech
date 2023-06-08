@@ -161,7 +161,7 @@ export default function Intervention() {
           .then(data=>{
             setLoading(false);
             setIsIntervention(data.result);
-            console.log(data.result);
+            // console.log(data.result);
           })
       
        

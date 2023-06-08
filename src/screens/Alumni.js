@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MyVideo from '../components/MyVideo';
 import CampusCard from '../sub-components/CampusCard';
@@ -200,11 +200,24 @@ and (max-device-width : 480px) {
 }
 `;
 export default function Alumni() {
+    const[isAlumni, setAlumni] = useState([]);
+    const[isLoading, setLoading] = useState(true);
     useEffect(()=>{
         window.scrollTo({
             top:0,
             behavior: 'smooth',
           })
+          fetch('https://mau-web-server.fly.dev/admin/get-alumni')
+          .then(res=>{
+            return res.json()
+          })
+          .then(
+            data=>{
+                setAlumni(data.message);
+                setLoading(false)
+                console.log(data.message)
+            }
+          )
     },[])
     return (
         <StyledContainer>
