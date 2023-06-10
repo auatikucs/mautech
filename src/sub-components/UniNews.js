@@ -9,11 +9,15 @@ height: 80%;
 background-color:white;
 margin:20px;
 cursor: pointer;
-/* box-shadow:0 8px 20px 0 rgba( 31, 38, 135, 0.37 ); */
+border: none;
 flex-shrink: 0;
 img{
     width: 100%;
    
+}
+StyledNews: hover{
+  background-color:red;
+  color: white;
 }
 @media only screen 
 and (max-width : 1060px){

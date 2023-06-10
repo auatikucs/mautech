@@ -3,7 +3,7 @@ import Carousel from 'react-material-ui-carousel'
 import MyCarouselContent from '../components/MyCarouselContent';
 import { Button, Divider, List, Skeleton } from '@mui/material';
 import VideoIcon from '@mui/icons-material/VideoCallOutlined'
-import {PlayArrow} from '@mui/icons-material'
+import {BorderBottom, PlayArrow} from '@mui/icons-material'
 import MyNews from '../sub-components/MyNews';
 import UniNews from '../sub-components/UniNews';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -20,6 +20,8 @@ import Cal from '../assets/cal3.png';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../components/FormatDate';
+import HomeNews from '../sub-components/HomeNews';
+import hostel from '../assets/hostel.jpg';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
@@ -37,6 +39,7 @@ transition: all 1s;
         width: 100%;
         min-height: 80vh;
         background:url(${Vc});
+        // background-color:whitesmoke;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -508,7 +511,7 @@ export default function HomeScreen() {
                     </div>
 
                     <div className='the-msg'>
-                        <p>
+                        <p style={{lineHeight: 2}}>
                           {
                               !isLoading&&
                               homeData.length > 0?homeData[0].vc.description:''
@@ -543,16 +546,54 @@ export default function HomeScreen() {
                     </List>
                 </div>
             </div>
-            
-            <div className='myDivider'>
+            <div>
+            <span style={{paddingLeft: 15, fontSize:20, color:'maroon'}}>NEWS & UPDATES</span>
+            <Divider className='evDiv' style={{ backgroundColor: '#D07348',width:'100%',height:5 }} />
+        </div>
+        <div className='Overall-Home-News-Container'> 
+            <div className='Home-News-Container'>
+           { !isLoading&&
+                    homeData.length > 0&&(
+                        homeData[0].newsEvents.slice(0,2).map((nws,ind)=>( 
+                        <HomeNews
+                        key={ind}
+                        image={nws.image}
+                        heading={nws.header}
+                        body={nws.description}
+                        link={`news/${nws.evntId}`}
+                        timePosted={formatDate(nws.dayOfEvent)}
+
+                        />)).reverse())}
+           
+                </div>
+                {/* other news in row card */}
+                <div className='News-small-row-card-container'>
+                    {!isLoading&&
+                     homeData.length > 0&&(
+                         homeData[0].newsEvents.slice(0,6).map((nws,ind)=>(
+                            <div style={{display:'flex',}}  onClick={()=>{
+                                navigate(`news/${nws.evntId}`)
+                                }}> 
+                        <img src={nws.image} alt='' width='100px' height='fit-content'/>
+                        <span>{nws.header}</span>
+                    </div>
+                         )))}
+                    
+                    
+                </div>
+                <div className='SeeAllNews'>
+                <span><Link to='/allnews'>SEE ALL NEWS ></Link></span>
+            </div>
+            </div>
+            {/* <div className='myDivider'>
             <h2 style={{
     color: '#D07348',
     textAlign: 'center'
      }}>News & Updates</h2>
             <Divider className='evDiv' style={{ backgroundColor: '#D07348',width:'100%',height:5 }} />
-            </div>
+            </div> */}
             
-            <div className='uni-news'>
+            {/* <div className='uni-news'>
                 {
                     !isLoading&&
                     homeData.length > 0&&(
@@ -596,19 +637,23 @@ export default function HomeScreen() {
                     </p>
               
               </div>
+             
 
-            </div>
+            </div> */}
             <Divider style={{ backgroundColor: '#D07348', marginBottom: 20 }} />
             <OnlineLinks />
             <Divider  sx={{
     "&::before, &::after": {
       borderColor: "#D07348",
     },
-  }}     style={{
+  }}  
+     style={{
             marginTop:20
             }}><h2 style={{color:'#D07348'}}>
+               
             EXPLORE OUR MAJOR  PROGRAMS    
              </h2></Divider>
+
              <Explore />
             <MyCount stats={stats}/>
            

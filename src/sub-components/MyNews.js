@@ -8,6 +8,7 @@ max-height: 50px;
 width: 90%;
 box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 display: flex;
+border-radius: 4px;
 flex-direction: row;
 margin-bottom: 15px;
 margin-left:auto;
@@ -50,6 +51,7 @@ export default function MyNews({news='',id,prog,date=null}) {
          <p>
          {news}
          </p>
+         {/* <p>I;m here</p> */}
         </div>
 {/* <ListItemButton style={{
     color:'#D07348'

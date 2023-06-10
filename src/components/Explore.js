@@ -3,8 +3,8 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import MyCard from '../sub-components/MyCard';
-const imgUrl=require('../assets/news1.jpg')
-const imgUrl2=require('../assets/und.jpg')
+const imgUrl=require('../assets/library.jpeg')
+const imgUrl2=require('../assets/stu1.jpeg')
 const StyledExplore=styled.div`
 min-height: 80vh;
 background-color: white;
@@ -34,6 +34,9 @@ flex-direction: row;
     cursor: pointer;
     h4{
         color:white;
+        font-size: 20px;
+        padding:15px;
+        text-align: center;
         
     }
     }
@@ -58,6 +61,10 @@ flex-direction: row;
     color:white;
   
 }
+h1{
+  font-size:59px;
+
+}
 p{
     color: white;
     text-align: justify;
@@ -75,6 +82,13 @@ and (max-width : 1060px){
     min-height:30vh;
     margin-left:auto;
     margin-right:auto;
+    h4{
+     
+    
+      font-size:10px;
+      
+      
+  }
   }
   h1{
     margin-right: 10px;
