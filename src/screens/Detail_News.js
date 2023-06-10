@@ -4,6 +4,9 @@ import mau_cover from '../assets/mau_cover.jpg';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { formatDate } from '../components/FormatDate';
+import UniNews from '../sub-components/UniNews';
+import { CalendarMonthOutlined, CalendarTodayOutlined } from '@mui/icons-material';
 
 const DetailNews = () => {
     const {id}=useParams()
@@ -23,19 +26,18 @@ const DetailNews = () => {
           })
     },[])
     return ( 
-        <div style={{
-            marginTop:110,
-            width:'80%',
-            position:'relative'
-            }} className='Deatail-News-Container'>
-
+        <div className='Deatail-News-Container'>
+           
         {
         singleNews!==null&&
         (
         <div className='News-Header'>
-            <div><span className='News-Title'>{singleNews.header}</span><br></br>
-            <span className='News-Date'>{singleNews.dateEntered} </span></div>
-            <img style={{height:'60vh'}} src={singleNews.image} alt="" srcset="" width='100%'  />
+           
+            <div><h2 className='News-Title4'>{singleNews.header}</h2><br></br>
+            <span style={{display:'flex'}}><CalendarTodayOutlined style={{paddingRight:10}}/> {(singleNews.dateEntered.slice(0,10))} </span>
+            </div>
+            
+            <img style={{height:'40vh'}} src={singleNews.image} alt="" srcset="" width='100%'  />
             <div className='News-Content'>
                 <p>{singleNews.description}</p>
             </div>
@@ -43,11 +45,10 @@ const DetailNews = () => {
         )
         }
             
-        <span className='AllNews' onClick={()=>{
-            navigate('/allnews')
-        }} to='allnews'>
-         All News   
-        </span>
+        <div>
+        <div><span className='SeeAllNews'><Link to='/allnews'>VIEW ALL NEWS ></Link></span></div> 
+        </div>
+       
         </div>
         
      );
