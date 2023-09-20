@@ -103,10 +103,13 @@ const Footer = () => {
                 {" "}
                 <EmailOutlined style={{padding:10}}/><span to="/" style={{color:'white', textDecoration:'none', paddingTop:10,}}>info@mau.edu.ng </span>
               </div>
+              {/*
               <div style={{display: 'flex'}}>
              
-                <PhoneInTalkRounded style={{padding:5}}/><Link to="/" style={{color:'white', textDecoration:'none', padding:5,}}>08060534900</Link>
+                <PhoneInTalkRounded style={{padding:5}}/><Link to="/" style={{color:'white', textDecoration:'none', padding:5,}}></Link>
               </div>
+              */}
+              
               <div>
                 {/* <div>
                   <WhatsAppIcon  style={{color:'white', fontSize:30}}/>
