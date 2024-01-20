@@ -90,6 +90,7 @@ transition: all 1s;
             p{
                 text-align: justify;
                 font-size: 20px;
+                font-weight:100;
                 margin-right:20px;
                 
             
@@ -511,7 +512,7 @@ export default function HomeScreen() {
                     </div>
 
                     <div className='the-msg'>
-                        <p style={{lineHeight: 2}}>
+                        <p style={{lineHeight: 2, textAlign:'justify', textJustify: 'distribute', wordSpacing: '-2px'}}>
                           {
                               !isLoading&&
                               homeData.length > 0?homeData[0].vc.description:''

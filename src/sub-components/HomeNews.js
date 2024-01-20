@@ -13,7 +13,7 @@ const HomeNews = ({image,heading='',body='',link='', timePosted=''}) => {
      navigate(link)
      }}>
                 <img src={image} alt="" width='100%' height='300px'/><br></br>
-                <span>{heading}</span>
+                <span style={{textAlign:'justify', textJustify: 'distribute', wordSpacing: '-2px'}}>{heading}</span>
                 <span>{timePosted}</span>
             </div>
             {/* <div>

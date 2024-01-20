@@ -34,7 +34,8 @@
   }
 }
 body{
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: "Poppins";
   margin: 0px;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -241,7 +242,7 @@ body::-webkit-scrollbar-thumb{
 }
 .Cart-Container-Programs{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   background-color: whitesmoke;
   margin-bottom: 5px;
 }

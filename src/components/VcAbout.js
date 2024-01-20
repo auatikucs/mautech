@@ -404,8 +404,25 @@ export default function VcAbout() {
     return (
         <Fade triggerOnce>
         <StyledVc>
-       
-        <div onClick={()=>{
+         
+       {leadershipData && leadershipData.map((vcData)=>{
+            
+            return(
+                vcData.principalOfficer.mail !== 'gmail.com' ?
+                <div onClick={()=>{
+                    route('/pricipal/001')
+                    }} className='myVc001 main'>
+                    <img 
+                    src={vcData.principalOfficer.image} 
+                    alt='img'/> 
+                    <span>{vcData.name}</span>
+                    <span>Vice Chancellor</span>
+                    <div className='bgv'></div>
+                    </div> : (<div>i'm here</div>)
+            )
+       })}
+
+        {/* <div onClick={()=>{
         route('/pricipal/001')
         }} className='myVc001 main'>
         <img 
@@ -414,7 +431,7 @@ export default function VcAbout() {
         <span>Prof. Liman Tukur</span>
         <span>Vice Chancellor</span>
         <div className='bgv'></div>
-        </div>
+        </div> */}
        
       
         <div className='others001 bur'>

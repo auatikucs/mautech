@@ -1,4 +1,7 @@
 import logo from './logo.svg';
+import "@fontsource/poppins"; // Defaults to weight 400
+import "@fontsource/poppins/400.css"; // Specify weight
+import "@fontsource/poppins/400-italic.css"; // Specify weight and style
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import { BrowserRouter, Route,Routes} from 'react-router-dom';
@@ -32,6 +35,7 @@ import Admission from './screens/Admission';
 import Portals from './screens/Portals';
 import CenterScreen from './screens/CenterScreen';
 import MainGallery from './sub-components/MainGallery';
+import RandD from './screens/R&D';
 
 function App() {
   return (
@@ -62,6 +66,7 @@ function App() {
     <Route path='/alumni' element={<Alumni/>}/>
     <Route path='/gallery' element={<MainGallery/>}/>
     <Route path='/oer' element={<Oer/>}/>
+    <Route path='/RandD' element={<RandD/>}/>
     <Route path='/admissions' element={<Admission/>}/>
     <Route path='/admission/:id' element={<UnderGraduate/>}/>
     </Routes>

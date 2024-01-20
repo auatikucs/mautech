@@ -7,14 +7,25 @@ import dvc_Admin from '../assets/dvc_Admin.jpeg';
 import bursar from '../assets/bur.jpeg';
 import avatar from '../assets/avatar.png';
 import Oba from '../assets/chancellor.jpg';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import VcAbout from '../components/VcAbout';
 
 const AboutLeadership = () => {
+    const[isLeadershipData, setLeadershipData] = useState([]);
+    // const[setLoading, isLoading] = true;
     useEffect(()=>{
         window.scrollTo({
             top:0,
             behavior: 'smooth',
+          })
+          fetch('https://mau-web-server.fly.dev/admin/get-about-leadership')
+          .then(res=>{
+            return res.json()
+          })
+          .then(data=>{
+            // isLoading(false)
+            setLeadershipData(data.result)
+            console.log(data.result)
           })
     },[])
     return ( 
@@ -26,15 +37,24 @@ const AboutLeadership = () => {
 
            </div>
            <div className='Chancellor-Container'>
-              
-               <div>
+              {isLeadershipData && isLeadershipData.map((chancellorData)=>(
+                <div>
+                <center> <div><img className='Chancellor-pic' src={chancellorData.chancellor.image} alt="" srcset="" width='500px' height='300px' /><br></br>
+                <span>{chancellorData.chancellor.name}</span><br></br>
+                <span>JP. Paramount Ruler/Ekporikpo of Obot</span><br></br>
+                <span>Chancellor, Modibbo Adama University</span><br></br>
+                </div></center>
+                <div></div>
+            </div>
+              ))}
+               {/* <div>
                    <center> <div><img className='Chancellor-pic' src={Oba} alt="" srcset="" width='500px' height='300px' /><br></br>
                    <span>HRM Okuku (Dr.) Uwa Umoh Adiaka III,</span><br></br>
                    <span>JP. Paramount Ruler/Ekporikpo of Obot</span><br></br>
                    <span>Chancellor, Modibbo Adama University</span><br></br>
                    </div></center>
                    <div></div>
-               </div>
+               </div> */}
            </div>
            <span className='AboutLeadership-Title'>Governing Council</span>
            <div className='Pro-Chancellor-Container' >
@@ -47,12 +67,20 @@ const AboutLeadership = () => {
                        <span className='Council-Members-Title'>Council Members</span>
                  </div>     
                     <div className='Governing_Council_New'>
-                       <div className='Pro-Chancellor-Img-Holder'>
+                        {isLeadershipData && isLeadershipData.map((proChancellorData)=>(
+                            <div className='Pro-Chancellor-Img-Holder'>
+               
+                            <img src={proChancellorData.proChancellor.image} alt="" srcset="" height='350px' width='300px'/><br></br>
+                                <span>{proChancellorData.proChancellor.name}</span><br></br>
+                                <span>Pro Chancellor and Chairman</span>
+                        </div>
+                        ))}
+                       {/* <div className='Pro-Chancellor-Img-Holder'>
                
                             <img src={proChancellor} alt="" srcset="" height='350px' width='300px'/><br></br>
                                 <span>Alh, Bashir Mohammed Dalhatu</span><br></br>
                                 <span>Pro Chancellor and Chairman</span>
-                        </div>
+                        </div> */}
                         <div className='Council_Members_List_container'>
                            <table>
                                <tr>

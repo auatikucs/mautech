@@ -107,7 +107,7 @@ export default function Downloads() {
               <span>{dow.downloadName}</span>
               <Download fill="#000000" />
             </div>
-          ))}
+          )).reverse()}
        
 
       

@@ -52,7 +52,7 @@ const Main = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              textAlign: "center",
+              textAlign: "left",
             }}
             className="Link-Wrapper"
           >
@@ -110,6 +110,59 @@ const Main = () => {
             {programs.length > 0 &&
               programs.map((prg, ind) => {
                 if (!prg.name.startsWith("C")) {
+                  return null;
+                }
+                return (
+                  <div key={prg.name}>
+                    {" "}
+                    <Link
+                      to={`/program/${prg.programId}/${prg.name}/${prg.activity}`}
+                    >
+                      {prg.name}
+                    </Link>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+        
+        <div>
+          <h1>E</h1>
+          <div style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: "center",
+            }} className="Link-Wrapper">
+            {programs.length > 0 &&
+              programs.map((prg, ind) => {
+                if (!prg.name.startsWith("E")) {
+                  return null;
+                }
+                return (
+                  <div key={prg.name}>
+                    {" "}
+                    <Link
+                      to={`/program/${prg.programId}/${prg.name}/${prg.activity}`}
+                    >
+                      {prg.name}
+                    </Link>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+        <div>
+          <h1>F</h1>
+          <div style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: "center",
+            }} className="Link-Wrapper">
+            {programs.length > 0 &&
+              programs.map((prg, ind) => {
+                if (!prg.name.startsWith("F")) {
                   return null;
                 }
                 return (

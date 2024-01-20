@@ -74,7 +74,7 @@ useEffect(()=>{
               el.click();
             }}>
              <span>{oer.oerName}</span>
-            <Link to={oer.oerLink} target="_blank"><Download/></Link>
+            <Link to={oer.oerLink} target="_blank"></Link>
            
          </div>
            ))}

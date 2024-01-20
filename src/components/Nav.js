@@ -368,7 +368,7 @@ const navigate=useNavigate()
                 <li><Link to='/careers'>Careers</Link> </li>
                 <li><Link to='/alumni'>Alumni</Link> </li>
                 <li><Link to='/gallery'>Gallery</Link> </li>
-                <li><a href='#'>R&D</a></li>
+                <li><Link to='/RandD'>R&D</Link></li>
                 <li><Link to='/oer'>OER</Link> </li>
                 <li><a href='#'>Login</a></li>
             </ul>

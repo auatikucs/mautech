@@ -136,7 +136,7 @@ export default function Principal() {
     return (
         <StyledContainer>
             <div style={{
-             background:`url('https://res.cloudinary.com/diwnlud5x/image/upload/v1675802340/mau/VC_eggrtk.png')`,
+             background:`url('https://res.cloudinary.com/mustyz/raw/upload/v1684945986/o4qwirm8y8zwk64zs2em.jpeg')`,
              backgroundPosition:'top',
              backgroundRepeat:'no-repeat',
              backgroundSize:'cover',
@@ -167,7 +167,7 @@ export default function Principal() {
 
                  </div>
 
-
+{/* 
                  <div className='mainSecond'>
                      <List>
                      <div>
@@ -224,7 +224,7 @@ export default function Principal() {
 <Divider style={{backgroundColor:'#f9f9f9'}}/>
  </div>
                      </List>
-                 </div>
+                 </div> */}
                 
              </div>
             </div>
