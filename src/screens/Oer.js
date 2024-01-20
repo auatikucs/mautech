@@ -7,7 +7,7 @@ const StyledContainer=styled.div`
 margin-top:100px;
 min-height:50vh;
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(3,1fr);
 .downLBg{
 min-height:50vh;
 width:100%;
@@ -16,28 +16,37 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 }
+.oer-title{
+  background-color:whitesmoke;
+  padding: 5px;
+}
 .mainDownlo{
     padding:20px;
     min-width:100%;
     display:flex;
     flex-direction:column;
-    .donHe{
-     width:100%;
-     text-align:center;
-     height:60px;
-     color:white;
-     background-color:#D07348;
-     font-size:40px;
-     border-radius:10px;
-    }
+    
     .downFil{
         display:flex;
-        flex-direction:row;
+        flex-direction:column;
         justify-content:space-between;
         margin-top:15px;
-        border-bottom:1px solid gray;
+       
+        border: 1px solid #ddd;
+        border-radius: 7px;
+       
+        background-color: white;
+        cursor:pointer;
+        .downfil: hover{
+          background-color: red;
+        }
         span{
             font-size:20px;
+        }
+        .desc{
+          font-size:12px;
+          font-weight: light;
+          padding: 5px;
         }
     }
 }
@@ -59,9 +68,12 @@ useEffect(()=>{
 },[])
 
   return (
+    <>
+      <span className='donHe'>Open Educational Research</span>
     <StyledContainer>
+     
         <div className='mainDownlo'>
-            <span className='donHe'>Open Educational Research</span>
+           
             {isLoading && <div>Loading......</div>}
            {isOER && isOER.map((oer)=>(
              <div className='downFil' 
@@ -73,10 +85,13 @@ useEffect(()=>{
               // console.log(el)
               el.click();
             }}>
-             <span>{oer.oerName}</span>
+             <span className='oer-title'>{oer.oerName}</span>
+             <span className='desc'>{oer?.description}</span>
+             {/* <span className='desc'>Open Educational Resources (OER) are learning, teaching and research materials in any format and medium that reside in the public domain or are under copyright that have been released under an open license, that permit no-cost access, re-use, re-purpose, adaptation and redistribution by others.</span> */}
             <Link to={oer.oerLink} target="_blank"></Link>
            
          </div>
+         
            ))}
 
 
@@ -86,5 +101,6 @@ useEffect(()=>{
           <img src={DownloadImg} alt='img'/>
         </div> */}
     </StyledContainer>
+    </>
   )
 }

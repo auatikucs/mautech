@@ -47,14 +47,7 @@ const AboutLeadership = () => {
                 <div></div>
             </div>
               ))}
-               {/* <div>
-                   <center> <div><img className='Chancellor-pic' src={Oba} alt="" srcset="" width='500px' height='300px' /><br></br>
-                   <span>HRM Okuku (Dr.) Uwa Umoh Adiaka III,</span><br></br>
-                   <span>JP. Paramount Ruler/Ekporikpo of Obot</span><br></br>
-                   <span>Chancellor, Modibbo Adama University</span><br></br>
-                   </div></center>
-                   <div></div>
-               </div> */}
+              
            </div>
            <span className='AboutLeadership-Title'>Governing Council</span>
            <div className='Pro-Chancellor-Container' >
@@ -75,12 +68,7 @@ const AboutLeadership = () => {
                                 <span>Pro Chancellor and Chairman</span>
                         </div>
                         ))}
-                       {/* <div className='Pro-Chancellor-Img-Holder'>
-               
-                            <img src={proChancellor} alt="" srcset="" height='350px' width='300px'/><br></br>
-                                <span>Alh, Bashir Mohammed Dalhatu</span><br></br>
-                                <span>Pro Chancellor and Chairman</span>
-                        </div> */}
+                      
                         <div className='Council_Members_List_container'>
                            <table>
                                <tr>
@@ -161,7 +149,7 @@ const AboutLeadership = () => {
            <div><h1 className='AboutLeadership-Title'>Principal Officers</h1></div>
            <div >
              
-           <VcAbout/>
+           {/* <VcAbout/> */}
                
           
            

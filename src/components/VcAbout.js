@@ -557,14 +557,14 @@ export default function VcAbout() {
         </div>
         </div>
         </StyledVc>
-        {leadershipData && leadershipData.map((officer)=>(
+        {/* {leadershipData && leadershipData.map((officer)=>(
            <div>
              <span>{officer.chancellor.name}</span>
             <span>{officer.chancellor.rank}</span>
             <span>{officer.principalOfficer.name}</span>
             <span>{officer.principalOfficer.rank}</span>
            </div>
-        ))}
+        ))} */}
         </Fade>
     )
 }
