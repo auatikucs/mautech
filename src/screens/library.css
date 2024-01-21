@@ -1,0 +1,41 @@
+.Access-our-services-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* background-color: red; */
+    padding: 10px;
+    grid-gap: 10px;
+    
+}
+.Access-our-services-container img {
+    height: 200px;
+}
+.E-Resources{
+    padding: 10px;
+}
+.Opening-hours-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.Hours-card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 1080px){
+    .Access-our-services-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* background-color: red; */
+        padding: 5px;
+        grid-gap: 10px;
+        
+    }
+    .Access-our-services-container img {
+        /* height: auto; */
+        width: 100%;
+    }
+    .Opening-hours-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

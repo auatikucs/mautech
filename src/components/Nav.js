@@ -2,27 +2,18 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Button,
   Drawer,
   List,
   Typography,
 } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import ForwardIcon from "@mui/icons-material/ArrowForward";
+
 import DrawerIcon from "@mui/icons-material/MenuOutlined";
 import styled from "styled-components";
 import MyList from "../sub-components/MyList";
 import CancelOutlined from "@mui/icons-material/CancelOutlined";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-import DropList from "../sub-components/DropList";
-import DropPortal from "../sub-components/DropPortal";
-import MainDrop from "../sub-components/MainDrop";
-import AboutDrop from "../sub-components/AboutDrop";
-import AdmissionDrop from "../sub-components/AdmissionDrop";
-import DropFaci from "../sub-components/DropFaci";
-import DropIntervention from "../sub-components/InterventionDrop";
-import { loadAllFac } from "../helpers/loadAllFac";
 
 import MenuItems from "./MenuItems";
 
@@ -513,8 +504,26 @@ export default function Nav() {
               url: "/admissions",
             },
             {
-              title: "Admissions",
-              url: "/admissions",
+              title: "Facilities",
+              url: "#",
+              submenu: [
+                {
+                  title: "Central Laboratory",
+                  url: "/facility/001",
+                },
+                {
+                  title: "Chevron Biotech Center",
+                  url: "/facility/001",
+                },
+                {
+                  title: "CEMIT",
+                  url: "/facility/001",
+                },
+                {
+                  title: "Publishing Center",
+                  url: "/facility/001",
+                },
+              ],
             },
             {
               title: "Portals",
@@ -523,6 +532,28 @@ export default function Nav() {
             {
               title: "Campus Life",
               url: "/campus",
+            },
+            {
+              title: "Intervention",
+              url: "#",
+              submenu: [
+                {
+                  title: "TETFUND INTERVENTION",
+                  url: "/intervention",
+                },
+                {
+                  title: "PTDF INTERVENTION",
+                  url: "/intervention",
+                },
+                {
+                  title: "NCC INTERVENTION",
+                  url: "/intervention",
+                },
+                {
+                  title: "OTHER INTERVENTIONS",
+                  url: "/intervention",
+                },
+              ],
             },
           ]);
           setAllUnits(data.message);
@@ -563,6 +594,9 @@ export default function Nav() {
               </li>
               <li>
                 <Link to="/oer">OER</Link>{" "}
+              </li>
+              <li>
+                <Link to="/library">Library</Link>{" "}
               </li>
               <li>
                 <a href="#">Login</a>

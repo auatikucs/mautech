@@ -36,6 +36,7 @@ import Portals from './screens/Portals';
 import CenterScreen from './screens/CenterScreen';
 import MainGallery from './sub-components/MainGallery';
 import RandD from './screens/R&D';
+import Library from './screens/Library';
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
     <Route path='/oer' element={<Oer/>}/>
     <Route path='/RandD' element={<RandD/>}/>
     <Route path='/admissions' element={<Admission/>}/>
+    <Route path='/library' element={<Library/>}/>
     <Route path='/admission/:id' element={<UnderGraduate/>}/>
     </Routes>
     <Footer/>

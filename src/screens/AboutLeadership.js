@@ -149,7 +149,7 @@ const AboutLeadership = () => {
            <div><h1 className='AboutLeadership-Title'>Principal Officers</h1></div>
            <div >
              
-           {/* <VcAbout/> */}
+           <VcAbout/>
                
           
            
