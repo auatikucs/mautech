@@ -185,7 +185,7 @@ const MyNav = styled.nav`
           0 4px 6px -2px rgba(71, 63, 79, 0.16);
         font-size: 0.875rem;
         z-index: 9999;
-        min-width: 10rem;
+        min-width: 20rem;
         padding: 0.5rem 0;
         list-style: none;
         background-color: #fff;
@@ -410,7 +410,6 @@ export default function Nav() {
     {
       title: "Academics",
       url: "#",
-      submenu: allUnits,
     },
     {
       title: "Admissions",
@@ -731,7 +730,7 @@ export default function Nav() {
                 <Typography style={{ color: "#ffffff" }}>Academics</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                {/* {allUnits.length > 0 &&
+                {allUnits.length > 0 &&
                   allUnits.map((un, ind) => (
                     <Accordion key={ind.toString()}>
                       <AccordionSummary
@@ -775,7 +774,7 @@ export default function Nav() {
                         </Typography>
                       </AccordionDetails>
                     </Accordion>
-                  ))} */}
+                  ))}
               </AccordionDetails>
             </Accordion>
 

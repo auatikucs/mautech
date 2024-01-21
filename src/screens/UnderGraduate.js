@@ -1,17 +1,22 @@
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate, useParams} from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 import student from "../assets/student.jpg";
+import DepLink from "../components/DepLink";
 const Main = () => {
   const [programs, setAllPrograms] = useState([]);
+  const [searchedPrograms, setSearchedPrograms] = useState([]);
   const { id } = useParams();
+  const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   const loadData = () => {
     fetch(`https://mau-web-server.fly.dev/admin/get-all-programs`)
       .then((res) => {
         res.json().then((data) => {
           setAllPrograms(data[`${id}`]);
+          setSearchedPrograms(data[`${id}`]);
+          console.log(data, "gggggg");
         });
       })
       .catch((err) => {});
@@ -23,6 +28,15 @@ const Main = () => {
       behavior: "smooth",
     });
   }, []);
+  useEffect(() => {
+    // Filter programs based on the search value
+    const filteredData = programs.filter((program) =>
+      program.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    console.log(filteredData);
+    // Update the searchedPrograms state
+    setSearchedPrograms(filteredData);
+  }, [searchValue, programs]);
   return (
     <div style={{ marginTop: 110 }} className="Main-Container">
       <div
@@ -38,14 +52,71 @@ const Main = () => {
 
       <h2>Programmes Offered</h2>
       <div
-        style={{ width: "100%", marginLeft: "auto", marginRight: "auto" }}
+        style={{
+          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          display: "flex",
+          flexDirection: "column",
+        }}
         className="Search-Input"
       >
         <div>Course finder helps you find several courses</div>
-        <input type="search" name="" id="" placeholder="Search for course" />
+        <input
+          value={searchValue}
+          onChange={(e) => {
+            const inputValue = e.currentTarget.value.toLowerCase();
+            setSearchValue(inputValue);
+
+            // setSearchedPrograms((prevPrograms) => {
+            //   if (inputValue === "") {
+            //     // Reset to the original list of programs when the search is cleared
+            //     return programs;
+            //   } else {
+            //     // Filter based on the input value
+            //     return programs.filter((program) =>
+            //       program.name.toLowerCase().includes(inputValue)
+            //     );
+            //   }
+            // });
+          }}
+          style={{
+            width: "90%",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+          type="search"
+          name=""
+          id=""
+          placeholder="Search for course"
+        />
       </div>
       <div className="Cart-Container-Programs">
-        <div>
+        {searchedPrograms.length > 0 &&
+          searchedPrograms.map((prg, ind) => {
+            return (
+              <div key={prg.name}>
+                <DepLink
+                  route={`/program/${prg.programId}/${prg.name}/${prg.activity}`}
+                  key={prg.name}
+                  link={`${prg.name}`}
+                  id={prg.name}
+                />
+                {/* <Link
+                  style={{
+                    fontSize: 12,
+                    textDecoration: "none",
+                  }}
+                  key={ind}
+                  to={`/program/${prg.programId}/${prg.name}/${prg.activity}`}
+                >
+                  {prg.name}
+                </Link> */}
+              </div>
+            );
+          })}
+
+        {/* <div>
           <h1>A</h1>
           <div
             style={{
@@ -177,7 +248,7 @@ const Main = () => {
                 );
               })}
           </div>
-        </div>
+        </div> */}
       </div>
       <h4 className="Expand-Row">More....</h4>
       <div className="Apply_section">
