@@ -519,7 +519,7 @@ export default function Library() {
         <div>
         <div className='E-Resources'>
                 <h1>E-Resources</h1>
-                <div>
+                <div className='E-resources-list'>
                     <Link to='/oer'><li>Open Educational Resources</li></Link>
                   <li>  Directory of Open Access Databases</li>
                     <li>Directory of Open Access journals</li>
@@ -532,7 +532,7 @@ export default function Library() {
         </div>
 
         <div>
-        <div className='depVis'>
+        <div className='depVis E-resources-list'>
     <h1>Opening Hours Semester Period</h1>
  <li>Monday – Saturday    -    8.00 a.m. – 10.00 p.m</li>
 <li>Sundays   - 5.00 p.m. – 10.00 p.m.</li>
@@ -556,7 +556,7 @@ export default function Library() {
         <div>
             <h1>Access Our Services</h1>
             <div className='Access-our-services-container'>
-                <div>
+                <div className='service-card'>
                     <div><img src={readingRoom} alt='reading-rooms'/></div>
                     <div><h4>Reading Rooms</h4></div>
                     <div><span> The University libraries provide rooms for studying. 

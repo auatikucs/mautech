@@ -102,16 +102,7 @@ const Main = () => {
                   link={`${prg.name}`}
                   id={prg.name}
                 />
-                {/* <Link
-                  style={{
-                    fontSize: 12,
-                    textDecoration: "none",
-                  }}
-                  key={ind}
-                  to={`/program/${prg.programId}/${prg.name}/${prg.activity}`}
-                >
-                  {prg.name}
-                </Link> */}
+                
               </div>
             );
           })}

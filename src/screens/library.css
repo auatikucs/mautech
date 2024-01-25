@@ -3,7 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     /* background-color: red; */
     padding: 10px;
-    grid-gap: 10px;
+    grid-gap: 20px;
     
 }
 .Access-our-services-container img {
@@ -12,13 +12,27 @@
 .E-Resources{
     padding: 10px;
 }
+.E-Resources h1{
+    font-size: 16px;
+}
+.E-resources-list{
+    padding: 10px;
+}
+.service-card{
+    /* background-color: white;
+    border: 1px solid #ddd; */
+}
 .Opening-hours-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap:10px;
 }
 .Hours-card{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+.depVis h1{
+    font-size: 16px;
 }
 
 @media screen and (max-width: 1080px){
