@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Registrar from "../assets/Registrar.jpeg";
 import dvc_Academics from "../assets/dvc_Academics.jpeg";
-import dvc_Admin from "../assets/dvc_Admin.jpeg";
-import bur from "../assets/bur.jpeg";
-import libb from "../assets/libb.jpeg";
+import vice_Chancellor from "../assets/vc2.png";
+import dvc_Admin from "../assets/domy.jpeg";
+import bur from "../assets/domy.jpeg";
+import libb from "../assets/librarian.jpg";
 import avatar from "../assets/avatar.png";
 import { Fade, Zoom, Bounce, Reveal } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
@@ -375,8 +376,10 @@ export default function VcAbout() {
                 }}
                 className="myVc001 main"
               >
-                <img src={vcData.principalOfficer.image} alt="img" />
-                <span>{vcData.name}</span>
+                {/*<img src={vcData.principalOfficer.image} alt="img" />
+                <span>{vcData.name}</span>*/}
+                <img src={vice_Chancellor} alt="img" />
+                <span>Prof. Ibrahim Umar</span>
                 <span>Vice Chancellor</span>
                 <div className="bgv"></div>
               </div>
@@ -405,7 +408,7 @@ export default function VcAbout() {
 
         <div className="others001 reg">
           <img src={dvc_Admin} alt="img" />
-          <span>Prof Muhammad Musa Malgwi</span>
+          <span>DVC Academics</span>
           <span>DVC Academics</span>
           <div className="bgv"></div>
         </div>
@@ -426,7 +429,7 @@ export default function VcAbout() {
 
         <div className="others001 dvc2">
           <img src={libb} alt="img" />
-          <span>Dr. Tukur AbbaPr</span>
+          <span>Dr. Murtala Aliyu</span>
           <span>Librarian</span>
           <div className="bgv"></div>
         </div>
@@ -444,11 +447,8 @@ export default function VcAbout() {
             }}
             className="others001Phone vc"
           >
-            <img
-              src="https://res.cloudinary.com/nutscoders/image/upload/v1646496506/VC-removebg-preview_zshkhs.png"
-              alt="img"
-            />
-            <span>Prof. Liman Tukur</span>
+            <img src={vice_Chancellor} alt="img" />
+            <span>Prof. Ibrahim Umar</span>
             <span>Vice Chancellor</span>
             <div className="bgv"></div>
           </div>
@@ -462,7 +462,7 @@ export default function VcAbout() {
 
           <div className="others001Phone reg">
             <img src={dvc_Admin} alt="img" />
-            <span>Prof Muhammad Musa Malgwi</span>
+            <span>DVC Academics</span>
             <span>DVC Academics</span>
             <div className="bgv"></div>
           </div>
@@ -483,7 +483,7 @@ export default function VcAbout() {
 
           <div className="others001Phone dvc2">
             <img src={libb} alt="img" />
-            <span>Dr. Tukur Abba</span>
+            <span>Dr. Murtala Aliyu</span>
             <span>Librarian</span>
             <div className="bgv"></div>
           </div>

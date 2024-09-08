@@ -1,6 +1,6 @@
 import vc from '../assets/vc.jpg'
 import mau_pic_footer from '../assets/mau_pic_footer.jpg';
-import proChancellor from '../assets/proChancellor.jpeg';
+import proChancellor from '../assets/Shinkafi.jpg';
 import Registrar from '../assets/Registrar.jpeg';
 import dvc_Academics from '../assets/dvc_Academics.jpeg';
 import dvc_Admin from '../assets/dvc_Admin.jpeg';
@@ -63,8 +63,10 @@ const AboutLeadership = () => {
                         {isLeadershipData && isLeadershipData.map((proChancellorData)=>(
                             <div className='Pro-Chancellor-Img-Holder'>
                
-                            <img src={proChancellorData.proChancellor.image} alt="" srcset="" height='350px' width='300px'/><br></br>
-                                <span>{proChancellorData.proChancellor.name}</span><br></br>
+                            {/*<img src={proChancellorData.proChancellor.image} alt="" srcset="" height='350px' width='300px'/><br></br>
+                                <span>{proChancellorData.proChancellor.name}</span><br></br>*/}
+                                <img src={proChancellor} alt="img" />
+                                <span>Alhaji Mahmud Aliyu Shinkafi</span><br></br>
                                 <span>Pro Chancellor and Chairman</span>
                         </div>
                         ))}
@@ -72,11 +74,11 @@ const AboutLeadership = () => {
                         <div className='Council_Members_List_container'>
                            <table>
                                <tr>
-                                   <td>Alh. Bashir Mohammed Dalhatu </td>
+                                   <td>Alhaji Mahmud Aliyu Shinkafi </td>
                                    <td>Pro-Chancellor & Chairman</td>
                                </tr>
                                <tr>
-                                   <td>Prof Abdullahi Liman Tukur </td>
+                                   <td>Prof. Ibrahim Umar </td>
                                    <td>Vice Chancellor</td>
                                </tr>
                                <tr>
@@ -84,47 +86,43 @@ const AboutLeadership = () => {
                                    <td>DVC Administration</td>
                                </tr>
                                <tr>
-                                   <td>Prof Muhammad Musa Malgwi </td>
-                                   <td>DVC Academics</td>
-                               </tr>
-                               <tr>
                                    <td>Haj. Halima Mohammed Bala </td>
                                    <td>Registrar & Secretary to Council</td>
                                </tr>
                                <tr>
-                                   <td>Ali Ibrahim Dogarai </td>
+                                   <td>Babagoro Abdulkadir Yahaya </td>
                                    <td>External Member</td>
                                </tr>
                                <tr>
-                                   <td>Abubakar Umar Dogondaji </td>
+                                   <td>Engineer Bawuro Bapetal Yahaya Phd </td>
                                    <td>External Member</td>
                                </tr>
                                <tr>
-                                   <td>Hon. Diogo John Ngukpen </td>
+                                   <td>Dr. Babajide Akin Thomas </td>
                                    <td>External Member</td>
                                </tr>
                                <tr>
-                                   <td>Hon. Paul U. Ezeobi </td>
+                                   <td>Hon. Jude Ogbeche Ngaji Phd  </td>
                                    <td>External Member</td>
                                </tr>
                                <tr>
-                                   <td>Mr. Kalu Kalu Obasi  </td>
+                                   <td>Mrs Comfort Uloma Ochasi (Jp)  </td>
                                    <td>Rep. Federal Ministry of Education</td>
                                </tr>
                                <tr>
-                                   <td>Prof. Kalep Bulus Filli </td>
+                                   <td>Prof. Mohammed Abubakar Husain </td>
                                    <td>Rep. Senate on Council</td>
                                </tr>
                                <tr>
-                                   <td>Prof. (Mrs.) Margaret Samuel Nadro  </td>
+                                   <td>Prof. Dahiru Yahya Dasin  </td>
                                    <td>Rep. Senate on Council</td>
                                </tr>
                                <tr>
-                                   <td>Prof. Danjuma Jibasen  </td>
+                                   <td>Prof. Ismaila Vela Haruna  </td>
                                    <td>Rep. Senate on Council</td>
                                </tr>
                                <tr>
-                                   <td>Prof. Abdullahi Muhammad Saddiq</td>
+                                   <td>Professor Abdullahi Muhammad</td>
                                    <td>Rep. Senate on Council</td>
                                </tr>
                                <tr>
@@ -133,7 +131,7 @@ const AboutLeadership = () => {
                                </tr>
                                
                                <tr>
-                                   <td>Ahmed Baba Lawan   </td>
+                                   <td>Dr. Usman Aliyu Santuraki   </td>
                                    <td>Rep. Congregation on Council</td>
                                </tr>
                            </table>
