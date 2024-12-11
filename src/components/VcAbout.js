@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Registrar from "../assets/Registrar.jpeg";
+import Registrar from "../assets/registrar.jpg";
 import dvc_Academics from "../assets/dvc_Academics.jpeg";
 import vice_Chancellor from "../assets/vc2.png";
 import dvc_Admin from "../assets/domy.jpeg";
@@ -415,7 +415,7 @@ export default function VcAbout() {
 
         <div className="others001 lib">
           <img src={Registrar} alt="img" />
-          <span>Haj. Halima Mohammed Bala</span>
+          <span>Mustafa Usman Migawa</span>
           <span>Registrar</span>
           <div className="bgv"></div>
         </div>
