@@ -86,7 +86,7 @@ const AboutLeadership = () => {
                                    <td>DVC Administration</td>
                                </tr>
                                <tr>
-                                   <td>Haj. Halima Mohammed Bala </td>
+                                   <td>Mustafa Usman Migawa </td>
                                    <td>Registrar & Secretary to Council</td>
                                </tr>
                                <tr>
