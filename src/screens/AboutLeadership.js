@@ -2,9 +2,9 @@ import vc from '../assets/vc.jpg'
 import mau_pic_footer from '../assets/mau_pic_footer.jpg';
 import proChancellor from '../assets/Shinkafi.jpg';
 import Registrar from '../assets/registrar.jpg';
-import dvc_Academics from '../assets/dvc_Academics.jpeg';
-import dvc_Admin from '../assets/dvc_Admin.jpeg';
-import bursar from '../assets/bur.jpeg';
+import dvc_Academics from '../assets/dvc_acad.jpg';
+import dvc_Admin from '../assets/dvc_admin.jpg';
+import bursar from '../assets/bur.jpg';
 import avatar from '../assets/avatar.png';
 import Oba from '../assets/chancellor.jpg';
 import { useEffect, useState } from 'react';
@@ -82,8 +82,12 @@ const AboutLeadership = () => {
                                    <td>Vice Chancellor</td>
                                </tr>
                                <tr>
-                                   <td>Prof Muhammad Inuwa Jaafaru </td>
+                                   <td>Prof. Aliyu Bawuro Mustapha </td>
                                    <td>DVC Administration</td>
+                               </tr>
+                               <tr>
+                                   <td>Prof. Iliyasu Audu </td>
+                                   <td>DVC Academics</td>
                                </tr>
                                <tr>
                                    <td>Mustafa Usman Migawa </td>

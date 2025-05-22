@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Registrar from "../assets/registrar.jpg";
-import dvc_Academics from "../assets/dvc_Academics.jpeg";
-import vice_Chancellor from "../assets/vc2.png";
-import dvc_Admin from "../assets/domy.jpeg";
-import bur from "../assets/domy.jpeg";
+import dvc_Academics from "../assets/dvc_admin.jpg";
+import vice_Chancellor from "../assets/vc2.jpg";
+import dvc_Admin from "../assets/dvc_acad.jpg";
+import bur from "../assets/bur.jpg";
 import libb from "../assets/librarian.jpg";
 import avatar from "../assets/avatar.png";
 import { Fade, Zoom, Bounce, Reveal } from "react-awesome-reveal";
@@ -401,14 +401,14 @@ export default function VcAbout() {
 
         <div className="others001 bur">
           <img src={dvc_Academics} alt="img" />
-          <span>Prof Muhammad Inuwa Jaafaru</span>
+          <span>Prof. Aliyu Bawuro Mustapha</span>
           <span>DVC Administration</span>
           <div className="bgv"></div>
         </div>
 
         <div className="others001 reg">
           <img src={dvc_Admin} alt="img" />
-          <span>DVC Academics</span>
+          <span>Prof. Iliyasu Audu</span>
           <span>DVC Academics</span>
           <div className="bgv"></div>
         </div>
@@ -422,14 +422,14 @@ export default function VcAbout() {
 
         <div className="others001 dvc1">
           <img src={bur} alt="img" />
-          <span>Alh Ismail Umar</span>
+          <span>Haniel Ndambarnji Ayuka</span>
           <span>Bursar</span>
           <div className="bgv"></div>
         </div>
 
         <div className="others001 dvc2">
           <img src={libb} alt="img" />
-          <span>Dr. Murtala Aliyu</span>
+          <span>Prof. Zainab Mohammed Abdullahi</span>
           <span>Librarian</span>
           <div className="bgv"></div>
         </div>
@@ -455,35 +455,35 @@ export default function VcAbout() {
 
           <div className="others001Phone bur">
             <img src={dvc_Academics} alt="img" />
-            <span>Prof Muhammad Inuwa Jaafaru</span>
+            <span>Prof. Aliyu Bawuro Mustapha</span>
             <span>DVC Administration</span>
             <div className="bgv"></div>
           </div>
 
           <div className="others001Phone reg">
             <img src={dvc_Admin} alt="img" />
-            <span>DVC Academics</span>
+            <span>Prof. Iliyasu Audu</span>
             <span>DVC Academics</span>
             <div className="bgv"></div>
           </div>
 
           <div className="others001Phone lib">
             <img src={Registrar} alt="img" />
-            <span>Haj. Halima Mohammed Bala</span>
+            <span>Mustafa Usman Migawa</span>
             <span>Registrar</span>
             <div className="bgv"></div>
           </div>
 
           <div className="others001Phone dvc1">
             <img src={bur} alt="img" />
-            <span>Alh Ismail Umar</span>
+            <span>Haniel Ndambarnji Ayuka</span>
             <span>Bursar</span>
             <div className="bgv"></div>
           </div>
 
           <div className="others001Phone dvc2">
             <img src={libb} alt="img" />
-            <span>Dr. Murtala Aliyu</span>
+            <span>Prof. Zainab Mohammed Abdullahi</span>
             <span>Librarian</span>
             <div className="bgv"></div>
           </div>
