@@ -114,7 +114,7 @@ const Footer = () => {
                       paddingTop: 10,
                     }}
                   >
-                    info@mau.edu.ng{" "}
+                    info@mau.edu.ng{" "} examsandrecords@mau.edu.ng{" "}
                   </span>
                 </div>
                 {/*
