@@ -532,28 +532,6 @@ export default function Nav() {
               title: "Campus Life",
               url: "/campus",
             },
-            {
-              title: "Intervention",
-              url: "#",
-              submenu: [
-                {
-                  title: "TETFUND INTERVENTION",
-                  url: "/intervention",
-                },
-                {
-                  title: "PTDF INTERVENTION",
-                  url: "/intervention",
-                },
-                {
-                  title: "NCC INTERVENTION",
-                  url: "/intervention",
-                },
-                {
-                  title: "OTHER INTERVENTIONS",
-                  url: "/intervention",
-                },
-              ],
-            },
           ]);
           setAllUnits(data.message);
         });

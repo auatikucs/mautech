@@ -1,15 +1,24 @@
 import React from 'react'
-import { Fade,Zoom } from 'react-awesome-reveal';
+import { Fade, Zoom } from 'react-awesome-reveal';
 import CountUp from 'react-countup';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {
+  SchoolOutlined, // For total students
+  PersonOutlined, // For undergraduates
+  EngineeringOutlined, // For postgraduates
+  ApartmentOutlined, // For schools/faculties
+  MenuBookOutlined, // For programs
+  CorporateFareOutlined // For units
+} from '@mui/icons-material';
 
-const StyledCount=styled.div`
-min-height: 50vh;
-width: 100%;
-margin-top: 50px;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-.mainCount{
+const StyledCount = styled.div`
+  min-height: 50vh;
+  width: 100%;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  
+  .mainCount{
     height: 80%;
     width: 80%;
     margin: 20px;
@@ -18,109 +27,78 @@ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    
     h4{
-        color: #D07348;
-        text-align: center;
+      color: #D07348;
+      text-align: center;
+      margin-top: 15px;
     }
-    img{
-        height: 80%;
-        width: 100%;
-
+    
+    .icon-container {
+      background-color: #D07348;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      
+      svg {
+        color: white;
+        font-size: 40px;
+      }
     }
-}
-@media only screen 
-and (max-width : 1060px){
-    grid-template-columns:1fr 1fr;
-}
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+  }
+  
+  @media only screen and (max-width : 1060px){
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     grid-template-columns: 1fr;
-}
+  }
 `;
-export default function MyCount({stats=[]}) {
-    const sources=[
-        {src:require('../assets/bui.gif')},
-        {src:require('../assets/coll.gif')},
-        {src:require('../assets/sch.gif')},
-        {src:require('../assets/cen.gif')} ,
-        {src:require('../assets/uni.gif')} ,
-        {src:require('../assets/prr.gif')} 
-        
-    ]
-    return (
-        <StyledCount>
-           <Zoom cascade={true} triggerOnce={true}>
-            {
-                stats.map((st,ind)=>(
-                    <div key={ind} className='mainCount'>
-                    <img src={sources[ind].src}/>
-                    <CountUp style={{
-                        color:'#D07348',
-                        fontSize:55,
-                        
-                    }} end={st.count} />
-                    <h4>{st.name}</h4>
-                   </div>
-                ))
-            }
-         
 
+// Static student data
+const studentStats = [
+  { name: "Faculties", count: 11, icon: <ApartmentOutlined /> },
+  { name: "Schools", count: 2, icon: <ApartmentOutlined /> },
+  { name: "Centers", count: 2, icon: <ApartmentOutlined /> },
+  { name: "Departments", count: 43, icon: <CorporateFareOutlined /> },
+  { name: "Programmes", count: 130, icon: <MenuBookOutlined /> },
+  { name: "Undergraduates", count: 12787, icon: <PersonOutlined /> },
+  { name: "Postgraduates", count: 2476, icon: <EngineeringOutlined /> },
+  { name: "Total Students", count: 15263, icon: <SchoolOutlined /> }
+  
+];
 
-           {/* <div className='mainCount'>
-           <img src={require('../assets/schools.png')}/>
-           <CountUp delay={2} style={{
-               color:'#D07348',
-               fontSize:55,
-               
-           }} end={2} />
-           <h4>Schools</h4>
+export default function MyCount({ stats = [] }) {
+  
+  return (
+    <StyledCount>
+      <Zoom cascade={true} triggerOnce={true}>
+        {studentStats.map((stat, index) => (
+          <div key={index} className='mainCount'>
+            <div className='icon-container'>
+              {stat.icon}
+            </div>
+            <CountUp 
+              style={{
+                color: '#D07348',
+                fontSize: 40,
+                fontWeight: 'bold'
+              }} 
+              end={stat.count} 
+              duration={2.5}
+            />
+            <h4>{stat.name}</h4>
           </div>
-
-          <div className='mainCount'>
-           <img src={require('../assets/units.png')}/>
-           <CountUp delay={3}  style={{
-               color:'#D07348',
-               fontSize:55,
-               
-           }} end={1} />
-           <h4>College</h4>
-          </div>
-
-
-          <div className='mainCount'>
-           <img src={require('../assets/units.png')}/>
-           <CountUp delay={3}  style={{
-               color:'#D07348',
-               fontSize:55,
-               
-           }} end={7} />
-           <h4>Faculties</h4>
-          </div>
-
-
-
-
-          <div className='mainCount'>
-           <img src={require('../assets/courses.png')}/>
-           <CountUp delay={4}  style={{
-               color:'#D07348',
-               fontSize:55,
-               
-           }} end={23} />
-           <h4>Programs</h4>
-          </div>
-
-          <div className='mainCount'>
-           <img src={require('../assets/courses.png')}/>
-           <CountUp delay={4}  style={{
-               color:'#D07348',
-               fontSize:55,
-               
-           }} end={2} />
-           <h4>Units</h4>
-          </div> */}
-          </Zoom>
-        </StyledCount>
-    )
+        ))}
+      </Zoom>
+    </StyledCount>
+  )
 }

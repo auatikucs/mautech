@@ -22,6 +22,7 @@ import { Link } from 'react-router-dom';
 import { formatDate } from '../components/FormatDate';
 import HomeNews from '../sub-components/HomeNews';
 import hostel from '../assets/hostel.jpg';
+import { Assessment } from '@mui/icons-material';
 const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
@@ -522,30 +523,6 @@ export default function HomeScreen() {
                     </div>
                 </div>
 
-                <div className='news'>
-                    <img src={require('../assets/cal3.png')} alt='cal'/>
-                    <List>
-                    <h3>Upcoming/Ongoing School Events</h3>
-                    
-                        {
-                            !isLoading&&
-                            homeData.length > 0&&(
-                                homeData[0].programs.slice(0,7).map((prg,ind)=>(
-                                    <MyNews
-                                    key={ind}
-                                    news={prg.description}
-                                    id={prg.evntId}
-                                    date={prg.dayOfEvent}
-                                    
-                                    />
-                                ))
-                            )
-                        }
-                    <p className='linkEv'>
-                        <Link to='allevents'>View All Events</Link>
-                    </p>
-                    </List>
-                </div>
             </div>
             <div>
             <span style={{paddingLeft: 15, fontSize:20, color:'maroon'}}>NEWS & UPDATES</span>
@@ -583,9 +560,57 @@ export default function HomeScreen() {
                     
                 </div>
                 <div className='SeeAllNews'>
-                <span><Link to='/allnews'>SEE ALL NEWS ></Link></span>
+                <span><Link to='/allnews'>SEE ALL NEWS </Link></span>
             </div>
             </div>
+
+            <Divider style={{ backgroundColor: '#D07348', marginBottom: 20 }} />
+            <div>
+                <div style={{
+                    margin: '20px auto',
+                    padding: '20px',
+                    maxWidth: '800px',
+                    backgroundColor: 'rgba(208, 115, 72, 0.1)',
+                    borderRadius: '8px',
+                    borderLeft: '4px solid #D07348',
+                    textAlign: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                        transform: 'translateY(-3px)',
+                        boxShadow: '0 5px 15px rgba(0,0,0,0.1)'
+                    }
+                }} onClick={() => navigate('/institutionalreports')}>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '10px'
+                    }}>
+                        <Assessment style={{
+                            fontSize: '2rem',
+                            color: '#D07348',
+                            marginRight: '10px'
+                        }} />
+                        <span style={{
+                            fontSize: '1.2rem',
+                            fontWeight: '600',
+                            color: '#D07348'
+                        }}>
+                            View Financial Reports
+                        </span>
+                    </div>
+                    <p style={{
+                        color: '#8B4513',
+                        fontSize: '0.9rem',
+                        marginTop: '8px',
+                        lineHeight: '1.4'
+                    }}>
+                        Access comprehensive financial statements and budget allocations
+                    </p>
+                </div>
+            </div>
+
             {/* <div className='myDivider'>
             <h2 style={{
     color: '#D07348',

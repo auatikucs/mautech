@@ -37,6 +37,7 @@ import CenterScreen from './screens/CenterScreen';
 import MainGallery from './sub-components/MainGallery';
 import RandD from './screens/R&D';
 import Library from './screens/Library';
+import InstitutionalReports from './screens/InstitutionalReports';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
     <Route exact path='/news/:id' element={<DetailNews/>}/>
     <Route path='/pricipal/:id' element={<Principal/>}/>
     <Route path='/intervention' element={<Intervention/>}/>
+    <Route path='/institutionalreports' element={<InstitutionalReports/>}/>
     <Route path='/facility/:id' element={<Facilities/>}/>
     <Route path='/careers' element={<Careers/>}/>
     <Route exact path='/allevents' element={<AllEvents/>}/>
