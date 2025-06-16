@@ -372,7 +372,7 @@ const InstitutionalReports = () => {
             {/* Other data cards remain the same */}
             <div className="data-card">
               <h3><span className="icon">R</span>Research Grant Revenue</h3>
-              <div className="amount">₦8.9 Billion</div>
+              <div className="amount">₦0.9 Billion</div>
               <div className="breakdown">
                 <div className="breakdown-item">
                   <span>Domestic Sources:</span>
