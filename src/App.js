@@ -9,6 +9,9 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import ProgramDetailScreen from './screens/ProgramDetailScreen';
 import DetailScreen from './screens/DetailScreen';
+import ParentalConsentForm from './screens/ParentalConsentForm';
+import PersonalDataConsentForm from './screens/PersonalDataConsentForm';
+import PrivacyPolicy from './screens/PrivacyPolicy';
 import DepartmentScreen from './screens/DepartmentScreen';
 import CourseFinderScreen from './screens/CourseFinderScreen';
 import AboutScreen from './screens/AboutScreen';
@@ -38,12 +41,15 @@ import MainGallery from './sub-components/MainGallery';
 import RandD from './screens/R&D';
 import Library from './screens/Library';
 import InstitutionalReports from './screens/InstitutionalReports';
+import CookieBanner from './components/CookieBanner'; 
 
 function App() {
   return (
     <AppState>
     <BrowserRouter>
     <Nav/>
+    {/* 2. Place it here so it appears on all routes */}
+    <CookieBanner /> 
     <Routes>
     <Route exact path='/' element={<HomeScreen/>}/>
     <Route exact path='/program/:id/:department/:activity' element={<ProgramDetailScreen/>}/>
@@ -52,6 +58,9 @@ function App() {
     <Route exact path='/center/:id/:activity' element={<CenterScreen/>}/>
     {/* <Route exact path='/admissions' element={<CourseFinderScreen/>}/> */}
     <Route exact path='/about' element={<AboutMau/>}/>
+    <Route exact path='/ParentalConsent' element={<ParentalConsentForm/>}/>
+    <Route exact path='/PersonalDataConsent' element={<PersonalDataConsentForm/>}/>
+    <Route exact path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
     <Route path='/leadership' element={<AboutMauLeadership/>}/>
     <Route exact path='/campus' element={<CampusScreen/>}/>
     <Route exact path='/portals' element={<Portals/>}/>
