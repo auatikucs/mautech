@@ -42,7 +42,15 @@ const Footer = () => {
                 </div>
                 <div>
                   {" "}
-                  <Link to="/">Contact</Link>
+                  <Link to="/ParentalConsent">Parental Consent Form</Link>
+                </div>
+                <div>
+                  {" "}
+                  <Link to="/PersonalDataConsent">Personal Data Consent Form</Link>
+                </div>
+                <div>
+                  {" "}
+                  <Link to="/">Data Consent Withdrawa Form</Link>
                 </div>
               </nav>
             </div>
