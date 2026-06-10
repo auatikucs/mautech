@@ -10,6 +10,7 @@ const CookieBanner = () => {
     if (!consent) {
       setIsVisible(true);
     }
+    setIsVisible(true);
   }, []);
 
   const acceptCookies = () => {
@@ -95,7 +96,7 @@ const styles = {
     gap: '10px'
   },
   acceptBtn: {
-    backgroundColor: '#004d40',
+    backgroundColor: '#d07348',
     color: 'white',
     border: 'none',
     padding: '10px 20px',

@@ -25,7 +25,7 @@ const Footer = () => {
           {/* <img src={mau_pic_footer} alt="" srcset="" width='100%' /> */}
 
           <div className="Footer-Container">
-            <div className="Footer-Content">
+            <div className="Footer-Content" style = {{width:255}}>
               <h4>CAMPUS</h4>
               <nav className="footerNav">
                 <div>
@@ -50,11 +50,15 @@ const Footer = () => {
                 </div>
                 <div>
                   {" "}
-                  <Link to="/">Data Consent Withdrawa Form</Link>
+                  <Link to="/DataConsentWithdrawal">Data Consent Withdrawa Form</Link>
+                </div>
+                <div>
+                  {" "}
+                  <Link to="/DataBreachNotificationForm">Data Breach Notification Form</Link>
                 </div>
               </nav>
             </div>
-            <div className="Footer-Content">
+            <div className="Footer-Content" style = {{width:180}}>
               <h4>Facilities & Services</h4>
               <nav className="footerNav">
                 <div>
@@ -75,7 +79,7 @@ const Footer = () => {
                 </div>
               </nav>
             </div>
-            <div className="Footer-Content">
+            <div className="Footer-Content" style = {{width:180}}>
               <h4>Portals</h4>
               <nav className="footerNav">
                 <div>
@@ -103,17 +107,15 @@ const Footer = () => {
 
             <div className="Footer-Content" style={{ color: "white" }}>
               <h4>Contact Info</h4>
-              <nav>
+              <nav className="footerNav">
                 <div>
                   {" "}
-                  <p>
-                    Modibbo Adama University Yola, <br></br>PMB 2076 Yola,
+                  Modibbo Adama University Yola, <br></br>PMB 2076 Yola,
                     Adamawa State{" "}
-                  </p>{" "}
                 </div>
                 <div style={{ display: "flex" }}>
                   {" "}
-                  <EmailOutlined style={{ padding: 10 }} />
+                  <EmailOutlined style={{ padding: '10 0' }} />
                   <span
                     to="/"
                     style={{

@@ -46,7 +46,6 @@ const MyNav = styled.nav`
     width: 100%;
     transition: all 0.5s;
     .logo {
-      width: 30%;
       min-height: 50px;
       background-color: transparent;
       display: flex;
@@ -69,13 +68,14 @@ const MyNav = styled.nav`
           text-transform: uppercase;
           line-height: 20px;
           width: 80%;
+          margin-top: 25px;
         }
         p {
           color: black;
           font-size: 15px;
           line-height: 1px;
           text-align: left;
-          margin-top: -15px;
+          margin-top: 10px;
           width: 80%;
         }
       }
@@ -281,11 +281,11 @@ const MyNav = styled.nav`
         }
     }
     img{
-    width: 80px;
-    height: 80px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 .links{
@@ -302,7 +302,7 @@ const MyNav = styled.nav`
     max-height: 100px;
     .logoGroup {
       .logo {
-        width: 50%;
+        min-width: 70%;
         .logo-head {
           h4 {
             font-size: 14px;
@@ -343,7 +343,7 @@ const MyNav = styled.nav`
       width: 100%;
       height: 100px;
       .logo {
-        min-width: 60%;
+        min-width: 70%;
         .logo-head {
           h4 {
             font-size: 14px;
