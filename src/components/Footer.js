@@ -50,7 +50,7 @@ const Footer = () => {
                 </div>
                 <div>
                   {" "}
-                  <Link to="/DataConsentWithdrawal">Data Consent Withdrawa Form</Link>
+                  <Link to="/DataConsentWithdrawal">Data Consent Withdrawal Form</Link>
                 </div>
                 <div>
                   {" "}
