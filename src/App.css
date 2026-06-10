@@ -162,7 +162,7 @@ body::-webkit-scrollbar-thumb{
 .Footer-Container {
   display: grid;
   margin: 0 auto;
-  width: 80%;
+  width: 95%;
   grid-template-columns: 1fr 1fr 1fr 2fr 2fr;
   position: relative;
 }
@@ -181,7 +181,7 @@ body::-webkit-scrollbar-thumb{
 } */
 
 .footerNav div {
-  padding: 5px;
+  padding: 5px 0;
   /* text-align: center; */
 }
 
