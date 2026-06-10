@@ -24,7 +24,8 @@
     "react-scripts": "5.0.0",
     "react-wavify": "^1.5.7",
     "styled-components": "^5.3.11",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "lucide-react": "^0.546.0"
   },
   "scripts": {
     "start": "react-scripts start",
