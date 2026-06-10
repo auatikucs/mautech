@@ -10,8 +10,10 @@ import Footer from './components/Footer';
 import ProgramDetailScreen from './screens/ProgramDetailScreen';
 import DetailScreen from './screens/DetailScreen';
 import ParentalConsentForm from './screens/ParentalConsentForm';
+import DataBreachNotificationForm from './screens/DataBreachNotificationForm';
 import PersonalDataConsentForm from './screens/PersonalDataConsentForm';
 import PrivacyPolicy from './screens/PrivacyPolicy';
+import DataConsentWithdrawalForm from './screens/DataConsentWithdrawalForm';
 import DepartmentScreen from './screens/DepartmentScreen';
 import CourseFinderScreen from './screens/CourseFinderScreen';
 import AboutScreen from './screens/AboutScreen';
@@ -61,6 +63,8 @@ function App() {
     <Route exact path='/ParentalConsent' element={<ParentalConsentForm/>}/>
     <Route exact path='/PersonalDataConsent' element={<PersonalDataConsentForm/>}/>
     <Route exact path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
+    <Route exact path='/DataConsentWithdrawal' element={<DataConsentWithdrawalForm/>}/>
+    <Route exact path='/DataBreachNotificationForm' element={<DataBreachNotificationForm/>}/>
     <Route path='/leadership' element={<AboutMauLeadership/>}/>
     <Route exact path='/campus' element={<CampusScreen/>}/>
     <Route exact path='/portals' element={<Portals/>}/>
