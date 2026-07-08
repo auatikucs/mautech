@@ -72,6 +72,21 @@ object-fit: cover;
         width: 70%;
         
     }
+    .cta-button{
+        display: inline-block;
+        margin-top: 16px;
+        padding: 12px 20px;
+        border-radius: 6px;
+        background-color: #D07348;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+
+        &:hover{
+            background-color: #b55c36;
+        }
+    }
 }
 
 
@@ -113,7 +128,7 @@ object-fit: cover;
     }
 }
 `;
-export default function MyCarouselContent({image,heading='',subheading='',body=''}) {
+export default function MyCarouselContent({image,heading='',subheading='',body='',ctaText='',ctaLink=''}) {
     return (
         <CarouselContainer>
         <div className='color-code'>
@@ -126,10 +141,17 @@ export default function MyCarouselContent({image,heading='',subheading='',body='
         {image?  <img  src={image}/>:null}
        <div className='car-write'>
        <Slide cascade={true} triggerOnce={true} delay={500}>
+       <div>
        <h4><span>{subheading}</span><br/>{heading}</h4>
        <p>
         {body}
         </p>
+        {ctaText && ctaLink ? (
+            <a className="cta-button" href={ctaLink} target="_blank" rel="noopener noreferrer">
+                {ctaText}
+            </a>
+        ) : null}
+       </div>
        </Slide>
        
        

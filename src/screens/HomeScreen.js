@@ -398,6 +398,21 @@ export default function HomeScreen() {
     const [stats,setStats]=useState([])
     const navigate=useNavigate()
 
+    const localHeroSlides = [
+        {
+            subHeader: 'Registration for Post-UTME and',
+            header: 'Direct Entry (DE) Screening Exercise ',
+            description: 'This is to request all candidates that applied for 2026/2027 admission into the undergraduate programmes through JAMB UTME and Direct Entry (DE) to register from Monday 13th July, 2025 to Monday, 31st August, 2026.',
+            image: hostel,
+            ctaText: 'Click Here to Register',
+            ctaLink: 'https://mau_postutme.admissions.cloud/',
+        },
+    ]
+
+    const carouselSlides = homeData?.[0]?.mainEvents?.length
+        ? [localHeroSlides[0], ...homeData[0].mainEvents]
+        : localHeroSlides
+
     useEffect(() => {
         window.scrollTo({
             top:0,
@@ -440,13 +455,14 @@ export default function HomeScreen() {
             <Carousel  autoPlay stopAutoPlayOnHover>
                 {
                     !isLoading && (
-                        homeData.length > 0 &&
-                        homeData[0].mainEvents.map((dat, ind)=>(
-                            <MyCarouselContent key={ind}
-                                subheading={dat.subHeader}
-                                heading={dat.header}
-                                body={dat.description}
+                        carouselSlides.map((dat, ind)=>(
+                            <MyCarouselContent key={`${ind}-${dat.header || 'slide'}`}
+                                subheading={dat.subHeader || dat.subheading}
+                                heading={dat.header || dat.heading}
+                                body={dat.description || dat.body}
                                 image={dat.image}
+                                ctaText={dat.ctaText}
+                                ctaLink={dat.ctaLink}
                              />
                         ))
                     )
