@@ -27,7 +27,7 @@ const MyContainer = styled.div`
 min-height: 150vh;
 min-width: 100%;
 background-color:white;
-margin-top: 110px;
+margin-top: 10px;
 overflow-x: hidden;
 transition: all 1s;
 .vc-message{
@@ -408,11 +408,11 @@ export default function HomeScreen() {
             ctaLink: 'https://mau_postutme.admissions.cloud/',
         },
     ]
-
+    // ? [localHeroSlides[0], ...homeData[0].mainEvents]
+      
     const carouselSlides = homeData?.[0]?.mainEvents?.length
-        ? [localHeroSlides[0], ...homeData[0].mainEvents]
-        : localHeroSlides
-
+       ? [...homeData[0].mainEvents]
+       : localHeroSlides
     useEffect(() => {
         window.scrollTo({
             top:0,
