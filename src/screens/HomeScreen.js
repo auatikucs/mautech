@@ -402,16 +402,17 @@ export default function HomeScreen() {
         {
             subHeader: 'Registration for Post-UTME and',
             header: 'Direct Entry (DE) Screening Exercise ',
-            description: 'This is to request all candidates that applied for 2026/2027 admission into the undergraduate programmes through JAMB UTME and Direct Entry (DE) to register from Monday 13th July, 2025 to Monday, 31st August, 2026.',
+            description: 'This is to request all candidates that applied for 2026/2027 admission into the undergraduate programmes through JAMB UTME and Direct Entry (DE) to register from Monday 20th July, 2025 to Monday, 31st August, 2026.',
             image: hostel,
             ctaText: 'Click Here to Register',
             ctaLink: 'https://mau_postutme.admissions.cloud/',
         },
     ]
     // ? [localHeroSlides[0], ...homeData[0].mainEvents]
+    // ? [...homeData[0].mainEvents]
       
     const carouselSlides = homeData?.[0]?.mainEvents?.length
-       ? [...homeData[0].mainEvents]
+       ? [localHeroSlides[0], ...homeData[0].mainEvents]
        : localHeroSlides
     useEffect(() => {
         window.scrollTo({
