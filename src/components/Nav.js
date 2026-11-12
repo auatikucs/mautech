@@ -815,9 +815,6 @@ export default function Nav() {
   href="https://ibblibrary.com"
   target="_blank"
   rel="noopener noreferrer"
-  onClick={() => {
-    setIsDrawerOpen(false);
-  }}
   style={{ textDecoration: "none", color: "inherit" }}
 >
   <MyList title="Library" />
