@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+// ...keep all your existing imports...
 import logo from './logo.svg';
 import "@fontsource/poppins"; // Defaults to weight 400
 import "@fontsource/poppins/400.css"; // Specify weight
@@ -45,6 +47,14 @@ import Library from './screens/Library';
 import InstitutionalReports from './screens/InstitutionalReports';
 import CookieBanner from './components/CookieBanner'; 
 
+
+function ExternalRedirect({ url }) {
+  useEffect(() => {
+    window.location.replace(url);
+  }, [url]);
+
+  return null;
+}
 function App() {
   return (
     <AppState>
