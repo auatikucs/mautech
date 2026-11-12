@@ -573,7 +573,7 @@ export default function Nav() {
                 <Link to="/oer">OER</Link>{" "}
               </li>
               <li>
-                <Link to="/library">Library</Link>{" "}
+                <a href="http://ibblibrary.com/">Library</a>
               </li>
               <li>
                 <a href="#">Login</a>
