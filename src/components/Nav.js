@@ -573,7 +573,7 @@ export default function Nav() {
                 <Link to="/oer">OER</Link>{" "}
               </li>
               <li>
-                <a href="http://ibblibrary.com/">Library</a>
+                <a href="http://ibblibrary.com/" target="_blank" rel="noopener noreferrer">Library</a>
               </li>
               <li>
                 <a href="#">Login</a>
