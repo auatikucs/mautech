@@ -84,7 +84,7 @@ function App() {
     <Route path='/oer' element={<Oer/>}/>
     <Route path='/RandD' element={<RandD/>}/>
     <Route path='/admissions' element={<Admission/>}/>
-    <Route path='/library' element={<Library/>}/>
+    <Route path='/library' element={<ExternalRedirect url="https://ibblibrary.com" />}/>
     <Route path='/admission/:id' element={<UnderGraduate/>}/>
     </Routes>
     <Footer/>
