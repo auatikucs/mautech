@@ -811,14 +811,17 @@ export default function Nav() {
               <MyList title="Portals" />
             </Link>
 
-            <Link
-              onClick={() => {
-                setIsDrawerOpen(false);
-              }}
-              to="/library"
-            >
-              <MyList title="Library" />
-            </Link>
+           <a
+  href="https://ibblibrary.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => {
+    setIsDrawerOpen(false);
+  }}
+  style={{ textDecoration: "none", color: "inherit" }}
+>
+  <MyList title="Library" />
+</a>
 
             <Link
               onClick={() => {
