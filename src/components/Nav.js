@@ -16,13 +16,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 import MenuItems from "./MenuItems";
-function ExternalRedirect({ url }) {
-  useEffect(() => {
-    window.location.replace(url);
-  }, [url]);
-
-  return null;
-}
 const MyNav = styled.nav`
   min-height: 107px;
   max-height: 107px;
@@ -817,15 +810,7 @@ export default function Nav() {
               <MyList title="Portals" />
             </Link>
 
-          <div
-  onClick={() => {
-    setIsDrawerOpen(false);
-    window.location.href = "https://ibblibrary.com";
-  }}
-  style={{ cursor: "pointer" }}
->
-  <MyList title="Library" />
-</div>
+          <Link onClick={() => { setIsDrawerOpen(false); }} to="/library"><MyList title="Library" /></Link>
 
             <Link
               onClick={() => {
