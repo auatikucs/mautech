@@ -817,14 +817,15 @@ export default function Nav() {
               <MyList title="Portals" />
             </Link>
 
-           <Link
-              onClick={() => {
-                setIsDrawerOpen(false);
-              }}
-              to="/library"
-            >
-              <MyList title="Library" />
-            </Link>
+          <div
+  onClick={() => {
+    setIsDrawerOpen(false);
+    window.location.href = "https://ibblibrary.com";
+  }}
+  style={{ cursor: "pointer" }}
+>
+  <MyList title="Library" />
+</div>
 
             <Link
               onClick={() => {
